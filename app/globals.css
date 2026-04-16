@@ -71,8 +71,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Body / paragraph / data text: sans-serif Plus Jakarta */
-body, p, span, div, li, td, th, a, button, input, textarea, select, label, small {
+/* Body / paragraph / data text: sans-serif Plus Jakarta.
+   NOTE: NO span here — span must inherit from parent so headlines keep Playfair when using wrapper spans */
+body, p, div, li, td, th, a, button, input, textarea, select, label, small {
   font-family: var(--font-sans);
 }
 
@@ -81,8 +82,12 @@ h1, h2 {
   font-family: var(--font-display);
 }
 
-/* em/i inherit from parent — inside h1/h2 they will be Playfair italic,
-   inside p/span they will be Plus Jakarta italic */
+/* Force Playfair on italic inside headlines (higher specificity than em, i rule) */
+h1 em, h2 em, h1 i, h2 i, h1 span, h2 span {
+  font-family: var(--font-display);
+}
+
+/* em/i inherit font-family from parent (after specific rules above) */
 em, i {
   font-style: italic;
   font-family: inherit;
