@@ -276,20 +276,20 @@ export function TijuanaChoropleth() {
 function HeroMetricPills() {
   const pills = [
     {
-      label: "30 zonas",
-      sub: "NSE AB → D · cobertura total TJ",
+      label: "Cap rate ~7%",
+      sub: "Rendimiento renta · zonas consolidadas",
       pos: "top-2 left-0",
       delay: 1.8,
     },
     {
-      label: "+22% YoY",
-      sub: "Zona Río · precio/m²",
+      label: "$3.2M MXN",
+      sub: "Ticket promedio · residencial venta",
       pos: "top-[42%] right-0",
       delay: 2.05,
     },
     {
-      label: "18,742 listings",
-      sub: "validados · últimos 30 días",
+      label: "Casa · Depto · Local",
+      sub: "Tipologías · venta y renta por zona",
       pos: "bottom-2 left-6",
       delay: 2.3,
     },
