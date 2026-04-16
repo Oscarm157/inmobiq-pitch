@@ -91,8 +91,8 @@ const stages = [
     num: "01",
     icon: "download",
     title: "Recopilamos",
-    sub: "15+ fuentes · portales · redes · INEGI",
-    detail: "Analistas locales cruzan 10 portales inmobiliarios, Facebook Marketplace, grupos y WhatsApp. Demografía censal oficial.",
+    sub: "Portales · marketplaces · redes · INEGI",
+    detail: "Analistas locales cruzan portales inmobiliarios, Facebook Marketplace, grupos y WhatsApp. Demografía censal oficial.",
   },
   {
     num: "02",
@@ -124,28 +124,28 @@ function PipelineFlow() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-0 relative">
         {stages.map((s, i) => (
           <div key={s.num} className="relative flex flex-col items-start px-3 py-4 md:px-5">
-            {/* Connector line between cards (hidden on mobile) */}
+            {/* Connector line between icons (hidden on mobile) */}
             {i < stages.length - 1 && (
-              <div className="hidden md:block absolute top-[38px] left-full w-full h-px z-0">
-                <svg width="100%" height="2" className="block">
+              <div className="hidden md:block absolute top-[44px] left-[76px] w-[calc(100%-56px)] h-px z-0 pointer-events-none">
+                <svg width="100%" height="2" className="block overflow-visible">
                   <line
                     x1="0"
                     y1="1"
                     x2="100%"
                     y2="1"
                     stroke="#3b82f6"
-                    strokeOpacity="0.5"
-                    strokeWidth="1.5"
+                    strokeOpacity="0.45"
+                    strokeWidth="1.25"
                     strokeDasharray="3 4"
                   />
                 </svg>
-                {/* Arrow */}
+                {/* Arrow — tip lands just before next icon */}
                 <span
-                  className="absolute -right-1.5 -top-[7px] text-accent"
+                  className="absolute -right-[2px] -top-[5px]"
                   style={{ lineHeight: 1 }}
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12">
-                    <path d="M0 2 L8 6 L0 10 Z" fill="#3b82f6" opacity="0.6" />
+                  <svg width="10" height="10" viewBox="0 0 10 10">
+                    <path d="M0 1 L7 5 L0 9 Z" fill="#3b82f6" opacity="0.7" />
                   </svg>
                 </span>
               </div>
@@ -307,18 +307,13 @@ function OceanCard({
 const chaosSources = [
   { label: "Inmuebles24", rot: -3, scale: 1.05, op: 0.9, type: "portal" },
   { label: "Lamudi", rot: 2, scale: 0.95, op: 0.75, type: "portal" },
-  { label: "Facebook Marketplace", rot: -1.5, scale: 1.08, op: 0.95, type: "social" },
-  { label: "Vivanuncios", rot: 3, scale: 0.9, op: 0.7, type: "portal" },
+  { label: "Vivanuncios", rot: 3, scale: 0.9, op: 0.72, type: "portal" },
   { label: "MercadoLibre", rot: -2, scale: 1, op: 0.85, type: "portal" },
-  { label: "WhatsApp brokers", rot: 4, scale: 1.02, op: 0.88, type: "social" },
-  { label: "Grupos de FB", rot: -4, scale: 0.92, op: 0.7, type: "social" },
-  { label: "Propiedades.com", rot: 1, scale: 0.95, op: 0.72, type: "portal" },
-  { label: "Casas y Terrenos", rot: -2.5, scale: 0.98, op: 0.78, type: "portal" },
-  { label: "Instagram DMs", rot: 3.5, scale: 0.92, op: 0.65, type: "social" },
-  { label: "Metros Cúbicos", rot: -1, scale: 0.9, op: 0.7, type: "portal" },
-  { label: "Trovit", rot: 2.5, scale: 0.88, op: 0.65, type: "portal" },
   { label: "EasyBroker", rot: -3.5, scale: 0.95, op: 0.72, type: "portal" },
-  { label: "Clasificados locales", rot: 1.5, scale: 0.9, op: 0.6, type: "social" },
+  { label: "Facebook Marketplace", rot: -1.5, scale: 1.08, op: 0.95, type: "social" },
+  { label: "Grupos de FB", rot: -4, scale: 0.95, op: 0.82, type: "social" },
+  { label: "WhatsApp brokers", rot: 4, scale: 1.02, op: 0.88, type: "social" },
+  { label: "Clasificados locales", rot: 1.5, scale: 0.92, op: 0.7, type: "social" },
   { label: "INEGI 2020", rot: 0, scale: 1.1, op: 1, type: "official" },
 ];
 
@@ -340,7 +335,7 @@ function SourceChaos() {
           Entrada · El caos actual
         </span>
         <span className="ml-auto text-[11px] uppercase tracking-[0.18em] text-muted">
-          15+ fuentes fragmentadas
+          10+ fuentes fragmentadas
         </span>
       </div>
 

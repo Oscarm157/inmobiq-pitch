@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import Image from "next/image";
 
 interface SlidesDeckProps {
   children: React.ReactNode[];
@@ -123,12 +124,23 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
 
       {/* Top-left: brand + home button */}
       <div
-        className="absolute top-0 left-0 z-50 flex items-center gap-3 px-4 sm:px-6 py-3 sm:py-4"
+        className="absolute top-0 left-0 z-50 flex items-center gap-4 px-4 sm:px-6 py-3 sm:py-4"
         style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
       >
-        <span className="font-semibold text-sm tracking-widest text-foreground/70 uppercase">
-          INMOBIQ
-        </span>
+        <button
+          onClick={() => goTo(0)}
+          aria-label="Ir al inicio"
+          className="flex items-center transition-opacity hover:opacity-80"
+        >
+          <Image
+            src="/logo-inmobiq-white.png"
+            alt="Inmobiq"
+            width={260}
+            height={80}
+            priority
+            className="h-5 sm:h-6 w-auto opacity-90"
+          />
+        </button>
         {current > 0 && (
           <button
             onClick={() => goTo(0)}

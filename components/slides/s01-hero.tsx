@@ -1,5 +1,6 @@
 import { Slide } from "../slide";
 import { HeroWord, FadeStack, FadeItem } from "../ui/motion-primitives";
+import { TijuanaChoropleth } from "../ui/tijuana-choropleth";
 import { brand } from "@/lib/data";
 
 export function S01Hero() {
@@ -52,77 +53,11 @@ export function S01Hero() {
           </FadeStack>
         </div>
 
-        {/* Right — editorial geometric composition */}
+        {/* Right — choropleth real de Tijuana */}
         <div className="lg:col-span-5 relative hidden lg:block h-[460px]">
-          <HeroGeometry />
+          <TijuanaChoropleth />
         </div>
       </div>
     </Slide>
-  );
-}
-
-function HeroGeometry() {
-  return (
-    <svg viewBox="0 0 420 460" className="w-full h-full">
-      <defs>
-        <linearGradient id="zoneGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.05" />
-        </linearGradient>
-        <linearGradient id="zoneGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.02" />
-        </linearGradient>
-        <filter id="blueGlow">
-          <feGaussianBlur stdDeviation="8" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      {/* Stylized zone polygons — evoking Tijuana choropleth */}
-      <polygon
-        points="90,40 260,60 280,180 130,220 60,150"
-        fill="url(#zoneGrad1)"
-        stroke="#3b82f6"
-        strokeOpacity="0.4"
-        strokeWidth="1"
-      />
-      <polygon
-        points="260,60 380,100 390,240 280,180"
-        fill="url(#zoneGrad2)"
-        stroke="#60a5fa"
-        strokeOpacity="0.3"
-        strokeWidth="1"
-      />
-      <polygon
-        points="130,220 280,180 310,350 150,360 90,290"
-        fill="url(#zoneGrad1)"
-        stroke="#3b82f6"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <polygon
-        points="280,180 390,240 380,390 310,350"
-        fill="url(#zoneGrad2)"
-        stroke="#60a5fa"
-        strokeOpacity="0.25"
-        strokeWidth="1"
-      />
-
-      {/* Data points with glow */}
-      <circle cx="180" cy="130" r="5" fill="#60a5fa" filter="url(#blueGlow)" className="pulse-dot" />
-      <circle cx="320" cy="160" r="4" fill="#3b82f6" filter="url(#blueGlow)" />
-      <circle cx="200" cy="280" r="5" fill="#60a5fa" filter="url(#blueGlow)" />
-      <circle cx="340" cy="310" r="4" fill="#3b82f6" filter="url(#blueGlow)" />
-      <circle cx="110" cy="200" r="3" fill="#93c5fd" />
-
-      {/* Connecting lines */}
-      <line x1="180" y1="130" x2="320" y2="160" stroke="#3b82f6" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 4" />
-      <line x1="320" y1="160" x2="340" y2="310" stroke="#3b82f6" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 4" />
-      <line x1="200" y1="280" x2="340" y2="310" stroke="#3b82f6" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 4" />
-    </svg>
   );
 }

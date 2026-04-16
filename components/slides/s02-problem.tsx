@@ -44,8 +44,8 @@ export function S02Problem() {
           {problemCards.map((c) => (
             <FadeItem key={c.label}>
               <div className="rounded-2xl bg-card p-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-0.5 transition-transform duration-300">
-                <div className="flex items-baseline gap-4">
-                  <span className="text-5xl sm:text-6xl font-semibold text-foreground leading-none tabular-nums">
+                <div className="flex items-center gap-4">
+                  <span className="text-5xl sm:text-6xl font-semibold text-foreground leading-[0.95] tabular-nums shrink-0">
                     {c.number}
                   </span>
                   <div className="flex-1">
@@ -82,8 +82,8 @@ const problemCards = [
     detail: "Tiempo que cada broker profesional pierde cruzando datos entre portales para cerrar una venta.",
   },
   {
-    number: "0",
-    label: "MLS nacional en México",
-    detail: "A diferencia de USA (NAR MLS), México no tiene un estándar de data pública inmobiliaria.",
+    number: "~0",
+    label: "Data pública confiable",
+    detail: "Pueden existir intentos aislados, pero la cobertura real es mínima o nula. Nadie ha construido la capa de intelligence que el broker mexicano necesita.",
   },
 ];
