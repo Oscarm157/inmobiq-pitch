@@ -22,7 +22,8 @@ export function S02Problem() {
 
           <FadeItem>
             <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl mt-2">
-              4 portales fragmentados con datos <em>user-generated</em> sin curar.
+              Varios portales, marketplaces y grupos de redes sociales —
+              información <em>diversa y difusa</em>, <em>user-generated</em> y sin curar.
               Precios inflados, listings duplicados, cero forma de validar una zona con
               confianza. Cada broker profesional pierde horas cada semana verificando
               información que debería ser un servicio base.
