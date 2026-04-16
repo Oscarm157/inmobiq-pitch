@@ -59,6 +59,7 @@
   --color-concrete: var(--concrete);
 
   --font-sans: var(--font-jakarta), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -70,12 +71,18 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Force sans-serif everywhere — defense against Tailwind preflight + italic font synthesis fallbacks */
-html, body, em, i, b, strong, h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, a, button, input, textarea, select, label {
+/* Body / paragraph / data text: sans-serif Plus Jakarta */
+body, p, span, div, li, td, th, a, button, input, textarea, select, label, small {
   font-family: var(--font-sans);
 }
 
-/* Explicit italic: italic style with same font-family as parent (prevents serif fallback) */
+/* Headlines: serif display (Playfair) */
+h1, h2 {
+  font-family: var(--font-display);
+}
+
+/* em/i inherit from parent — inside h1/h2 they will be Playfair italic,
+   inside p/span they will be Plus Jakarta italic */
 em, i {
   font-style: italic;
   font-family: inherit;

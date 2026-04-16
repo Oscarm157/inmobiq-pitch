@@ -17,7 +17,7 @@ export function S10Traction() {
 
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em] max-w-4xl">
-            Un año construyendo. <em className="font-sans italic text-gradient-accent">MVP listo.</em> Pre-launch.
+            Un año construyendo. <em className="italic text-gradient-accent">MVP listo.</em> Pre-launch.
           </h2>
         </FadeItem>
 

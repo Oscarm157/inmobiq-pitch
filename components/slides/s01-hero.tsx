@@ -30,7 +30,7 @@ export function S01Hero() {
               <HeroWord delay={0.35}>inmobiliaria </HeroWord>
               <br className="hidden sm:block" />
               <HeroWord delay={0.55}>
-                <em className="font-sans italic text-gradient-accent">curada</em>
+                <em className="italic text-gradient-accent">curada</em>
               </HeroWord>
               <HeroWord delay={0.7}> para profesionales.</HeroWord>
             </h1>

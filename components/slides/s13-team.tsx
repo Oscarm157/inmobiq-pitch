@@ -17,7 +17,7 @@ export function S13Team() {
 
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em] max-w-4xl">
-            Un año ejecutando. <em className="font-sans italic text-gradient-accent">Capital para formalizar.</em>
+            Un año ejecutando. <em className="italic text-gradient-accent">Capital para formalizar.</em>
           </h2>
         </FadeItem>
 

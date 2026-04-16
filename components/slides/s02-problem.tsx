@@ -16,7 +16,7 @@ export function S02Problem() {
 
           <FadeItem>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              En México, los brokers <em className="font-sans italic text-accent">trabajan a ciegas.</em>
+              En México, los brokers <em className="italic text-accent">trabajan a ciegas.</em>
             </h2>
           </FadeItem>
 

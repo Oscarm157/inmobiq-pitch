@@ -25,7 +25,7 @@ export function S14Investment() {
 
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-            Semilla <em className="font-sans italic text-gradient-accent">boutique</em>.
+            Semilla <em className="italic text-gradient-accent">boutique</em>.
             <br />
             $9.25M MXN por 25%.
           </h2>

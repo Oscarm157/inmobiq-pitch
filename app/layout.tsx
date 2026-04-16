@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -8,6 +8,14 @@ const jakarta = Plus_Jakarta_Sans({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-jakarta",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +37,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body className={`${jakarta.variable} antialiased font-sans`}>
+      <body className={`${jakarta.variable} ${playfair.variable} antialiased font-sans`}>
         {children}
       </body>
     </html>

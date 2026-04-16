@@ -24,7 +24,7 @@ export function S07Market() {
 
           <FadeItem>
             <h2 className="text-4xl sm:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Un mercado real, medible y <em className="font-sans italic text-accent">subatendido.</em>
+              Un mercado real, medible y <em className="italic text-accent">subatendido.</em>
             </h2>
           </FadeItem>
 
