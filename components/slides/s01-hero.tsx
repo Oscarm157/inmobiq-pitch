@@ -16,17 +16,17 @@ export function S01Hero() {
         }}
       />
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left narrative */}
-        <div className="lg:col-span-7">
-          <FadeStack className="flex flex-col gap-6">
+        <div className="lg:col-span-5">
+          <FadeStack className="flex flex-col gap-5">
             <FadeItem>
               <span className="inline-block text-[11px] font-semibold tracking-[0.22em] uppercase text-accent">
                 Presentación de Inversión · 2026
               </span>
             </FadeItem>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-bold leading-[1.02] text-foreground tracking-[-0.02em]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold leading-[1.04] text-foreground tracking-[-0.02em]">
               <HeroWord delay={0.2}>Inteligencia </HeroWord>
               <HeroWord delay={0.35}>inmobiliaria </HeroWord>
               <br className="hidden sm:block" />
@@ -54,7 +54,7 @@ export function S01Hero() {
         </div>
 
         {/* Right — choropleth real de Tijuana */}
-        <div className="lg:col-span-5 relative hidden lg:block h-[460px]">
+        <div className="lg:col-span-7 relative hidden lg:block h-[520px]">
           <TijuanaChoropleth />
         </div>
       </div>
