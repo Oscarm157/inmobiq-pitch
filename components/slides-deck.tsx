@@ -138,7 +138,7 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
             width={260}
             height={80}
             priority
-            className="h-5 sm:h-6 w-auto opacity-90"
+            className="h-7 sm:h-9 w-auto opacity-90"
           />
         </button>
         {current > 0 && (
