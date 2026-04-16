@@ -26,7 +26,7 @@ export function S11Financials() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                Crecimiento <em className="italic text-gradient-accent">viable</em>. No milagroso.
+                Crecimiento <em className="font-sans italic text-gradient-accent">viable</em>. No milagroso.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Break-even mes 9. Rentable mes 12. 18 meses para triplicar de 800 a 2,500 usuarios —

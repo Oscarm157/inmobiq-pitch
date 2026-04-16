@@ -22,7 +22,7 @@ export function S12Expansion() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Crecimiento <em className="italic text-accent">boutique</em>, no masivo.
+              Crecimiento <em className="font-sans italic text-accent">boutique</em>, no masivo.
             </h2>
             <p className="mt-4 text-base text-muted max-w-xl leading-relaxed">
               Cada ciudad se abre con analistas locales curando data. Costo por apertura:

@@ -28,7 +28,7 @@ export function S15CTA() {
             <br />
             <HeroWord delay={0.5}>la capa de </HeroWord>
             <HeroWord delay={0.7}>
-              <em className="italic text-gradient-accent">intelligence</em>
+              <em className="font-sans italic text-gradient-accent">intelligence</em>
             </HeroWord>
             <HeroWord delay={0.9}> inmobiliaria</HeroWord>
             <br />

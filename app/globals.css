@@ -58,7 +58,7 @@
   --color-violet: var(--violet);
   --color-concrete: var(--concrete);
 
-  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -68,6 +68,17 @@ html, body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force sans-serif everywhere — defense against Tailwind preflight + italic font synthesis fallbacks */
+html, body, em, i, b, strong, h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, a, button, input, textarea, select, label {
+  font-family: var(--font-sans);
+}
+
+/* Explicit italic: italic style with same font-family as parent (prevents serif fallback) */
+em, i {
+  font-style: italic;
+  font-family: inherit;
 }
 
 /* Dark slide container — applies dark tokens to child sections */

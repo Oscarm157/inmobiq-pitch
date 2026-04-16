@@ -24,7 +24,7 @@ export function S03Solution() {
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em] max-w-4xl">
             Un co-piloto de intelligence para el{" "}
-            <em className="italic text-gradient-accent">broker profesional.</em>
+            <em className="font-sans italic text-gradient-accent">broker profesional.</em>
           </h2>
         </FadeItem>
 

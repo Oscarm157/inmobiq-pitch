@@ -79,7 +79,7 @@ export function S08Cities() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                15 ciudades. <em className="italic text-accent">Un plan</em> de 24 meses.
+                15 ciudades. <em className="font-sans italic text-accent">Un plan</em> de 24 meses.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 TAM total 63.6K usuarios potenciales (brokers + inmobiliarias en las 15 ciudades con mayor

@@ -23,7 +23,7 @@ export function S04HowItWorks() {
 
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-[64px] font-bold leading-[1.02] text-foreground tracking-[-0.02em] max-w-5xl">
-            De data cruda a <em className="italic text-gradient-accent">claridad</em> de mercado.
+            De data cruda a <em className="font-sans italic text-gradient-accent">claridad</em> de mercado.
           </h2>
         </FadeItem>
 
@@ -31,7 +31,7 @@ export function S04HowItWorks() {
           <p className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed">
             La data inmobiliaria en México vive dispersa entre 10+ portales, redes sociales, WhatsApp y
             marketplaces. Nuestro pipeline curado convierte ese caos en un{" "}
-            <em className="italic text-foreground/90">source of truth</em> para el profesional.
+            <em className="font-sans italic text-foreground/90">source of truth</em> para el profesional.
           </p>
         </FadeItem>
 
