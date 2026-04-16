@@ -5,8 +5,8 @@ export function S02Problem() {
   return (
     <Slide mode="dark">
       <FadeStack className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-        {/* Left narrative — 60% */}
-        <div className="lg:col-span-7 flex flex-col gap-6">
+        {/* Left narrative — 50% */}
+        <div className="lg:col-span-6 flex flex-col gap-6">
           <FadeItem>
             <div className="flex items-center gap-3">
               <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">02</span>
@@ -38,8 +38,8 @@ export function S02Problem() {
           </FadeItem>
         </div>
 
-        {/* Right data evidence — 40% */}
-        <div className="lg:col-span-5 flex flex-col gap-4">
+        {/* Right data evidence — 50% */}
+        <div className="lg:col-span-6 flex flex-col gap-4">
           {problemCards.map((c) => (
             <FadeItem key={c.label}>
               <div className="rounded-2xl bg-card p-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-0.5 transition-transform duration-300">

@@ -6,7 +6,7 @@
 
 export const brand = {
   name: "Inmobiq",
-  tagline: "Inteligencia inmobiliaria curada para profesionales.",
+  tagline: "Inteligencia inmobiliaria confiable y precisa para profesionales.",
   subline: "La claridad del mercado mexicano, finalmente.",
   founder: "Oscar Amayoral",
   city: "Tijuana, México",
