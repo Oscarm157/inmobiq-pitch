@@ -1,0 +1,228 @@
+"use client";
+
+import {
+  ComposedChart,
+  Bar,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ReferenceLine,
+  ResponsiveContainer,
+  Legend,
+  Cell,
+} from "recharts";
+
+type Point = {
+  month: string;
+  monthNum: number;
+  users: number;
+  mrr_mxn: number;
+  arr_mxn: number;
+  status: string;
+  highlight?: "break-even" | "profitable" | "expansion";
+};
+
+export const growthSeries: Point[] = [
+  { month: "M3",  monthNum: 3,  users: 100,  mrr_mxn: 62_930,    arr_mxn: 755_160,    status: "Ramp-up inicial" },
+  { month: "M6",  monthNum: 6,  users: 250,  mrr_mxn: 179_800,   arr_mxn: 2_157_600,  status: "Tijuana consolidando" },
+  { month: "M9",  monthNum: 9,  users: 400,  mrr_mxn: 305_660,   arr_mxn: 3_667_920,  status: "Break-even operativo",   highlight: "break-even" },
+  { month: "M12", monthNum: 12, users: 800,  mrr_mxn: 611_320,   arr_mxn: 7_335_840,  status: "GDL + Cancún live",      highlight: "profitable" },
+  { month: "M18", monthNum: 18, users: 1_500, mrr_mxn: 1_146_225, arr_mxn: 13_754_700, status: "3 ciudades en operación", highlight: "expansion" },
+  { month: "M24", monthNum: 24, users: 2_500, mrr_mxn: 1_910_375, arr_mxn: 22_924_500, status: "CDMX + MTY en ramp-up",   highlight: "expansion" },
+];
+
+const fmtUsers = (n: number) => n.toLocaleString("es-MX");
+const fmtMxn = (n: number) =>
+  n >= 1_000_000
+    ? `$${(n / 1_000_000).toFixed(1)}M`
+    : `$${Math.round(n / 1_000)}K`;
+
+function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<{ payload: Point }> }) {
+  if (!active || !payload || !payload.length) return null;
+  const p = payload[0].payload;
+
+  const highlightColor =
+    p.highlight === "break-even"
+      ? "text-emerald-300"
+      : p.highlight === "profitable"
+      ? "text-accent-light"
+      : p.highlight === "expansion"
+      ? "text-accent"
+      : "text-muted";
+
+  return (
+    <div className="rounded-xl bg-[#0a0a0a]/95 border border-[#2a2a3e] backdrop-blur-sm px-4 py-3 shadow-[0_20px_48px_-4px_rgba(0,0,0,0.6)] min-w-[220px]">
+      <div className="flex items-baseline justify-between gap-3 mb-2.5 pb-2.5 border-b border-[#2a2a3e]">
+        <div className="text-xl font-semibold text-[#e0e0e0]">
+          Mes {p.monthNum}
+        </div>
+        <div className={`text-[10px] uppercase tracking-widest font-semibold ${highlightColor}`}>
+          {p.status}
+        </div>
+      </div>
+      <dl className="flex flex-col gap-1.5">
+        <div className="flex justify-between items-baseline gap-3">
+          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">Users activos</dt>
+          <dd className="text-sm font-semibold text-[#e0e0e0] tabular-nums">{fmtUsers(p.users)}</dd>
+        </div>
+        <div className="flex justify-between items-baseline gap-3">
+          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">MRR</dt>
+          <dd className="text-sm font-semibold text-[#60a5fa] tabular-nums">{fmtMxn(p.mrr_mxn)} MXN</dd>
+        </div>
+        <div className="flex justify-between items-baseline gap-3">
+          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">ARR</dt>
+          <dd className="text-sm font-bold text-[#60a5fa] tabular-nums">{fmtMxn(p.arr_mxn)} MXN</dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
+interface ActiveDotProps {
+  cx?: number;
+  cy?: number;
+  payload?: Point;
+}
+
+function ActiveDot({ cx, cy, payload }: ActiveDotProps) {
+  if (cx === undefined || cy === undefined || !payload) return null;
+  const isBreakEven = payload.highlight === "break-even";
+  const isMilestone = !!payload.highlight;
+  const r = isMilestone ? 8 : 5;
+  const fill = isBreakEven ? "#10b981" : "#60a5fa";
+
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r + 7} fill={fill} opacity={0.12} />
+      <circle cx={cx} cy={cy} r={r + 3} fill={fill} opacity={0.25} />
+      <circle cx={cx} cy={cy} r={r} fill={fill} stroke="#0a0a0a" strokeWidth={2} />
+    </g>
+  );
+}
+
+export function GrowthChart() {
+  return (
+    <div className="w-full h-[420px] sm:h-[460px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <ComposedChart
+          data={growthSeries}
+          margin={{ top: 20, right: 40, bottom: 10, left: 10 }}
+        >
+          <defs>
+            <linearGradient id="mrrGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.45} />
+              <stop offset="60%" stopColor="#3b82f6" stopOpacity={0.14} />
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#60a5fa" stopOpacity={0.55} />
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.15} />
+            </linearGradient>
+          </defs>
+
+          <CartesianGrid
+            stroke="rgba(148, 163, 184, 0.08)"
+            strokeDasharray="3 6"
+            vertical={false}
+          />
+
+          <XAxis
+            dataKey="month"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#94a3b8", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em" }}
+            dy={10}
+          />
+
+          {/* Left axis — users */}
+          <YAxis
+            yAxisId="users"
+            orientation="left"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#64748b", fontSize: 10 }}
+            tickFormatter={(v) => fmtUsers(v)}
+            width={50}
+          />
+
+          {/* Right axis — MRR */}
+          <YAxis
+            yAxisId="mrr"
+            orientation="right"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#60a5fa", fontSize: 10, fontWeight: 600 }}
+            tickFormatter={(v) => fmtMxn(v)}
+            width={55}
+          />
+
+          <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(59, 130, 246, 0.06)" }} />
+
+          <Legend
+            verticalAlign="top"
+            align="right"
+            iconType="circle"
+            iconSize={8}
+            wrapperStyle={{ paddingBottom: 14, fontSize: 11, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.12em" }}
+            formatter={(value: string) => <span style={{ color: "#94a3b8", marginRight: 12 }}>{value}</span>}
+          />
+
+          {/* Break-even reference */}
+          <ReferenceLine
+            x="M9"
+            yAxisId="users"
+            stroke="#10b981"
+            strokeDasharray="4 4"
+            strokeOpacity={0.6}
+            label={{
+              value: "Break-even",
+              position: "insideTopRight",
+              fill: "#10b981",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              offset: 6,
+            }}
+          />
+
+          {/* Users bars */}
+          <Bar
+            yAxisId="users"
+            dataKey="users"
+            name="Users activos"
+            fill="url(#barGradient)"
+            radius={[6, 6, 0, 0]}
+            barSize={34}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationEasing="ease-out"
+          >
+            {growthSeries.map((p, i) => (
+              <Cell
+                key={`c-${i}`}
+                fill={p.highlight === "break-even" ? "rgba(16, 185, 129, 0.35)" : "url(#barGradient)"}
+              />
+            ))}
+          </Bar>
+
+          {/* MRR area */}
+          <Area
+            yAxisId="mrr"
+            type="monotone"
+            dataKey="mrr_mxn"
+            name="MRR MXN"
+            stroke="#3b82f6"
+            strokeWidth={2.5}
+            fill="url(#mrrGradient)"
+            activeDot={(props: unknown) => <ActiveDot {...(props as ActiveDotProps)} />}
+            isAnimationActive={true}
+            animationDuration={1600}
+            animationEasing="ease-out"
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
