@@ -112,46 +112,65 @@ export function S15Investment() {
                 <thead>
                   <tr className="bg-surface-muted/40">
                     <th className="px-3 py-3 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades activas</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Costo curadores</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-emerald-300/90">Opex VEQ</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores Inmobiq</th>
                     <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
                     <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">Utilidad Inmobiq</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {monthly_cash_flow.map((row, i) => (
-                    <tr
-                      key={`${row.month}`}
-                      className={i % 2 === 0 ? "bg-transparent" : "bg-surface-muted/20"}
-                    >
-                      <td className="px-3 py-3 text-sm font-mono tabular-nums text-foreground/90">
-                        M{row.month}
-                      </td>
-                      <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
-                      <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/80">
-                        {fmtK(row.burn_mxn)}
-                      </td>
-                      <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/90">
-                        {fmtK(row.mrr_mxn)}
-                      </td>
-                      <td className="px-3 py-3 text-right text-base font-semibold tabular-nums text-accent">
-                        +{fmtK(row.net_mxn)}
-                      </td>
-                    </tr>
-                  ))}
+                  {monthly_cash_flow.map((row, i) => {
+                    const isYear2 = row.opex_veq_mxn === 0;
+                    return (
+                      <tr
+                        key={`${row.month}`}
+                        className={
+                          isYear2
+                            ? "bg-accent/5 border-l-2 border-accent/40"
+                            : i % 2 === 0
+                            ? "bg-transparent"
+                            : "bg-surface-muted/20"
+                        }
+                      >
+                        <td className="px-3 py-3 text-sm font-mono tabular-nums text-foreground/90">
+                          M{row.month}
+                        </td>
+                        <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
+                        <td className="px-3 py-3 text-right text-sm tabular-nums text-emerald-300/80">
+                          {row.opex_veq_mxn > 0 ? fmtK(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
+                        </td>
+                        <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/80">
+                          {fmtK(row.burn_mxn)}
+                        </td>
+                        <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/90">
+                          {fmtK(row.mrr_mxn)}
+                        </td>
+                        <td className="px-3 py-3 text-right text-base font-semibold tabular-nums text-accent">
+                          +{fmtK(row.net_mxn)}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted">
               <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span className="uppercase tracking-widest font-semibold text-emerald-300/90">
+                  Año 1 · VEQ cubre $238K/mes opex
+                </span>
+              </span>
+              <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent" />
                 <span className="uppercase tracking-widest font-semibold text-accent">
-                  Año 1 utilidad acumulada ~$5.9M MXN
+                  Año 2 · Inmobiq asume opex
                 </span>
               </span>
               <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
-                Año 2 Inmobiq asume el opex completo desde su propio cash flow. VEQ ya no aporta operativamente.
+                Utilidad acumulada año 1 ~$5.9M MXN — suficiente para cubrir el opex el año 2 sin más capital.
               </span>
             </div>
           </div>

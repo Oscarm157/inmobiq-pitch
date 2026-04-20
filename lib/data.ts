@@ -108,15 +108,17 @@ export const founder_secondary_tranches = [
   { tranche: 3, mxn: 150_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses (final)" },
 ];
 
-// Flujo mensual — gasto Inmobiq (sólo curadores) vs ingresos
-// VEQ cubre TODO el opex año 1. Único costo Inmobiq = curadores = $40K/mes por ciudad activa
+// Flujo mensual — opex completo (VEQ + Inmobiq) vs ingresos
+// Año 1: VEQ cubre $238K/mes opex corporativo · Inmobiq solo paga curadores
+// Año 2 (mes 13+): Inmobiq asume el opex completo desde su revenue
+const opexVeqMonthly = 238_000;
 export const monthly_cash_flow = [
-  { month: 3,  cities: 5,  burn_mxn: 200_000, mrr_mxn: 275_655,   net_mxn: 75_655,    note: "Ola 1 abriendo · 5 ciudades activas" },
-  { month: 6,  cities: 8,  burn_mxn: 320_000, mrr_mxn: 791_010,   net_mxn: 471_010,   note: "Punto de equilibrio · ola 2 abriendo" },
-  { month: 9,  cities: 8,  burn_mxn: 320_000, mrr_mxn: 1_358_300, net_mxn: 1_038_300, note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, cities: 15, burn_mxn: 600_000, mrr_mxn: 1_917_600, net_mxn: 1_317_600, note: "Ola 3 abriendo · 15 ciudades activas" },
-  { month: 15, cities: 15, burn_mxn: 600_000, mrr_mxn: 3_100_000, net_mxn: 2_500_000, note: "Plan completo estabilizando" },
-  { month: 18, cities: 15, burn_mxn: 600_000, mrr_mxn: 4_298_620, net_mxn: 3_698_620, note: "Autosostenible · año 2 Inmobiq asume opex" },
+  { month: 3,  cities: 5,  opex_veq_mxn: opexVeqMonthly, burn_mxn: 200_000, mrr_mxn: 275_655,   net_mxn: 75_655,    note: "Ola 1 abriendo · 5 ciudades activas" },
+  { month: 6,  cities: 8,  opex_veq_mxn: opexVeqMonthly, burn_mxn: 320_000, mrr_mxn: 791_010,   net_mxn: 471_010,   note: "Punto de equilibrio · ola 2 abriendo" },
+  { month: 9,  cities: 8,  opex_veq_mxn: opexVeqMonthly, burn_mxn: 320_000, mrr_mxn: 1_358_300, net_mxn: 1_038_300, note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, cities: 15, opex_veq_mxn: opexVeqMonthly, burn_mxn: 600_000, mrr_mxn: 1_917_600, net_mxn: 1_317_600, note: "Ola 3 abriendo · 15 ciudades activas" },
+  { month: 15, cities: 15, opex_veq_mxn: 0,              burn_mxn: 600_000, mrr_mxn: 3_100_000, net_mxn: 2_500_000, note: "Año 2 · Inmobiq asume opex" },
+  { month: 18, cities: 15, opex_veq_mxn: 0,              burn_mxn: 600_000, mrr_mxn: 4_298_620, net_mxn: 3_698_620, note: "Autosostenible · plan completo" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
