@@ -13,20 +13,20 @@ const gains = [
   {
     icon: "schedule",
     title: "Tiempo liberado",
-    value: "8–12 hrs/semana",
-    detail: "El análisis que antes tomaba horas, ahora tarda 5 segundos. El broker lo usa en lo que importa.",
+    value: "22× más rápido",
+    detail: "Análisis manual de 1 propiedad: ~90 min (portales, filtros, cálculos). Con Inmobiq: ~4 min. En 1 hora haces lo que antes te tomaba día y medio.",
   },
   {
     icon: "groups",
     title: "Más clientes",
-    value: "3× capacidad",
-    detail: "Sin el cuello de botella del análisis manual, puede atender el triple de prospectos en paralelo.",
+    value: "8 → 20 activos",
+    detail: "Un broker promedio maneja 8-10 clientes activos limitado por el tiempo de investigación. Con ese cuello de botella eliminado: 20-25 clientes en paralelo.",
   },
   {
     icon: "verified",
     title: "Se ve pro",
-    value: "Reporte en segundos",
-    detail: "Llega a la cita con un reporte completo, datos verificados y valuación IA. El cliente lo percibe diferente.",
+    value: "Reporte al instante",
+    detail: "Llega a la cita con valuación IA, comparativa de zona, riesgo y demografía — en PDF. El cliente percibe a alguien que domina el mercado.",
   },
 ];
 
@@ -115,8 +115,8 @@ export function SSuperpowers() {
               <div>
                 <div className="text-xs font-semibold text-accent uppercase tracking-wide">Brújula AI toma este tramo</div>
                 <div className="text-[11px] text-muted mt-0.5">
-                  Cruza 1 propiedad vs <span className="text-foreground font-semibold">1,000 en el mercado</span> · genera reporte completo · todo en{" "}
-                  <span className="text-emerald-300 font-semibold">5 segundos</span>
+                  Cruza 1 propiedad vs <span className="text-foreground font-semibold">1,000 en el mercado</span> · genera reporte completo ·{" "}
+                  <span className="text-emerald-300 font-semibold">~4 minutos</span> vs 90 min manual
                 </div>
               </div>
             </div>
