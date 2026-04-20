@@ -52,24 +52,24 @@ export function S15Investment() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <PackageCard
               label="Cash a la operación"
-              amount={fmtMxn(round.cash_to_company_mxn)}
+              amount={fmtMxn(round.cash_to_operation_mxn)}
               subtitle="MXN · entra a banco Inmobiq"
-              detail="14 city openings, marketing, infra, legal, buffer"
+              detail="14 city openings + salario founder + marketing + legal + infra + buffer"
               color="accent"
             />
             <PackageCard
               label="VEQ in-kind · 18 meses"
               amount={fmtMxn(round.veq_inkind_mxn)}
               subtitle="MXN · valor equivalente"
-              detail="2 devs + admin + $40K/mo ads + marketing team"
+              detail="2 devs + admin + $40K/mo ads + equipo marketing"
               color="emerald"
               breakdown={veq_inkind}
             />
             <PackageCard
-              label="Founder package"
-              amount={fmtMxn(round.founder_salary_mxn + round.founder_secondary_mxn)}
-              subtitle="Salario 12m + secondary"
-              detail={`$45K/mo × 12 + $500K secondary en 4 tramos`}
+              label="Founder secondary"
+              amount={fmtMxn(round.founder_secondary_mxn)}
+              subtitle="Compensación personal · hitos"
+              detail="Pago al founder por el año bootstrapping. 4 tramos atados a milestones operativos."
               color="amber"
               breakdown={founder_secondary_tranches.map((t) => ({
                 label: `Tramo ${t.tranche}`,

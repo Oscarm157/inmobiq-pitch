@@ -18,15 +18,17 @@ export const round = {
   package_total_mxn: 7_370_000,
   package_total_usd: 398_378,
 
-  // Cash que entra a la cuenta de Inmobiq
-  cash_to_company_mxn: 4_670_000,
-  cash_to_company_usd: 252_432,
+  // Cash a operación (incluye salario founder · gasto operativo)
+  cash_to_operation_mxn: 4_170_000,
+  cash_to_operation_usd: 225_405,
 
-  // Founder package (aparte del cash a la empresa)
+  // Salario founder (dentro de la operación · contrato laboral)
   founder_salary_mxn: 540_000, // $45K × 12 meses
   founder_salary_monthly_mxn: 45_000,
   founder_salary_months: 12,
-  founder_secondary_mxn: 500_000, // 4 tramos por hitos
+
+  // Founder secondary (compensación personal por hitos · separada de operación)
+  founder_secondary_mxn: 500_000,
   founder_secondary_tranches: 4,
 
   // VEQ in-kind (18 meses)
@@ -119,13 +121,21 @@ export const use_of_funds = [
     ],
   },
   {
-    chapter: "Founder package",
-    percent: 22.3,
-    mxn: 1_040_000,
-    usd: 56_216,
+    chapter: "Salarios · operación",
+    percent: 11.6,
+    mxn: 540_000,
+    usd: 29_189,
     items: [
       { label: "Salario founder (12 meses)", detail: "$45K MXN/mo · contrato laboral", mxn: 540_000 },
-      { label: "Secondary founder", detail: "4 tramos por hitos (closing, mes 3, mes 6, mes 12)", mxn: 500_000 },
+    ],
+  },
+  {
+    chapter: "Founder secondary · personal por hitos",
+    percent: 10.7,
+    mxn: 500_000,
+    usd: 27_027,
+    items: [
+      { label: "Compensación bootstrapping", detail: "4 tramos: closing, mes 3, mes 6, mes 12", mxn: 500_000 },
     ],
   },
   {
