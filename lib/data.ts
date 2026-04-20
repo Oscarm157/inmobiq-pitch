@@ -169,6 +169,7 @@ export const pricing = [
       "Historial extendido (12 meses)",
       "API de acceso a data",
       "Reportes automatizados semanales",
+      "Acceso a comunidad INMOBIQ",
       "Soporte prioritario",
       "Onboarding personalizado",
     ],
