@@ -61,8 +61,7 @@ function BasicView() {
       </div>
 
       <div className="relative rounded-xl overflow-hidden aspect-video">
-        <Image src="/house.webp" alt="Propiedad" fill className="object-cover grayscale opacity-50" />
-        <div className="absolute inset-0" style={{ background: "rgba(14,14,22,0.45)" }} />
+        <Image src="/house.webp" alt="Propiedad" fill className="object-cover grayscale opacity-80" />
       </div>
 
       <div className="flex flex-col gap-0.5">
@@ -125,8 +124,7 @@ function CockpitView() {
 
       {/* Property image with HUD */}
       <div className="relative rounded-xl overflow-hidden aspect-video z-20">
-        <Image src="/house.webp" alt="Propiedad" fill className="object-cover brightness-50" />
-        <div className="absolute inset-0" style={{ background: "rgba(8,8,15,0.35)" }} />
+        <Image src="/house.webp" alt="Propiedad" fill className="object-cover brightness-[0.4]" />
         <ScanLines />
         <Crosshair />
 
