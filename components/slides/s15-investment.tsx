@@ -177,8 +177,12 @@ export function S15Investment() {
                           {fmtMxn(row.mrr_mxn)}
                         </td>
                         <td className="px-2.5 py-3 text-right text-sm tabular-nums">
-                          <div className="font-semibold text-accent">+{fmtMxn(row.net_mxn)}</div>
-                          <div className="text-[10px] text-accent/60 font-medium">{row.margin_pct}%</div>
+                          <div className={`font-semibold ${row.net_mxn < 0 ? "text-rose-300" : "text-accent"}`}>
+                            {row.net_mxn < 0 ? "" : "+"}{fmtMxn(row.net_mxn)}
+                          </div>
+                          <div className={`text-[10px] font-medium ${row.margin_pct < 0 ? "text-rose-400/70" : "text-accent/60"}`}>
+                            {row.margin_pct}%
+                          </div>
                         </td>
                       </tr>
                     );

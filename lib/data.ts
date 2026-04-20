@@ -114,6 +114,7 @@ export const founder_secondary_tranches = [
 // Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) × $20K/mes
 const opexMonthly = 238_000;
 export const monthly_cash_flow = [
+  { month: 1,  cities: 1,  users: 35,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 27_965,    net_mxn: -12_035,   margin_pct: -43, note: "Tijuana piloto · pre-escala" },
   { month: 3,  cities: 5,  users: 345,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 275_655,   net_mxn: 115_655,   margin_pct: 42, note: "Ola 1 abriendo · 5 ciudades" },
   { month: 6,  cities: 8,  users: 990,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 791_010,   net_mxn: 551_010,   margin_pct: 70, note: "Punto de equilibrio · ola 2 abriendo" },
   { month: 9,  cities: 8,  users: 1_700, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_358_300, net_mxn: 1_118_300, margin_pct: 82, note: "Rentable · 8 ciudades estabilizadas" },
