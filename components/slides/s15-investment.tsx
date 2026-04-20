@@ -229,19 +229,25 @@ function PackageCard({
       <div className="text-[10px] text-muted mt-0.5 mb-2.5">{subtitle}</div>
       <div className="text-[11px] text-muted leading-relaxed mb-3">{detail}</div>
       {breakdown && (
-        <ul className="mt-auto pt-3 border-t border-card-border/50 flex flex-col gap-1.5">
-          {breakdown.map((b, i) => (
-            <li key={i} className="flex items-baseline justify-between gap-3 text-[11px]">
-              <div className="flex-1 leading-snug">
-                <div className="text-foreground/80">{b.label}</div>
-                {b.detail && <div className="text-muted/70 text-[10px]">{b.detail}</div>}
-              </div>
-              <span className="font-semibold tabular-nums text-foreground/90 whitespace-nowrap">
-                ${(b.mxn / 1_000).toFixed(0)}K
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-auto pt-3 border-t border-card-border/50">
+          <div className="flex items-baseline justify-between mb-2">
+            <span className="text-[9px] uppercase tracking-widest font-semibold text-muted">Desglose</span>
+            <span className="text-[9px] uppercase tracking-widest font-semibold text-muted/70">Total acumulado</span>
+          </div>
+          <ul className="flex flex-col gap-1.5">
+            {breakdown.map((b, i) => (
+              <li key={i} className="flex items-baseline justify-between gap-3 text-[11px]">
+                <div className="flex-1 leading-snug">
+                  <div className="text-foreground/80">{b.label}</div>
+                  {b.detail && <div className="text-muted/70 text-[10px]">{b.detail}</div>}
+                </div>
+                <span className="font-semibold tabular-nums text-foreground/90 whitespace-nowrap">
+                  ${(b.mxn / 1_000).toFixed(0)}K
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );
