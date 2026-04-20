@@ -29,8 +29,8 @@ export function S15Investment() {
       <FadeStack className="relative z-10 flex flex-col gap-7">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">15</span>
-            <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Ronda · capital con operación</span>
+            <span className="font-mono text-sm font-semibold tracking-[0.22em] text-accent">15</span>
+            <span className="text-sm uppercase tracking-[0.18em] text-muted-light">Ronda · capital con operación</span>
           </div>
         </FadeItem>
 
@@ -95,14 +95,14 @@ export function S15Investment() {
           <div className="rounded-2xl bg-card p-5 sm:p-6">
             <div className="flex items-center justify-between gap-4 mb-4">
               <div>
-                <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-accent mb-1">
+                <div className="text-xs uppercase tracking-[0.22em] font-semibold text-accent mb-1">
                   La razón por la que el efectivo es modesto
                 </div>
                 <div className="text-base font-semibold text-foreground">
                   El negocio se autosostiene desde el mes 3 — la ronda solo financia las aperturas y el colchón.
                 </div>
               </div>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-muted italic max-w-[180px] text-right">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-muted italic max-w-[180px] text-right">
                 Los ingresos cubren el gasto casi de inmediato
               </span>
             </div>
@@ -111,12 +111,12 @@ export function S15Investment() {
               <table className="w-full">
                 <thead>
                   <tr className="bg-surface-muted/40">
-                    <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Gasto corporativo</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-accent">Sobrante</th>
-                    <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Estado</th>
+                    <th className="px-3 py-2.5 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
+                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
+                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Gasto corporativo</th>
+                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
+                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">Sobrante</th>
+                    <th className="px-3 py-2.5 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Estado</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -136,7 +136,7 @@ export function S15Investment() {
                         <td className="px-3 py-2.5 text-right text-sm font-semibold tabular-nums text-accent">
                           +{fmtK(row.net_mxn)}
                         </td>
-                        <td className="px-3 py-2.5 text-[11px] text-muted leading-snug">{row.note}</td>
+                        <td className="px-3 py-2.5 text-xs text-muted leading-snug">{row.note}</td>
                       </tr>
                     );
                   })}
@@ -144,7 +144,7 @@ export function S15Investment() {
               </table>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-5 text-[11px] text-muted">
+            <div className="mt-4 flex flex-wrap items-center gap-5 text-xs text-muted">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-sm bg-emerald-500" />
                 <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
@@ -224,22 +224,22 @@ function PackageCard({
 
   return (
     <div className={`rounded-2xl bg-card p-5 ring-1 ${ring} flex flex-col h-full`}>
-      <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted mb-1.5">{label}</div>
+      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted mb-1.5">{label}</div>
       <div className={`text-3xl sm:text-4xl font-semibold tabular-nums ${text}`}>{amount}</div>
-      <div className="text-[10px] text-muted mt-0.5 mb-2.5">{subtitle}</div>
-      <div className="text-[11px] text-muted leading-relaxed mb-3">{detail}</div>
+      <div className="text-[11px] text-muted mt-0.5 mb-2.5">{subtitle}</div>
+      <div className="text-xs text-muted leading-relaxed mb-3">{detail}</div>
       {breakdown && (
         <div className="mt-auto pt-3 border-t border-card-border/50">
           <div className="flex items-baseline justify-between mb-2">
-            <span className="text-[9px] uppercase tracking-widest font-semibold text-muted">Desglose</span>
-            <span className="text-[9px] uppercase tracking-widest font-semibold text-muted/70">Total acumulado</span>
+            <span className="text-[11px] uppercase tracking-widest font-semibold text-muted">Desglose</span>
+            <span className="text-[11px] uppercase tracking-widest font-semibold text-muted/70">Total acumulado</span>
           </div>
           <ul className="flex flex-col gap-1.5">
             {breakdown.map((b, i) => (
-              <li key={i} className="flex items-baseline justify-between gap-3 text-[11px]">
+              <li key={i} className="flex items-baseline justify-between gap-3 text-xs">
                 <div className="flex-1 leading-snug">
                   <div className="text-foreground/80">{b.label}</div>
-                  {b.detail && <div className="text-muted/70 text-[10px]">{b.detail}</div>}
+                  {b.detail && <div className="text-muted/70 text-[11px]">{b.detail}</div>}
                 </div>
                 <span className="font-semibold tabular-nums text-foreground/90 whitespace-nowrap">
                   ${(b.mxn / 1_000).toFixed(0)}K
@@ -256,11 +256,11 @@ function PackageCard({
 function Stat({ label, value, sub, accent }: { label: string; value: string; sub: string; accent?: boolean }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">{label}</div>
+      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted">{label}</div>
       <div className={`text-2xl font-semibold tabular-nums mt-1 ${accent ? "text-gradient-accent" : "text-foreground"}`}>
         {value}
       </div>
-      <div className="text-[10px] text-muted mt-0.5">{sub}</div>
+      <div className="text-[11px] text-muted mt-0.5">{sub}</div>
     </div>
   );
 }
@@ -294,7 +294,7 @@ function ReturnCard({
         />
       )}
       <div className="relative">
-        <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted">{horizon}</div>
+        <div className="text-xs uppercase tracking-[0.22em] font-semibold text-muted">{horizon}</div>
         <div
           className={`text-[80px] sm:text-[100px] font-semibold leading-none tabular-nums mt-2 ${
             featured ? "text-gradient-accent" : "text-foreground"
@@ -310,7 +310,7 @@ function ReturnCard({
         <div className="text-xs text-muted mt-0.5 tabular-nums">
           Retorno para VEQ · equivale a ${(usd / 1_000_000).toFixed(1)}M USD
         </div>
-        <div className="text-[11px] text-muted/80 mt-3 italic leading-relaxed">{detail}</div>
+        <div className="text-xs text-muted/80 mt-3 italic leading-relaxed">{detail}</div>
       </div>
     </div>
   );
