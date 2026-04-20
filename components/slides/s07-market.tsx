@@ -1,4 +1,5 @@
 import { Slide } from "../slide";
+import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { market } from "@/lib/data";
 
@@ -94,6 +95,12 @@ export function S07Market() {
             </div>
           </div>
         </div>
+        <TermLegend terms={[
+          { term: "TAM", def: "mercado total disponible" },
+          { term: "SAM", def: "porción a la que podemos llegar" },
+          { term: "SOM", def: "porción realista a capturar en el plan" },
+          { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios" },
+        ]} />
       </FadeStack>
     </Slide>
   );

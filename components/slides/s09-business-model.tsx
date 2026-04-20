@@ -1,4 +1,5 @@
 import { Slide } from "../slide";
+import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { pricing, unit_economics } from "@/lib/data";
 
@@ -77,6 +78,11 @@ export function S09BusinessModel() {
             <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en 2.5 meses" accent />
           </div>
         </FadeItem>
+        <TermLegend terms={[
+          { term: "CAC", def: "costo de adquirir un cliente" },
+          { term: "LTV", def: "ingresos totales del cliente en su vida" },
+          { term: "LTV/CAC", def: "cuántas veces recuperas lo invertido en adquirirlo — >3× es saludable" },
+        ]} />
       </FadeStack>
     </Slide>
   );

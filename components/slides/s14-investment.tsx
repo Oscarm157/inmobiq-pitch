@@ -1,4 +1,5 @@
 import { Slide } from "../slide";
+import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { AnimatedCounter } from "../ui/animated-counter";
 import { round, roi } from "@/lib/data";
@@ -80,6 +81,11 @@ export function S14Investment() {
             <div className="h-px flex-1 bg-card-border" />
           </div>
         </FadeItem>
+        <TermLegend terms={[
+          { term: "SAFE", def: "instrumento que convierte a equity en la siguiente ronda sin fijar valuación hoy" },
+          { term: "IRR", def: "rendimiento anual compuesto de la inversión" },
+          { term: "Runway", def: "meses que dura el capital antes de necesitar más" },
+        ]} />
       </FadeStack>
     </Slide>
   );

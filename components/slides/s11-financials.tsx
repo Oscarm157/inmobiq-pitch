@@ -1,4 +1,5 @@
 import { Slide } from "../slide";
+import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { GrowthChart } from "../ui/growth-chart";
 
@@ -112,6 +113,12 @@ export function S11Financials() {
             </span>
           </div>
         </FadeItem>
+        <TermLegend terms={[
+          { term: "MRR", def: "ingresos recurrentes mensuales por suscripciones" },
+          { term: "ARR", def: "ingresos recurrentes anuales (MRR × 12)" },
+          { term: "Break-even", def: "mes donde ingresos = costos operativos" },
+          { term: "Series A", def: "siguiente ronda de inversión formal" },
+        ]} />
       </FadeStack>
     </Slide>
   );
