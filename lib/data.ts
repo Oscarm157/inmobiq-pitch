@@ -188,11 +188,11 @@ export const unit_economics = {
 
 // Proyección usuarios + revenue (MXN)
 export const projections = [
-  { month: 3,  users_active: 420,   paid_percent: 100, paid_users: 420,   mrr_mxn: 335_580,   arr_mxn: 4_026_960,   status: "ramp" },
-  { month: 6,  users_active: 940,   paid_percent: 100, paid_users: 940,   mrr_mxn: 750_860,   arr_mxn: 9_010_320,   status: "break-even" },
-  { month: 9,  users_active: 1_500, paid_percent: 100, paid_users: 1_500, mrr_mxn: 1_198_500, arr_mxn: 14_382_000,  status: "profitable" },
-  { month: 12, users_active: 2_050, paid_percent: 100, paid_users: 2_050, mrr_mxn: 1_637_950, arr_mxn: 19_655_400,  status: "15 ciudades" },
-  { month: 18, users_active: 5_545, paid_percent: 100, paid_users: 5_545, mrr_mxn: 4_430_455, arr_mxn: 53_165_460,  status: "plan completo" },
+  { month: 3,  users_active: 345,   paid_percent: 100, paid_users: 345,   mrr_mxn: 275_655,   arr_mxn: 3_307_860,   status: "ramp" },
+  { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,   status: "break-even" },
+  { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600,  status: "profitable" },
+  { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200,  status: "15 ciudades" },
+  { month: 18, users_active: 5_512, paid_percent: 100, paid_users: 5_512, mrr_mxn: 4_403_888, arr_mxn: 52_846_656,  status: "plan completo" },
 ];
 
 export const market = {

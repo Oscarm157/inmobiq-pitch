@@ -38,7 +38,7 @@ export function S11Financials() {
             <div className="flex gap-5 sm:gap-7">
               <HeroKpi label="Break-even" value="Mes 6" sub="~490 users pagados" accent="emerald" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="ARR Mes 12" value="$19.7M" sub="MXN · $1.06M USD" />
+              <HeroKpi label="ARR Mes 12" value="$23M" sub="MXN · $1.24M USD" />
               <div className="w-px bg-[#2a2a3e]" />
               <HeroKpi label="ARR Mes 18" value="$53.2M" sub="MXN · $2.9M USD" accent="blue" />
             </div>

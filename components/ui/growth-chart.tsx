@@ -25,11 +25,11 @@ type Point = {
 };
 
 export const growthSeries: Point[] = [
-  { month: "M3",  monthNum: 3,  users: 420,   mrr_mxn: 335_580,   arr_mxn: 4_026_960,  status: "TJ + 4 ciudades ola 1" },
-  { month: "M6",  monthNum: 6,  users: 940,   mrr_mxn: 750_860,   arr_mxn: 9_010_320,  status: "Break-even operativo",  highlight: "break-even" },
-  { month: "M9",  monthNum: 9,  users: 1_500, mrr_mxn: 1_198_500, arr_mxn: 14_382_000, status: "Ola 2 consolidando",    highlight: "profitable" },
-  { month: "M12", monthNum: 12, users: 2_050, mrr_mxn: 1_637_950, arr_mxn: 19_655_400, status: "15 ciudades activas",   highlight: "expansion" },
-  { month: "M18", monthNum: 18, users: 5_545, mrr_mxn: 4_430_455, arr_mxn: 53_165_460, status: "Plan completo · 8.7% TAM", highlight: "expansion" },
+  { month: "M3",  monthNum: 3,  users: 345,   mrr_mxn: 275_655,   arr_mxn: 3_307_860,  status: "TJ + 4 ciudades ola 1" },
+  { month: "M6",  monthNum: 6,  users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,  status: "Break-even operativo",  highlight: "break-even" },
+  { month: "M9",  monthNum: 9,  users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600, status: "Ola 2 consolidando",    highlight: "profitable" },
+  { month: "M12", monthNum: 12, users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200, status: "15 ciudades activas",   highlight: "expansion" },
+  { month: "M18", monthNum: 18, users: 5_512, mrr_mxn: 4_403_888, arr_mxn: 52_846_656, status: "Plan completo · 8.7% TAM", highlight: "expansion" },
 ];
 
 const fmtUsers = (n: number) => n.toLocaleString("es-MX");
