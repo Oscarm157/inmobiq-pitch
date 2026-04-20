@@ -359,7 +359,8 @@ export const glossary = [
 export const slideVeqCategories: string[][] = [
   [],                                                    // S01 Hero
   [],                                                    // S02 Problem
-  [],                                                    // S-Cockpit (analogía)
+  [],                                                    // S-Cockpit (Brújula)
+  [],                                                    // S-Radar (Panorama)
   ["Producto / Tecnología"],                             // S03 Solution
   ["Producto / Tecnología"],                             // S04 How It Works
   ["Producto"],                                          // S05 Product

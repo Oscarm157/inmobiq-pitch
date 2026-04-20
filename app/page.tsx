@@ -2,6 +2,7 @@ import { SlidesDeck } from "@/components/slides-deck";
 import { S01Hero } from "@/components/slides/s01-hero";
 import { S02Problem } from "@/components/slides/s02-problem";
 import { SCockpit } from "@/components/slides/s-cockpit";
+import { SRadar } from "@/components/slides/s-radar";
 import { S03Solution } from "@/components/slides/s03-solution";
 import { S04HowItWorks } from "@/components/slides/s04-how-it-works";
 import { S05Product } from "@/components/slides/s05-product";
@@ -23,6 +24,7 @@ export default function Page() {
       <S01Hero />
       <S02Problem />
       <SCockpit />
+      <SRadar />
       <S03Solution />
       <S04HowItWorks />
       <S05Product />
