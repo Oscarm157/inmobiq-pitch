@@ -101,9 +101,17 @@ export function S15Investment() {
               <div className="text-xs uppercase tracking-[0.22em] font-semibold text-accent mb-1.5">
                 Inmobiq genera utilidad desde el mes 3
               </div>
-              <div className="text-base text-foreground/90 leading-snug max-w-3xl">
+              <div className="text-base text-foreground/90 leading-snug max-w-3xl mb-2">
                 VEQ cubre todo el opex el año base. El único gasto de Inmobiq son los curadores —
                 que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.
+              </div>
+              <div className="flex flex-wrap gap-x-5 gap-y-1 text-[11px] text-muted">
+                <span className="uppercase tracking-widest font-semibold text-foreground/80">
+                  Todas las cifras son mensuales · MXN
+                </span>
+                <span className="italic">
+                  Curadores: 2 por ciudad · $20K MXN/mes c/u → $40K por ciudad activa
+                </span>
               </div>
             </div>
 
@@ -112,11 +120,24 @@ export function S15Investment() {
                 <thead>
                   <tr className="bg-surface-muted/40">
                     <th className="px-3 py-3 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-emerald-300/90">Opex VEQ</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores Inmobiq</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">Utilidad Inmobiq</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+                      Ciudades<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">activas</span>
+                    </th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+                      Curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">2 por ciudad</span>
+                    </th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-emerald-300/90">
+                      Opex VEQ<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">cubierto in-kind</span>
+                    </th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+                      Costo curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">$40K × ciudad</span>
+                    </th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+                      Ingresos<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">MRR</span>
+                    </th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">
+                      Utilidad<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">Inmobiq</span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -137,6 +158,7 @@ export function S15Investment() {
                           M{row.month}
                         </td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
+                        <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities * 2}</td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-emerald-300/80">
                           {row.opex_veq_mxn > 0 ? fmtK(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
                         </td>
