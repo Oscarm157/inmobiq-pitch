@@ -328,3 +328,22 @@ export const mvp_stats = [
   { value: "4", label: "Scrapers de portales" },
   { value: "1 año", label: "De desarrollo" },
 ];
+
+// Categorías de VEQ que cubre cada slide (índice 0 = S01 Hero)
+export const slideVeqCategories: string[][] = [
+  [],                                                    // S01 Hero
+  [],                                                    // S02 Problem
+  ["Producto / Tecnología"],                             // S03 Solution
+  ["Producto / Tecnología"],                             // S04 How It Works
+  ["Producto"],                                          // S05 Product
+  ["Producto / Tecnología"],                             // S06 Differentiator
+  ["Mercado objetivo"],                                  // S07 Market
+  ["Expansión por ciudad", "Crecimiento de usuarios"],   // S08 Cities
+  ["Modelo de ingresos", "Pricing"],                     // S09 Business Model
+  ["Escalabilidad"],                                     // S10 Traction
+  ["Retorno (ROI)", "Punto de equilibrio"],              // S11 Financials
+  ["Expansión por ciudad", "Costos operativos"],         // S12 Expansion
+  ["Riesgos"],                                           // S13 Team & Risks
+  ["Estructura de inversión", "Retorno (ROI)"],          // S14 Investment
+  [],                                                    // S15 CTA
+];

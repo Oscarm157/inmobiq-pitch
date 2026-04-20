@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
+import { slideVeqCategories } from "@/lib/data";
 
 interface SlidesDeckProps {
   children: React.ReactNode[];
@@ -109,7 +110,7 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
       {children.map((child, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`absolute inset-0 bg-background transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             i === current
               ? "opacity-100 translate-x-0 pointer-events-auto"
               : i < current
@@ -191,6 +192,20 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
           </span>
         </button>
       </div>
+
+      {/* VEQ Category Badge */}
+      {slideVeqCategories[current]?.length > 0 && (
+        <div className="absolute bottom-8 left-4 sm:left-6 z-40 flex flex-wrap gap-1.5 pointer-events-none">
+          {slideVeqCategories[current].map((cat) => (
+            <span
+              key={cat}
+              className="px-2.5 py-1 rounded-md bg-accent/15 border border-accent/30 text-accent text-[10px] font-semibold uppercase tracking-wider backdrop-blur-sm"
+            >
+              {cat}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Bottom progress */}
       <div
