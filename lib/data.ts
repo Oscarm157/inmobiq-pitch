@@ -363,6 +363,7 @@ export const slideVeqCategories: string[][] = [
   ["Producto / Tecnología"],                             // S03 Solution
   ["Producto / Tecnología"],                             // S04 How It Works
   ["Producto"],                                          // S05 Product
+  ["Producto / Tecnología"],                             // S-Superpowers
   ["Producto / Tecnología"],                             // S06 Differentiator
   ["Mercado objetivo"],                                  // S07 Market
   ["Expansión por ciudad", "Crecimiento de usuarios"],   // S08 Cities

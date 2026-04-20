@@ -5,6 +5,7 @@ import { SCockpit } from "@/components/slides/s-cockpit";
 import { S03Solution } from "@/components/slides/s03-solution";
 import { S04HowItWorks } from "@/components/slides/s04-how-it-works";
 import { S05Product } from "@/components/slides/s05-product";
+import { SSuperpowers } from "@/components/slides/s-superpowers";
 import { S06Differentiator } from "@/components/slides/s06-differentiator";
 import { S07Market } from "@/components/slides/s07-market";
 import { S08Cities } from "@/components/slides/s08-cities";
@@ -25,6 +26,7 @@ export default function Page() {
       <S03Solution />
       <S04HowItWorks />
       <S05Product />
+      <SSuperpowers />
       <S06Differentiator />
       <S07Market />
       <S08Cities />
