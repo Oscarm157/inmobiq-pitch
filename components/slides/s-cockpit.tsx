@@ -80,14 +80,11 @@ function BasicView() {
           "¿Cuántos listings activos?",
         ].map((q) => (
           <div key={q} className="flex items-center gap-2">
-            <span className="text-base font-bold text-muted leading-none">?</span>
-            <span className="text-[10px] text-foreground/70 italic">{q}</span>
+            <span className="text-sm font-bold text-muted leading-none">?</span>
+            <span className="text-[11px] text-foreground/80">{q}</span>
           </div>
         ))}
       </div>
-
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at center, transparent 20%, rgba(8,8,15,0.55) 100%)" }} />
     </div>
   );
 }
