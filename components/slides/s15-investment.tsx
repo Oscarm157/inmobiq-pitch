@@ -40,10 +40,10 @@ export function S15Investment() {
               <em className="italic text-gradient-accent">No es solo capital.</em> VEQ co-opera Inmobiq.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              $4.17M MXN a la operación + $2.7M en equipo aportado por VEQ (desarrolladores, admin, marketing)
-              + $500K de compensación al fundador — paquete total $7.37M MXN por
-              <span className="text-foreground font-semibold"> 49% de participación</span>.
-              El negocio se autosostiene desde el mes 3.
+              $4.17M MXN a la operación + $1.8M en equipo aportado por VEQ durante el primer año
+              (desarrolladores, admin, marketing) + $500K de compensación al fundador —
+              paquete total $6.47M MXN por <span className="text-foreground font-semibold">49% de participación</span>.
+              VEQ aporta solo el año base; desde mes 12 Inmobiq se autosostiene.
             </p>
           </div>
         </FadeItem>
@@ -59,10 +59,10 @@ export function S15Investment() {
               color="accent"
             />
             <PackageCard
-              label="Aporte VEQ · 18 meses"
+              label="Aporte VEQ · año base (12 meses)"
               amount={fmtMxn(round.veq_inkind_mxn)}
               subtitle="MXN · valor equivalente en especie"
-              detail="2 desarrolladores + admin + $40K/mes en publicidad + equipo de marketing"
+              detail="2 desarrolladores + admin + $40K/mes publicidad + marketing. Solo año 1 — luego Inmobiq se autosostiene."
               color="emerald"
               breakdown={veq_inkind}
             />

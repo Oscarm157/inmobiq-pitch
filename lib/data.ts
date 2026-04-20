@@ -14,9 +14,9 @@ export const brand = {
 };
 
 export const round = {
-  // Package total = cash + founder package + VEQ in-kind services
-  package_total_mxn: 7_370_000,
-  package_total_usd: 398_378,
+  // Paquete total = efectivo a operación + compensación al fundador + aporte VEQ
+  package_total_mxn: 6_470_000,
+  package_total_usd: 349_730,
 
   // Cash a operación (incluye salario founder · gasto operativo)
   cash_to_operation_mxn: 4_170_000,
@@ -31,9 +31,9 @@ export const round = {
   founder_secondary_mxn: 500_000,
   founder_secondary_tranches: 4,
 
-  // VEQ in-kind (18 meses)
-  veq_inkind_mxn: 2_700_000,
-  veq_inkind_months: 18,
+  // Aporte VEQ (12 meses — base para que Inmobiq se autosostenga)
+  veq_inkind_mxn: 1_800_000,
+  veq_inkind_months: 12,
 
   // Equity
   equity_percent: 49,
@@ -41,15 +41,15 @@ export const round = {
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 15_040_000,
-  post_money_usd: 813_000,
-  pre_money_mxn: 7_670_000,
-  pre_money_usd: 414_595,
+  post_money_mxn: 13_200_000,
+  post_money_usd: 713_513,
+  pre_money_mxn: 6_730_000,
+  pre_money_usd: 363_783,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $7.37M MXN",
-  runway_months: 18,
-  buffer_months: 0, // ya viene en el cash
+  instrument: "Participación directa · 49% por paquete de $6.47M MXN",
+  runway_months: 12,
+  buffer_months: 0,
 };
 
 export const roi = {
@@ -65,7 +65,7 @@ export const roi = {
     valuation_mxn: 498_400_000,
     veq_return_usd: 13_200_000,
     veq_return_mxn: 244_220_000,
-    veq_multiple: "33×",
+    veq_multiple: "38×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -77,17 +77,17 @@ export const roi = {
     valuation_mxn: 613_600_000,
     veq_return_usd: 16_252_000,
     veq_return_mxn: 300_660_000,
-    veq_multiple: "41×",
+    veq_multiple: "46×",
   },
-  irr_annual_percent: 110,
+  irr_annual_percent: 116,
 };
 
-// VEQ in-kind — equipo y recursos aportados
+// Aporte VEQ — equipo y recursos aportados durante el año 1 (12 meses)
 export const veq_inkind = [
-  { label: "2 desarrolladores full-stack", detail: "$35K MXN/mo c/u · 18m", mxn: 1_260_000 },
-  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mo · 18m", mxn: 450_000 },
-  { label: "Ads pagadas (Meta + Google)", detail: "$40K MXN/mes · 18m", mxn: 720_000 },
-  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · valor equivalente", mxn: 270_000 },
+  { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 12m", mxn: 840_000 },
+  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 12m", mxn: 300_000 },
+  { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 12m", mxn: 480_000 },
+  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 12m", mxn: 180_000 },
 ];
 
 // Founder secondary — tramos atados a hitos
