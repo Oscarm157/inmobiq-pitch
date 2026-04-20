@@ -98,15 +98,16 @@ export const founder_secondary_tranches = [
   { tranche: 4, mxn: 150_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses sostenido" },
 ];
 
-// Flujo mensual — burn de Inmobiq vs MRR (el pitch clave)
-// Burn incluye founder + fijo + TODOS los curadores activos (2 por ciudad)
+// Flujo mensual — gasto corporativo de Inmobiq vs ingresos
+// Curadores NO incluidos: cada ciudad paga sus 2 curadores con su propio revenue
+// Gasto corporativo = salario fundador + infra + legal + software = $71K/mes fijo
 export const monthly_cash_flow = [
-  { month: 3,  curators: 10, burn_mxn: 271_000, mrr_mxn: 275_655,   net_mxn: 4_655,     note: "Ola 1 abriendo · 5 ciudades activas" },
-  { month: 6,  curators: 16, burn_mxn: 391_000, mrr_mxn: 791_010,   net_mxn: 400_010,   note: "Punto de equilibrio · ola 2 abriendo · 8 ciudades" },
-  { month: 9,  curators: 16, burn_mxn: 391_000, mrr_mxn: 1_358_300, net_mxn: 967_300,   note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, curators: 30, burn_mxn: 671_000, mrr_mxn: 1_917_600, net_mxn: 1_246_600, note: "Ola 3 abriendo · 15 ciudades activas" },
-  { month: 15, curators: 30, burn_mxn: 671_000, mrr_mxn: 3_100_000, net_mxn: 2_429_000, note: "Plan completo estabilizando" },
-  { month: 18, curators: 30, burn_mxn: 671_000, mrr_mxn: 4_298_620, net_mxn: 3_627_620, note: "Autosostenible sostenido" },
+  { month: 3,  cities: 5,  burn_mxn: 71_000, mrr_mxn: 275_655,   net_mxn: 204_655,   note: "Ola 1 abriendo · 5 ciudades activas" },
+  { month: 6,  cities: 8,  burn_mxn: 71_000, mrr_mxn: 791_010,   net_mxn: 720_010,   note: "Punto de equilibrio · ola 2 abriendo" },
+  { month: 9,  cities: 8,  burn_mxn: 71_000, mrr_mxn: 1_358_300, net_mxn: 1_287_300, note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, cities: 15, burn_mxn: 71_000, mrr_mxn: 1_917_600, net_mxn: 1_846_600, note: "Ola 3 abriendo · 15 ciudades activas" },
+  { month: 15, cities: 15, burn_mxn: 71_000, mrr_mxn: 3_100_000, net_mxn: 3_029_000, note: "Plan completo estabilizando" },
+  { month: 18, cities: 15, burn_mxn: 71_000, mrr_mxn: 4_298_620, net_mxn: 4_227_620, note: "Autosostenible sostenido" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)

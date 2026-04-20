@@ -112,8 +112,8 @@ export function S15Investment() {
                 <thead>
                   <tr className="bg-surface-muted/40">
                     <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Gasto Inmobiq</th>
+                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
+                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Gasto corporativo</th>
                     <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
                     <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-accent">Sobrante</th>
                     <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Estado</th>
@@ -122,18 +122,15 @@ export function S15Investment() {
                 <tbody>
                   {monthly_cash_flow.map((row, i) => {
                     const isBE = row.month === 6;
-                    const isPeak = row.month === 12;
                     const rowBg = isBE
                       ? "bg-emerald-500/8 border-l-2 border-emerald-500"
-                      : isPeak
-                      ? "bg-accent/8 border-l-2 border-accent"
                       : i % 2 === 0
                       ? "bg-transparent"
                       : "bg-surface-muted/20";
                     return (
-                      <tr key={row.month} className={rowBg}>
+                      <tr key={`${row.month}`} className={rowBg}>
                         <td className="px-3 py-2.5 text-sm font-mono tabular-nums text-foreground/90">M{row.month}</td>
-                        <td className="px-3 py-2.5 text-right text-sm tabular-nums text-muted">{row.curators}</td>
+                        <td className="px-3 py-2.5 text-right text-sm tabular-nums text-muted">{row.cities}</td>
                         <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/80">{fmtK(row.burn_mxn)}</td>
                         <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{fmtK(row.mrr_mxn)}</td>
                         <td className="px-3 py-2.5 text-right text-sm font-semibold tabular-nums text-accent">
@@ -152,12 +149,8 @@ export function S15Investment() {
                 <span className="w-2 h-2 rounded-sm bg-emerald-500" />
                 <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
               </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-sm bg-accent" />
-                <span className="uppercase tracking-widest font-semibold text-accent">Pico de gasto mes 12 (ola 3)</span>
-              </span>
               <span className="ml-auto italic text-muted/70">
-                Gasto = $71K fijo + 2 curadores × $20K por ciudad activa (permanentes)
+                Gasto corporativo: $71K fijo (salario fundador + infra + legal). Cada ciudad cubre sus 2 curadores con su propio revenue.
               </span>
             </div>
           </div>
