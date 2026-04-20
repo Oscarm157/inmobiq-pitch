@@ -192,7 +192,7 @@ export const projections = [
   { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,   status: "break-even" },
   { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600,  status: "profitable" },
   { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200,  status: "15 ciudades" },
-  { month: 18, users_active: 5_412, paid_percent: 100, paid_users: 5_412, mrr_mxn: 4_324_188, arr_mxn: 51_890_256,  status: "plan completo" },
+  { month: 18, users_active: 5_380, paid_percent: 100, paid_users: 5_380, mrr_mxn: 4_298_620, arr_mxn: 51_583_440,  status: "plan completo" },
 ];
 
 export const market = {
