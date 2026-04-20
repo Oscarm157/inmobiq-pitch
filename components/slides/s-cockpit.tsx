@@ -66,12 +66,12 @@ function BasicView() {
       </div>
 
       <div className="flex flex-col gap-0.5">
-        <div className="text-[11px] text-muted/50">Col. Zona Río, Tijuana</div>
-        <div className="text-[10px] text-muted/40">Depto · 2 rec · 1 baño · 75 m²</div>
-        <div className="text-xl font-semibold text-foreground/50 tabular-nums mt-1">$1,850,000 MXN</div>
+        <div className="text-[11px] text-muted">Col. Zona Río, Tijuana</div>
+        <div className="text-[10px] text-muted/70">Depto · 2 rec · 1 baño · 75 m²</div>
+        <div className="text-xl font-semibold text-foreground/80 tabular-nums mt-1">$1,850,000 MXN</div>
       </div>
 
-      <div className="flex flex-col gap-2 border-t border-card-border/20 pt-2.5">
+      <div className="flex flex-col gap-2 border-t border-card-border/40 pt-2.5">
         {[
           "¿Precio por m² de la zona?",
           "¿Tendencia del mercado?",
@@ -80,8 +80,8 @@ function BasicView() {
           "¿Cuántos listings activos?",
         ].map((q) => (
           <div key={q} className="flex items-center gap-2">
-            <span className="text-base font-bold text-muted/20 leading-none">?</span>
-            <span className="text-[10px] text-muted/35 italic">{q}</span>
+            <span className="text-base font-bold text-muted/50 leading-none">?</span>
+            <span className="text-[10px] text-muted/70 italic">{q}</span>
           </div>
         ))}
       </div>
