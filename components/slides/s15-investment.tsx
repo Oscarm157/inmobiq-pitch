@@ -45,7 +45,7 @@ export function S15Investment() {
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
               VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> el año base
               (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores —
-              que se cubren con el revenue de cada ciudad. Paquete total $5.68M MXN por
+              que se cubren con el revenue de cada ciudad. Paquete total $5.26M MXN por
               <span className="text-foreground font-semibold"> 49% de participación</span>.
             </p>
           </div>
@@ -110,7 +110,7 @@ export function S15Investment() {
                   Todas las cifras son mensuales · MXN
                 </span>
                 <span className="italic">
-                  Curadores: 2 por ciudad · $20K MXN/mes c/u → $40K por ciudad activa
+                  Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) · $20K MXN/mes c/u
                 </span>
               </div>
             </div>
@@ -124,13 +124,13 @@ export function S15Investment() {
                       Ciudades<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">activas</span>
                     </th>
                     <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
-                      Curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">2 por ciudad</span>
+                      Curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">1.5 por ciudad prom</span>
                     </th>
                     <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-emerald-300/90">
                       Opex VEQ<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">cubierto in-kind</span>
                     </th>
                     <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
-                      Costo curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">$40K × ciudad</span>
+                      Costo curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">$20K × persona</span>
                     </th>
                     <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
                       Ingresos<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">MRR</span>
@@ -158,7 +158,7 @@ export function S15Investment() {
                           M{row.month}
                         </td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
-                        <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities * 2}</td>
+                        <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.curators}</td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-emerald-300/80">
                           {row.opex_veq_mxn > 0 ? fmtK(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
                         </td>
