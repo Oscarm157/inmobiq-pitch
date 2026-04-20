@@ -149,6 +149,9 @@ export const pricing = [
     featured: true,
     features: [
       "75 valuaciones Brújula · export PDF/Excel / mes",
+      "Comparador completo · todas las zonas",
+      "Panorama de ciudad completo",
+      "Historial de valuaciones (90 días)",
       "Data demográfica INEGI cruzada",
       "Alertas de precio por zona",
       "Análisis de riesgo completo",
@@ -162,9 +165,11 @@ export const pricing = [
     features: [
       "1,000 créditos Brújula · export PDF/Excel / mes",
       "Hasta 5 usuarios simultáneos",
+      "Reportes con logo de la inmobiliaria",
+      "Historial extendido (12 meses)",
       "API de acceso a data",
       "Reportes automatizados semanales",
-      "Pipeline de scraper visible",
+      "Soporte prioritario",
       "Onboarding personalizado",
     ],
   },
