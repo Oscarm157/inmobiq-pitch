@@ -119,24 +119,27 @@ export function S15Investment() {
               <table className="w-full">
                 <thead>
                   <tr className="bg-surface-muted/40">
-                    <th className="px-3 py-3 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+                    <th className="px-2.5 py-3 text-left text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">Mes</th>
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">
                       Ciudades<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">activas</span>
                     </th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
-                      Curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">1.5 por ciudad prom</span>
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">
+                      Usuarios<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">pagados</span>
                     </th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-emerald-300/90">
-                      Opex VEQ<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">cubierto in-kind</span>
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-emerald-300/90">
+                      Opex VEQ<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">aporte in-kind</span>
                     </th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
-                      Costo curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">$20K × persona</span>
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-violet">
+                      Opex Inmobiq<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">año 2 asume</span>
                     </th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">
+                      Curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">$20K × persona</span>
+                    </th>
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">
                       Ingresos<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">MRR</span>
                     </th>
-                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">
-                      Utilidad<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">Inmobiq</span>
+                    <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-accent">
+                      Utilidad<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">Inmobiq · %</span>
                     </th>
                   </tr>
                 </thead>
@@ -154,22 +157,28 @@ export function S15Investment() {
                             : "bg-surface-muted/20"
                         }
                       >
-                        <td className="px-3 py-3 text-sm font-mono tabular-nums text-foreground/90">
+                        <td className="px-2.5 py-3 text-sm font-mono tabular-nums text-foreground/90">
                           M{row.month}
                         </td>
-                        <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
-                        <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.curators}</td>
-                        <td className="px-3 py-3 text-right text-sm tabular-nums text-emerald-300/80">
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums text-foreground/85">
+                          {row.users.toLocaleString("es-MX")}
+                        </td>
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums text-emerald-300/80">
                           {row.opex_veq_mxn > 0 ? fmtMxn(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
                         </td>
-                        <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/80">
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums text-violet/90">
+                          {row.opex_inmobiq_mxn > 0 ? fmtMxn(row.opex_inmobiq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
+                        </td>
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums text-foreground/80">
                           {fmtMxn(row.burn_mxn)}
                         </td>
-                        <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/90">
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums text-foreground/90">
                           {fmtMxn(row.mrr_mxn)}
                         </td>
-                        <td className="px-3 py-3 text-right text-base font-semibold tabular-nums text-accent">
-                          +{fmtMxn(row.net_mxn)}
+                        <td className="px-2.5 py-3 text-right text-sm tabular-nums">
+                          <div className="font-semibold text-accent">+{fmtMxn(row.net_mxn)}</div>
+                          <div className="text-[10px] text-accent/60 font-medium">{row.margin_pct}%</div>
                         </td>
                       </tr>
                     );
