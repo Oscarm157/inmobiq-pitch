@@ -10,7 +10,10 @@ import {
   monthly_cash_flow,
 } from "@/lib/data";
 
-const fmtMxn = (n: number) => `$${(n / 1_000_000).toFixed(2)}M`;
+const fmtMxn = (n: number) =>
+  n >= 1_000_000
+    ? `$${(n / 1_000_000).toFixed(2)}M`
+    : `$${Math.round(n / 1_000).toLocaleString("es-MX")}K`;
 const fmtK = (n: number) => `$${Math.round(n / 1_000).toLocaleString("es-MX")}K`;
 
 export function S15Investment() {
