@@ -47,7 +47,7 @@ export const round = {
   pre_money_usd: 414_595,
 
   // Términos
-  instrument: "Equity directo · 49% por $7.37M MXN package",
+  instrument: "Participación directa · 49% por paquete de $7.37M MXN",
   runway_months: 18,
   buffer_months: 0, // ya viene en el cash
 };
@@ -92,21 +92,21 @@ export const veq_inkind = [
 
 // Founder secondary — tramos atados a hitos
 export const founder_secondary_tranches = [
-  { tranche: 1, mxn: 100_000, milestone: "Closing del deal" },
-  { tranche: 2, mxn: 125_000, milestone: "Mes 3 · break-even operativo a la vista" },
-  { tranche: 3, mxn: 125_000, milestone: "Mes 6 · break-even confirmado" },
-  { tranche: 4, mxn: 150_000, milestone: "Mes 12 · Inmobiq cash-flow positive sostenido 3 meses" },
+  { tranche: 1, mxn: 100_000, milestone: "Cierre del trato" },
+  { tranche: 2, mxn: 125_000, milestone: "Mes 3 · punto de equilibrio operativo a la vista" },
+  { tranche: 3, mxn: 125_000, milestone: "Mes 6 · punto de equilibrio confirmado" },
+  { tranche: 4, mxn: 150_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses sostenido" },
 ];
 
 // Flujo mensual — burn de Inmobiq vs MRR (el pitch clave)
 // Burn incluye founder + fijo + TODOS los curadores activos (2 por ciudad)
 export const monthly_cash_flow = [
   { month: 3,  curators: 10, burn_mxn: 271_000, mrr_mxn: 275_655,   net_mxn: 4_655,     note: "Ola 1 abriendo · 5 ciudades activas" },
-  { month: 6,  curators: 16, burn_mxn: 391_000, mrr_mxn: 791_010,   net_mxn: 400_010,   note: "Break-even · ola 2 abriendo · 8 ciudades" },
+  { month: 6,  curators: 16, burn_mxn: 391_000, mrr_mxn: 791_010,   net_mxn: 400_010,   note: "Punto de equilibrio · ola 2 abriendo · 8 ciudades" },
   { month: 9,  curators: 16, burn_mxn: 391_000, mrr_mxn: 1_358_300, net_mxn: 967_300,   note: "Rentable · 8 ciudades estabilizadas" },
   { month: 12, curators: 30, burn_mxn: 671_000, mrr_mxn: 1_917_600, net_mxn: 1_246_600, note: "Ola 3 abriendo · 15 ciudades activas" },
   { month: 15, curators: 30, burn_mxn: 671_000, mrr_mxn: 3_100_000, net_mxn: 2_429_000, note: "Plan completo estabilizando" },
-  { month: 18, curators: 30, burn_mxn: 671_000, mrr_mxn: 4_298_620, net_mxn: 3_627_620, note: "Self-funding sostenido" },
+  { month: 18, curators: 30, burn_mxn: 671_000, mrr_mxn: 4_298_620, net_mxn: 3_627_620, note: "Autosostenible sostenido" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
@@ -126,16 +126,16 @@ export const use_of_funds = [
     mxn: 540_000,
     usd: 29_189,
     items: [
-      { label: "Salario founder (12 meses)", detail: "$45K MXN/mo · contrato laboral", mxn: 540_000 },
+      { label: "Salario fundador (12 meses)", detail: "$45K MXN/mes · contrato laboral", mxn: 540_000 },
     ],
   },
   {
-    chapter: "Founder secondary · personal por hitos",
+    chapter: "Compensación al fundador · personal por hitos",
     percent: 10.7,
     mxn: 500_000,
     usd: 27_027,
     items: [
-      { label: "Compensación bootstrapping", detail: "4 tramos: closing, mes 3, mes 6, mes 12", mxn: 500_000 },
+      { label: "Compensación por el año bootstrap", detail: "4 tramos: cierre, mes 3, mes 6, mes 12", mxn: 500_000 },
     ],
   },
   {
@@ -254,7 +254,7 @@ export const unit_economics = {
 // Proyección usuarios + revenue (MXN)
 export const projections = [
   { month: 3,  users_active: 345,   paid_percent: 100, paid_users: 345,   mrr_mxn: 275_655,   arr_mxn: 3_307_860,   status: "ramp" },
-  { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,   status: "break-even" },
+  { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,   status: "punto de equilibrio" },
   { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600,  status: "profitable" },
   { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200,  status: "15 ciudades" },
   { month: 18, users_active: 5_380, paid_percent: 100, paid_users: 5_380, mrr_mxn: 4_298_620, arr_mxn: 51_583_440,  status: "plan completo" },
@@ -315,8 +315,8 @@ export const city_opening_cost = {
 export const team = [
   {
     name: "Oscar Amayoral",
-    role: "Founder · Product, Tech & Go-to-Market",
-    bio: "Full-stack. 1 año construyendo Inmobiq end-to-end con equipo técnico subcontratado. Experiencia en marketing digital y desarrollo de producto.",
+    role: "Fundador · Producto, tecnología y comercial",
+    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia en marketing digital y desarrollo de producto.",
     highlight: true,
     source: "founder",
   },
@@ -329,29 +329,29 @@ export const team = [
   },
   {
     name: "2 desarrolladores VEQ",
-    role: "Tech team full-stack · in-kind",
-    bio: "Equipo técnico asignado por Grupo VEQ. Construyen y mantienen la plataforma junto al founder. Reemplaza la necesidad de un CTO formal.",
+    role: "Equipo técnico full-stack · aporte VEQ",
+    bio: "Equipo técnico asignado por Grupo VEQ. Construyen y mantienen la plataforma junto al fundador. Reemplaza la necesidad de un CTO formal.",
     highlight: false,
     source: "veq",
   },
   {
     name: "Admin/operaciones VEQ",
-    role: "Cobros, contratos, RH ligero · in-kind",
-    bio: "Perfil operativo asignado por VEQ. Libera al founder para focalizar en producto y go-to-market.",
+    role: "Cobros, contratos, RH ligero · aporte VEQ",
+    bio: "Perfil operativo asignado por VEQ. Libera al fundador para enfocarse en producto y comercial.",
     highlight: false,
     source: "veq",
   },
   {
     name: "Equipo de marketing VEQ",
-    role: "Estrategia + creatividad + $40K/mo ads · in-kind",
+    role: "Estrategia + creatividad + $40K/mes en publicidad · aporte VEQ",
     bio: "Acceso al equipo de marketing de Grupo VEQ + presupuesto mensual para campañas pagadas (Meta + Google).",
     highlight: false,
     source: "veq",
   },
   {
     name: "Curadores por ciudad",
-    role: "2 por ciudad nueva · pre-revenue",
-    bio: "Curan data de mercado local. Pagados por Inmobiq durante 3 meses ramp; después se autosostienen con revenue de la ciudad.",
+    role: "2 por ciudad nueva · permanentes",
+    bio: "Curan datos de mercado local. Pagados por Inmobiq desde el día uno; los ingresos de la ciudad cubren su salario una vez estabilizada.",
     highlight: false,
     source: "inmobiq",
   },
@@ -430,7 +430,7 @@ export const glossary = [
   { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
   { term: "SAFE", def: "Simple Agreement for Future Equity — instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
   { term: "IRR", def: "Tasa Interna de Retorno — rendimiento anual compuesto de la inversión. ~102% proyectado." },
-  { term: "Break-even", def: "Punto de equilibrio — mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 6." },
+  { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 6." },
   { term: "Runway", def: "Tiempo que dura el dinero de la ronda antes de necesitar más capital o ser rentables." },
   { term: "SaaS", def: "Software as a Service — modelo de negocio de suscripción mensual/anual en la nube." },
   { term: "B2B", def: "Business to Business — vendemos a empresas (inmobiliarias, brokers profesionales), no al consumidor final." },

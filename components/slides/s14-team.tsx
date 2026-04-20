@@ -5,10 +5,10 @@ import { team, risks } from "@/lib/data";
 type TeamSource = "founder" | "current" | "veq" | "inmobiq";
 
 const sourceConfig: Record<TeamSource, { label: string; bg: string; text: string; icon: string }> = {
-  founder:  { label: "Founder",       bg: "bg-accent/15",       text: "text-accent",        icon: "account_circle" },
+  founder:  { label: "Fundador",      bg: "bg-accent/15",       text: "text-accent",        icon: "account_circle" },
   current:  { label: "Equipo actual", bg: "bg-muted/15",        text: "text-muted-light",   icon: "groups" },
-  veq:      { label: "VEQ in-kind",   bg: "bg-emerald-500/15",  text: "text-emerald-300",   icon: "handshake" },
-  inmobiq:  { label: "Inmobiq hire",  bg: "bg-violet/15",       text: "text-violet",        icon: "group_add" },
+  veq:      { label: "Aporte VEQ",    bg: "bg-emerald-500/15",  text: "text-emerald-300",   icon: "handshake" },
+  inmobiq:  { label: "Contrata Inmobiq", bg: "bg-violet/15",    text: "text-violet",        icon: "group_add" },
 };
 
 export function S14Team() {
@@ -27,12 +27,12 @@ export function S14Team() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Un año ejecutando solo. <em className="italic text-gradient-accent">VEQ aporta el equipo que falta.</em>
+              Un año ejecutando solo. <em className="italic text-gradient-accent">VEQ aporta el equipo que hace falta.</em>
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              No es un round de capital pasivo. VEQ pone 2 desarrolladores, un admin/operaciones y su
-              equipo de marketing in-kind durante 18 meses — además del cash. El founder se libera para
-              foco en producto y go-to-market.
+              No es una ronda de capital pasivo. VEQ aporta 2 desarrolladores, un admin/operaciones y su
+              equipo de marketing durante 18 meses — además del efectivo. El fundador se libera para
+              enfocarse en producto y crecimiento comercial.
             </p>
           </div>
         </FadeItem>

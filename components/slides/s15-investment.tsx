@@ -30,7 +30,7 @@ export function S15Investment() {
         <FadeItem>
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">15</span>
-            <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Ronda · smart capital + operación</span>
+            <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Ronda · capital con operación</span>
           </div>
         </FadeItem>
 
@@ -40,36 +40,37 @@ export function S15Investment() {
               <em className="italic text-gradient-accent">No es solo capital.</em> VEQ co-opera Inmobiq.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              $4.67M MXN cash a la operación + $2.7M en equipo VEQ in-kind (devs, admin, marketing) +
-              founder package — total $7.37M MXN por <span className="text-foreground font-semibold">40% equity</span>.
-              El negocio se autosostiene desde mes 3.
+              $4.17M MXN a la operación + $2.7M en equipo aportado por VEQ (desarrolladores, admin, marketing)
+              + $500K de compensación al fundador — paquete total $7.37M MXN por
+              <span className="text-foreground font-semibold"> 49% de participación</span>.
+              El negocio se autosostiene desde el mes 3.
             </p>
           </div>
         </FadeItem>
 
-        {/* Package breakdown */}
+        {/* Desglose del paquete */}
         <FadeItem>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <PackageCard
-              label="Cash a la operación"
+              label="Efectivo a la operación"
               amount={fmtMxn(round.cash_to_operation_mxn)}
-              subtitle="MXN · entra a banco Inmobiq"
-              detail="14 city openings + salario founder + marketing + legal + infra + buffer"
+              subtitle="MXN · entra al banco de Inmobiq"
+              detail="Apertura de 14 ciudades + salario fundador + marketing + legal + infraestructura + colchón"
               color="accent"
             />
             <PackageCard
-              label="VEQ in-kind · 18 meses"
+              label="Aporte VEQ · 18 meses"
               amount={fmtMxn(round.veq_inkind_mxn)}
-              subtitle="MXN · valor equivalente"
-              detail="2 devs + admin + $40K/mo ads + equipo marketing"
+              subtitle="MXN · valor equivalente en especie"
+              detail="2 desarrolladores + admin + $40K/mes en publicidad + equipo de marketing"
               color="emerald"
               breakdown={veq_inkind}
             />
             <PackageCard
-              label="Founder secondary"
+              label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
-              subtitle="Compensación personal · hitos"
-              detail="Pago al founder por el año bootstrapping. 4 tramos atados a milestones operativos."
+              subtitle="Pago personal · por hitos"
+              detail="Compensación al fundador por el año de bootstrap. 4 tramos atados a hitos operativos."
               color="amber"
               breakdown={founder_secondary_tranches.map((t) => ({
                 label: `Tramo ${t.tranche}`,
@@ -80,29 +81,29 @@ export function S15Investment() {
           </div>
         </FadeItem>
 
-        {/* Equity + valuation strip */}
+        {/* Participación + valuación */}
         <FadeItem>
           <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <Stat label="Founder" value={`${round.founder_percent}%`} sub="equity · control mayoritario" />
-            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="equity · co-operador" accent />
-            <Stat label="Post-money" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-money ${fmtMxn(round.pre_money_mxn)}`} />
+            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="control mayoritario" />
+            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
+            <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
 
-        {/* MRR vs Burn — el dato que vende */}
+        {/* Ingresos vs gasto mensual — el dato que vende */}
         <FadeItem>
           <div className="rounded-2xl bg-card p-5 sm:p-6">
             <div className="flex items-center justify-between gap-4 mb-4">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-accent mb-1">
-                  La razón por la que el cash es chico
+                  La razón por la que el efectivo es modesto
                 </div>
                 <div className="text-base font-semibold text-foreground">
-                  El negocio se autosostiene desde mes 3 — la ronda solo financia las aperturas y el colchón.
+                  El negocio se autosostiene desde el mes 3 — la ronda solo financia las aperturas y el colchón.
                 </div>
               </div>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-muted italic max-w-[160px] text-right">
-                MRR cubre burn casi inmediato
+              <span className="text-[10px] uppercase tracking-[0.18em] text-muted italic max-w-[180px] text-right">
+                Los ingresos cubren el gasto casi de inmediato
               </span>
             </div>
 
@@ -112,9 +113,9 @@ export function S15Investment() {
                   <tr className="bg-surface-muted/40">
                     <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
                     <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Burn Inmobiq</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">MRR</th>
-                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-accent">Net</th>
+                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Gasto Inmobiq</th>
+                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
+                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-accent">Sobrante</th>
                     <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Estado</th>
                   </tr>
                 </thead>
@@ -149,20 +150,20 @@ export function S15Investment() {
             <div className="mt-4 flex flex-wrap items-center gap-5 text-[11px] text-muted">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-sm bg-emerald-500" />
-                <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Break-even mes 6</span>
+                <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-sm bg-accent" />
-                <span className="uppercase tracking-widest font-semibold text-accent">Pico de burn mes 12 (ola 3)</span>
+                <span className="uppercase tracking-widest font-semibold text-accent">Pico de gasto mes 12 (ola 3)</span>
               </span>
               <span className="ml-auto italic text-muted/70">
-                Burn = $71K fijo + 2 curadores × $20K por ciudad activa (permanentes)
+                Gasto = $71K fijo + 2 curadores × $20K por ciudad activa (permanentes)
               </span>
             </div>
           </div>
         </FadeItem>
 
-        {/* Returns */}
+        {/* Retornos para VEQ */}
         <FadeItem>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <ReturnCard
@@ -170,14 +171,14 @@ export function S15Investment() {
               multiple={roi.year_3.veq_multiple}
               mxn={roi.year_3.veq_return_mxn}
               usd={roi.year_3.veq_return_usd}
-              detail={`ARR ${fmtMxn(roi.year_3.arr_mxn)} MXN · ${roi.year_3.users.toLocaleString()} users · ${roi.year_3.tam_percent}% TAM · múltiplo 8× SaaS`}
+              detail={`Ingreso anual ${fmtMxn(roi.year_3.arr_mxn)} MXN · ${roi.year_3.users.toLocaleString()} usuarios · ${roi.year_3.tam_percent}% del mercado · múltiplo 8× SaaS LatAm`}
             />
             <ReturnCard
               horizon="Año 5"
               multiple={roi.year_5.veq_multiple}
               mxn={roi.year_5.veq_return_mxn}
               usd={roi.year_5.veq_return_usd}
-              detail={`ARR ${fmtMxn(roi.year_5.arr_mxn)} MXN · ${roi.year_5.users.toLocaleString()} users · ${roi.year_5.tam_percent}% TAM · exit / Series B`}
+              detail={`Ingreso anual ${fmtMxn(roi.year_5.arr_mxn)} MXN · ${roi.year_5.users.toLocaleString()} usuarios · ${roi.year_5.tam_percent}% del mercado · salida / Ronda B`}
               featured
             />
           </div>
@@ -187,7 +188,7 @@ export function S15Investment() {
           <div className="flex items-center gap-4">
             <div className="h-px flex-1 bg-card-border" />
             <div className="text-xs uppercase tracking-[0.22em] font-semibold text-accent">
-              IRR proyectado · {roi.irr_annual_percent}% anual
+              Rendimiento anual proyectado · {roi.irr_annual_percent}%
             </div>
             <div className="h-px flex-1 bg-card-border" />
           </div>
@@ -195,12 +196,12 @@ export function S15Investment() {
 
         <TermLegend
           terms={[
-            { term: "In-kind", def: "aporte en especie (equipo, servicios, ads) — valor equivalente, no efectivo" },
-            { term: "Secondary", def: "compensación al founder por el año bootstrapping, pagada en tramos por hitos" },
-            { term: "Burn", def: "gasto mensual de operación que sale del cash en banco" },
-            { term: "MRR", def: "ingresos mensuales recurrentes por suscripciones" },
-            { term: "Post-money", def: "valuación de la empresa después de que entra el dinero" },
-            { term: "IRR", def: "rendimiento anual compuesto de la inversión" },
+            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por VEQ — valor equivalente, no efectivo" },
+            { term: "Compensación al fundador", def: "pago al fundador por el año de bootstrap, dividido en tramos atados a hitos" },
+            { term: "Gasto mensual", def: "lo que sale del banco cada mes para operar (salarios, infra, etc.)" },
+            { term: "Ingreso recurrente", def: "ingresos mensuales por suscripciones (MRR · ARR cuando es anual)" },
+            { term: "Valuación post-inversión", def: "lo que vale la empresa una vez que entra el capital" },
+            { term: "Rendimiento anual", def: "ganancia compuesta anual del dinero invertido (IRR)" },
           ]}
         />
       </FadeStack>
@@ -308,7 +309,7 @@ function ReturnCard({
           {fmtFull(Math.round(mxn / 100_000) * 100_000).replace(",000,000", "M")}
         </div>
         <div className="text-xs text-muted mt-0.5 tabular-nums">
-          Retorno para VEQ · ${(usd / 1_000_000).toFixed(1)}M USD
+          Retorno para VEQ · equivale a ${(usd / 1_000_000).toFixed(1)}M USD
         </div>
         <div className="text-[11px] text-muted/80 mt-3 italic leading-relaxed">{detail}</div>
       </div>

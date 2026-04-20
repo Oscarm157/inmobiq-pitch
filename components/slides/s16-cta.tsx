@@ -47,7 +47,7 @@ export function S16CTA() {
             <div className="flex flex-col sm:flex-row items-center gap-6 mt-10">
               <div className="text-left">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-muted mb-1">
-                  Founder
+                  Fundador
                 </div>
                 <div className="text-2xl font-semibold text-foreground">
                   {brand.founder}

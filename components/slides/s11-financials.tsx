@@ -30,13 +30,13 @@ export function S11Financials() {
                 Crecimiento <em className="italic text-gradient-accent">viable</em>. No milagroso.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                Break-even mes 6. Rentable mes 9. 18 meses para crecer de 420 a 5,545 usuarios —
+                Punto de equilibrio mes 6. Rentable mes 9. 18 meses para crecer de 420 a 5,545 usuarios —
                 13× impulsado por inversión y expansión en olas.
               </p>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <HeroKpi label="Break-even" value="Mes 6" sub="~490 users pagados" accent="emerald" />
+              <HeroKpi label="Punto de equilibrio" value="Mes 6" sub="~490 usuarios pagados" accent="emerald" />
               <div className="w-px bg-[#2a2a3e]" />
               <HeroKpi label="ARR Mes 12" value="$23M" sub="MXN · $1.24M USD" />
               <div className="w-px bg-[#2a2a3e]" />
@@ -59,7 +59,7 @@ export function S11Financials() {
                 </span>
                 <span className="flex items-center gap-2 text-emerald-300">
                   <span className="w-5 h-px bg-emerald-400/80" style={{ borderTop: "1px dashed rgba(16,185,129,0.8)" }} />
-                  Break-even
+                  Punto de equilibrio
                 </span>
               </div>
               <span className="text-[10px] uppercase tracking-[0.18em] text-muted">
@@ -91,9 +91,9 @@ export function S11Financials() {
           />
           <InsightCard
             icon="rocket_launch"
-            label="Series A"
+            label="Siguiente ronda"
             value="Mes 24-30"
-            detail="ARR $53.2M MXN posiciona para ronda A $6-8M USD @ múltiplo 6×"
+            detail="Ingreso anual $53.2M MXN posiciona para ronda A de $6-8M USD a múltiplo 6×"
             featured
           />
         </FadeStack>
@@ -102,7 +102,7 @@ export function S11Financials() {
           <div className="flex flex-wrap items-center gap-6 text-xs text-muted pt-2">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Break-even mes 6</span>
+              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -116,8 +116,8 @@ export function S11Financials() {
         <TermLegend terms={[
           { term: "MRR", def: "ingresos recurrentes mensuales por suscripciones" },
           { term: "ARR", def: "ingresos recurrentes anuales (MRR × 12)" },
-          { term: "Break-even", def: "mes donde ingresos = costos operativos" },
-          { term: "Series A", def: "siguiente ronda de inversión formal" },
+          { term: "Punto de equilibrio", def: "mes en que los ingresos igualan a los costos operativos" },
+          { term: "Ronda A", def: "siguiente ronda de inversión formal (antes llamada Series A)" },
         ]} />
       </FadeStack>
     </Slide>

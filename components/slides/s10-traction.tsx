@@ -70,7 +70,7 @@ export function S10Traction() {
 
 const roadmap = [
   { quarter: "Q1 2026", label: "MVP producción", detail: "30 zonas TJ vivas · pipeline de data operando", status: "done" },
-  { quarter: "Q2 2026", label: "Launch TJ · Pro/Empresarial", detail: "Activación de planes pagos · 100 primeros clientes", status: "active" },
+  { quarter: "Q2 2026", label: "Lanzamiento TJ · Pro/Empresarial", detail: "Activación de planes pagados · 100 primeros clientes", status: "active" },
   { quarter: "Q4 2026", label: "GDL + Cancún", detail: "Segunda y tercera ciudad · 4 curadores nuevos", status: "next" },
-  { quarter: "2027", label: "CDMX + Monterrey", detail: "Series A · 2,500+ usuarios activos", status: "next" },
+  { quarter: "2027", label: "CDMX + Monterrey", detail: "Ronda A · 2,500+ usuarios activos", status: "next" },
 ];

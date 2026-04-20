@@ -44,7 +44,7 @@ const fmt = (n: number) => n.toLocaleString("es-MX");
 const cell = (n: number) => (n > 0 ? fmt(n) : <span className="text-muted-light/40">—</span>);
 
 const waveConfig: Record<Wave, { bg: string; text: string; dot?: boolean; label: string }> = {
-  live:  { bg: "bg-success/15",  text: "text-success", dot: true, label: "Live · Mes 1" },
+  live:  { bg: "bg-success/15",  text: "text-success", dot: true, label: "En vivo · Mes 1" },
   mes3:  { bg: "bg-accent/15",   text: "text-accent",              label: "Mes 3"        },
   mes6:  { bg: "bg-violet/15",   text: "text-violet",              label: "Mes 6"        },
   mes12: { bg: "bg-muted/10",    text: "text-muted",               label: "Mes 12"       },
@@ -78,7 +78,7 @@ export function S08Cities() {
                 15 ciudades. <em className="italic text-accent">Un plan</em> de 18 meses.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                TAM total 63.6K usuarios potenciales. Tijuana live desde el día uno — las 14 ciudades
+                TAM total 63.6K usuarios potenciales. Tijuana en vivo desde el día uno — las 14 ciudades
                 restantes en 3 olas durante los primeros 12 meses. La ronda financia toda la expansión.
               </p>
             </div>
