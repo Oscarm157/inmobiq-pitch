@@ -34,18 +34,18 @@ export const round = {
   veq_inkind_months: 18,
 
   // Equity
-  equity_percent: 40,
-  founder_percent: 50,
-  employee_pool_percent: 10,
+  equity_percent: 49,
+  founder_percent: 51,
+  employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 18_425_000,
-  post_money_usd: 996_000,
-  pre_money_mxn: 11_055_000,
-  pre_money_usd: 598_000,
+  post_money_mxn: 15_040_000,
+  post_money_usd: 813_000,
+  pre_money_mxn: 7_670_000,
+  pre_money_usd: 414_595,
 
   // Términos
-  instrument: "Equity directo · 40% por $7.37M MXN package",
+  instrument: "Equity directo · 49% por $7.37M MXN package",
   runway_months: 18,
   buffer_months: 0, // ya viene en el cash
 };
@@ -61,9 +61,9 @@ export const roi = {
     multiple_saas: 8,
     valuation_usd: 26_940_000,
     valuation_mxn: 498_400_000,
-    veq_return_usd: 10_776_000,
-    veq_return_mxn: 199_360_000,
-    veq_multiple: "27×",
+    veq_return_usd: 13_200_000,
+    veq_return_mxn: 244_220_000,
+    veq_multiple: "33×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -73,11 +73,11 @@ export const roi = {
     multiple_saas: 8,
     valuation_usd: 33_168_000,
     valuation_mxn: 613_600_000,
-    veq_return_usd: 13_267_000,
-    veq_return_mxn: 245_440_000,
-    veq_multiple: "33×",
+    veq_return_usd: 16_252_000,
+    veq_return_mxn: 300_660_000,
+    veq_multiple: "41×",
   },
-  irr_annual_percent: 102,
+  irr_annual_percent: 110,
 };
 
 // VEQ in-kind — equipo y recursos aportados

@@ -82,10 +82,9 @@ export function S15Investment() {
 
         {/* Equity + valuation strip */}
         <FadeItem>
-          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="equity" accent />
-            <Stat label="Founder" value={`${round.founder_percent}%`} sub="equity" />
-            <Stat label="Pool empleados" value={`${round.employee_pool_percent}%`} sub="equity futuro" />
+          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <Stat label="Founder" value={`${round.founder_percent}%`} sub="equity · control mayoritario" />
+            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="equity · co-operador" accent />
             <Stat label="Post-money" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-money ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
