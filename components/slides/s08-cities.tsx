@@ -83,7 +83,7 @@ export function S08Cities() {
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <Kpi label="TAM total" value={fmt(totals.tam)} sub="usuarios" />
+              <Kpi label="TAM total" value={fmt(totals.tam)} sub="brokers e inmobiliarias · 15 ciudades" />
               <div className="w-px bg-card-border" />
               <Kpi label="Mes 24" value={fmt(totals.m24)} sub="users activos" accent />
               <div className="w-px bg-card-border" />
@@ -112,7 +112,9 @@ export function S08Cities() {
                 <tr className="bg-surface-muted/60">
                   <th className="px-3 py-3 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted w-10">#</th>
                   <th className="px-3 py-3 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudad</th>
-                  <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">TAM</th>
+                  <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">
+                    TAM<span className="block text-[8px] normal-case tracking-normal font-normal text-muted/60">brokers potenciales</span>
+                  </th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 6</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 12</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 18</th>
