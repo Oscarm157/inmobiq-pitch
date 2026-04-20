@@ -2,7 +2,7 @@ import { Slide } from "../slide";
 import { FadeStack, FadeItem, HeroWord } from "../ui/motion-primitives";
 import { brand } from "@/lib/data";
 
-export function S15CTA() {
+export function S16CTA() {
   return (
     <Slide mode="dark" className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />

@@ -4,7 +4,7 @@ import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { AnimatedCounter } from "../ui/animated-counter";
 import { round, roi } from "@/lib/data";
 
-export function S14Investment() {
+export function S15Investment() {
   return (
     <Slide mode="dark" className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
@@ -19,7 +19,7 @@ export function S14Investment() {
       <FadeStack className="relative z-10 flex flex-col gap-8">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">14</span>
+            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">15</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Ronda de inversión</span>
           </div>
         </FadeItem>

@@ -14,9 +14,10 @@ import { S09BusinessModel } from "@/components/slides/s09-business-model";
 import { S10Traction } from "@/components/slides/s10-traction";
 import { S11Financials } from "@/components/slides/s11-financials";
 import { S12Expansion } from "@/components/slides/s12-expansion";
-import { S13Team } from "@/components/slides/s13-team";
-import { S14Investment } from "@/components/slides/s14-investment";
-import { S15CTA } from "@/components/slides/s15-cta";
+import { S13Havi } from "@/components/slides/s13-havi";
+import { S14Team } from "@/components/slides/s14-team";
+import { S15Investment } from "@/components/slides/s15-investment";
+import { S16CTA } from "@/components/slides/s16-cta";
 
 export default function Page() {
   return (
@@ -36,9 +37,10 @@ export default function Page() {
       <S10Traction />
       <S11Financials />
       <S12Expansion />
-      <S13Team />
-      <S14Investment />
-      <S15CTA />
+      <S13Havi />
+      <S14Team />
+      <S15Investment />
+      <S16CTA />
     </SlidesDeck>
   );
 }

@@ -2,7 +2,7 @@ import { Slide } from "../slide";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { team, risks } from "@/lib/data";
 
-export function S13Team() {
+export function S14Team() {
   return (
     <Slide mode="dark" className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
@@ -10,7 +10,7 @@ export function S13Team() {
       <FadeStack className="relative z-10 flex flex-col gap-10">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">13</span>
+            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">14</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Equipo y riesgos</span>
           </div>
         </FadeItem>
