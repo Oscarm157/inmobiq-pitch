@@ -1,12 +1,13 @@
 import { Slide } from "../slide";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 
+type Wave = "live" | "mes3" | "mes6" | "mes12";
+
 type City = {
   rank: number;
   name: string;
   tam: number;
-  status: "live" | "q4-2026" | "q2-2027" | "q4-2027" | "pipeline";
-  activation_label: string;
+  wave: Wave;
   m6: number;
   m12: number;
   m18: number;
@@ -14,52 +15,46 @@ type City = {
 };
 
 const cities: City[] = [
-  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, status: "q2-2027",  activation_label: "Q2 2027",     m6: 0,   m12: 0,   m18: 120, m24: 480 },
-  { rank: 2,  name: "Monterrey",                  tam: 8_000,  status: "q4-2027",  activation_label: "Q4 2027",     m6: 0,   m12: 0,   m18: 0,   m24: 250 },
-  { rank: 3,  name: "Guadalajara",                tam: 7_200,  status: "q4-2026",  activation_label: "Q4 2026",     m6: 0,   m12: 150, m18: 380, m24: 550 },
-  { rank: 4,  name: "Puebla",                     tam: 3_200,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 5,  name: "Tijuana",                    tam: 3_200,  status: "live",     activation_label: "Live · Q2 2026", m6: 250, m12: 550, m18: 700, m24: 800 },
-  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  status: "q4-2026",  activation_label: "Q4 2026",     m6: 0,   m12: 100, m18: 300, m24: 420 },
-  { rank: 7,  name: "Querétaro",                  tam: 2_800,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 8,  name: "Mérida",                     tam: 2_400,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 9,  name: "León",                       tam: 2_000,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 10, name: "Toluca",                     tam: 2_000,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 14, name: "Los Cabos",                  tam: 1_200,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
-  { rank: 15, name: "Aguascalientes",             tam: 1_200,  status: "pipeline", activation_label: "Pipeline 2028+", m6: 0, m12: 0, m18: 0, m24: 0 },
+  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m6: 80,  m12: 280, m18: 620,  m24: 1_100 },
+  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m6: 40,  m12: 120, m18: 280,  m24: 520   },
+  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m6: 40,  m12: 110, m18: 260,  m24: 480   },
+  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m6: 0,   m12: 70,  m18: 190,  m24: 340   },
+  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m6: 200, m12: 380, m18: 520,  m24: 680   },
+  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m6: 30,  m12: 90,  m18: 200,  m24: 360   },
+  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m6: 0,   m12: 60,  m18: 160,  m24: 290   },
+  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m6: 0,   m12: 55,  m18: 140,  m24: 250   },
+  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m6: 0,   m12: 0,   m18: 45,   m24: 130   },
+  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m6: 0,   m12: 0,   m18: 40,   m24: 110   },
+  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m6: 0,   m12: 0,   m18: 35,   m24: 90    },
+  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m6: 0,   m12: 0,   m18: 35,   m24: 90    },
+  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m6: 0,   m12: 0,   m18: 30,   m24: 80    },
+  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m6: 0,   m12: 0,   m18: 25,   m24: 70    },
+  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m6: 0,   m12: 0,   m18: 25,   m24: 70    },
 ];
 
 const totals = cities.reduce(
-  (a, c) => ({
-    tam: a.tam + c.tam,
-    m6: a.m6 + c.m6,
-    m12: a.m12 + c.m12,
-    m18: a.m18 + c.m18,
-    m24: a.m24 + c.m24,
-  }),
+  (a, c) => ({ tam: a.tam + c.tam, m6: a.m6 + c.m6, m12: a.m12 + c.m12, m18: a.m18 + c.m18, m24: a.m24 + c.m24 }),
   { tam: 0, m6: 0, m12: 0, m18: 0, m24: 0 }
 );
 
 const penetration24 = (totals.m24 / totals.tam) * 100;
 
 const fmt = (n: number) => n.toLocaleString("es-MX");
-const cell = (n: number) => (n > 0 ? fmt(n) : <span className="text-muted-light/50">—</span>);
+const cell = (n: number) => (n > 0 ? fmt(n) : <span className="text-muted-light/40">—</span>);
 
-function statusChip(status: City["status"], label: string) {
-  const map: Record<City["status"], { bg: string; text: string; dot?: boolean }> = {
-    live: { bg: "bg-success/15", text: "text-success", dot: true },
-    "q4-2026": { bg: "bg-accent/15", text: "text-accent" },
-    "q2-2027": { bg: "bg-accent/10", text: "text-accent/80" },
-    "q4-2027": { bg: "bg-accent/10", text: "text-accent/80" },
-    pipeline: { bg: "bg-muted/10", text: "text-muted/70" },
-  };
-  const s = map[status];
+const waveConfig: Record<Wave, { bg: string; text: string; dot?: boolean; label: string }> = {
+  live:  { bg: "bg-success/15",  text: "text-success", dot: true, label: "Live · Mes 1" },
+  mes3:  { bg: "bg-accent/15",   text: "text-accent",              label: "Mes 3"        },
+  mes6:  { bg: "bg-violet/15",   text: "text-violet",              label: "Mes 6"        },
+  mes12: { bg: "bg-muted/10",    text: "text-muted",               label: "Mes 12"       },
+};
+
+function WaveChip({ wave }: { wave: Wave }) {
+  const s = waveConfig[wave];
   return (
     <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[9px] font-semibold uppercase tracking-wider ${s.bg} ${s.text} whitespace-nowrap`}>
       {s.dot && <span className="w-1 h-1 rounded-full bg-success pulse-dot" />}
-      {label}
+      {s.label}
     </span>
   );
 }
@@ -79,12 +74,11 @@ export function S08Cities() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                15 ciudades. <em className="italic text-accent">Un plan</em> de 24 meses.
+                15 ciudades. <em className="italic text-accent">Un plan</em> de 12 meses.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                TAM total 63.6K usuarios potenciales (brokers + inmobiliarias en las 15 ciudades con mayor
-                volumen inmobiliario). La ronda financia la captura de las primeras 4 ciudades. El resto es
-                pipeline para Series A.
+                TAM total 63.6K usuarios potenciales. Tijuana live desde el día uno — las 14 ciudades
+                restantes en 3 olas durante los primeros 12 meses. La ronda financia toda la expansión.
               </p>
             </div>
 
@@ -95,6 +89,19 @@ export function S08Cities() {
               <div className="w-px bg-card-border" />
               <Kpi label="Penetración" value={`${penetration24.toFixed(1)}%`} sub="del TAM" accent />
             </div>
+          </div>
+        </FadeItem>
+
+        {/* Wave legend */}
+        <FadeItem>
+          <div className="flex items-center gap-4 text-[9px] uppercase tracking-widest font-semibold">
+            <span className="text-muted">Olas de activación:</span>
+            {(Object.entries(waveConfig) as [Wave, typeof waveConfig[Wave]][]).map(([wave, s]) => (
+              <span key={wave} className={`flex items-center gap-1.5 ${s.text}`}>
+                {s.dot && <span className="w-1.5 h-1.5 rounded-full bg-success" />}
+                {s.label}
+              </span>
+            ))}
           </div>
         </FadeItem>
 
@@ -110,73 +117,38 @@ export function S08Cities() {
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 12</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 18</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 24</th>
-                  <th className="px-3 py-3 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Activación</th>
+                  <th className="px-3 py-3 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ola</th>
                 </tr>
               </thead>
               <tbody>
                 {cities.map((c, i) => {
-                  const isLive = c.status === "live";
-                  const isActive = ["live", "q4-2026", "q2-2027", "q4-2027"].includes(c.status);
+                  const isLive = c.wave === "live";
                   const rowBg = isLive
                     ? "bg-accent/8 border-l-2 border-accent"
-                    : isActive
-                    ? i % 2 === 0
-                      ? "bg-transparent"
-                      : "bg-surface-muted/40"
-                    : "opacity-50 bg-surface-muted/20";
+                    : i % 2 === 0 ? "bg-transparent" : "bg-surface-muted/30";
                   return (
                     <tr key={c.rank} className={rowBg}>
-                      <td className="px-3 py-2.5 text-xs font-mono tabular-nums text-muted">
-                        {String(c.rank).padStart(2, "0")}
-                      </td>
-                      <td className="px-3 py-2.5 text-sm font-semibold text-foreground">
-                        {c.name}
-                      </td>
-                      <td className="px-3 py-2.5 text-right text-xs tabular-nums text-muted">
-                        {fmt(c.tam)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">
-                        {cell(c.m6)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">
-                        {cell(c.m12)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">
-                        {cell(c.m18)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right text-sm tabular-nums font-semibold text-accent">
-                        {cell(c.m24)}
-                      </td>
-                      <td className="px-3 py-2.5 text-left">{statusChip(c.status, c.activation_label)}</td>
+                      <td className="px-3 py-2.5 text-xs font-mono tabular-nums text-muted">{String(c.rank).padStart(2, "0")}</td>
+                      <td className="px-3 py-2.5 text-sm font-semibold text-foreground">{c.name}</td>
+                      <td className="px-3 py-2.5 text-right text-xs tabular-nums text-muted">{fmt(c.tam)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m6)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m12)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m18)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums font-semibold text-accent">{cell(c.m24)}</td>
+                      <td className="px-3 py-2.5"><WaveChip wave={c.wave} /></td>
                     </tr>
                   );
                 })}
-
-                {/* Totals row */}
                 <tr className="bg-foreground text-background">
                   <td className="px-3 py-3.5 text-xs font-mono tabular-nums">—</td>
-                  <td className="px-3 py-3.5 text-sm font-bold uppercase tracking-widest text-background">
-                    Total captura
-                  </td>
-                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums text-muted-light">
-                    {fmt(totals.tam)}
-                  </td>
-                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">
-                    {fmt(totals.m6)}
-                  </td>
-                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">
-                    {fmt(totals.m12)}
-                  </td>
-                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">
-                    {fmt(totals.m18)}
-                  </td>
-                  <td className="px-3 py-3.5 text-right text-base font-bold tabular-nums text-gradient-accent">
-                    {fmt(totals.m24)}
-                  </td>
-                  <td className="px-3 py-3.5 text-left">
-                    <span className="text-[10px] uppercase tracking-widest text-accent-light font-semibold">
-                      {penetration24.toFixed(1)}% TAM
-                    </span>
+                  <td className="px-3 py-3.5 text-sm font-bold uppercase tracking-widest">Total captura</td>
+                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums text-muted-light">{fmt(totals.tam)}</td>
+                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m6)}</td>
+                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m12)}</td>
+                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m18)}</td>
+                  <td className="px-3 py-3.5 text-right text-base font-bold tabular-nums text-gradient-accent">{fmt(totals.m24)}</td>
+                  <td className="px-3 py-3.5">
+                    <span className="text-[10px] uppercase tracking-widest text-accent-light font-semibold">{penetration24.toFixed(1)}% TAM</span>
                   </td>
                 </tr>
               </tbody>
@@ -185,35 +157,18 @@ export function S08Cities() {
         </FadeItem>
 
         <FadeItem>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="rounded-xl bg-card p-4 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)]">
-              <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-accent mb-2">
-                La ronda (18 meses)
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { label: "Ola 1 · Mes 3", cities: "CDMX, MTY, GDL, Cancún", detail: "Las 4 plazas con mayor volumen. Con Tijuana suman las 5 ciudades principales del país." },
+              { label: "Ola 2 · Mes 6", cities: "Puebla, Querétaro, Mérida", detail: "Mercados emergentes de alto crecimiento. Menor competencia, mayor velocidad de adopción." },
+              { label: "Ola 3 · Mes 12", cities: "7 ciudades restantes", detail: "León, Toluca, Cd. Juárez, Playa del Carmen, SLP, Los Cabos, Aguascalientes — pipeline consolidado." },
+            ].map((w) => (
+              <div key={w.label} className="rounded-xl bg-card p-4">
+                <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-accent mb-1">{w.label}</div>
+                <div className="text-sm font-semibold text-foreground mb-1">{w.cities}</div>
+                <div className="text-[11px] text-muted leading-relaxed">{w.detail}</div>
               </div>
-              <div className="text-sm text-foreground/90 leading-relaxed">
-                Consolidamos <span className="font-semibold">Tijuana</span> + abrimos{" "}
-                <span className="font-semibold">GDL</span> y <span className="font-semibold">Cancún</span> en Q4 2026.
-                Mes 18: ~1,500 usuarios activos · 2.4% del TAM.
-              </div>
-            </div>
-            <div className="rounded-xl bg-card p-4 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)]">
-              <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-accent mb-2">
-                Siguiente fase (Series A · 2027)
-              </div>
-              <div className="text-sm text-foreground/90 leading-relaxed">
-                Abrimos <span className="font-semibold">CDMX</span> y{" "}
-                <span className="font-semibold">Monterrey</span> (60% del TAM concentrado). Mes 24: 2,500 usuarios
-                · 3.9% del TAM · las 10 restantes son pipeline 2028+.
-              </div>
-            </div>
-          </div>
-        </FadeItem>
-
-        <FadeItem>
-          <div className="text-xs text-muted italic leading-relaxed max-w-3xl">
-            <span className="font-semibold text-foreground not-italic">Fuente TAM:</span> 80K brokers AMPI + estimación de
-            no-registrados, distribuidos por participación del mercado inmobiliario mexicano. Mix objetivo 70% Pro + 30% Empresarial
-            (ticket promedio ponderado $799 MXN/mes). Números redondeados · proyecciones base del plan financiero (slide 11).
+            ))}
           </div>
         </FadeItem>
       </FadeStack>
@@ -225,13 +180,7 @@ function Kpi({ label, value, sub, accent }: { label: string; value: string; sub:
   return (
     <div className="text-right">
       <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">{label}</div>
-      <div
-        className={`text-2xl sm:text-3xl font-semibold tabular-nums mt-0.5 ${
-          accent ? "text-gradient-accent" : "text-foreground"
-        }`}
-      >
-        {value}
-      </div>
+      <div className={`text-2xl sm:text-3xl font-semibold tabular-nums mt-0.5 ${accent ? "text-gradient-accent" : "text-foreground"}`}>{value}</div>
       <div className="text-[10px] text-muted mt-0.5">{sub}</div>
     </div>
   );
