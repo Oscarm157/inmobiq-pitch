@@ -208,8 +208,8 @@ export const market = {
   som: {
     label: "SOM — Penetración objetivo mes 18",
     users: 4_645,
-    revenue_potential_mxn: 50_100_000,
-    detail: "7.3% del TAM total · 15 ciudades · plan de 18 meses financiado con esta ronda",
+    revenue_potential_mxn: 42_600_000,
+    detail: "7.3% del TAM · 4,645 users × 85% pagos × $899 avg = $3.5M MXN/mes MRR",
   },
 };
 

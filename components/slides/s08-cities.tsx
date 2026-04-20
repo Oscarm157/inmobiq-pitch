@@ -84,11 +84,13 @@ export function S08Cities() {
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <Kpi label="TAM total" value={fmt(totals.tam)} sub="brokers e inmobiliarias · 15 ciudades" />
+              <Kpi label="TAM total" value={fmt(totals.tam)} sub="brokers · 15 ciudades" />
               <div className="w-px bg-card-border" />
-              <Kpi label="Mes 18" value={fmt(totals.m18)} sub="users activos" accent />
+              <Kpi label="Users mes 18" value={fmt(totals.m18)} sub={`${penetration18.toFixed(1)}% del TAM`} accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="Penetración" value={`${penetration18.toFixed(1)}%`} sub="del TAM" accent />
+              <Kpi label="MRR mes 18" value="$3.5M MXN" sub="85% pagos · avg $899/mes" accent />
+              <div className="w-px bg-card-border" />
+              <Kpi label="ARR mes 18" value="$42.6M MXN" sub="≈ $2.5M USD run rate" />
             </div>
           </div>
         </FadeItem>
