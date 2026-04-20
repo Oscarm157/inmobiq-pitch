@@ -7,6 +7,7 @@ import {
   roi,
   veq_inkind,
   founder_secondary_tranches,
+  cash_to_operation_breakdown,
   monthly_cash_flow,
 } from "@/lib/data";
 
@@ -77,8 +78,9 @@ export function S15Investment() {
               label="Efectivo a Inmobiq"
               amount={fmtMxn(round.cash_to_operation_mxn)}
               subtitle="MXN · al banco de Inmobiq"
-              detail="Apertura de 14 ciudades nuevas + ramp de curadores antes de que la ciudad genere revenue."
+              detail="Capital para abrir las 14 ciudades nuevas. Cubre el ramp de curadores antes de que cada ciudad genere revenue."
               color="accent"
+              breakdown={cash_to_operation_breakdown}
             />
           </div>
         </FadeItem>

@@ -94,6 +94,13 @@ export const veq_inkind = [
   { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 12m", mxn: 36_000 },
 ];
 
+// Cash a Inmobiq — desglose
+export const cash_to_operation_breakdown = [
+  { label: "Curadores pre-revenue", detail: "14 ciudades × 2 curadores × $20K × 3 meses", mxn: 1_680_000 },
+  { label: "Marketing local de lanzamiento", detail: "14 ciudades × $30K · activación broker AMPI local", mxn: 420_000 },
+  { label: "Setup técnico por ciudad", detail: "14 ciudades × $20K · import INEGI + data inicial", mxn: 280_000 },
+];
+
 // Compensación fundador — 3 tramos de $150K c/u atados a hitos · pagada por VEQ
 export const founder_secondary_tranches = [
   { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
