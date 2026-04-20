@@ -163,13 +163,13 @@ export function S15Investment() {
                           {row.opex_veq_mxn > 0 ? fmtK(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
                         </td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/80">
-                          {fmtK(row.burn_mxn)}
+                          {fmtMxn(row.burn_mxn)}
                         </td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/90">
-                          {fmtK(row.mrr_mxn)}
+                          {fmtMxn(row.mrr_mxn)}
                         </td>
                         <td className="px-3 py-3 text-right text-base font-semibold tabular-nums text-accent">
-                          +{fmtK(row.net_mxn)}
+                          +{fmtMxn(row.net_mxn)}
                         </td>
                       </tr>
                     );
