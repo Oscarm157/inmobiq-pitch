@@ -40,7 +40,7 @@ export function S11Financials() {
               <div className="w-px bg-[#2a2a3e]" />
               <HeroKpi label="ARR Mes 12" value="$23M" sub="MXN · $1.24M USD" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="ARR Mes 18" value="$53.2M" sub="MXN · $2.9M USD" accent="blue" />
+              <HeroKpi label="ARR Mes 18" value="$51.9M" sub="MXN · $2.8M USD" accent="blue" />
             </div>
           </div>
         </FadeItem>

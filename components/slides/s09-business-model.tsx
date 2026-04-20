@@ -75,7 +75,7 @@ export function S09BusinessModel() {
             <Kpi label="Ticket promedio" value={`$${unit_economics.avg_ticket_mxn} MXN`} sub="Mix 70% Pro + 30% Empresarial" />
             <Kpi label="CAC objetivo" value={`$${unit_economics.cac_mxn.toLocaleString()} MXN`} sub="Ads + SEO + referidos" accent />
             <Kpi label="LTV" value={`$${unit_economics.ltv_mxn.toLocaleString()} MXN`} sub="18 meses retention B2B" />
-            <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en 2.5 meses" accent />
+            <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en 3 meses" accent />
           </div>
         </FadeItem>
         <TermLegend terms={[

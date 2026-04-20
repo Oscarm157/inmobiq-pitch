@@ -192,7 +192,7 @@ export const projections = [
   { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,   status: "break-even" },
   { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600,  status: "profitable" },
   { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200,  status: "15 ciudades" },
-  { month: 18, users_active: 5_512, paid_percent: 100, paid_users: 5_512, mrr_mxn: 4_403_888, arr_mxn: 52_846_656,  status: "plan completo" },
+  { month: 18, users_active: 5_412, paid_percent: 100, paid_users: 5_412, mrr_mxn: 4_324_188, arr_mxn: 51_890_256,  status: "plan completo" },
 ];
 
 export const market = {
@@ -210,9 +210,9 @@ export const market = {
   },
   som: {
     label: "SOM — Penetración objetivo mes 18",
-    users: 5_545,
-    revenue_potential_mxn: 53_200_000,
-    detail: "8.7% del TAM · 5,545 usuarios pagos × $799 avg (70% Pro / 30% Empresarial) = $4.4M MXN/mes MRR",
+    users: 5_412,
+    revenue_potential_mxn: 51_900_000,
+    detail: "8.5% del TAM · 5,412 usuarios pagos × $799 avg (70% Pro / 30% Empresarial) = $4.3M MXN/mes MRR",
   },
 };
 

@@ -29,7 +29,7 @@ export const growthSeries: Point[] = [
   { month: "M6",  monthNum: 6,  users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,  status: "Break-even operativo",  highlight: "break-even" },
   { month: "M9",  monthNum: 9,  users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600, status: "Ola 2 consolidando",    highlight: "profitable" },
   { month: "M12", monthNum: 12, users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200, status: "15 ciudades activas",   highlight: "expansion" },
-  { month: "M18", monthNum: 18, users: 5_512, mrr_mxn: 4_403_888, arr_mxn: 52_846_656, status: "Plan completo · 8.7% TAM", highlight: "expansion" },
+  { month: "M18", monthNum: 18, users: 5_412, mrr_mxn: 4_324_188, arr_mxn: 51_890_256, status: "Plan completo · 8.5% TAM", highlight: "expansion" },
 ];
 
 const fmtUsers = (n: number) => n.toLocaleString("es-MX");
