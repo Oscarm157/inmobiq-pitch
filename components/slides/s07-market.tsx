@@ -84,7 +84,7 @@ export function S07Market() {
                     {fmt(market.som.users)}
                   </div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted mt-1">
-                    SOM año 5
+                    SOM · mes 18
                   </div>
                 </div>
               </div>

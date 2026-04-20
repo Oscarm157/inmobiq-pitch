@@ -206,10 +206,10 @@ export const market = {
     detail: "TJ + GDL + Cancún + CDMX + MTY · profesionales con >5 transacciones/año",
   },
   som: {
-    label: "SOM — Penetración objetivo año 5",
-    users: 4_000,
-    revenue_potential_mxn: 43_152_000,
-    detail: "20% del SAM · captura realista con modelo boutique",
+    label: "SOM — Penetración objetivo mes 18",
+    users: 4_645,
+    revenue_potential_mxn: 50_100_000,
+    detail: "7.3% del TAM total · 15 ciudades · plan de 18 meses financiado con esta ronda",
   },
 };
 

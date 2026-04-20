@@ -16,21 +16,21 @@ type City = {
 };
 
 const cities: City[] = [
-  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m1: 0,  m3: 20,  m6: 80,  m12: 280, m18: 620  },
-  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 120, m18: 280  },
-  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 110, m18: 260  },
-  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 70,  m18: 190  },
-  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m1: 30, m3: 80,  m6: 200, m12: 380, m18: 520  },
-  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 30,  m12: 90,  m18: 200  },
-  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 60,  m18: 160  },
-  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 55,  m18: 140  },
-  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 45   },
-  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 40   },
-  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 35   },
-  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 35   },
-  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 30   },
-  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 25   },
-  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 25   },
+  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m1: 0,  m3: 20,  m6: 80,  m12: 280, m18: 1_300 },
+  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 120, m18: 480   },
+  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 110, m18: 420   },
+  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 70,  m18: 280   },
+  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m1: 30, m3: 80,  m6: 200, m12: 380, m18: 920   },
+  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 30,  m12: 90,  m18: 300   },
+  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 60,  m18: 240   },
+  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 55,  m18: 200   },
+  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 100   },
+  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 90    },
+  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 70    },
+  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 70    },
+  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 65    },
+  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 55    },
+  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 55    },
 ];
 
 const totals = cities.reduce(
