@@ -15,8 +15,8 @@ export const brand = {
 
 export const round = {
   // Paquete total VEQ (todo lo aporta VEQ — Inmobiq solo paga curadores)
-  package_total_mxn: 5_380_000,
-  package_total_usd: 290_810,
+  package_total_mxn: 5_680_000,
+  package_total_usd: 307_027,
 
   // Cash a Inmobiq (apertura de ciudades + ramp pre-revenue de curadores)
   cash_to_operation_mxn: 2_380_000,
@@ -27,8 +27,8 @@ export const round = {
   founder_salary_monthly_mxn: 45_000,
   founder_salary_months: 12,
 
-  // Compensación al fundador (3 tramos por hitos · pagado por VEQ)
-  founder_secondary_mxn: 150_000,
+  // Compensación al fundador (3 tramos de $150K c/u · pagado por VEQ)
+  founder_secondary_mxn: 450_000,
   founder_secondary_tranches: 3,
 
   // Aporte VEQ in-kind (12 meses cubriendo TODO el opex de Inmobiq)
@@ -41,13 +41,13 @@ export const round = {
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 10_980_000,
-  post_money_usd: 593_514,
-  pre_money_mxn: 5_600_000,
-  pre_money_usd: 302_703,
+  post_money_mxn: 11_590_000,
+  post_money_usd: 626_486,
+  pre_money_mxn: 5_910_000,
+  pre_money_usd: 319_459,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $5.38M MXN",
+  instrument: "Participación directa · 49% por paquete de $5.68M MXN",
   runway_months: 12,
   buffer_months: 0,
 };
@@ -65,7 +65,7 @@ export const roi = {
     valuation_mxn: 498_400_000,
     veq_return_usd: 13_200_000,
     veq_return_mxn: 244_220_000,
-    veq_multiple: "45×",
+    veq_multiple: "43×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -77,9 +77,9 @@ export const roi = {
     valuation_mxn: 613_600_000,
     veq_return_usd: 16_252_000,
     veq_return_mxn: 300_660_000,
-    veq_multiple: "56×",
+    veq_multiple: "53×",
   },
-  irr_annual_percent: 121,
+  irr_annual_percent: 119,
 };
 
 // Aporte VEQ in-kind — TODO el opex de Inmobiq durante el año base (12 meses)
@@ -94,11 +94,11 @@ export const veq_inkind = [
   { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 12m", mxn: 36_000 },
 ];
 
-// Compensación fundador — 3 tramos atados a hitos · pagada por VEQ
+// Compensación fundador — 3 tramos de $150K c/u atados a hitos · pagada por VEQ
 export const founder_secondary_tranches = [
-  { tranche: 1, mxn: 50_000, milestone: "Cierre del trato (inicial)" },
-  { tranche: 2, mxn: 50_000, milestone: "Mes 6 · punto de equilibrio confirmado (intermedia)" },
-  { tranche: 3, mxn: 50_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses (final)" },
+  { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
+  { tranche: 2, mxn: 150_000, milestone: "Mes 6 · punto de equilibrio confirmado (intermedia)" },
+  { tranche: 3, mxn: 150_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses (final)" },
 ];
 
 // Flujo mensual — gasto Inmobiq (sólo curadores) vs ingresos
