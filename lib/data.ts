@@ -29,29 +29,29 @@ export const round = {
 };
 
 export const roi = {
-  break_even_month: 9,
-  capital_payback_month: 22,
+  break_even_month: 6,
+  capital_payback_month: 18,
   year_3: {
-    arr_usd: 1_500_000,
-    arr_mxn: 27_750_000,
+    arr_usd: 5_800_000,
+    arr_mxn: 107_300_000,
     multiple_saas: 8,
-    valuation_usd: 12_000_000,
-    valuation_mxn: 222_000_000,
-    veq_return_usd: 3_000_000,
-    veq_return_mxn: 55_500_000,
-    veq_multiple: "6x",
+    valuation_usd: 46_400_000,
+    valuation_mxn: 858_400_000,
+    veq_return_usd: 11_600_000,
+    veq_return_mxn: 214_600_000,
+    veq_multiple: "23×",
   },
   year_5: {
-    arr_usd: 3_000_000,
-    arr_mxn: 55_500_000,
-    multiple_saas: 10,
-    valuation_usd: 30_000_000,
-    valuation_mxn: 555_000_000,
-    veq_return_usd: 7_500_000,
-    veq_return_mxn: 138_750_000,
-    veq_multiple: "15x",
+    arr_usd: 11_900_000,
+    arr_mxn: 220_150_000,
+    multiple_saas: 8,
+    valuation_usd: 95_200_000,
+    valuation_mxn: 1_761_200_000,
+    veq_return_usd: 23_800_000,
+    veq_return_mxn: 440_300_000,
+    veq_multiple: "47×",
   },
-  irr_annual_percent: 72,
+  irr_annual_percent: 95,
 };
 
 // Uso de fondos — breakdown detallado
@@ -188,12 +188,11 @@ export const unit_economics = {
 
 // Proyección usuarios + revenue (MXN)
 export const projections = [
-  { month: 3, users_active: 100, paid_percent: 70, paid_users: 70, mrr_mxn: 62_930, arr_mxn: 755_160, status: "ramp" },
-  { month: 6, users_active: 250, paid_percent: 80, paid_users: 200, mrr_mxn: 179_800, arr_mxn: 2_157_600, status: "ramp" },
-  { month: 9, users_active: 400, paid_percent: 85, paid_users: 340, mrr_mxn: 305_660, arr_mxn: 3_667_920, status: "break-even" },
-  { month: 12, users_active: 800, paid_percent: 85, paid_users: 680, mrr_mxn: 611_320, arr_mxn: 7_335_840, status: "profitable" },
-  { month: 18, users_active: 1_500, paid_percent: 85, paid_users: 1_275, mrr_mxn: 1_146_225, arr_mxn: 13_754_700, status: "3 ciudades" },
-  { month: 24, users_active: 2_500, paid_percent: 85, paid_users: 2_125, mrr_mxn: 1_910_375, arr_mxn: 22_924_500, status: "4 ciudades" },
+  { month: 3,  users_active: 420,   paid_percent: 100, paid_users: 420,   mrr_mxn: 335_580,   arr_mxn: 4_026_960,   status: "ramp" },
+  { month: 6,  users_active: 940,   paid_percent: 100, paid_users: 940,   mrr_mxn: 750_860,   arr_mxn: 9_010_320,   status: "break-even" },
+  { month: 9,  users_active: 1_500, paid_percent: 100, paid_users: 1_500, mrr_mxn: 1_198_500, arr_mxn: 14_382_000,  status: "profitable" },
+  { month: 12, users_active: 2_050, paid_percent: 100, paid_users: 2_050, mrr_mxn: 1_637_950, arr_mxn: 19_655_400,  status: "15 ciudades" },
+  { month: 18, users_active: 5_545, paid_percent: 100, paid_users: 5_545, mrr_mxn: 4_430_455, arr_mxn: 53_165_460,  status: "plan completo" },
 ];
 
 export const market = {
@@ -228,11 +227,11 @@ export const competitors = [
 
 // Expansión roadmap
 export const expansion = [
-  { city: "Tijuana", status: "live", quarter: "Q2 2026", users_target: 500 },
-  { city: "Guadalajara", status: "Q4 2026", quarter: "Q4 2026", users_target: 400 },
-  { city: "Cancún", status: "Q4 2026", quarter: "Q4 2026", users_target: 350 },
-  { city: "CDMX", status: "roadmap", quarter: "Q2 2027", users_target: 900 },
-  { city: "Monterrey", status: "roadmap", quarter: "Q4 2027", users_target: 600 },
+  { city: "Tijuana",     status: "live",     quarter: "Mes 1",  users_target: 1_050 },
+  { city: "Guadalajara", status: "Q4 2026",  quarter: "Mes 3",  users_target: 490   },
+  { city: "Cancún",      status: "Q4 2026",  quarter: "Mes 3",  users_target: 340   },
+  { city: "CDMX",        status: "roadmap",  quarter: "Mes 3",  users_target: 1_550 },
+  { city: "Monterrey",   status: "roadmap",  quarter: "Mes 3",  users_target: 560   },
 ];
 
 // City unit cost (para preguntas de VEQ)

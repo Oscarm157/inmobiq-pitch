@@ -25,12 +25,11 @@ type Point = {
 };
 
 export const growthSeries: Point[] = [
-  { month: "M3",  monthNum: 3,  users: 100,  mrr_mxn: 62_930,    arr_mxn: 755_160,    status: "Ramp-up inicial" },
-  { month: "M6",  monthNum: 6,  users: 250,  mrr_mxn: 179_800,   arr_mxn: 2_157_600,  status: "Tijuana consolidando" },
-  { month: "M9",  monthNum: 9,  users: 400,  mrr_mxn: 305_660,   arr_mxn: 3_667_920,  status: "Break-even operativo",   highlight: "break-even" },
-  { month: "M12", monthNum: 12, users: 800,  mrr_mxn: 611_320,   arr_mxn: 7_335_840,  status: "GDL + Cancún live",      highlight: "profitable" },
-  { month: "M18", monthNum: 18, users: 1_500, mrr_mxn: 1_146_225, arr_mxn: 13_754_700, status: "3 ciudades en operación", highlight: "expansion" },
-  { month: "M24", monthNum: 24, users: 2_500, mrr_mxn: 1_910_375, arr_mxn: 22_924_500, status: "CDMX + MTY en ramp-up",   highlight: "expansion" },
+  { month: "M3",  monthNum: 3,  users: 420,   mrr_mxn: 335_580,   arr_mxn: 4_026_960,  status: "TJ + 4 ciudades ola 1" },
+  { month: "M6",  monthNum: 6,  users: 940,   mrr_mxn: 750_860,   arr_mxn: 9_010_320,  status: "Break-even operativo",  highlight: "break-even" },
+  { month: "M9",  monthNum: 9,  users: 1_500, mrr_mxn: 1_198_500, arr_mxn: 14_382_000, status: "Ola 2 consolidando",    highlight: "profitable" },
+  { month: "M12", monthNum: 12, users: 2_050, mrr_mxn: 1_637_950, arr_mxn: 19_655_400, status: "15 ciudades activas",   highlight: "expansion" },
+  { month: "M18", monthNum: 18, users: 5_545, mrr_mxn: 4_430_455, arr_mxn: 53_165_460, status: "Plan completo · 8.7% TAM", highlight: "expansion" },
 ];
 
 const fmtUsers = (n: number) => n.toLocaleString("es-MX");
@@ -171,7 +170,7 @@ export function GrowthChart() {
 
           {/* Break-even reference */}
           <ReferenceLine
-            x="M9"
+            x="M6"
             yAxisId="users"
             stroke="#10b981"
             strokeDasharray="4 4"

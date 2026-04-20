@@ -30,17 +30,17 @@ export function S11Financials() {
                 Crecimiento <em className="italic text-gradient-accent">viable</em>. No milagroso.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                Break-even mes 9. Rentable mes 12. 18 meses para triplicar de 800 a 2,500 usuarios —
-                consistente con la captura por ciudad del plan.
+                Break-even mes 6. Rentable mes 9. 18 meses para crecer de 420 a 5,545 usuarios —
+                13× impulsado por inversión y expansión en olas.
               </p>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <HeroKpi label="Break-even" value="Mes 9" sub="268 users pagados" accent="emerald" />
+              <HeroKpi label="Break-even" value="Mes 6" sub="~490 users pagados" accent="emerald" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="ARR Mes 12" value="$7.3M" sub="MXN · $395K USD" />
+              <HeroKpi label="ARR Mes 12" value="$19.7M" sub="MXN · $1.06M USD" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="ARR Mes 24" value="$22.9M" sub="MXN · $1.24M USD" accent="blue" />
+              <HeroKpi label="ARR Mes 18" value="$53.2M" sub="MXN · $2.9M USD" accent="blue" />
             </div>
           </div>
         </FadeItem>
@@ -73,9 +73,9 @@ export function S11Financials() {
         <FadeStack className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <InsightCard
             icon="trending_up"
-            label="Doblez de users"
-            value="M12 → M18"
-            detail="De 800 a 1,500 users en 6 meses con la entrada de GDL + Cancún"
+            label="Aceleración M12→M18"
+            value="2.7× en 6 meses"
+            detail="De 2,050 a 5,545 users con las 15 ciudades en plena operación"
           />
           <InsightCard
             icon="payments"
@@ -86,14 +86,14 @@ export function S11Financials() {
           <InsightCard
             icon="schedule"
             label="Payback CAC"
-            value="2.5 meses"
-            detail="CAC $2K MXN · ticket promedio $799 MXN · retención 18m"
+            value="3 meses"
+            detail="CAC $2.5K MXN · ticket promedio $799 MXN · retención 18m"
           />
           <InsightCard
             icon="rocket_launch"
             label="Series A"
             value="Mes 24-30"
-            detail="ARR $22.9M MXN habilita ronda A $3-5M USD @ múltiplo 10x"
+            detail="ARR $53.2M MXN posiciona para ronda A $6-8M USD @ múltiplo 6×"
             featured
           />
         </FadeStack>
@@ -102,11 +102,11 @@ export function S11Financials() {
           <div className="flex flex-wrap items-center gap-6 text-xs text-muted pt-2">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Break-even mes 9</span>
+              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Break-even mes 6</span>
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              <span className="uppercase tracking-widest font-semibold text-accent">Rentable mes 12</span>
+              <span className="uppercase tracking-widest font-semibold text-accent">Rentable mes 9</span>
             </span>
             <span className="ml-auto italic">
               Proyección base · tabla detallada en anexo · USD @ 18.5 MXN
