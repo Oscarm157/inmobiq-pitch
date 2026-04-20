@@ -136,7 +136,7 @@ export const pricing = [
     price_label: "Gratis",
     target: "Funnel inicial · probadita del producto",
     features: [
-      "3 valuaciones Brújula · export PDF / mes",
+      "3 créditos Brújula · export PDF / mes",
       "Vista parcial del dashboard",
       "Comparador limitado (2 zonas)",
     ],
@@ -148,7 +148,7 @@ export const pricing = [
     target: "Broker profesional independiente",
     featured: true,
     features: [
-      "75 valuaciones Brújula · export PDF/Excel / mes",
+      "75 créditos Brújula · export PDF/Excel / mes",
       "Comparador completo · todas las zonas",
       "Panorama de ciudad completo",
       "Historial de valuaciones (90 días)",
