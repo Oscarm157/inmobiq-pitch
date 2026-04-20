@@ -54,21 +54,6 @@ export function S15Investment() {
         <FadeItem>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <PackageCard
-              label="Efectivo a Inmobiq"
-              amount={fmtMxn(round.cash_to_operation_mxn)}
-              subtitle="MXN · al banco de Inmobiq"
-              detail="Apertura de 14 ciudades nuevas + ramp de curadores antes de que la ciudad genere revenue."
-              color="accent"
-            />
-            <PackageCard
-              label="Aporte VEQ · año base (12 meses)"
-              amount={fmtMxn(round.veq_inkind_mxn)}
-              subtitle="MXN · todo el opex de Inmobiq"
-              detail="VEQ asume el opex completo el año 1: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
-              color="emerald"
-              breakdown={veq_inkind}
-            />
-            <PackageCard
               label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
               subtitle="Pagada por VEQ · por hitos"
@@ -79,6 +64,21 @@ export function S15Investment() {
                 detail: t.milestone,
                 mxn: t.mxn,
               }))}
+            />
+            <PackageCard
+              label="Aporte VEQ · año base (12 meses)"
+              amount={fmtMxn(round.veq_inkind_mxn)}
+              subtitle="MXN · todo el opex de Inmobiq"
+              detail="VEQ asume el opex completo el año 1: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
+              color="emerald"
+              breakdown={veq_inkind}
+            />
+            <PackageCard
+              label="Efectivo a Inmobiq"
+              amount={fmtMxn(round.cash_to_operation_mxn)}
+              subtitle="MXN · al banco de Inmobiq"
+              detail="Apertura de 14 ciudades nuevas + ramp de curadores antes de que la ciudad genere revenue."
+              color="accent"
             />
           </div>
         </FadeItem>
