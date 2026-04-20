@@ -58,14 +58,14 @@ export function S15Investment() {
                 multiple={roi.year_3.veq_multiple}
                 mxn={roi.year_3.veq_return_mxn}
                 usd={roi.year_3.veq_return_usd}
-                detail={`ARR $27.75M MXN · múltiplo 8× SaaS LatAm`}
+                detail={`ARR $107.3M MXN · múltiplo 8× SaaS LatAm`}
               />
               <ReturnCard
                 horizon="Año 5"
                 multiple={roi.year_5.veq_multiple}
                 mxn={roi.year_5.veq_return_mxn}
                 usd={roi.year_5.veq_return_usd}
-                detail="ARR $55.5M MXN · múltiplo 10× · exit / Series A"
+                detail="ARR $220.2M MXN · múltiplo 8× · exit / Series B"
                 featured
               />
             </div>
