@@ -8,36 +8,37 @@ type City = {
   name: string;
   tam: number;
   wave: Wave;
+  m1: number;
+  m3: number;
   m6: number;
   m12: number;
   m18: number;
-  m24: number;
 };
 
 const cities: City[] = [
-  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m6: 80,  m12: 280, m18: 620,  m24: 1_100 },
-  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m6: 40,  m12: 120, m18: 280,  m24: 520   },
-  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m6: 40,  m12: 110, m18: 260,  m24: 480   },
-  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m6: 0,   m12: 70,  m18: 190,  m24: 340   },
-  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m6: 200, m12: 380, m18: 520,  m24: 680   },
-  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m6: 30,  m12: 90,  m18: 200,  m24: 360   },
-  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m6: 0,   m12: 60,  m18: 160,  m24: 290   },
-  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m6: 0,   m12: 55,  m18: 140,  m24: 250   },
-  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m6: 0,   m12: 0,   m18: 45,   m24: 130   },
-  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m6: 0,   m12: 0,   m18: 40,   m24: 110   },
-  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m6: 0,   m12: 0,   m18: 35,   m24: 90    },
-  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m6: 0,   m12: 0,   m18: 35,   m24: 90    },
-  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m6: 0,   m12: 0,   m18: 30,   m24: 80    },
-  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m6: 0,   m12: 0,   m18: 25,   m24: 70    },
-  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m6: 0,   m12: 0,   m18: 25,   m24: 70    },
+  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m1: 0,  m3: 20,  m6: 80,  m12: 280, m18: 620  },
+  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 120, m18: 280  },
+  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 110, m18: 260  },
+  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 70,  m18: 190  },
+  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m1: 30, m3: 80,  m6: 200, m12: 380, m18: 520  },
+  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 30,  m12: 90,  m18: 200  },
+  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 60,  m18: 160  },
+  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 55,  m18: 140  },
+  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 45   },
+  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 40   },
+  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 35   },
+  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 35   },
+  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 30   },
+  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 25   },
+  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 25   },
 ];
 
 const totals = cities.reduce(
-  (a, c) => ({ tam: a.tam + c.tam, m6: a.m6 + c.m6, m12: a.m12 + c.m12, m18: a.m18 + c.m18, m24: a.m24 + c.m24 }),
-  { tam: 0, m6: 0, m12: 0, m18: 0, m24: 0 }
+  (a, c) => ({ tam: a.tam + c.tam, m1: a.m1 + c.m1, m3: a.m3 + c.m3, m6: a.m6 + c.m6, m12: a.m12 + c.m12, m18: a.m18 + c.m18 }),
+  { tam: 0, m1: 0, m3: 0, m6: 0, m12: 0, m18: 0 }
 );
 
-const penetration24 = (totals.m24 / totals.tam) * 100;
+const penetration18 = (totals.m18 / totals.tam) * 100;
 
 const fmt = (n: number) => n.toLocaleString("es-MX");
 const cell = (n: number) => (n > 0 ? fmt(n) : <span className="text-muted-light/40">—</span>);
@@ -74,7 +75,7 @@ export function S08Cities() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                15 ciudades. <em className="italic text-accent">Un plan</em> de 12 meses.
+                15 ciudades. <em className="italic text-accent">Un plan</em> de 18 meses.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 TAM total 63.6K usuarios potenciales. Tijuana live desde el día uno — las 14 ciudades
@@ -85,9 +86,9 @@ export function S08Cities() {
             <div className="flex gap-5 sm:gap-7">
               <Kpi label="TAM total" value={fmt(totals.tam)} sub="brokers e inmobiliarias · 15 ciudades" />
               <div className="w-px bg-card-border" />
-              <Kpi label="Mes 24" value={fmt(totals.m24)} sub="users activos" accent />
+              <Kpi label="Mes 18" value={fmt(totals.m18)} sub="users activos" accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="Penetración" value={`${penetration24.toFixed(1)}%`} sub="del TAM" accent />
+              <Kpi label="Penetración" value={`${penetration18.toFixed(1)}%`} sub="del TAM" accent />
             </div>
           </div>
         </FadeItem>
@@ -115,10 +116,11 @@ export function S08Cities() {
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">
                     TAM<span className="block text-[8px] normal-case tracking-normal font-normal text-muted/60">brokers potenciales</span>
                   </th>
+                  <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 1</th>
+                  <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 3</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 6</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 12</th>
                   <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 18</th>
-                  <th className="px-3 py-3 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes 24</th>
                   <th className="px-3 py-3 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Ola</th>
                 </tr>
               </thead>
@@ -133,10 +135,11 @@ export function S08Cities() {
                       <td className="px-3 py-2.5 text-xs font-mono tabular-nums text-muted">{String(c.rank).padStart(2, "0")}</td>
                       <td className="px-3 py-2.5 text-sm font-semibold text-foreground">{c.name}</td>
                       <td className="px-3 py-2.5 text-right text-xs tabular-nums text-muted">{fmt(c.tam)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m1)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m3)}</td>
                       <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m6)}</td>
                       <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m12)}</td>
-                      <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{cell(c.m18)}</td>
-                      <td className="px-3 py-2.5 text-right text-sm tabular-nums font-semibold text-accent">{cell(c.m24)}</td>
+                      <td className="px-3 py-2.5 text-right text-sm tabular-nums font-semibold text-accent">{cell(c.m18)}</td>
                       <td className="px-3 py-2.5"><WaveChip wave={c.wave} /></td>
                     </tr>
                   );
@@ -145,12 +148,13 @@ export function S08Cities() {
                   <td className="px-3 py-3.5 text-xs font-mono tabular-nums">—</td>
                   <td className="px-3 py-3.5 text-sm font-bold uppercase tracking-widest">Total captura</td>
                   <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums text-muted-light">{fmt(totals.tam)}</td>
+                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m1)}</td>
+                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m3)}</td>
                   <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m6)}</td>
                   <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m12)}</td>
-                  <td className="px-3 py-3.5 text-right text-sm font-bold tabular-nums">{fmt(totals.m18)}</td>
-                  <td className="px-3 py-3.5 text-right text-base font-bold tabular-nums text-gradient-accent">{fmt(totals.m24)}</td>
+                  <td className="px-3 py-3.5 text-right text-base font-bold tabular-nums text-gradient-accent">{fmt(totals.m18)}</td>
                   <td className="px-3 py-3.5">
-                    <span className="text-[10px] uppercase tracking-widest text-accent-light font-semibold">{penetration24.toFixed(1)}% TAM</span>
+                    <span className="text-[10px] uppercase tracking-widest text-accent-light font-semibold">{penetration18.toFixed(1)}% TAM</span>
                   </td>
                 </tr>
               </tbody>
