@@ -178,12 +178,12 @@ export const pricing = [
 
 export const unit_economics = {
   avg_ticket_mxn: 799, // weighted: $499 × 0.7 + $1,499 × 0.3
-  cac_mxn: 2_000,
-  cac_usd: 108,
+  cac_mxn: 2_500,
+  cac_usd: 147,
   ltv_retention_months: 18,
   ltv_mxn: 14_382,
-  ltv_cac_ratio: 7,
-  payback_months: 2.5,
+  ltv_cac_ratio: 5.7,
+  payback_months: 3.1,
 };
 
 // Proyección usuarios + revenue (MXN)
@@ -211,9 +211,9 @@ export const market = {
   },
   som: {
     label: "SOM — Penetración objetivo mes 18",
-    users: 4_645,
-    revenue_potential_mxn: 44_500_000,
-    detail: "7.3% del TAM · 4,645 usuarios pagos × $799 avg (70% Pro / 30% Empresarial) = $3.7M MXN/mes MRR",
+    users: 5_545,
+    revenue_potential_mxn: 53_200_000,
+    detail: "8.7% del TAM · 5,545 usuarios pagos × $799 avg (70% Pro / 30% Empresarial) = $4.4M MXN/mes MRR",
   },
 };
 

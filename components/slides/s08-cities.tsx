@@ -16,21 +16,21 @@ type City = {
 };
 
 const cities: City[] = [
-  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m1: 0,  m3: 20,  m6: 80,  m12: 280, m18: 1_300 },
-  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 120, m18: 480   },
-  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 40,  m12: 110, m18: 420   },
-  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 70,  m18: 280   },
-  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m1: 30, m3: 80,  m6: 200, m12: 380, m18: 920   },
-  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m1: 0,  m3: 10,  m6: 30,  m12: 90,  m18: 300   },
-  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 60,  m18: 240   },
-  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 55,  m18: 200   },
-  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 100   },
-  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 90    },
-  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 70    },
-  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 70    },
-  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 65    },
-  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 55    },
-  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 55    },
+  { rank: 1,  name: "CDMX + Zona Metropolitana", tam: 22_400, wave: "mes3",  m1: 0,  m3: 80,  m6: 250, m12: 550, m18: 1_550 },
+  { rank: 2,  name: "Monterrey",                  tam: 8_000,  wave: "mes3",  m1: 0,  m3: 40,  m6: 120, m12: 250, m18: 560   },
+  { rank: 3,  name: "Guadalajara",                tam: 7_200,  wave: "mes3",  m1: 0,  m3: 35,  m6: 110, m12: 220, m18: 490   },
+  { rank: 4,  name: "Puebla",                     tam: 3_200,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 100, m18: 310   },
+  { rank: 5,  name: "Tijuana",                    tam: 3_200,  wave: "live",  m1: 60, m3: 180, m6: 380, m12: 600, m18: 1_050 },
+  { rank: 6,  name: "Cancún + Riviera Maya",      tam: 3_200,  wave: "mes3",  m1: 0,  m3: 25,  m6: 80,  m12: 160, m18: 340   },
+  { rank: 7,  name: "Querétaro",                  tam: 2_800,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 90,  m18: 275   },
+  { rank: 8,  name: "Mérida",                     tam: 2_400,  wave: "mes6",  m1: 0,  m3: 0,   m6: 0,   m12: 80,  m18: 235   },
+  { rank: 9,  name: "León",                       tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 135   },
+  { rank: 10, name: "Toluca",                     tam: 2_000,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 125   },
+  { rank: 11, name: "Ciudad Juárez",              tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 105   },
+  { rank: 12, name: "Playa del Carmen",           tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 105   },
+  { rank: 13, name: "San Luis Potosí",            tam: 1_600,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 95    },
+  { rank: 14, name: "Los Cabos",                  tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 85    },
+  { rank: 15, name: "Aguascalientes",             tam: 1_200,  wave: "mes12", m1: 0,  m3: 0,   m6: 0,   m12: 0,   m18: 85    },
 ];
 
 const totals = cities.reduce(
@@ -88,9 +88,9 @@ export function S08Cities() {
               <div className="w-px bg-card-border" />
               <Kpi label="Users mes 18" value={fmt(totals.m18)} sub={`${penetration18.toFixed(1)}% del TAM`} accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="MRR mes 18" value="$3.7M MXN" sub="4,645 pagos · avg $799/mes" accent />
+              <Kpi label="MRR mes 18" value="$4.4M MXN" sub="5,545 pagos · avg $799/mes" accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="ARR mes 18" value="$44.5M MXN" sub="≈ $2.6M USD run rate" />
+              <Kpi label="ARR mes 18" value="$53.2M MXN" sub="≈ $2.9M USD run rate" />
             </div>
           </div>
         </FadeItem>
