@@ -136,8 +136,7 @@ export const pricing = [
     price_label: "Gratis",
     target: "Funnel inicial · probadita del producto",
     features: [
-      "3 valuaciones Brújula / mes",
-      "3 exports / mes",
+      "3 valuaciones Brújula · export PDF / mes",
       "Vista parcial del dashboard",
       "Comparador limitado (2 zonas)",
     ],
@@ -149,8 +148,7 @@ export const pricing = [
     target: "Broker profesional independiente",
     featured: true,
     features: [
-      "75 valuaciones Brújula / mes",
-      "Exports ilimitados (PDF/Excel)",
+      "75 valuaciones Brújula · export PDF/Excel / mes",
       "Data demográfica INEGI cruzada",
       "Alertas de precio por zona",
       "Análisis de riesgo completo",
@@ -162,7 +160,7 @@ export const pricing = [
     price_label: "$1,499 MXN/mes",
     target: "Inmobiliarias · 5-20 agentes",
     features: [
-      "1,000 créditos / mes",
+      "1,000 créditos Brújula · export PDF/Excel / mes",
       "Hasta 5 usuarios simultáneos",
       "API de acceso a data",
       "Reportes automatizados semanales",
