@@ -12,7 +12,6 @@ import {
 
 const fmtMxn = (n: number) => `$${(n / 1_000_000).toFixed(2)}M`;
 const fmtK = (n: number) => `$${Math.round(n / 1_000).toLocaleString("es-MX")}K`;
-const fmtFull = (n: number) => `$${n.toLocaleString("es-MX")}`;
 
 export function S15Investment() {
   return (
@@ -37,7 +36,7 @@ export function S15Investment() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              <em className="italic text-gradient-accent">No es solo capital.</em> VEQ co-opera Inmobiq.
+              <em className="italic text-gradient-accent">No es solo capital.</em> VEQ opera junto a Inmobiq.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
               $4.17M MXN a la operación + $1.8M en equipo aportado por VEQ durante el primer año
@@ -62,7 +61,7 @@ export function S15Investment() {
               label="Aporte VEQ · año base (12 meses)"
               amount={fmtMxn(round.veq_inkind_mxn)}
               subtitle="MXN · valor equivalente en especie"
-              detail="2 desarrolladores + admin + $40K/mes publicidad + marketing. Cobertura año 1 como colchón — Inmobiq es autosostenible desde mes 3, los 12 son prevención."
+              detail="2 desarrolladores + admin + $40K/mes en publicidad + equipo de marketing. Cobertura preventiva — Inmobiq se autosostiene desde mes 3."
               color="emerald"
               breakdown={veq_inkind}
             />
@@ -305,7 +304,7 @@ function ReturnCard({
       </div>
       <div className="relative mt-4">
         <div className="text-2xl font-semibold text-foreground tabular-nums">
-          {fmtFull(Math.round(mxn / 100_000) * 100_000).replace(",000,000", "M")}
+          ${(mxn / 1_000_000).toFixed(1)}M MXN
         </div>
         <div className="text-xs text-muted mt-0.5 tabular-nums">
           Retorno para VEQ · equivale a ${(usd / 1_000_000).toFixed(1)}M USD
