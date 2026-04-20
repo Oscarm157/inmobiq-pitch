@@ -118,8 +118,10 @@ export const monthly_cash_flow = [
   { month: 6,  cities: 8,  curators: 12, opex_veq_mxn: opexVeqMonthly, burn_mxn: 240_000, mrr_mxn: 791_010,   net_mxn: 551_010,   note: "Punto de equilibrio · ola 2 abriendo" },
   { month: 9,  cities: 8,  curators: 12, opex_veq_mxn: opexVeqMonthly, burn_mxn: 240_000, mrr_mxn: 1_358_300, net_mxn: 1_118_300, note: "Rentable · 8 ciudades estabilizadas" },
   { month: 12, cities: 15, curators: 22, opex_veq_mxn: opexVeqMonthly, burn_mxn: 440_000, mrr_mxn: 1_917_600, net_mxn: 1_477_600, note: "Ola 3 abriendo · 15 ciudades activas" },
-  { month: 15, cities: 15, curators: 22, opex_veq_mxn: 0,              burn_mxn: 440_000, mrr_mxn: 3_100_000, net_mxn: 2_660_000, note: "Año 2 · Inmobiq asume opex" },
-  { month: 18, cities: 15, curators: 22, opex_veq_mxn: 0,              burn_mxn: 440_000, mrr_mxn: 4_298_620, net_mxn: 3_858_620, note: "Autosostenible · plan completo" },
+  { month: 15, cities: 15, curators: 22, opex_veq_mxn: 0, burn_mxn: 440_000, mrr_mxn: 3_100_000, net_mxn: 2_660_000, note: "Año 2 inicia · Inmobiq asume opex" },
+  { month: 16, cities: 15, curators: 22, opex_veq_mxn: 0, burn_mxn: 440_000, mrr_mxn: 3_500_000, net_mxn: 3_060_000, note: "Crecimiento sostenido en 15 ciudades" },
+  { month: 17, cities: 15, curators: 22, opex_veq_mxn: 0, burn_mxn: 440_000, mrr_mxn: 3_900_000, net_mxn: 3_460_000, note: "Optimización · LTV creciendo" },
+  { month: 18, cities: 15, curators: 22, opex_veq_mxn: 0, burn_mxn: 440_000, mrr_mxn: 4_298_620, net_mxn: 3_858_620, note: "Plan completo · autosostenible" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
