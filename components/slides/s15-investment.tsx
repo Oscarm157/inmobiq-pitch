@@ -94,67 +94,64 @@ export function S15Investment() {
           </div>
         </FadeItem>
 
-        {/* Ingresos vs gasto mensual — el dato que vende */}
+        {/* Utilidad mensual de Inmobiq */}
         <FadeItem>
           <div className="rounded-2xl bg-card p-5 sm:p-6">
-            <div className="flex items-center justify-between gap-4 mb-4">
-              <div>
-                <div className="text-xs uppercase tracking-[0.22em] font-semibold text-accent mb-1">
-                  La razón por la que el efectivo es modesto
-                </div>
-                <div className="text-base font-semibold text-foreground">
-                  El negocio se autosostiene desde el mes 3 — la ronda solo financia las aperturas y el colchón.
-                </div>
+            <div className="mb-4">
+              <div className="text-xs uppercase tracking-[0.22em] font-semibold text-accent mb-1.5">
+                Inmobiq genera utilidad desde el mes 3
               </div>
-              <span className="text-[11px] uppercase tracking-[0.18em] text-muted italic max-w-[180px] text-right">
-                Los ingresos cubren el gasto casi de inmediato
-              </span>
+              <div className="text-base text-foreground/90 leading-snug max-w-3xl">
+                VEQ cubre todo el opex el año base. El único gasto de Inmobiq son los curadores —
+                que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.
+              </div>
             </div>
 
             <div className="overflow-hidden rounded-xl border border-card-border/50">
               <table className="w-full">
                 <thead>
                   <tr className="bg-surface-muted/40">
-                    <th className="px-3 py-2.5 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
-                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
-                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores Inmobiq</th>
-                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
-                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">Sobrante</th>
-                    <th className="px-3 py-2.5 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Estado</th>
+                    <th className="px-3 py-3 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades activas</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Costo curadores</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
+                    <th className="px-3 py-3 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">Utilidad Inmobiq</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {monthly_cash_flow.map((row, i) => {
-                    const isBE = row.month === 6;
-                    const rowBg = isBE
-                      ? "bg-emerald-500/8 border-l-2 border-emerald-500"
-                      : i % 2 === 0
-                      ? "bg-transparent"
-                      : "bg-surface-muted/20";
-                    return (
-                      <tr key={`${row.month}`} className={rowBg}>
-                        <td className="px-3 py-2.5 text-sm font-mono tabular-nums text-foreground/90">M{row.month}</td>
-                        <td className="px-3 py-2.5 text-right text-sm tabular-nums text-muted">{row.cities}</td>
-                        <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/80">{fmtK(row.burn_mxn)}</td>
-                        <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{fmtK(row.mrr_mxn)}</td>
-                        <td className="px-3 py-2.5 text-right text-sm font-semibold tabular-nums text-accent">
-                          +{fmtK(row.net_mxn)}
-                        </td>
-                        <td className="px-3 py-2.5 text-xs text-muted leading-snug">{row.note}</td>
-                      </tr>
-                    );
-                  })}
+                  {monthly_cash_flow.map((row, i) => (
+                    <tr
+                      key={`${row.month}`}
+                      className={i % 2 === 0 ? "bg-transparent" : "bg-surface-muted/20"}
+                    >
+                      <td className="px-3 py-3 text-sm font-mono tabular-nums text-foreground/90">
+                        M{row.month}
+                      </td>
+                      <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
+                      <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/80">
+                        {fmtK(row.burn_mxn)}
+                      </td>
+                      <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/90">
+                        {fmtK(row.mrr_mxn)}
+                      </td>
+                      <td className="px-3 py-3 text-right text-base font-semibold tabular-nums text-accent">
+                        +{fmtK(row.net_mxn)}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-5 text-xs text-muted">
+            <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-sm bg-emerald-500" />
-                <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
+                <span className="w-2 h-2 rounded-full bg-accent" />
+                <span className="uppercase tracking-widest font-semibold text-accent">
+                  Año 1 utilidad acumulada ~$5.9M MXN
+                </span>
               </span>
-              <span className="ml-auto italic text-muted/70">
-                Único gasto de Inmobiq = curadores ($40K/mes por ciudad activa). Todo lo demás lo paga VEQ durante el año base.
+              <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
+                Año 2 Inmobiq asume el opex completo desde su propio cash flow. VEQ ya no aporta operativamente.
               </span>
             </div>
           </div>
