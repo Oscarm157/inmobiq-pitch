@@ -149,7 +149,7 @@ export const pricing = [
     target: "Broker profesional independiente",
     featured: true,
     features: [
-      "Brújula ilimitado",
+      "75 valuaciones Brújula / mes",
       "Exports ilimitados (PDF/Excel)",
       "Data demográfica INEGI cruzada",
       "Alertas de precio por zona",
@@ -162,7 +162,7 @@ export const pricing = [
     price_label: "$1,499 MXN/mes",
     target: "Inmobiliarias · 5-20 agentes",
     features: [
-      "Todo de Pro",
+      "1,000 créditos / mes",
       "Hasta 5 usuarios simultáneos",
       "API de acceso a data",
       "Reportes automatizados semanales",
