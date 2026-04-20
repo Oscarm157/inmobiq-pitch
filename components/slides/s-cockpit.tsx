@@ -56,8 +56,8 @@ function BasicView() {
   return (
     <div className="bg-[#0e0e16] px-5 py-4 flex flex-col gap-3 relative border-r border-card-border">
       <div className="flex items-center gap-2">
-        <div className="w-1.5 h-1.5 rounded-full bg-muted/30" />
-        <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted/50">Sin Inmobiq</span>
+        <div className="w-1.5 h-1.5 rounded-full bg-muted/60" />
+        <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">Sin Inmobiq</span>
       </div>
 
       <div className="relative rounded-xl overflow-hidden aspect-video">
@@ -80,8 +80,8 @@ function BasicView() {
           "¿Cuántos listings activos?",
         ].map((q) => (
           <div key={q} className="flex items-center gap-2">
-            <span className="text-base font-bold text-muted/50 leading-none">?</span>
-            <span className="text-[10px] text-muted/70 italic">{q}</span>
+            <span className="text-base font-bold text-muted leading-none">?</span>
+            <span className="text-[10px] text-foreground/70 italic">{q}</span>
           </div>
         ))}
       </div>
@@ -151,23 +151,37 @@ function CockpitView() {
           <div className="text-[8px] text-accent font-bold mt-1">78% · Alta</div>
         </div>
 
+        {/* NSE — 5 dot scale */}
         <div className="bg-card/50 border border-card-border/50 rounded-lg p-2 backdrop-blur-sm">
-          <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1">NSE · INEGI</div>
-          <div className="text-[10px] font-semibold text-foreground">Medio-Alto</div>
-          <div className="text-[8px] text-muted mt-0.5">12,400 hog.</div>
+          <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1.5">NSE · INEGI</div>
+          <div className="flex gap-0.5 mb-1">
+            {["Bajo", "M-Bajo", "Medio", "M-Alto", "Alto"].map((lvl, i) => (
+              <div key={lvl} className={`flex-1 h-1.5 rounded-sm ${i <= 3 ? "bg-accent" : "bg-card-border"}`} />
+            ))}
+          </div>
+          <div className="text-[8px] text-accent font-semibold">Medio-Alto</div>
         </div>
 
         {/* Row 2 */}
+        {/* Apreciación — barra verde */}
         <div className="bg-card/50 border border-card-border/50 rounded-lg p-2 backdrop-blur-sm">
           <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1">Apreciación</div>
           <div className="text-sm font-bold text-foreground tabular-nums">+12.4%</div>
-          <div className="text-[8px] text-muted mt-0.5">anual zona</div>
+          <div className="h-1 rounded-full bg-card-border overflow-hidden mt-1">
+            <div className="h-full bg-emerald-400 rounded-full" style={{ width: "62%" }} />
+          </div>
+          <div className="text-[7px] text-muted mt-0.5">anual zona</div>
         </div>
 
+        {/* Liquidez — 10 cuadritos */}
         <div className="bg-card/50 border border-card-border/50 rounded-lg p-2 backdrop-blur-sm">
-          <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1">Liquidez</div>
-          <div className="text-sm font-bold text-foreground tabular-nums">6.2/10</div>
-          <div className="text-[8px] text-accent mt-0.5">Media-alta</div>
+          <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1.5">Liquidez</div>
+          <div className="flex gap-0.5 flex-wrap mb-1">
+            {Array.from({ length: 10 }).map((_, i) => (
+              <div key={i} className={`w-2 h-2 rounded-sm ${i < 6 ? "bg-accent" : "bg-card-border"}`} />
+            ))}
+          </div>
+          <div className="text-[8px] text-accent font-semibold">6.2 / 10</div>
         </div>
 
         <div className="bg-card/50 border border-card-border/50 rounded-lg p-2 backdrop-blur-sm">
