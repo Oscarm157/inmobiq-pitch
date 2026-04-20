@@ -11,7 +11,7 @@ import {
 } from "@/lib/data";
 
 const fmtMxn = (n: number) => `$${(n / 1_000_000).toFixed(2)}M`;
-const fmtK = (n: number) => `$${Math.round(n / 1_000)}K`;
+const fmtK = (n: number) => `$${Math.round(n / 1_000).toLocaleString("es-MX")}K`;
 const fmtFull = (n: number) => `$${n.toLocaleString("es-MX")}`;
 
 export function S15Investment() {
