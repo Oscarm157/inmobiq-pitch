@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { slideVeqCategories } from "@/lib/data";
+import { slideVeqCategories, glossary } from "@/lib/data";
 
 interface SlidesDeckProps {
   children: React.ReactNode[];
@@ -14,6 +14,7 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [, setIsAnimating] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [glossaryOpen, setGlossaryOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStart = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
@@ -180,6 +181,14 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
           </button>
         </div>
         <button
+          onClick={() => setGlossaryOpen((v) => !v)}
+          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-concrete hover:text-foreground hover:bg-card transition-all"
+          title="Glosario de términos"
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: 16 }}>menu_book</span>
+          <span className="text-xs font-medium hidden md:inline">Glosario</span>
+        </button>
+        <button
           onClick={toggleFullscreen}
           className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-concrete hover:text-foreground hover:bg-card transition-all"
           title="Fullscreen (F)"
@@ -206,6 +215,34 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
           ))}
         </div>
       )}
+
+      {/* Glossary panel */}
+      <div
+        className={`absolute top-0 right-0 h-full z-50 w-80 bg-[#111118] border-l border-card-border flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          glossaryOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between px-5 py-4 border-b border-card-border">
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-accent" style={{ fontSize: 18 }}>menu_book</span>
+            <span className="text-sm font-semibold text-foreground uppercase tracking-[0.12em]">Glosario</span>
+          </div>
+          <button
+            onClick={() => setGlossaryOpen(false)}
+            className="w-8 h-8 flex items-center justify-center rounded-lg text-muted hover:text-foreground hover:bg-card transition-all"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: 18 }}>close</span>
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto px-5 py-4 flex flex-col gap-4">
+          {glossary.map((item) => (
+            <div key={item.term} className="flex flex-col gap-1">
+              <span className="text-xs font-semibold text-accent uppercase tracking-[0.14em]">{item.term}</span>
+              <span className="text-xs text-muted leading-relaxed">{item.def}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Bottom progress */}
       <div
