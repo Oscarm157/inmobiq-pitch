@@ -109,6 +109,23 @@ function CockpitView() {
         <span className="text-muted/60">Datos: en vivo</span>
       </div>
 
+      {/* Price comparison bar */}
+      <div className="flex items-center gap-3 bg-card/40 border border-card-border/50 rounded-xl px-4 py-2.5 relative z-20 backdrop-blur-sm">
+        <div className="flex flex-col">
+          <span className="text-[7px] uppercase tracking-widest text-muted font-semibold">Precio anuncio</span>
+          <span className="text-base font-bold text-foreground tabular-nums">$1,850,000 MXN</span>
+        </div>
+        <div className="flex-1 flex items-center gap-2 px-2">
+          <div className="flex-1 h-px bg-card-border" />
+          <span className="text-[8px] text-warning font-semibold uppercase tracking-wide">-3.8% bajo mercado</span>
+          <div className="flex-1 h-px bg-card-border" />
+        </div>
+        <div className="flex flex-col items-end">
+          <span className="text-[7px] uppercase tracking-widest text-accent font-semibold">Brújula AI</span>
+          <span className="text-base font-bold text-emerald-300 tabular-nums">$1,921,000 MXN</span>
+        </div>
+      </div>
+
       {/* Property image with HUD */}
       <div className="relative rounded-xl overflow-hidden aspect-video z-20">
         <Image src="/house.webp" alt="Propiedad" fill className="object-cover brightness-50" />
@@ -118,13 +135,8 @@ function CockpitView() {
 
         <div className="absolute top-2 left-2.5 text-[7px] font-mono text-accent/70">32.5149° N · 117.0382° W</div>
         <div className="absolute top-2 right-2.5 text-[7px] font-mono text-accent/70">ID: TJ-ZR-4412</div>
-        <div className="absolute bottom-2 left-2.5 text-[7px] font-mono text-muted/40">AGEB 02004·0010·7</div>
-
-        <div className="absolute bottom-2 right-2.5 bg-accent/20 border border-accent/40 rounded-lg px-2.5 py-1.5 backdrop-blur-sm">
-          <div className="text-[7px] uppercase tracking-widest text-accent font-semibold">Brújula AI</div>
-          <div className="text-sm font-bold text-foreground tabular-nums leading-tight">$1.92M</div>
-          <div className="text-[8px] text-emerald-300 font-semibold">+3.8% · precio justo</div>
-        </div>
+        <div className="absolute bottom-2 left-2.5 text-[7px] font-mono text-muted/60">AGEB 02004·0010·7</div>
+        <div className="absolute bottom-2 right-2.5 text-[7px] font-mono text-muted/60">Col. Zona Río · 75 m²</div>
       </div>
 
       {/* KPI grid — 4 cols × 2 rows */}
