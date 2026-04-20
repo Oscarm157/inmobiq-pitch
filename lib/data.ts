@@ -14,118 +14,172 @@ export const brand = {
 };
 
 export const round = {
-  raise_mxn: 9_250_000,
-  raise_usd: 500_000,
-  equity_percent: 25,
-  post_money_mxn: 37_000_000,
-  post_money_usd: 2_000_000,
-  pre_money_mxn: 27_750_000,
-  pre_money_usd: 1_500_000,
-  founder_percent: 60,
-  employee_pool_percent: 15,
-  instrument: "SAFE · Cap $2M USD / $37M MXN",
+  // Package total = cash + founder package + VEQ in-kind services
+  package_total_mxn: 7_370_000,
+  package_total_usd: 398_378,
+
+  // Cash que entra a la cuenta de Inmobiq
+  cash_to_company_mxn: 4_670_000,
+  cash_to_company_usd: 252_432,
+
+  // Founder package (aparte del cash a la empresa)
+  founder_salary_mxn: 540_000, // $45K × 12 meses
+  founder_salary_monthly_mxn: 45_000,
+  founder_salary_months: 12,
+  founder_secondary_mxn: 500_000, // 4 tramos por hitos
+  founder_secondary_tranches: 4,
+
+  // VEQ in-kind (18 meses)
+  veq_inkind_mxn: 2_700_000,
+  veq_inkind_months: 18,
+
+  // Equity
+  equity_percent: 40,
+  founder_percent: 50,
+  employee_pool_percent: 10,
+
+  // Valuación
+  post_money_mxn: 18_425_000,
+  post_money_usd: 996_000,
+  pre_money_mxn: 11_055_000,
+  pre_money_usd: 598_000,
+
+  // Términos
+  instrument: "Equity directo · 40% por $7.37M MXN package",
   runway_months: 18,
-  buffer_months: 6,
+  buffer_months: 0, // ya viene en el cash
 };
 
 export const roi = {
   break_even_month: 6,
   capital_payback_month: 18,
   year_3: {
-    arr_usd: 5_800_000,
-    arr_mxn: 107_300_000,
+    arr_usd: 3_368_000,
+    arr_mxn: 62_300_000,
+    users: 6_500,
+    tam_percent: 10.2,
     multiple_saas: 8,
-    valuation_usd: 46_400_000,
-    valuation_mxn: 858_400_000,
-    veq_return_usd: 11_600_000,
-    veq_return_mxn: 214_600_000,
-    veq_multiple: "23×",
+    valuation_usd: 26_940_000,
+    valuation_mxn: 498_400_000,
+    veq_return_usd: 10_776_000,
+    veq_return_mxn: 199_360_000,
+    veq_multiple: "27×",
   },
   year_5: {
-    arr_usd: 11_900_000,
-    arr_mxn: 220_150_000,
+    arr_usd: 4_146_000,
+    arr_mxn: 76_700_000,
+    users: 8_000,
+    tam_percent: 12.6,
     multiple_saas: 8,
-    valuation_usd: 95_200_000,
-    valuation_mxn: 1_761_200_000,
-    veq_return_usd: 23_800_000,
-    veq_return_mxn: 440_300_000,
-    veq_multiple: "47×",
+    valuation_usd: 33_168_000,
+    valuation_mxn: 613_600_000,
+    veq_return_usd: 13_267_000,
+    veq_return_mxn: 245_440_000,
+    veq_multiple: "33×",
   },
-  irr_annual_percent: 95,
+  irr_annual_percent: 102,
 };
 
-// Uso de fondos — breakdown detallado
+// VEQ in-kind — equipo y recursos aportados
+export const veq_inkind = [
+  { label: "2 desarrolladores full-stack", detail: "$35K MXN/mo c/u · 18m", mxn: 1_260_000 },
+  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mo · 18m", mxn: 450_000 },
+  { label: "Ads pagadas (Meta + Google)", detail: "$40K MXN/mes · 18m", mxn: 720_000 },
+  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · valor equivalente", mxn: 270_000 },
+];
+
+// Founder secondary — tramos atados a hitos
+export const founder_secondary_tranches = [
+  { tranche: 1, mxn: 100_000, milestone: "Closing del deal" },
+  { tranche: 2, mxn: 125_000, milestone: "Mes 3 · break-even operativo a la vista" },
+  { tranche: 3, mxn: 125_000, milestone: "Mes 6 · break-even confirmado" },
+  { tranche: 4, mxn: 150_000, milestone: "Mes 12 · Inmobiq cash-flow positive sostenido 3 meses" },
+];
+
+// Flujo mensual — burn de Inmobiq vs MRR (el pitch clave)
+export const monthly_cash_flow = [
+  { month: 3,  burn_mxn: 230_000, mrr_mxn: 275_655,   net_mxn: 45_655,    note: "Ola 1 abriendo (4 ciudades · curadores pre-revenue)" },
+  { month: 6,  burn_mxn: 190_000, mrr_mxn: 791_010,   net_mxn: 601_010,   note: "Break-even · ola 2 abriendo" },
+  { month: 9,  burn_mxn: 71_000,  mrr_mxn: 1_358_300, net_mxn: 1_287_300, note: "Rentable · todo en revenue" },
+  { month: 12, burn_mxn: 350_000, mrr_mxn: 1_917_600, net_mxn: 1_567_600, note: "Pico · ola 3 abriendo (7 ciudades)" },
+  { month: 15, burn_mxn: 71_000,  mrr_mxn: 3_100_000, net_mxn: 3_029_000, note: "Ola 3 estabilizando" },
+  { month: 18, burn_mxn: 71_000,  mrr_mxn: 4_298_620, net_mxn: 4_227_620, note: "Plan completo · self-funding" },
+];
+
+// Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
 export const use_of_funds = [
   {
-    chapter: "Equipo",
-    percent: 42.8,
-    mxn: 3_960_000,
-    usd: 214_054,
+    chapter: "Apertura 14 ciudades nuevas",
+    percent: 51.0,
+    mxn: 2_380_000,
+    usd: 128_649,
     items: [
-      { label: "4 curadores de data (TJ + 2a ciudad)", detail: "2 TJ + 2 GDL/Cancún · $20K MXN c/u · 18 meses", mxn: 1_440_000 },
-      { label: "CTO / Tech Lead", detail: "Formalizar rol técnico · 18 meses", mxn: 720_000 },
-      { label: "2 devs full-time", detail: "$30K MXN c/u · 18 meses", mxn: 1_080_000 },
-      { label: "Founder (dedicación 100%)", detail: "Salario mínimo vital · 18 meses", mxn: 720_000 },
+      { label: "$170K por ciudad × 14", detail: "Incluye 2 curadores × 3 meses pre-revenue + marketing launch + setup INEGI", mxn: 2_380_000 },
     ],
   },
   {
-    chapter: "Marketing y crecimiento",
-    percent: 17.1,
-    mxn: 1_580_000,
-    usd: 85_405,
+    chapter: "Founder package",
+    percent: 22.3,
+    mxn: 1_040_000,
+    usd: 56_216,
     items: [
-      { label: "Ads digitales (Meta + Google)", detail: "$20K/mes · 18 meses", mxn: 360_000 },
-      { label: "Campañas ad-hoc", detail: "6 campañas · launches y temporadas", mxn: 600_000 },
-      { label: "Brand + video + contenido inicial", detail: "One-off", mxn: 200_000 },
-      { label: "Eventos brokers + AMPI", detail: "6 eventos · presencia ferias", mxn: 240_000 },
-      { label: "SEO + contenido continuo", detail: "Blog, case studies, whitepapers", mxn: 180_000 },
+      { label: "Salario founder (12 meses)", detail: "$45K MXN/mo · contrato laboral", mxn: 540_000 },
+      { label: "Secondary founder", detail: "4 tramos por hitos (closing, mes 3, mes 6, mes 12)", mxn: 500_000 },
     ],
   },
   {
-    chapter: "Expansión 2 ciudades",
-    percent: 3.7,
-    mxn: 340_000,
-    usd: 18_378,
+    chapter: "Marketing extras",
+    percent: 6.4,
+    mxn: 300_000,
+    usd: 16_216,
     items: [
-      { label: "Apertura Guadalajara", detail: "Curadores 3m + launch + setup INEGI", mxn: 170_000 },
-      { label: "Apertura Cancún", detail: "Curadores 3m + launch + setup INEGI", mxn: 170_000 },
+      { label: "Eventos AMPI + ferias", detail: "Aparte de los $40K/mo ads que pone VEQ", mxn: 150_000 },
+      { label: "Brand + video + contenido", detail: "Lanzamiento por ciudad", mxn: 150_000 },
     ],
   },
   {
-    chapter: "Infraestructura y operación",
-    percent: 7.9,
-    mxn: 729_000,
-    usd: 39_405,
+    chapter: "Legal + contador + admin",
+    percent: 6.4,
+    mxn: 300_000,
+    usd: 16_216,
     items: [
-      { label: "Infra cloud", detail: "Supabase Pro + Vercel Pro + Claude API + dominios · 18m", mxn: 45_000 },
-      { label: "Software SaaS", detail: "Figma, Linear, Notion, GitHub · 18m", mxn: 54_000 },
-      { label: "Legal", detail: "Constitución formal + contratos VEQ + marcas", mxn: 180_000 },
-      { label: "Contador fiscal", detail: "$10K/mes · 18m", mxn: 180_000 },
-      { label: "Admin + varios", detail: "Bank fees, papeleo, imprevistos", mxn: 270_000 },
+      { label: "Constitución formal + contratos VEQ", detail: "One-off + marcas", mxn: 150_000 },
+      { label: "Contador fiscal", detail: "$8K/mes · 18m", mxn: 150_000 },
     ],
   },
   {
-    chapter: "Buffer estratégico (6 meses extra)",
-    percent: 28.5,
-    mxn: 2_641_000,
-    usd: 142_757,
+    chapter: "Infraestructura + software",
+    percent: 3.2,
+    mxn: 150_000,
+    usd: 8_108,
     items: [
-      { label: "Runway adicional mes 19-24", detail: "Colchón si revenue ramp-up tarda · reduce riesgo de bridge round", mxn: 2_641_000 },
+      { label: "Cloud + APIs", detail: "Supabase Pro + Vercel Pro + Claude API · 18m", mxn: 90_000 },
+      { label: "Software SaaS", detail: "Linear, Notion, GitHub, Figma · 18m", mxn: 60_000 },
+    ],
+  },
+  {
+    chapter: "Buffer / contingencia",
+    percent: 10.7,
+    mxn: 500_000,
+    usd: 27_027,
+    items: [
+      { label: "Colchón de seguridad", detail: "Para si revenue ramp-up tarda o hay imprevistos", mxn: 500_000 },
     ],
   },
 ];
 
-// Costos operativos mensuales — steady state
+// Costos operativos mensuales — fixed (steady state)
+// VEQ paga aparte sus 2 devs + admin + ads (no entra aquí)
 export const monthly_opex = {
-  infra_mxn: 2_500,
-  curators_mxn: 80_000, // 4 pax
-  tech_team_mxn: 140_000, // CTO + 2 devs + founder
-  marketing_mxn: 20_000,
+  founder_salary_mxn: 45_000,
+  infra_mxn: 8_000,
+  legal_contador_mxn: 15_000,
   software_mxn: 3_000,
-  legal_contador_mxn: 20_000,
-  admin_mxn: 15_000,
-  total_mxn: 280_500,
-  total_usd: 15_162,
+  total_fixed_mxn: 71_000,
+  total_fixed_usd: 3_838,
+  // Variable: $40K/mes por cada ciudad nueva durante 3 meses pre-revenue
+  variable_per_city_opening_mxn: 40_000,
+  variable_per_city_opening_months: 3,
 };
 
 // Pricing
@@ -246,25 +300,49 @@ export const city_opening_cost = {
   payback_months: 3,
 };
 
-// Equipo
+// Equipo — actual + post-inversión (incluyendo VEQ in-kind)
 export const team = [
   {
     name: "Oscar Amayoral",
     role: "Founder · Product, Tech & Go-to-Market",
     bio: "Full-stack. 1 año construyendo Inmobiq end-to-end con equipo técnico subcontratado. Experiencia en marketing digital y desarrollo de producto.",
     highlight: true,
+    source: "founder",
   },
   {
     name: "Equipo técnico actual",
     role: "3 colaboradores de desarrollo",
     bio: "Programadores subcontratados que han apoyado en la construcción del MVP durante el último año.",
     highlight: false,
+    source: "current",
   },
   {
-    name: "Post-inversión",
-    role: "Plan de contratación",
-    bio: "CTO full-time · 4 curadores de data (TJ + 2a ciudad) · 2 devs dedicados · Customer success lead.",
+    name: "2 desarrolladores VEQ",
+    role: "Tech team full-stack · in-kind",
+    bio: "Equipo técnico asignado por Grupo VEQ. Construyen y mantienen la plataforma junto al founder. Reemplaza la necesidad de un CTO formal.",
     highlight: false,
+    source: "veq",
+  },
+  {
+    name: "Admin/operaciones VEQ",
+    role: "Cobros, contratos, RH ligero · in-kind",
+    bio: "Perfil operativo asignado por VEQ. Libera al founder para focalizar en producto y go-to-market.",
+    highlight: false,
+    source: "veq",
+  },
+  {
+    name: "Equipo de marketing VEQ",
+    role: "Estrategia + creatividad + $40K/mo ads · in-kind",
+    bio: "Acceso al equipo de marketing de Grupo VEQ + presupuesto mensual para campañas pagadas (Meta + Google).",
+    highlight: false,
+    source: "veq",
+  },
+  {
+    name: "Curadores por ciudad",
+    role: "2 por ciudad nueva · pre-revenue",
+    bio: "Curan data de mercado local. Pagados por Inmobiq durante 3 meses ramp; después se autosostienen con revenue de la ciudad.",
+    highlight: false,
+    source: "inmobiq",
   },
 ];
 
@@ -340,8 +418,8 @@ export const glossary = [
   { term: "LTV", def: "Lifetime Value — ingresos totales que genera un cliente durante su vida con el producto." },
   { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
   { term: "SAFE", def: "Simple Agreement for Future Equity — instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
-  { term: "IRR", def: "Tasa Interna de Retorno — rendimiento anual compuesto de la inversión. 72% proyectado." },
-  { term: "Break-even", def: "Punto de equilibrio — mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 9." },
+  { term: "IRR", def: "Tasa Interna de Retorno — rendimiento anual compuesto de la inversión. ~102% proyectado." },
+  { term: "Break-even", def: "Punto de equilibrio — mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 6." },
   { term: "Runway", def: "Tiempo que dura el dinero de la ronda antes de necesitar más capital o ser rentables." },
   { term: "SaaS", def: "Software as a Service — modelo de negocio de suscripción mensual/anual en la nube." },
   { term: "B2B", def: "Business to Business — vendemos a empresas (inmobiliarias, brokers profesionales), no al consumidor final." },
@@ -350,7 +428,7 @@ export const glossary = [
   { term: "SOM", def: "Serviceable Obtainable Market — porción realista del SAM capturable en el horizonte del plan (4K usuarios)." },
   { term: "Múltiplo ARR", def: "Valuación de empresas SaaS = ARR × múltiplo (8–10× en LatAm seed). Estándar de la industria para calcular retorno." },
   { term: "Churn", def: "Tasa de cancelación — porcentaje de usuarios que dejan de pagar cada mes. Queremos <5% mensual." },
-  { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de $22.9M MXN." },
+  { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$60M MXN." },
   { term: "Tiers", def: "Niveles de precio del producto: Explorador (gratis), Pro ($499 MXN/mes), Empresarial ($1,499 MXN/mes)." },
   { term: "INEGI", def: "Instituto Nacional de Estadística y Geografía — fuente oficial de datos demográficos del Censo 2020 (500+ variables por zona)." },
   { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios — principal agremiación de brokers e inmobiliarias en México." },
@@ -375,7 +453,8 @@ export const slideVeqCategories: string[][] = [
   ["Escalabilidad"],                                     // S10 Traction
   ["Retorno (ROI)", "Punto de equilibrio"],              // S11 Financials
   ["Expansión por ciudad", "Costos operativos"],         // S12 Expansion
-  ["Riesgos"],                                           // S13 Team & Risks
-  ["Estructura de inversión", "Retorno (ROI)"],          // S14 Investment
-  [],                                                    // S15 CTA
+  ["Producto / Tecnología", "Mercado objetivo"],         // S13 Havi
+  ["Riesgos"],                                           // S14 Team & Risks
+  ["Estructura de inversión", "Retorno (ROI)"],          // S15 Investment
+  [],                                                    // S16 CTA
 ];
