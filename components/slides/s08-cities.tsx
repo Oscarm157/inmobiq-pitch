@@ -88,9 +88,9 @@ export function S08Cities() {
               <div className="w-px bg-card-border" />
               <Kpi label="Users mes 18" value={fmt(totals.m18)} sub={`${penetration18.toFixed(1)}% del TAM`} accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="MRR mes 18" value="$4.2M MXN" sub="4,645 pagos · avg $899/mes" accent />
+              <Kpi label="MRR mes 18" value="$3.7M MXN" sub="4,645 pagos · avg $799/mes" accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="ARR mes 18" value="$50.1M MXN" sub="≈ $2.9M USD run rate" />
+              <Kpi label="ARR mes 18" value="$44.5M MXN" sub="≈ $2.6M USD run rate" />
             </div>
           </div>
         </FadeItem>
