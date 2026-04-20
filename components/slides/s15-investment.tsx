@@ -39,10 +39,10 @@ export function S15Investment() {
               <em className="italic text-gradient-accent">No es solo capital.</em> VEQ opera junto a Inmobiq.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              $4.17M MXN a la operación + $1.8M en equipo aportado por VEQ durante el primer año
-              (desarrolladores, admin, marketing) + $500K de compensación al fundador —
-              paquete total $6.47M MXN por <span className="text-foreground font-semibold">49% de participación</span>.
-              VEQ aporta solo el año base; desde mes 12 Inmobiq se autosostiene.
+              VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> el año base
+              (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores —
+              que se cubren con el revenue de cada ciudad. Paquete total $5.38M MXN por
+              <span className="text-foreground font-semibold"> 49% de participación</span>.
             </p>
           </div>
         </FadeItem>
@@ -51,25 +51,25 @@ export function S15Investment() {
         <FadeItem>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <PackageCard
-              label="Efectivo a la operación"
+              label="Efectivo a Inmobiq"
               amount={fmtMxn(round.cash_to_operation_mxn)}
-              subtitle="MXN · entra al banco de Inmobiq"
-              detail="Apertura de 14 ciudades + salario fundador + marketing + legal + infraestructura + colchón"
+              subtitle="MXN · al banco de Inmobiq"
+              detail="Apertura de 14 ciudades nuevas + ramp de curadores antes de que la ciudad genere revenue."
               color="accent"
             />
             <PackageCard
               label="Aporte VEQ · año base (12 meses)"
               amount={fmtMxn(round.veq_inkind_mxn)}
-              subtitle="MXN · valor equivalente en especie"
-              detail="2 desarrolladores + admin + $40K/mes en publicidad + equipo de marketing. Cobertura preventiva — Inmobiq se autosostiene desde mes 3."
+              subtitle="MXN · todo el opex de Inmobiq"
+              detail="VEQ asume el opex completo el año 1: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
               color="emerald"
               breakdown={veq_inkind}
             />
             <PackageCard
               label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
-              subtitle="Pago personal · por hitos"
-              detail="Compensación al fundador por el año de bootstrap. 4 tramos atados a hitos operativos."
+              subtitle="Pagada por VEQ · por hitos"
+              detail="Diferida en 3 tramos atados a hitos operativos. Reducida del estándar para hacer el deal más atractivo a VEQ."
               color="amber"
               breakdown={founder_secondary_tranches.map((t) => ({
                 label: `Tramo ${t.tranche}`,
@@ -112,7 +112,7 @@ export function S15Investment() {
                   <tr className="bg-surface-muted/40">
                     <th className="px-3 py-2.5 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
                     <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ciudades</th>
-                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Gasto corporativo</th>
+                    <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores Inmobiq</th>
                     <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Ingresos mensuales</th>
                     <th className="px-3 py-2.5 text-right text-[11px] uppercase tracking-[0.16em] font-semibold text-accent">Sobrante</th>
                     <th className="px-3 py-2.5 text-left text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Estado</th>
@@ -149,7 +149,7 @@ export function S15Investment() {
                 <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
               </span>
               <span className="ml-auto italic text-muted/70">
-                Gasto corporativo: $71K fijo (salario fundador + infra + legal). Cada ciudad cubre sus 2 curadores con su propio revenue.
+                Único gasto de Inmobiq = curadores ($40K/mes por ciudad activa). Todo lo demás lo paga VEQ durante el año base.
               </span>
             </div>
           </div>

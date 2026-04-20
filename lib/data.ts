@@ -14,40 +14,40 @@ export const brand = {
 };
 
 export const round = {
-  // Paquete total = efectivo a operación + compensación al fundador + aporte VEQ
-  package_total_mxn: 6_470_000,
-  package_total_usd: 349_730,
+  // Paquete total VEQ (todo lo aporta VEQ — Inmobiq solo paga curadores)
+  package_total_mxn: 5_380_000,
+  package_total_usd: 290_810,
 
-  // Cash a operación (incluye salario founder · gasto operativo)
-  cash_to_operation_mxn: 4_170_000,
-  cash_to_operation_usd: 225_405,
+  // Cash a Inmobiq (apertura de ciudades + ramp pre-revenue de curadores)
+  cash_to_operation_mxn: 2_380_000,
+  cash_to_operation_usd: 128_649,
 
-  // Salario founder (dentro de la operación · contrato laboral)
-  founder_salary_mxn: 540_000, // $45K × 12 meses
+  // Salario fundador (cubierto por VEQ in-kind)
+  founder_salary_mxn: 540_000,
   founder_salary_monthly_mxn: 45_000,
   founder_salary_months: 12,
 
-  // Founder secondary (compensación personal por hitos · separada de operación)
-  founder_secondary_mxn: 500_000,
-  founder_secondary_tranches: 4,
+  // Compensación al fundador (3 tramos por hitos · pagado por VEQ)
+  founder_secondary_mxn: 150_000,
+  founder_secondary_tranches: 3,
 
-  // Aporte VEQ (12 meses — base para que Inmobiq se autosostenga)
-  veq_inkind_mxn: 1_800_000,
+  // Aporte VEQ in-kind (12 meses cubriendo TODO el opex de Inmobiq)
+  veq_inkind_mxn: 2_850_000,
   veq_inkind_months: 12,
 
-  // Equity
+  // Participación
   equity_percent: 49,
   founder_percent: 51,
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 13_200_000,
-  post_money_usd: 713_513,
-  pre_money_mxn: 6_730_000,
-  pre_money_usd: 363_783,
+  post_money_mxn: 10_980_000,
+  post_money_usd: 593_514,
+  pre_money_mxn: 5_600_000,
+  pre_money_usd: 302_703,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $6.47M MXN",
+  instrument: "Participación directa · 49% por paquete de $5.38M MXN",
   runway_months: 12,
   buffer_months: 0,
 };
@@ -65,7 +65,7 @@ export const roi = {
     valuation_mxn: 498_400_000,
     veq_return_usd: 13_200_000,
     veq_return_mxn: 244_220_000,
-    veq_multiple: "38×",
+    veq_multiple: "45×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -77,37 +77,39 @@ export const roi = {
     valuation_mxn: 613_600_000,
     veq_return_usd: 16_252_000,
     veq_return_mxn: 300_660_000,
-    veq_multiple: "46×",
+    veq_multiple: "56×",
   },
-  irr_annual_percent: 116,
+  irr_annual_percent: 121,
 };
 
-// Aporte VEQ — equipo y recursos aportados durante el año 1 (12 meses)
+// Aporte VEQ in-kind — TODO el opex de Inmobiq durante el año base (12 meses)
 export const veq_inkind = [
   { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 12m", mxn: 840_000 },
   { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 12m", mxn: 300_000 },
   { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 12m", mxn: 480_000 },
   { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 12m", mxn: 180_000 },
+  { label: "Salario fundador", detail: "$45K MXN/mes · 12m", mxn: 540_000 },
+  { label: "Infraestructura + IA", detail: "Cloud + Claude API masivo + tokens · 12m", mxn: 296_000 },
+  { label: "Legal + contador fiscal", detail: "$15K/mes · 12m", mxn: 180_000 },
+  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 12m", mxn: 36_000 },
 ];
 
-// Founder secondary — tramos atados a hitos
+// Compensación fundador — 3 tramos atados a hitos · pagada por VEQ
 export const founder_secondary_tranches = [
-  { tranche: 1, mxn: 100_000, milestone: "Cierre del trato" },
-  { tranche: 2, mxn: 125_000, milestone: "Mes 3 · punto de equilibrio operativo a la vista" },
-  { tranche: 3, mxn: 125_000, milestone: "Mes 6 · punto de equilibrio confirmado" },
-  { tranche: 4, mxn: 150_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses sostenido" },
+  { tranche: 1, mxn: 50_000, milestone: "Cierre del trato (inicial)" },
+  { tranche: 2, mxn: 50_000, milestone: "Mes 6 · punto de equilibrio confirmado (intermedia)" },
+  { tranche: 3, mxn: 50_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses (final)" },
 ];
 
-// Flujo mensual — gasto corporativo de Inmobiq vs ingresos
-// Curadores NO incluidos: cada ciudad paga sus 2 curadores con su propio revenue
-// Gasto corporativo = salario fundador + infra + legal + software = $71K/mes fijo
+// Flujo mensual — gasto Inmobiq (sólo curadores) vs ingresos
+// VEQ cubre TODO el opex año 1. Único costo Inmobiq = curadores = $40K/mes por ciudad activa
 export const monthly_cash_flow = [
-  { month: 3,  cities: 5,  burn_mxn: 71_000, mrr_mxn: 275_655,   net_mxn: 204_655,   note: "Ola 1 abriendo · 5 ciudades activas" },
-  { month: 6,  cities: 8,  burn_mxn: 71_000, mrr_mxn: 791_010,   net_mxn: 720_010,   note: "Punto de equilibrio · ola 2 abriendo" },
-  { month: 9,  cities: 8,  burn_mxn: 71_000, mrr_mxn: 1_358_300, net_mxn: 1_287_300, note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, cities: 15, burn_mxn: 71_000, mrr_mxn: 1_917_600, net_mxn: 1_846_600, note: "Ola 3 abriendo · 15 ciudades activas" },
-  { month: 15, cities: 15, burn_mxn: 71_000, mrr_mxn: 3_100_000, net_mxn: 3_029_000, note: "Plan completo estabilizando" },
-  { month: 18, cities: 15, burn_mxn: 71_000, mrr_mxn: 4_298_620, net_mxn: 4_227_620, note: "Autosostenible sostenido" },
+  { month: 3,  cities: 5,  burn_mxn: 200_000, mrr_mxn: 275_655,   net_mxn: 75_655,    note: "Ola 1 abriendo · 5 ciudades activas" },
+  { month: 6,  cities: 8,  burn_mxn: 320_000, mrr_mxn: 791_010,   net_mxn: 471_010,   note: "Punto de equilibrio · ola 2 abriendo" },
+  { month: 9,  cities: 8,  burn_mxn: 320_000, mrr_mxn: 1_358_300, net_mxn: 1_038_300, note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, cities: 15, burn_mxn: 600_000, mrr_mxn: 1_917_600, net_mxn: 1_317_600, note: "Ola 3 abriendo · 15 ciudades activas" },
+  { month: 15, cities: 15, burn_mxn: 600_000, mrr_mxn: 3_100_000, net_mxn: 2_500_000, note: "Plan completo estabilizando" },
+  { month: 18, cities: 15, burn_mxn: 600_000, mrr_mxn: 4_298_620, net_mxn: 3_698_620, note: "Autosostenible · año 2 Inmobiq asume opex" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
