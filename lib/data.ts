@@ -97,13 +97,14 @@ export const founder_secondary_tranches = [
 ];
 
 // Flujo mensual — burn de Inmobiq vs MRR (el pitch clave)
+// Burn incluye founder + fijo + TODOS los curadores activos (2 por ciudad)
 export const monthly_cash_flow = [
-  { month: 3,  burn_mxn: 230_000, mrr_mxn: 275_655,   net_mxn: 45_655,    note: "Ola 1 abriendo (4 ciudades · curadores pre-revenue)" },
-  { month: 6,  burn_mxn: 190_000, mrr_mxn: 791_010,   net_mxn: 601_010,   note: "Break-even · ola 2 abriendo" },
-  { month: 9,  burn_mxn: 71_000,  mrr_mxn: 1_358_300, net_mxn: 1_287_300, note: "Rentable · todo en revenue" },
-  { month: 12, burn_mxn: 350_000, mrr_mxn: 1_917_600, net_mxn: 1_567_600, note: "Pico · ola 3 abriendo (7 ciudades)" },
-  { month: 15, burn_mxn: 71_000,  mrr_mxn: 3_100_000, net_mxn: 3_029_000, note: "Ola 3 estabilizando" },
-  { month: 18, burn_mxn: 71_000,  mrr_mxn: 4_298_620, net_mxn: 4_227_620, note: "Plan completo · self-funding" },
+  { month: 3,  curators: 10, burn_mxn: 271_000, mrr_mxn: 275_655,   net_mxn: 4_655,     note: "Ola 1 abriendo · 5 ciudades activas" },
+  { month: 6,  curators: 16, burn_mxn: 391_000, mrr_mxn: 791_010,   net_mxn: 400_010,   note: "Break-even · ola 2 abriendo · 8 ciudades" },
+  { month: 9,  curators: 16, burn_mxn: 391_000, mrr_mxn: 1_358_300, net_mxn: 967_300,   note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, curators: 30, burn_mxn: 671_000, mrr_mxn: 1_917_600, net_mxn: 1_246_600, note: "Ola 3 abriendo · 15 ciudades activas" },
+  { month: 15, curators: 30, burn_mxn: 671_000, mrr_mxn: 3_100_000, net_mxn: 2_429_000, note: "Plan completo estabilizando" },
+  { month: 18, curators: 30, burn_mxn: 671_000, mrr_mxn: 4_298_620, net_mxn: 3_627_620, note: "Self-funding sostenido" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)

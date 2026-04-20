@@ -112,6 +112,7 @@ export function S15Investment() {
                 <thead>
                   <tr className="bg-surface-muted/40">
                     <th className="px-3 py-2.5 text-left text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Mes</th>
+                    <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Curadores</th>
                     <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">Burn Inmobiq</th>
                     <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-muted">MRR</th>
                     <th className="px-3 py-2.5 text-right text-[10px] uppercase tracking-[0.16em] font-semibold text-accent">Net</th>
@@ -132,6 +133,7 @@ export function S15Investment() {
                     return (
                       <tr key={row.month} className={rowBg}>
                         <td className="px-3 py-2.5 text-sm font-mono tabular-nums text-foreground/90">M{row.month}</td>
+                        <td className="px-3 py-2.5 text-right text-sm tabular-nums text-muted">{row.curators}</td>
                         <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/80">{fmtK(row.burn_mxn)}</td>
                         <td className="px-3 py-2.5 text-right text-sm tabular-nums text-foreground/90">{fmtK(row.mrr_mxn)}</td>
                         <td className="px-3 py-2.5 text-right text-sm font-semibold tabular-nums text-accent">
@@ -155,7 +157,7 @@ export function S15Investment() {
                 <span className="uppercase tracking-widest font-semibold text-accent">Pico de burn mes 12 (ola 3)</span>
               </span>
               <span className="ml-auto italic text-muted/70">
-                Burn fijo $71K/mo · variable +$40K/mo por ciudad nueva en pre-revenue
+                Burn = $71K fijo + 2 curadores × $20K por ciudad activa (permanentes)
               </span>
             </div>
           </div>
