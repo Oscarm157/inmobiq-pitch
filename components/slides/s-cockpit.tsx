@@ -126,6 +126,7 @@ function CockpitView() {
       <div className="relative rounded-xl overflow-hidden aspect-video z-20">
         <Image src="/house.webp" alt="Propiedad" fill className="object-cover brightness-[0.4]" />
         <ScanLines />
+        <div className="hud-scan-line" />
         <Crosshair />
 
         <div className="absolute top-2 left-2.5 text-[7px] font-mono text-accent/70">32.5149° N · 117.0382° W</div>
