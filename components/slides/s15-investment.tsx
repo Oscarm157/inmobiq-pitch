@@ -160,7 +160,7 @@ export function S15Investment() {
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.cities}</td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-muted">{row.curators}</td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-emerald-300/80">
-                          {row.opex_veq_mxn > 0 ? fmtK(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
+                          {row.opex_veq_mxn > 0 ? fmtMxn(row.opex_veq_mxn) : <span className="text-muted/50 italic text-xs">—</span>}
                         </td>
                         <td className="px-3 py-3 text-right text-sm tabular-nums text-foreground/80">
                           {fmtMxn(row.burn_mxn)}
