@@ -62,7 +62,7 @@ export function S15Investment() {
               label="Aporte VEQ · año base (12 meses)"
               amount={fmtMxn(round.veq_inkind_mxn)}
               subtitle="MXN · valor equivalente en especie"
-              detail="2 desarrolladores + admin + $40K/mes publicidad + marketing. Solo año 1 — luego Inmobiq se autosostiene."
+              detail="2 desarrolladores + admin + $40K/mes publicidad + marketing. Cobertura año 1 como colchón — Inmobiq es autosostenible desde mes 3, los 12 son prevención."
               color="emerald"
               breakdown={veq_inkind}
             />
