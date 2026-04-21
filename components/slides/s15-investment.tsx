@@ -64,8 +64,8 @@ export function S15Investment() {
             <PackageCard
               label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
-              subtitle="Pagada por VEQ · por hitos"
-              detail="Diferida en 2 tramos atados a hitos operativos. Reducida del estándar para hacer el deal más atractivo a VEQ."
+              subtitle="$250K al cierre · $150K por hito"
+              detail="$250K pagados al cierre del deal. Los $150K restantes están condicionados al hito de los primeros 300 usuarios pagados."
               color="amber"
               breakdown={founder_secondary_tranches.map((t) => ({
                 label: `Tramo ${t.tranche}`,
