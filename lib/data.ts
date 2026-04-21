@@ -379,8 +379,8 @@ export const risks = [
   {
     risk: "Calidad de data depende de curadores",
     mitigation: [
-      "Spot-checks aleatorios",
-      "Cruce con precios de portales (Inmuebles24, Lamudi)",
+      "Verificaciones aleatorias de registros capturados (muestreo semanal por curador)",
+      "Auditoría mensual de precisión de data por equipo interno",
       "Rotación de zonas por curador para evitar sesgos",
     ],
   },
