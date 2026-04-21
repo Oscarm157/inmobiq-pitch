@@ -38,11 +38,6 @@ export function S09BusinessModel() {
                     : "bg-card shadow-[0_12px_32px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-1"
                 }`}
               >
-                {p.featured && (
-                  <div className="absolute top-4 right-4 px-2 py-1 rounded-md bg-accent text-white text-[10px] uppercase tracking-widest font-semibold">
-                    Recomendado
-                  </div>
-                )}
                 <div className="text-xs uppercase tracking-[0.18em] font-semibold mb-2 opacity-80">
                   {p.name}
                 </div>
