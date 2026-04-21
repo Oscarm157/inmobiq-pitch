@@ -13,8 +13,8 @@ const gains = [
   {
     icon: "schedule",
     title: "Tiempo liberado",
-    value: "22× más rápido",
-    detail: "Análisis manual de 1 propiedad: ~90 min (portales, filtros, cálculos). Con Inmobiq: ~4 min. En 1 hora haces lo que antes te tomaba día y medio.",
+    value: "36× más rápido",
+    detail: "Análisis manual de 1 propiedad: ~3 horas (portales, filtros, cálculos). Con Inmobiq: ~5 minutos. En 1 hora haces lo que antes te tomaba media semana.",
   },
   {
     icon: "groups",
@@ -116,7 +116,7 @@ export function SSuperpowers() {
                 <div className="text-xs font-semibold text-accent uppercase tracking-wide">Brújula Inmobiliaria toma este tramo</div>
                 <div className="text-[11px] text-muted mt-0.5">
                   Cruza 1 propiedad vs <span className="text-foreground font-semibold">1,000 en el mercado</span> · genera reporte completo ·{" "}
-                  <span className="text-emerald-300 font-semibold">~4 minutos</span> vs 90 min manual
+                  <span className="text-emerald-300 font-semibold">~5 minutos</span> vs ~3 horas manual
                 </div>
               </div>
             </div>
