@@ -88,7 +88,7 @@ export function S11Financials() {
             icon="schedule"
             label="Payback CAC"
             value="~2 meses"
-            detail="CAC $1.5K MXN · ticket promedio $729 MXN · retención 18m"
+            detail="CAC $1.5K MXN · ticket promedio $729 MXN · retención 12m"
           />
           <InsightCard
             icon="rocket_launch"

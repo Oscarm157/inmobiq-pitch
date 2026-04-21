@@ -234,9 +234,9 @@ export const unit_economics = {
   avg_ticket_mxn: 729, // ponderado: $399 × 0.7 + $1,499 × 0.3
   cac_mxn: 1_500,
   cac_usd: 81,
-  ltv_retention_months: 18,
-  ltv_mxn: 13_122,
-  ltv_cac_ratio: 8.7,
+  ltv_retention_months: 12,
+  ltv_mxn: 8_748,
+  ltv_cac_ratio: 5.8,
   payback_months: 2.1,
 };
 
@@ -442,7 +442,7 @@ export const glossary = [
   { term: "MRR", def: "Monthly Recurring Revenue. Ingresos recurrentes por suscripciones en un mes." },
   { term: "CAC", def: "Costo de Adquisición por Cliente. Cuánto cuesta conseguir un usuario pagado." },
   { term: "LTV", def: "Lifetime Value. Ingresos totales que genera un cliente durante su vida con el producto." },
-  { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
+  { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en ~6×." },
   { term: "SAFE", def: "Simple Agreement for Future Equity. Instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
   { term: "IRR", def: "Tasa Interna de Retorno. Rendimiento anual compuesto de la inversión. ~120% proyectado." },
   { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 5." },

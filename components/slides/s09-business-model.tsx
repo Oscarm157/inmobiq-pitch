@@ -73,7 +73,7 @@ export function S09BusinessModel() {
           <div className="rounded-2xl bg-card p-6 shadow-[0_12px_32px_-4px_rgba(15,23,42,0.05)] grid grid-cols-2 sm:grid-cols-4 gap-4">
             <Kpi label="Ticket promedio" value={`$${unit_economics.avg_ticket_mxn} MXN`} sub="Mix 70% Pro + 30% Empresarial" />
             <Kpi label="CAC objetivo" value={`$${unit_economics.cac_mxn.toLocaleString()} MXN`} sub="Ads + SEO + referidos" accent />
-            <Kpi label="LTV" value={`$${unit_economics.ltv_mxn.toLocaleString()} MXN`} sub="18 meses retention B2B" />
+            <Kpi label="LTV" value={`$${unit_economics.ltv_mxn.toLocaleString()} MXN`} sub="12 meses retention B2B" />
             <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en ~2 meses" accent />
           </div>
         </FadeItem>
