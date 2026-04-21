@@ -6,6 +6,7 @@ import { SRadar } from "@/components/slides/s-radar";
 import { S03Solution } from "@/components/slides/s03-solution";
 import { S04HowItWorks } from "@/components/slides/s04-how-it-works";
 import { S05Product } from "@/components/slides/s05-product";
+import { S05ProductShowcase } from "@/components/slides/s05b-product-showcase";
 import { SSuperpowers } from "@/components/slides/s-superpowers";
 import { S06Differentiator } from "@/components/slides/s06-differentiator";
 import { S07Market } from "@/components/slides/s07-market";
@@ -29,6 +30,7 @@ export default function Page() {
       <S04HowItWorks />
       <S03Solution />
       <S05Product />
+      <S05ProductShowcase />
       <SSuperpowers />
       <S06Differentiator />
       <S07Market />
