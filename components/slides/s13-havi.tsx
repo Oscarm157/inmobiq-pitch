@@ -10,7 +10,7 @@ const publishers = [
   {
     icon: "key",
     title: "Compradores / rentadores",
-    detail: "Publican lo que buscan: zona, presupuesto, tipo. Brokers responden con propiedades que matchean.",
+    detail: "Onboarding de 10 preguntas que perfila a fondo al usuario — el matching funciona como Tinder/Bumble: el sistema empareja al comprador con las propiedades que realmente encajan con su perfil.",
   },
   {
     icon: "badge",
