@@ -35,36 +35,15 @@ export function S16CTA() {
           </h2>
 
           <FadeItem>
-            <p className="text-lg text-muted max-w-2xl leading-relaxed mt-4">
-              Llevamos un año construyendo el MVP. Tijuana ya está lista.
-              El capital de Grupo VEQ activa el equipo, abre GDL y Cancún, y
-              consolida Inmobiq como el estándar profesional del mercado mexicano.
-            </p>
-          </FadeItem>
-
-          <FadeItem>
-            <div className="flex flex-col sm:flex-row items-center gap-6 mt-10">
-              <div className="text-left">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-muted mb-1">
-                  Fundador
-                </div>
-                <div className="text-2xl font-semibold text-foreground">
-                  {brand.founder}
-                </div>
-                <div className="text-sm text-accent-light mt-1">oscar.amayoral@gmail.com</div>
+            <div className="flex flex-col items-center gap-1 mt-12">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-muted mb-1">
+                Fundador
               </div>
-
-              <div className="hidden sm:block w-px h-14 bg-card-border" />
-
-              <div className="text-left">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-muted mb-1">
-                  Siguiente paso
-                </div>
-                <div className="text-2xl font-semibold text-foreground">
-                  Due diligence + term sheet
-                </div>
-                <div className="text-sm text-muted mt-1">Ventana: esta semana</div>
+              <div className="text-2xl font-semibold text-foreground">
+                {brand.founder}
               </div>
+              <div className="text-sm text-accent-light mt-1">oscar.amayoral@gmail.com</div>
+              <div className="text-sm text-accent-light tabular-nums">664-731-26-95</div>
             </div>
           </FadeItem>
 

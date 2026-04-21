@@ -56,30 +56,30 @@ export const roi = {
   break_even_month: 5,
   capital_payback_month: 18,
   year_3: {
-    arr_usd: 3_368_000,
-    arr_mxn: 62_300_000,
-    users: 6_500,
-    tam_percent: 10.2,
+    arr_usd: 2_742_000,
+    arr_mxn: 50_720_000,
+    users: 5_290,
+    tam_percent: 8.3,
     multiple_saas: 8,
-    valuation_usd: 26_940_000,
-    valuation_mxn: 498_400_000,
-    veq_return_usd: 13_200_000,
-    veq_return_mxn: 244_220_000,
-    veq_multiple: "53×",
+    valuation_usd: 21_935_000,
+    valuation_mxn: 405_760_000,
+    veq_return_usd: 10_748_000,
+    veq_return_mxn: 198_820_000,
+    veq_multiple: "43×",
   },
   year_5: {
-    arr_usd: 4_146_000,
-    arr_mxn: 76_700_000,
-    users: 8_000,
-    tam_percent: 12.6,
+    arr_usd: 3_375_000,
+    arr_mxn: 62_440_000,
+    users: 6_510,
+    tam_percent: 10.3,
     multiple_saas: 8,
-    valuation_usd: 33_168_000,
-    valuation_mxn: 613_600_000,
-    veq_return_usd: 16_252_000,
-    veq_return_mxn: 300_660_000,
-    veq_multiple: "65×",
+    valuation_usd: 27_004_000,
+    valuation_mxn: 499_520_000,
+    veq_return_usd: 13_232_000,
+    veq_return_mxn: 244_765_000,
+    veq_multiple: "53×",
   },
-  irr_annual_percent: 134,
+  irr_annual_percent: 120,
 };
 
 // Aporte VEQ in-kind — TODO el opex de Inmobiq durante 10 meses
@@ -113,15 +113,15 @@ export const founder_secondary_tranches = [
 // Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) × $20K/mes
 const opexMonthly = 238_000;
 export const monthly_cash_flow = [
-  { month: 1,  cities: 1,  users: 35,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 25_515,    net_mxn: -14_485,  margin_pct: -57, note: "Tijuana piloto · pre-escala" },
-  { month: 3,  cities: 5,  users: 345,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 251_505,   net_mxn: 91_505,   margin_pct: 36, note: "Ola 1 abriendo · 5 ciudades" },
-  { month: 6,  cities: 8,  users: 990,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 721_710,   net_mxn: 481_710,  margin_pct: 67, note: "Rentable · ola 2 abriendo" },
-  { month: 9,  cities: 8,  users: 1_700, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_239_300, net_mxn: 999_300,  margin_pct: 81, note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, cities: 15, users: 2_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 1_749_600, net_mxn: 1_071_600, margin_pct: 61, note: "Ola 3 · 15 ciudades · Inmobiq asume opex post-M10" },
-  { month: 15, cities: 15, users: 3_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_843_100, net_mxn: 2_165_100, margin_pct: 76, note: "Crecimiento sostenido" },
-  { month: 16, cities: 15, users: 4_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_207_600, net_mxn: 2_529_600, margin_pct: 79, note: "Optimización" },
-  { month: 17, cities: 15, users: 4_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_572_100, net_mxn: 2_894_100, margin_pct: 81, note: "Optimización" },
-  { month: 18, cities: 15, users: 5_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_922_020, net_mxn: 3_244_020, margin_pct: 83, note: "Plan completo · autosostenible" },
+  { month: 1,  cities: 1,  users: 28,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 20_412,    net_mxn: -19_588,  margin_pct: -96, note: "Tijuana piloto · pre-escala" },
+  { month: 3,  cities: 5,  users: 280,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 204_120,   net_mxn: 44_120,   margin_pct: 22, note: "Ola 1 abriendo · 5 ciudades" },
+  { month: 6,  cities: 8,  users: 805,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 586_845,   net_mxn: 346_845,  margin_pct: 59, note: "Rentable · ola 2 abriendo" },
+  { month: 9,  cities: 8,  users: 1_385, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_009_665, net_mxn: 769_665,  margin_pct: 76, note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, cities: 15, users: 1_950, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 1_421_550, net_mxn: 743_550,  margin_pct: 52, note: "Ola 3 · 15 ciudades · Inmobiq asume opex post-M10" },
+  { month: 15, cities: 15, users: 3_175, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_314_575, net_mxn: 1_636_575, margin_pct: 71, note: "Crecimiento sostenido" },
+  { month: 16, cities: 15, users: 3_580, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_609_820, net_mxn: 1_931_820, margin_pct: 74, note: "Optimización" },
+  { month: 17, cities: 15, users: 3_990, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_908_710, net_mxn: 2_230_710, margin_pct: 77, note: "Optimización" },
+  { month: 18, cities: 15, users: 4_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_193_020, net_mxn: 2_515_020, margin_pct: 79, note: "Plan completo · autosostenible" },
 ];
 
 // Uso de fondos — breakdown del paquete total VEQ ($4.785M MXN)
@@ -242,11 +242,11 @@ export const unit_economics = {
 
 // Proyección usuarios + revenue (MXN) · ticket avg $729
 export const projections = [
-  { month: 3,  users_active: 345,   paid_percent: 100, paid_users: 345,   mrr_mxn: 251_505,   arr_mxn: 3_018_060,   status: "ramp" },
-  { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 721_710,   arr_mxn: 8_660_520,   status: "punto de equilibrio" },
-  { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_239_300, arr_mxn: 14_871_600,  status: "profitable" },
-  { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_749_600, arr_mxn: 20_995_200,  status: "15 ciudades" },
-  { month: 18, users_active: 5_380, paid_percent: 100, paid_users: 5_380, mrr_mxn: 3_922_020, arr_mxn: 47_064_240,  status: "plan completo" },
+  { month: 3,  users_active: 280,   paid_percent: 100, paid_users: 280,   mrr_mxn: 204_120,   arr_mxn: 2_449_440,   status: "ramp" },
+  { month: 6,  users_active: 805,   paid_percent: 100, paid_users: 805,   mrr_mxn: 586_845,   arr_mxn: 7_042_140,   status: "punto de equilibrio" },
+  { month: 9,  users_active: 1_385, paid_percent: 100, paid_users: 1_385, mrr_mxn: 1_009_665, arr_mxn: 12_115_980,  status: "profitable" },
+  { month: 12, users_active: 1_950, paid_percent: 100, paid_users: 1_950, mrr_mxn: 1_421_550, arr_mxn: 17_058_600,  status: "15 ciudades" },
+  { month: 18, users_active: 4_380, paid_percent: 100, paid_users: 4_380, mrr_mxn: 3_193_020, arr_mxn: 38_316_240,  status: "plan completo" },
 ];
 
 export const market = {
@@ -264,9 +264,9 @@ export const market = {
   },
   som: {
     label: "SOM · Penetración objetivo mes 18",
-    users: 5_380,
-    revenue_potential_mxn: 47_064_240,
-    detail: "6.7% del TAM · 5,380 usuarios pagados × $729 avg (70% Pro / 30% Empresarial) = $3.92M MXN/mes",
+    users: 4_380,
+    revenue_potential_mxn: 38_316_240,
+    detail: "5.5% del TAM · 4,380 usuarios pagados × $729 avg (70% Pro / 30% Empresarial) = $3.19M MXN/mes",
   },
 };
 
@@ -281,21 +281,21 @@ export const competitors = [
 
 // Expansión — alineado con tabla de S08 (targets al M18)
 export const expansion = [
-  { city: "Tijuana",              wave: "live", launch: "Mes 1",  users_m18: 445   },
-  { city: "CDMX + Zona Metro",    wave: "ola1", launch: "Mes 3",  users_m18: 2_016 },
-  { city: "Monterrey",            wave: "ola1", launch: "Mes 3",  users_m18: 720   },
-  { city: "Guadalajara",          wave: "ola1", launch: "Mes 3",  users_m18: 650   },
-  { city: "Cancún + Riviera Maya", wave: "ola1", launch: "Mes 3",  users_m18: 288   },
-  { city: "Puebla",               wave: "ola2", launch: "Mes 6",  users_m18: 225   },
-  { city: "Querétaro",            wave: "ola2", launch: "Mes 6",  users_m18: 196   },
-  { city: "Mérida",               wave: "ola2", launch: "Mes 6",  users_m18: 168   },
-  { city: "León",                 wave: "ola3", launch: "Mes 12", users_m18: 120   },
-  { city: "Toluca",               wave: "ola3", launch: "Mes 12", users_m18: 120   },
-  { city: "Ciudad Juárez",        wave: "ola3", launch: "Mes 12", users_m18: 96    },
-  { city: "Playa del Carmen",     wave: "ola3", launch: "Mes 12", users_m18: 96    },
-  { city: "San Luis Potosí",      wave: "ola3", launch: "Mes 12", users_m18: 96    },
-  { city: "Los Cabos",            wave: "ola3", launch: "Mes 12", users_m18: 72    },
-  { city: "Aguascalientes",       wave: "ola3", launch: "Mes 12", users_m18: 72    },
+  { city: "Tijuana",              wave: "live", launch: "Mes 1",  users_m18: 360   },
+  { city: "CDMX + Zona Metro",    wave: "ola1", launch: "Mes 3",  users_m18: 1_630 },
+  { city: "Monterrey",            wave: "ola1", launch: "Mes 3",  users_m18: 585   },
+  { city: "Guadalajara",          wave: "ola1", launch: "Mes 3",  users_m18: 530   },
+  { city: "Cancún + Riviera Maya", wave: "ola1", launch: "Mes 3",  users_m18: 235   },
+  { city: "Puebla",               wave: "ola2", launch: "Mes 6",  users_m18: 185   },
+  { city: "Querétaro",            wave: "ola2", launch: "Mes 6",  users_m18: 160   },
+  { city: "Mérida",               wave: "ola2", launch: "Mes 6",  users_m18: 135   },
+  { city: "León",                 wave: "ola3", launch: "Mes 12", users_m18: 100   },
+  { city: "Toluca",               wave: "ola3", launch: "Mes 12", users_m18: 100   },
+  { city: "Ciudad Juárez",        wave: "ola3", launch: "Mes 12", users_m18: 80    },
+  { city: "Playa del Carmen",     wave: "ola3", launch: "Mes 12", users_m18: 80    },
+  { city: "San Luis Potosí",      wave: "ola3", launch: "Mes 12", users_m18: 80    },
+  { city: "Los Cabos",            wave: "ola3", launch: "Mes 12", users_m18: 60    },
+  { city: "Aguascalientes",       wave: "ola3", launch: "Mes 12", users_m18: 60    },
 ];
 
 // City unit cost (para preguntas de VEQ)
@@ -444,17 +444,17 @@ export const glossary = [
   { term: "LTV", def: "Lifetime Value. Ingresos totales que genera un cliente durante su vida con el producto." },
   { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
   { term: "SAFE", def: "Simple Agreement for Future Equity. Instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
-  { term: "IRR", def: "Tasa Interna de Retorno. Rendimiento anual compuesto de la inversión. ~134% proyectado." },
+  { term: "IRR", def: "Tasa Interna de Retorno. Rendimiento anual compuesto de la inversión. ~120% proyectado." },
   { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 5." },
   { term: "Runway", def: "Tiempo que dura el dinero de la ronda antes de necesitar más capital o ser rentables." },
   { term: "SaaS", def: "Software as a Service. Modelo de negocio de suscripción mensual/anual en la nube." },
   { term: "B2B", def: "Business to Business. Vendemos a empresas (inmobiliarias, brokers profesionales), no al consumidor final." },
   { term: "TAM", def: "Total Addressable Market. Mercado total disponible si capturaras el 100% (80K brokers en México)." },
   { term: "SAM", def: "Serviceable Addressable Market. Porción del TAM a la que realmente puedes llegar (20K en ciudades objetivo)." },
-  { term: "SOM", def: "Serviceable Obtainable Market. Porción realista del SAM capturable en el horizonte del plan (4K usuarios)." },
+  { term: "SOM", def: "Serviceable Obtainable Market. Porción realista del SAM capturable en el horizonte del plan (4,380 usuarios al mes 18)." },
   { term: "Múltiplo ARR", def: "Valuación de empresas SaaS = ARR × múltiplo (8–10× en LatAm seed). Estándar de la industria para calcular retorno." },
   { term: "Churn", def: "Tasa de cancelación. Porcentaje de usuarios que dejan de pagar cada mes. Queremos <5% mensual." },
-  { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$48M MXN." },
+  { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$38M MXN." },
   { term: "Tiers", def: "Niveles de precio del producto: Explorador (gratis), Pro ($399 MXN/mes), Empresarial ($1,499 MXN/mes)." },
   { term: "INEGI", def: "Instituto Nacional de Estadística y Geografía. Fuente oficial de datos demográficos del Censo 2020." },
   { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios. Principal agremiación de brokers e inmobiliarias en México." },

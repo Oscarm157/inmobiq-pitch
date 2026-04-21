@@ -31,17 +31,17 @@ export function S11Financials() {
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Punto de equilibrio operativo al mes 4-5. Rentabilidad sostenida desde el mes 9.
-                La base de usuarios pagados escala 15× durante el plan, de 345 al mes 3 a 5,380
+                La base de usuarios pagados escala 15× durante el plan, de 280 al mes 3 a 4,380
                 al mes 18, impulsada por la expansión escalonada en tres olas.
               </p>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <HeroKpi label="Punto de equilibrio" value="Mes 4-5" sub="~490 usuarios pagados" accent="emerald" />
+              <HeroKpi label="Punto de equilibrio" value="Mes 4-5" sub="~400 usuarios pagados" accent="emerald" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="Ingreso anual mes 12" value="$21M" sub="MXN · $1.13M USD" />
+              <HeroKpi label="Ingreso anual mes 12" value="$17.1M" sub="MXN · $922K USD" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="Ingreso anual mes 18" value="$47.1M" sub="MXN · $2.5M USD" accent="blue" />
+              <HeroKpi label="Ingreso anual mes 18" value="$38.3M" sub="MXN · $2.07M USD" accent="blue" />
             </div>
           </div>
         </FadeItem>
@@ -76,7 +76,7 @@ export function S11Financials() {
             icon="trending_up"
             label="Aceleración M12→M18"
             value="2.2× en 6 meses"
-            detail="De 2,400 a 5,380 users con las 15 ciudades en plena operación"
+            detail="De 1,950 a 4,380 users con las 15 ciudades en plena operación"
           />
           <InsightCard
             icon="payments"
@@ -94,7 +94,7 @@ export function S11Financials() {
             icon="rocket_launch"
             label="Siguiente ronda"
             value="Mes 24-30"
-            detail="Ingreso anual ~$48M MXN posiciona para ronda A de $5-7M USD a múltiplo 6×"
+            detail="Ingreso anual ~$38M MXN posiciona para ronda A de $4-6M USD a múltiplo 6×"
             featured
           />
         </FadeStack>
