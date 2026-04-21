@@ -81,15 +81,6 @@ export function S08Cities() {
                 TAM total 63.6K usuarios potenciales. Tijuana en vivo desde el día uno — las 14 ciudades
                 restantes en 3 olas durante los primeros 12 meses. La ronda financia toda la expansión.
               </p>
-              <a
-                href="https://www.nobroker.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/30 text-accent text-sm font-semibold transition-colors"
-              >
-                <span className="material-symbols-outlined" style={{ fontSize: 16 }}>open_in_new</span>
-                Nobroker.in
-              </a>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
@@ -186,6 +177,54 @@ export function S08Cities() {
                 <div className="text-[11px] text-muted leading-relaxed">{w.detail}</div>
               </div>
             ))}
+          </div>
+        </FadeItem>
+
+        {/* Visión a futuro — trayectoria post broker */}
+        <FadeItem>
+          <div className="rounded-2xl bg-gradient-to-br from-accent/10 via-card to-card border border-accent/20 p-5 sm:p-6">
+            <div className="flex items-start justify-between gap-6 flex-wrap">
+              <div className="flex-1 min-w-[280px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="material-symbols-outlined text-accent" style={{ fontSize: 18 }}>
+                    rocket_launch
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
+                    Visión a futuro · post broker
+                  </span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight mb-2">
+                  Hoy empoderamos al broker. Mañana, el cliente final tendrá ese poder en 3 clics.
+                </h3>
+                <p className="text-[12px] sm:text-sm text-muted leading-relaxed max-w-2xl">
+                  Inmobiq nace B2B porque el broker es el nodo de conocimiento del mercado mexicano. Pero
+                  conforme la data se vuelve más confiable y la AI más capaz, esa intermediación se simplifica:
+                  el cliente final podrá hacer su propio análisis de zona, valuación y comparación. El broker
+                  se mueve a la etapa de cierre, donde realmente aporta valor humano.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 min-w-[220px]">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-muted font-semibold">
+                  Referencia del modelo
+                </div>
+                <a
+                  href="https://www.nobroker.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-accent/15 hover:bg-accent/25 border border-accent/40 text-accent font-semibold transition-all hover:-translate-y-0.5"
+                >
+                  <div className="flex flex-col items-start">
+                    <span className="text-[10px] uppercase tracking-widest text-accent/70">India · 2014→</span>
+                    <span className="text-base">Nobroker.in</span>
+                  </div>
+                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>open_in_new</span>
+                </a>
+                <p className="text-[11px] text-muted leading-relaxed">
+                  Plataforma india que eliminó al broker del proceso. Hoy +50M usuarios, $200M+ revenue.
+                </p>
+              </div>
+            </div>
           </div>
         </FadeItem>
       </FadeStack>
