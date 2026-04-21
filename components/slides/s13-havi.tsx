@@ -83,9 +83,17 @@ export function S13Havi() {
 
       <FadeStack className="relative z-10 flex flex-col gap-7">
         <FadeItem>
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">13</span>
+          <div className="flex items-center justify-between gap-4 flex-wrap">
             <span className="text-xs uppercase tracking-[0.18em] text-muted">Visión · portal propio de data</span>
+            <a
+              href="https://havi-ai.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/15 hover:bg-accent/25 border border-accent/40 text-accent font-semibold text-xs uppercase tracking-[0.18em] transition-all hover:-translate-y-0.5"
+            >
+              Ver Havi
+              <span className="material-symbols-outlined" style={{ fontSize: 16 }}>arrow_forward</span>
+            </a>
           </div>
         </FadeItem>
 

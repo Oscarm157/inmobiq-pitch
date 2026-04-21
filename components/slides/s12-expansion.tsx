@@ -19,7 +19,6 @@ export function S12Expansion() {
       <FadeStack className="flex flex-col gap-10">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">12</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted">Expansión multi-ciudad</span>
           </div>
         </FadeItem>

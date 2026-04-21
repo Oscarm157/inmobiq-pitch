@@ -18,7 +18,6 @@ export function S11Financials() {
       <FadeStack className="relative z-10 flex flex-col gap-6">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">11</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Crecimiento proyectado</span>
           </div>
         </FadeItem>
@@ -88,7 +87,7 @@ export function S11Financials() {
             icon="schedule"
             label="Payback CAC"
             value="~2 meses"
-            detail="CAC $1.5K MXN · ticket promedio $729 MXN · retención 18m"
+            detail="CAC $1.5K MXN · ticket promedio $729 MXN · retención 12m"
           />
           <InsightCard
             icon="rocket_launch"
@@ -108,9 +107,6 @@ export function S11Financials() {
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               <span className="uppercase tracking-widest font-semibold text-accent">Rentable mes 9</span>
-            </span>
-            <span className="ml-auto italic">
-              Proyección base · tabla detallada en anexo · USD @ 18.5 MXN
             </span>
           </div>
         </FadeItem>

@@ -9,7 +9,6 @@ export function S09BusinessModel() {
       <FadeStack className="flex flex-col gap-10">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">09</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted">Modelo de negocio</span>
           </div>
         </FadeItem>
@@ -38,11 +37,6 @@ export function S09BusinessModel() {
                     : "bg-card shadow-[0_12px_32px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-1"
                 }`}
               >
-                {p.featured && (
-                  <div className="absolute top-4 right-4 px-2 py-1 rounded-md bg-accent text-white text-[10px] uppercase tracking-widest font-semibold">
-                    Recomendado
-                  </div>
-                )}
                 <div className="text-xs uppercase tracking-[0.18em] font-semibold mb-2 opacity-80">
                   {p.name}
                 </div>
@@ -78,7 +72,7 @@ export function S09BusinessModel() {
           <div className="rounded-2xl bg-card p-6 shadow-[0_12px_32px_-4px_rgba(15,23,42,0.05)] grid grid-cols-2 sm:grid-cols-4 gap-4">
             <Kpi label="Ticket promedio" value={`$${unit_economics.avg_ticket_mxn} MXN`} sub="Mix 70% Pro + 30% Empresarial" />
             <Kpi label="CAC objetivo" value={`$${unit_economics.cac_mxn.toLocaleString()} MXN`} sub="Ads + SEO + referidos" accent />
-            <Kpi label="LTV" value={`$${unit_economics.ltv_mxn.toLocaleString()} MXN`} sub="18 meses retention B2B" />
+            <Kpi label="LTV" value={`$${unit_economics.ltv_mxn.toLocaleString()} MXN`} sub="12 meses retention B2B" />
             <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en ~2 meses" accent />
           </div>
         </FadeItem>

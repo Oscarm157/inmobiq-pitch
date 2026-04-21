@@ -42,7 +42,6 @@ export function S07Market() {
       <FadeStack className="flex flex-col gap-8">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">07</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted">Mercado</span>
           </div>
         </FadeItem>
@@ -54,6 +53,9 @@ export function S07Market() {
             </h2>
             <p className="mt-3 text-base text-muted max-w-2xl leading-relaxed">
               80,000 brokers activos en México. La mitad trabaja con datos sin curar.
+            </p>
+            <p className="mt-2 text-xs text-muted/70 italic max-w-2xl">
+              Dato AMPI · padrón de brokers e inmobiliarias registradas a nivel nacional.
             </p>
           </div>
         </FadeItem>

@@ -168,7 +168,25 @@ export function GrowthChart() {
             formatter={(value: string) => <span style={{ color: "#94a3b8", marginRight: 12 }}>{value}</span>}
           />
 
-          {/* Break-even reference */}
+          {/* Ola 1 — Mes 3 */}
+          <ReferenceLine
+            x="M3"
+            yAxisId="users"
+            stroke="#60a5fa"
+            strokeDasharray="3 5"
+            strokeOpacity={0.45}
+            label={{
+              value: "Ola 1 · 5 ciudades",
+              position: "insideTopRight",
+              fill: "#60a5fa",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              offset: 6,
+            }}
+          />
+
+          {/* Break-even + Ola 2 — Mes 6 */}
           <ReferenceLine
             x="M6"
             yAxisId="users"
@@ -176,9 +194,27 @@ export function GrowthChart() {
             strokeDasharray="4 4"
             strokeOpacity={0.6}
             label={{
-              value: "Break-even",
+              value: "Break-even · Ola 2",
               position: "insideTopRight",
               fill: "#10b981",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              offset: 6,
+            }}
+          />
+
+          {/* Ola 3 — Mes 12 */}
+          <ReferenceLine
+            x="M12"
+            yAxisId="users"
+            stroke="#60a5fa"
+            strokeDasharray="3 5"
+            strokeOpacity={0.45}
+            label={{
+              value: "Ola 3 · 15 ciudades",
+              position: "insideTopRight",
+              fill: "#60a5fa",
               fontSize: 10,
               fontWeight: 700,
               letterSpacing: "0.15em",
