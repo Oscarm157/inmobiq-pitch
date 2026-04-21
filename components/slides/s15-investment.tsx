@@ -51,7 +51,7 @@ export function S15Investment() {
         {/* Participación + valuación */}
         <FadeItem>
           <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="control mayoritario" />
+            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="práctico 50/50 · asegura libertad creativa" />
             <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
             <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
