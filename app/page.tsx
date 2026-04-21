@@ -33,9 +33,9 @@ export default function Page() {
       <S05ProductShowcase />
       <SSuperpowers />
       <S06Differentiator />
+      <S09BusinessModel />
       <S07Market />
       <S08Cities />
-      <S09BusinessModel />
       <S10Traction />
       <S11Financials />
       <S12Expansion />
