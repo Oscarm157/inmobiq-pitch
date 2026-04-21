@@ -81,6 +81,15 @@ export function S08Cities() {
                 TAM total 63.6K usuarios potenciales. Tijuana en vivo desde el día uno — las 14 ciudades
                 restantes en 3 olas durante los primeros 12 meses. La ronda financia toda la expansión.
               </p>
+              <a
+                href="https://www.nobroker.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/30 text-accent text-sm font-semibold transition-colors"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: 16 }}>open_in_new</span>
+                Nobroker.in
+              </a>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
