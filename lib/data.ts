@@ -350,20 +350,37 @@ export const team = [
 export const risks = [
   {
     risk: "Adopción lenta de brokers",
-    mitigation: "Herramientas gratuitas para brokers con INMOBIQ como canal de entrada · alianzas con AMPI · marketing de afiliados con influencers de real estate · campañas pagadas (Meta + Google)",
+    mitigation: [
+      "Herramientas gratuitas para brokers con INMOBIQ como canal de entrada",
+      "Alianza con AMPI",
+      "Marketing de afiliados con influencers de real estate",
+      "Campañas pagadas (Meta + Google)",
+    ],
     link: { label: "logofa.st", url: "https://logofa.st/" },
   },
   {
     risk: "Competencia de portales grandes (Inmuebles24, Lamudi)",
-    mitigation: "No competimos en listings, competimos en claridad. B2B tool con data curada + INEGI + IA de valuación — capa que los portales no ofrecen. Nuestro lead en data curada + 15 ciudades mapeadas es real.",
+    mitigation: [
+      "No competimos en listings, competimos en claridad — B2B tool",
+      "Capa de data curada + INEGI + IA que los portales no ofrecen",
+      "Lead en data curada y 15 ciudades mapeadas",
+    ],
   },
   {
     risk: "Calidad de data depende de curadores",
-    mitigation: "Spot-checks aleatorios · cruce con precios de portales (Inmuebles24, Lamudi) · rotación de zonas por curador para evitar sesgos",
+    mitigation: [
+      "Spot-checks aleatorios",
+      "Cruce con precios de portales (Inmuebles24, Lamudi)",
+      "Rotación de zonas por curador para evitar sesgos",
+    ],
   },
   {
     risk: "Retención B2B (churn)",
-    mitigation: "Customer success dedicado · contratos anuales para Empresarial · features stickiness (alertas, API)",
+    mitigation: [
+      "Customer success dedicado",
+      "Contratos anuales para Empresarial",
+      "Features stickiness (alertas, API)",
+    ],
   },
 ];
 
