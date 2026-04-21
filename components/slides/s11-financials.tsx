@@ -27,11 +27,12 @@ export function S11Financials() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                Crecimiento <em className="italic text-gradient-accent">viable</em>. No milagroso.
+                Trayectoria financiera <em className="italic text-gradient-accent">del plan</em>.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                Punto de equilibrio mes 6. Rentable mes 9. 18 meses para crecer de 420 a 5,545 usuarios —
-                13× impulsado por inversión y expansión en olas.
+                Punto de equilibrio operativo al mes 6. Rentabilidad sostenida desde el mes 9.
+                La base de usuarios pagados escala 15× durante el plan — de 345 al mes 3 a 5,380
+                al mes 18 — impulsada por la expansión escalonada en tres olas.
               </p>
             </div>
 
