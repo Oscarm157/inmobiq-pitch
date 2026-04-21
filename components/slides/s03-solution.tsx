@@ -33,8 +33,7 @@ export function S03Solution() {
             Inmobiq combina data curada manualmente por analistas locales,
             demografía INEGI (Censo 2020 hoy · Encuesta Intercensal 2025 disponible
             septiembre 2026), histórico de crecimiento por zona y valuaciones con IA.
-            No otro portal de anuncios: la capa de claridad que el profesional
-            mexicano necesitaba.
+            Es una herramienta de análisis, no un portal de anuncios.
           </p>
         </FadeItem>
 
@@ -84,6 +83,6 @@ const pillars = [
   {
     icon: "travel_explore",
     title: "Brújula AI",
-    description: "Valuación instantánea de cualquier propiedad. Narrativa explicable con Claude. El diferencial emocional.",
+    description: "Valuación instantánea de cualquier propiedad con narrativa explicable generada por Claude AI.",
   },
 ];
