@@ -315,7 +315,7 @@ export const team = [
   {
     name: "Oscar Amayoral",
     role: "Fundador · Producto, tecnología y comercial",
-    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia profunda en IA aplicada: automatización, workflows con Claude, integración de modelos en producto. Background en marketing digital y desarrollo de producto.",
+    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia profunda en IA aplicada: automatización, creación y entrenamiento de algoritmos y redes neuronales, integración de modelos en producto. Background en marketing digital y desarrollo de producto.",
     highlight: true,
     source: "founder",
   },
