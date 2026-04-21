@@ -84,14 +84,14 @@ export const roi = {
 
 // Aporte VEQ in-kind — TODO el opex de Inmobiq durante 10 meses
 export const veq_inkind = [
-  { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 10m", mxn: 700_000 },
-  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 10m", mxn: 250_000 },
-  { label: "Publicidad pagada (Meta + Google)", detail: "$30K MXN/mes · 10m", mxn: 300_000 },
-  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · $15K/mes · 10m", mxn: 150_000 },
-  { label: "Salario fundador", detail: "$40K MXN/mes · 10m", mxn: 400_000 },
-  { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens · $22.5K/mes · 10m", mxn: 225_000 },
-  { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
-  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$10K/mes · 10m", mxn: 100_000 },
+  { label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
+  { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
+  { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
+  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
+  { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
+  { label: "Equipo de marketing VEQ", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
+  { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
+  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
 ];
 
 // Cash a Inmobiq — desglose
@@ -132,14 +132,14 @@ export const use_of_funds = [
     mxn: 2_275_000,
     usd: 122_973,
     items: [
-      { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 10m", mxn: 700_000 },
-      { label: "Salario fundador", detail: "$40K MXN/mes · 10m", mxn: 400_000 },
-      { label: "Publicidad pagada (Meta + Google)", detail: "$30K MXN/mes · 10m", mxn: 300_000 },
-      { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 10m", mxn: 250_000 },
-      { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens · $22.5K/mes · 10m", mxn: 225_000 },
-      { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · $15K/mes · 10m", mxn: 150_000 },
-      { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
-      { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$10K/mes · 10m", mxn: 100_000 },
+      { label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
+      { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
+      { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
+      { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
+      { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
+      { label: "Equipo de marketing VEQ", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
+      { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
+      { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
     ],
   },
   {
