@@ -17,7 +17,7 @@ export function S09BusinessModel() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Pricing validado con brokers.
+              Precios validados con brokers.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
               Tres tiers. El free es solo una probada — el valor real está en Pro y

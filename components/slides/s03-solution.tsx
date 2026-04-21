@@ -23,7 +23,7 @@ export function S03Solution() {
 
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em] max-w-4xl">
-            Un co-piloto de intelligence para el{" "}
+            Un co-piloto de inteligencia para el{" "}
             <em className="italic text-gradient-accent">broker profesional.</em>
           </h2>
         </FadeItem>
@@ -31,7 +31,7 @@ export function S03Solution() {
         <FadeItem>
           <p className="text-lg text-muted max-w-2xl leading-relaxed">
             Inmobiq combina data curada manualmente por analistas locales,
-            demografía INEGI 2020 y valuaciones con IA. No otro portal de listings:
+            demografía INEGI 2020 y valuaciones con IA. No otro portal de anuncios:
             la capa de claridad que el profesional mexicano necesitaba.
           </p>
         </FadeItem>
@@ -70,13 +70,13 @@ const pillars = [
     title: "Data curada por locales",
     description: (
       <>
-        Analistas <em className="italic text-foreground/95">humanos</em> en cada ciudad validan precios, zonas y listings. Calidad que un scraper nunca alcanza.
+        Analistas <em className="italic text-foreground/95">humanos</em> en cada ciudad validan precios, zonas y anuncios. Calidad que la extracción automática nunca alcanza.
       </>
     ),
   },
   {
     icon: "insights",
-    title: "Intelligence de zona",
+    title: "Inteligencia de zona",
     description: "Precio por m², tendencia, riesgo, demografía INEGI cruzada. 30 zonas canónicas ya vivas en TJ.",
   },
   {

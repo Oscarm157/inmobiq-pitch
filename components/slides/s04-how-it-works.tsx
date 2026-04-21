@@ -31,7 +31,7 @@ export function S04HowItWorks() {
           <p className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed">
             La data inmobiliaria en México vive dispersa entre 10+ portales, redes sociales, WhatsApp y
             marketplaces. Nuestro pipeline curado convierte ese caos en un{" "}
-            <em className="italic text-foreground/90">source of truth</em> para el profesional.
+            <em className="italic text-foreground/90">punto único de verdad</em> para el profesional.
           </p>
         </FadeItem>
 
@@ -80,7 +80,7 @@ const stages = [
     num: "04",
     icon: "insights",
     title: "Procesamos",
-    sub: "Intelligence + valuaciones + narrativas",
+    sub: "Inteligencia + valuaciones + narrativas",
     detail: "Risk scoring multifactor. ADN de zona. Brújula AI. Comparadores.",
   },
 ];
@@ -153,7 +153,7 @@ function PipelineFlow() {
             <span className="text-gradient-accent">Status actual</span> del mercado inmobiliario en México.
           </div>
           <div className="text-xs text-muted mt-1.5 uppercase tracking-[0.18em]">
-            Un único source of truth para brokers e inmobiliarias
+            Un único punto de verdad para brokers e inmobiliarias
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export function S16CTA() {
             <br />
             <HeroWord delay={0.5}>la capa de </HeroWord>
             <HeroWord delay={0.7}>
-              <em className="italic text-gradient-accent">intelligence</em>
+              <em className="italic text-gradient-accent">inteligencia</em>
             </HeroWord>
             <HeroWord delay={0.9}> inmobiliaria</HeroWord>
             <br />

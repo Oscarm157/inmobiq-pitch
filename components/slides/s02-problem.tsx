@@ -23,8 +23,8 @@ export function S02Problem() {
           <FadeItem>
             <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl mt-2">
               Varios portales, marketplaces y grupos de redes sociales —
-              información <em>diversa y difusa</em>, <em>user-generated</em> y sin curar.
-              Precios inflados, listings duplicados, cero forma de validar una zona con
+              información <em>diversa y difusa</em>, <em>generada por usuarios</em> y sin curar.
+              Precios inflados, anuncios duplicados, cero forma de validar una zona con
               confianza. Cada broker profesional pierde horas cada semana verificando
               información que debería ser un servicio base.
             </p>
@@ -84,6 +84,6 @@ const problemCards = [
   {
     number: "1-2",
     label: "Data pública confiable",
-    detail: "Pueden existir intentos aislados, pero la cobertura real es mínima o nula. Nadie ha construido la capa de intelligence que el broker mexicano necesita.",
+    detail: "Pueden existir intentos aislados, pero la cobertura real es mínima o nula. Nadie ha construido la capa de inteligencia que el broker mexicano necesita.",
   },
 ];

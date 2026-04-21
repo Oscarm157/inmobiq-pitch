@@ -78,7 +78,7 @@ export function S15Investment() {
               label="Efectivo a Inmobiq"
               amount={fmtMxn(round.cash_to_operation_mxn)}
               subtitle="MXN · al banco de Inmobiq"
-              detail="Capital para abrir las 14 ciudades nuevas. Cubre el ramp de curadores antes de que cada ciudad genere revenue."
+              detail="Capital para abrir las 14 ciudades nuevas. Cubre el arranque de curadores antes de que cada ciudad genere ingresos."
               color="accent"
               breakdown={cash_to_operation_breakdown}
             />
