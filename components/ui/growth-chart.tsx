@@ -67,11 +67,11 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
           <dd className="text-sm font-semibold text-[#e0e0e0] tabular-nums">{fmtUsers(p.users)}</dd>
         </div>
         <div className="flex justify-between items-baseline gap-3">
-          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">MRR</dt>
+          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">Ingreso mensual</dt>
           <dd className="text-sm font-semibold text-[#60a5fa] tabular-nums">{fmtMxn(p.mrr_mxn)} MXN</dd>
         </div>
         <div className="flex justify-between items-baseline gap-3">
-          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">ARR</dt>
+          <dt className="text-[10px] uppercase tracking-wider text-[#94a3b8]">Ingreso anual</dt>
           <dd className="text-sm font-bold text-[#60a5fa] tabular-nums">{fmtMxn(p.arr_mxn)} MXN</dd>
         </div>
       </dl>
@@ -211,7 +211,7 @@ export function GrowthChart() {
             yAxisId="mrr"
             type="monotone"
             dataKey="mrr_mxn"
-            name="MRR MXN"
+            name="Ingreso mensual MXN"
             stroke="#3b82f6"
             strokeWidth={2.5}
             fill="url(#mrrGradient)"

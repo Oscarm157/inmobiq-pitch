@@ -56,7 +56,7 @@ export function S11Financials() {
                 </span>
                 <span className="flex items-center gap-2 text-accent">
                   <span className="w-2.5 h-2.5 rounded-full bg-accent" />
-                  MRR (MXN)
+                  Ingreso mensual (MXN)
                 </span>
                 <span className="flex items-center gap-2 text-emerald-300">
                   <span className="w-5 h-px bg-emerald-400/80" style={{ borderTop: "1px dashed rgba(16,185,129,0.8)" }} />
@@ -115,8 +115,8 @@ export function S11Financials() {
           </div>
         </FadeItem>
         <TermLegend terms={[
-          { term: "MRR", def: "ingresos recurrentes mensuales por suscripciones" },
-          { term: "ARR", def: "ingresos recurrentes anuales (MRR × 12)" },
+          { term: "Ingreso mensual", def: "ingresos recurrentes por suscripciones cada mes (MRR)" },
+          { term: "Ingreso anual", def: "ingresos recurrentes anualizados (ARR · ingreso mensual × 12)" },
           { term: "Punto de equilibrio", def: "mes en que los ingresos igualan a los costos operativos" },
           { term: "Ronda A", def: "siguiente ronda de inversión formal (antes llamada Series A)" },
         ]} />
