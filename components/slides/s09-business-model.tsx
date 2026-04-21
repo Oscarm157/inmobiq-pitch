@@ -20,8 +20,9 @@ export function S09BusinessModel() {
               Tres planes para el broker mexicano.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-              El plan gratuito es una probada del producto — el valor real está en Pro
-              y Empresarial, donde proyectamos que el 85% de los usuarios pagarán.
+              El plan gratuito sirve como puerta de entrada al producto. Los planes
+              Pro y Empresarial concentran el valor real — proyectamos una conversión
+              del 85% de los usuarios a planes pagados.
             </p>
           </div>
         </FadeItem>
