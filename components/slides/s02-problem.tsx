@@ -25,8 +25,8 @@ export function S02Problem() {
               Varios portales, marketplaces y grupos de redes sociales —
               información <em>diversa y difusa</em>, <em>generada por usuarios</em> y sin curar.
               Precios inflados, anuncios duplicados, cero forma de validar una zona con
-              confianza. Cada broker profesional pierde horas cada semana verificando
-              información que debería ser un servicio base.
+              confianza. Cada broker profesional pierde horas cada semana validando datos
+              que deberían venir limpios de origen.
             </p>
           </FadeItem>
 
