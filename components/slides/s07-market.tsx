@@ -124,7 +124,7 @@ export function S07Market() {
 
         <FadeItem>
           <p className="text-xs text-muted/70 italic">
-            Fuente: AMPI (Asociación Mexicana de Profesionales Inmobiliarios) + estimaciones sectoriales · ticket promedio $899 MXN/mes × 12 meses.
+            Fuente: AMPI (Asociación Mexicana de Profesionales Inmobiliarios) + estimaciones sectoriales.
           </p>
         </FadeItem>
       </FadeStack>
