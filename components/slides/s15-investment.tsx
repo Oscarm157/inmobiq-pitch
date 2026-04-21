@@ -1,7 +1,6 @@
 import { Slide } from "../slide";
 import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
-import { AnimatedCounter } from "../ui/animated-counter";
 import {
   round,
   roi,
@@ -202,27 +201,6 @@ export function S15Investment() {
           </div>
         </FadeItem>
 
-        {/* Retornos para VEQ */}
-        <FadeItem>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <ReturnCard
-              horizon="Año 3"
-              multiple={roi.year_3.veq_multiple}
-              mxn={roi.year_3.veq_return_mxn}
-              usd={roi.year_3.veq_return_usd}
-              detail={`Ingreso anual ${fmtMxn(roi.year_3.arr_mxn)} MXN · ${roi.year_3.users.toLocaleString()} usuarios · ${roi.year_3.tam_percent}% del mercado · múltiplo 8× SaaS LatAm`}
-            />
-            <ReturnCard
-              horizon="Año 5"
-              multiple={roi.year_5.veq_multiple}
-              mxn={roi.year_5.veq_return_mxn}
-              usd={roi.year_5.veq_return_usd}
-              detail={`Ingreso anual ${fmtMxn(roi.year_5.arr_mxn)} MXN · ${roi.year_5.users.toLocaleString()} usuarios · ${roi.year_5.tam_percent}% del mercado · salida / Ronda B`}
-              featured
-            />
-          </div>
-        </FadeItem>
-
         <FadeItem>
           <div className="flex items-center gap-4">
             <div className="h-px flex-1 bg-card-border" />
@@ -311,53 +289,3 @@ function Stat({ label, value, sub, accent }: { label: string; value: string; sub
   );
 }
 
-function ReturnCard({
-  horizon,
-  multiple,
-  mxn,
-  usd,
-  detail,
-  featured,
-}: {
-  horizon: string;
-  multiple: string;
-  mxn: number;
-  usd: number;
-  detail: string;
-  featured?: boolean;
-}) {
-  const mult = parseInt(multiple.replace("×", "").replace("x", ""), 10);
-  return (
-    <div
-      className={`rounded-2xl p-6 sm:p-7 h-full flex flex-col justify-between relative overflow-hidden ${
-        featured ? "bg-card glow-accent" : "bg-card"
-      }`}
-    >
-      {featured && (
-        <div
-          className="absolute -top-20 -right-20 w-48 h-48 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)" }}
-        />
-      )}
-      <div className="relative">
-        <div className="text-xs uppercase tracking-[0.22em] font-semibold text-muted">{horizon}</div>
-        <div
-          className={`text-[80px] sm:text-[100px] font-semibold leading-none tabular-nums mt-2 ${
-            featured ? "text-gradient-accent" : "text-foreground"
-          }`}
-        >
-          <AnimatedCounter value={mult} duration={1400} suffix="×" />
-        </div>
-      </div>
-      <div className="relative mt-4">
-        <div className="text-2xl font-semibold text-foreground tabular-nums">
-          ${(mxn / 1_000_000).toFixed(1)}M MXN
-        </div>
-        <div className="text-xs text-muted mt-0.5 tabular-nums">
-          Retorno para VEQ · equivale a ${(usd / 1_000_000).toFixed(1)}M USD
-        </div>
-        <div className="text-xs text-muted/80 mt-3 italic leading-relaxed">{detail}</div>
-      </div>
-    </div>
-  );
-}
