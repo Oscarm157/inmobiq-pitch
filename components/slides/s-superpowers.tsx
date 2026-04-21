@@ -113,7 +113,7 @@ export function SSuperpowers() {
             <div className="mt-4 mx-auto w-fit flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-xl px-5 py-3">
               <span className="material-symbols-outlined text-accent" style={{ fontSize: 20 }}>auto_awesome</span>
               <div>
-                <div className="text-xs font-semibold text-accent uppercase tracking-wide">Brújula AI toma este tramo</div>
+                <div className="text-xs font-semibold text-accent uppercase tracking-wide">Brújula Inmobiliaria toma este tramo</div>
                 <div className="text-[11px] text-muted mt-0.5">
                   Cruza 1 propiedad vs <span className="text-foreground font-semibold">1,000 en el mercado</span> · genera reporte completo ·{" "}
                   <span className="text-emerald-300 font-semibold">~4 minutos</span> vs 90 min manual
