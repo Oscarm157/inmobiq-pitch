@@ -15,8 +15,8 @@ export const brand = {
 
 export const round = {
   // Paquete total VEQ (todo lo aporta VEQ — Inmobiq solo paga curadores)
-  package_total_mxn: 4_735_000,
-  package_total_usd: 255_946,
+  package_total_mxn: 4_805_000,
+  package_total_usd: 259_730,
 
   // Cash a Inmobiq (apertura de ciudades + ramp pre-revenue de curadores)
   cash_to_operation_mxn: 1_960_000,
@@ -32,7 +32,7 @@ export const round = {
   founder_secondary_tranches: 2,
 
   // Aporte VEQ in-kind (10 meses cubriendo TODO el opex de Inmobiq)
-  veq_inkind_mxn: 2_375_000,
+  veq_inkind_mxn: 2_445_000,
   veq_inkind_months: 10,
 
   // Participación
@@ -41,13 +41,13 @@ export const round = {
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 9_663_000,
-  post_money_usd: 522_324,
-  pre_money_mxn: 4_928_000,
-  pre_money_usd: 266_378,
+  post_money_mxn: 9_806_000,
+  post_money_usd: 530_054,
+  pre_money_mxn: 5_001_000,
+  pre_money_usd: 270_324,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $4.735M MXN",
+  instrument: "Participación directa · 49% por paquete de $4.805M MXN",
   runway_months: 10,
   buffer_months: 0,
 };
@@ -65,7 +65,7 @@ export const roi = {
     valuation_mxn: 498_400_000,
     veq_return_usd: 13_200_000,
     veq_return_mxn: 244_220_000,
-    veq_multiple: "52×",
+    veq_multiple: "51×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -79,7 +79,7 @@ export const roi = {
     veq_return_mxn: 300_660_000,
     veq_multiple: "63×",
   },
-  irr_annual_percent: 132,
+  irr_annual_percent: 131,
 };
 
 // Aporte VEQ in-kind — TODO el opex de Inmobiq durante 10 meses
@@ -91,7 +91,7 @@ export const veq_inkind = [
   { label: "Salario fundador", detail: "$45K MXN/mes · 10m", mxn: 450_000 },
   { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens · $24.5K/mes · 10m", mxn: 245_000 },
   { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
-  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 10m", mxn: 30_000 },
+  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$10K/mes · 10m", mxn: 100_000 },
 ];
 
 // Cash a Inmobiq — desglose
@@ -128,9 +128,9 @@ export const monthly_cash_flow = [
 export const use_of_funds = [
   {
     chapter: "Aporte VEQ in-kind (10 meses)",
-    percent: 50.2,
-    mxn: 2_375_000,
-    usd: 128_378,
+    percent: 50.9,
+    mxn: 2_445_000,
+    usd: 132_162,
     items: [
       { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 10m", mxn: 700_000 },
       { label: "Salario fundador", detail: "$45K MXN/mes · 10m", mxn: 450_000 },
@@ -139,12 +139,12 @@ export const use_of_funds = [
       { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens · $24.5K/mes · 10m", mxn: 245_000 },
       { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · $15K/mes · 10m", mxn: 150_000 },
       { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
-      { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 10m", mxn: 30_000 },
+      { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$10K/mes · 10m", mxn: 100_000 },
     ],
   },
   {
     chapter: "Efectivo a Inmobiq (apertura 14 ciudades)",
-    percent: 41.4,
+    percent: 40.8,
     mxn: 1_960_000,
     usd: 105_946,
     items: [
@@ -155,7 +155,7 @@ export const use_of_funds = [
   },
   {
     chapter: "Compensación al fundador (por hitos)",
-    percent: 8.4,
+    percent: 8.3,
     mxn: 400_000,
     usd: 21_622,
     items: [
@@ -444,7 +444,7 @@ export const glossary = [
   { term: "LTV", def: "Lifetime Value. Ingresos totales que genera un cliente durante su vida con el producto." },
   { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
   { term: "SAFE", def: "Simple Agreement for Future Equity. Instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
-  { term: "IRR", def: "Tasa Interna de Retorno. Rendimiento anual compuesto de la inversión. ~132% proyectado." },
+  { term: "IRR", def: "Tasa Interna de Retorno. Rendimiento anual compuesto de la inversión. ~131% proyectado." },
   { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 5." },
   { term: "Runway", def: "Tiempo que dura el dinero de la ronda antes de necesitar más capital o ser rentables." },
   { term: "SaaS", def: "Software as a Service. Modelo de negocio de suscripción mensual/anual en la nube." },
