@@ -37,8 +37,8 @@ export default function Page() {
       <S07Market />
       <S08Cities />
       <S11Financials />
-      <S10Traction />
       <S12Expansion />
+      <S10Traction />
       <S13Havi />
       <S14Team />
       <S15Investment />

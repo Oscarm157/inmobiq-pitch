@@ -10,7 +10,6 @@ export function S06Differentiator() {
       <FadeStack className="relative z-10 flex flex-col gap-10">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">06</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Diferenciador</span>
           </div>
         </FadeItem>

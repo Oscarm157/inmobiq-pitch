@@ -18,7 +18,6 @@ export function S11Financials() {
       <FadeStack className="relative z-10 flex flex-col gap-6">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">11</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Crecimiento proyectado</span>
           </div>
         </FadeItem>

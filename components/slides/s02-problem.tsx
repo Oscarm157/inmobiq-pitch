@@ -9,7 +9,6 @@ export function S02Problem() {
         <div className="lg:col-span-6 flex flex-col gap-6">
           <FadeItem>
             <div className="flex items-center gap-3">
-              <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">02</span>
               <span className="text-xs uppercase tracking-[0.18em] text-muted">El problema</span>
             </div>
           </FadeItem>

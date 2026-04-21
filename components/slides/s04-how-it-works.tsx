@@ -16,7 +16,6 @@ export function S04HowItWorks() {
       <FadeStack className="relative z-10 flex flex-col gap-8">
         <FadeItem>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">04</span>
             <span className="text-xs uppercase tracking-[0.18em] text-muted-light">Cómo funcionamos</span>
           </div>
         </FadeItem>
