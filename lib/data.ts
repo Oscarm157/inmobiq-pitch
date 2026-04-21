@@ -371,9 +371,9 @@ export const risks = [
   {
     risk: "Competencia de portales grandes (Inmuebles24, Lamudi)",
     mitigation: [
+      "Mentalidad startup: iteramos, fallamos y lanzamos features en días. En portales grandes una decisión de producto tarda +6 meses en pasar por aprobación y despliegue",
       "No competimos en listings, competimos en claridad (B2B tool)",
       "Capa de data curada + INEGI + IA que los portales no ofrecen",
-      "Lead en data curada y 15 ciudades mapeadas",
     ],
   },
   {
