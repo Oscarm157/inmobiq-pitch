@@ -83,7 +83,7 @@ const problemCards = [
   },
   {
     number: "1-2",
-    label: "Data pública confiable",
+    label: "Iniciativas serias",
     detail: "Pueden existir intentos aislados, pero la cobertura real es mínima o nula. Nadie ha construido la capa de inteligencia que el broker mexicano necesita.",
   },
 ];
