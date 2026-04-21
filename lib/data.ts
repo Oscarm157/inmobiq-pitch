@@ -224,8 +224,8 @@ export const pricing = [
   },
   {
     name: "Pro",
-    price_mxn: 499,
-    price_label: "$499 MXN/mes",
+    price_mxn: 399,
+    price_label: "$399 MXN/mes",
     target: "Broker profesional independiente",
     featured: true,
     features: [
@@ -456,7 +456,7 @@ export const glossary = [
   { term: "Múltiplo ARR", def: "Valuación de empresas SaaS = ARR × múltiplo (8–10× en LatAm seed). Estándar de la industria para calcular retorno." },
   { term: "Churn", def: "Tasa de cancelación — porcentaje de usuarios que dejan de pagar cada mes. Queremos <5% mensual." },
   { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$60M MXN." },
-  { term: "Tiers", def: "Niveles de precio del producto: Explorador (gratis), Pro ($499 MXN/mes), Empresarial ($1,499 MXN/mes)." },
+  { term: "Tiers", def: "Niveles de precio del producto: Explorador (gratis), Pro ($399 MXN/mes), Empresarial ($1,499 MXN/mes)." },
   { term: "INEGI", def: "Instituto Nacional de Estadística y Geografía — fuente oficial de datos demográficos del Censo 2020 (500+ variables por zona)." },
   { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios — principal agremiación de brokers e inmobiliarias en México." },
   { term: "ICP", def: "Ideal Customer Profile — perfil del cliente ideal: broker con 5+ años, 5+ transacciones/mes, ciudad de alto volumen." },
