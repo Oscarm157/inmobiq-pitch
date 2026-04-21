@@ -259,12 +259,12 @@ export const pricing = [
 
 export const unit_economics = {
   avg_ticket_mxn: 729, // ponderado: $399 × 0.7 + $1,499 × 0.3
-  cac_mxn: 2_500,
-  cac_usd: 147,
+  cac_mxn: 1_500,
+  cac_usd: 81,
   ltv_retention_months: 18,
   ltv_mxn: 13_122,
-  ltv_cac_ratio: 5.2,
-  payback_months: 3.4,
+  ltv_cac_ratio: 8.7,
+  payback_months: 2.1,
 };
 
 // Proyección usuarios + revenue (MXN) · ticket avg $729
