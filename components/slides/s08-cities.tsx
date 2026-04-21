@@ -80,7 +80,7 @@ export function S08Cities() {
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Mercado potencial agregado de 63,600 brokers en las 15 ciudades. Tijuana opera en vivo
                 desde el día uno; las 14 ciudades restantes se incorporan en tres olas durante los
-                primeros 12 meses. La ronda financia la expansión completa.
+                primeros 10 meses. La ronda financia la expansión completa.
               </p>
             </div>
 

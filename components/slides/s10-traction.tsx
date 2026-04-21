@@ -69,8 +69,8 @@ export function S10Traction() {
 }
 
 const roadmap = [
-  { quarter: "Q1 2026", label: "MVP producción", detail: "30 zonas TJ vivas · pipeline de data operando", status: "done" },
-  { quarter: "Q2 2026", label: "Lanzamiento TJ · Pro/Empresarial", detail: "Activación de planes pagados · 100 primeros clientes", status: "active" },
-  { quarter: "Q4 2026", label: "GDL + Cancún", detail: "Segunda y tercera ciudad · 4 curadores nuevos", status: "next" },
-  { quarter: "2027", label: "CDMX + Monterrey", detail: "Ronda A · 2,500+ usuarios activos", status: "next" },
+  { quarter: "Q2 2026 · hoy", label: "Terminar MVP · lanzar Tijuana", detail: "Cerrar el 20% restante del producto · activar Pro/Empresarial · primeros pagados", status: "active" },
+  { quarter: "Mes 3-6", label: "Ola 1 · 5 ciudades", detail: "GDL + Cancún + CDMX + Monterrey · punto de equilibrio en mes 4-5", status: "next" },
+  { quarter: "Mes 6-12", label: "Ola 2-3 · 15 ciudades", detail: "8 ciudades rentables en M9 · 15 ciudades activas en M12 · 2,400 usuarios", status: "next" },
+  { quarter: "Mes 12-18", label: "Plan completo · Ronda A", detail: "5,380 usuarios · ARR ~$47M MXN · posicionado para Ronda A", status: "next" },
 ];

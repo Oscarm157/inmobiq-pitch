@@ -43,9 +43,9 @@ export function S15Investment() {
               <em className="italic text-gradient-accent">No es solo capital.</em> VEQ opera junto a Inmobiq.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> el año base
+              VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
               (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores —
-              que se cubren con el revenue de cada ciudad. Paquete total $5.26M MXN por
+              que se cubren con el revenue de cada ciudad. Paquete total $4.785M MXN por
               <span className="text-foreground font-semibold"> 49% de participación</span>.
             </p>
           </div>
@@ -67,10 +67,10 @@ export function S15Investment() {
               }))}
             />
             <PackageCard
-              label="Aporte VEQ · año base (12 meses)"
+              label="Aporte VEQ · 10 meses de opex"
               amount={fmtMxn(round.veq_inkind_mxn)}
               subtitle="MXN · todo el opex de Inmobiq"
-              detail="VEQ asume el opex completo el año 1: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
+              detail="VEQ asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
               color="emerald"
               breakdown={veq_inkind}
             />
@@ -102,7 +102,7 @@ export function S15Investment() {
                 Inmobiq genera utilidad desde el mes 3
               </div>
               <div className="text-base text-foreground/90 leading-snug max-w-3xl mb-2">
-                VEQ cubre todo el opex el año base. El único gasto de Inmobiq son los curadores —
+                VEQ cubre todo el opex los primeros 10 meses. El único gasto de Inmobiq son los curadores —
                 que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.
               </div>
               <div className="flex flex-wrap gap-x-5 gap-y-1 text-[11px] text-muted">
@@ -130,7 +130,7 @@ export function S15Investment() {
                       Opex VEQ<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">aporte in-kind</span>
                     </th>
                     <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-violet">
-                      Opex Inmobiq<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">año 2 asume</span>
+                      Opex Inmobiq<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">post-mes 10</span>
                     </th>
                     <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">
                       Curadores<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">$20K × persona</span>
@@ -195,17 +195,17 @@ export function S15Investment() {
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span className="uppercase tracking-widest font-semibold text-emerald-300/90">
-                  Año 1 · VEQ cubre $238K/mes opex
+                  M1-M10 · VEQ cubre $238K/mes opex
                 </span>
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent" />
                 <span className="uppercase tracking-widest font-semibold text-accent">
-                  Año 2 · Inmobiq asume opex
+                  M11+ · Inmobiq asume opex
                 </span>
               </span>
               <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
-                Utilidad acumulada año 1 ~$5.9M MXN — suficiente para cubrir el opex el año 2 sin más capital.
+                Utilidad acumulada M1-M10 ~$5M MXN — suficiente para cubrir el opex propio a partir del mes 11.
               </span>
             </div>
           </div>

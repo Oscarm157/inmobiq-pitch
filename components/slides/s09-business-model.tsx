@@ -20,9 +20,9 @@ export function S09BusinessModel() {
               Tres planes para el broker mexicano.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-              El plan gratuito sirve como puerta de entrada al producto. Los planes
-              Pro y Empresarial concentran el valor real — proyectamos una conversión
-              del 85% de los usuarios a planes pagados.
+              El plan gratuito es puerta de entrada — funnel, no monetización. Los
+              planes Pro y Empresarial concentran el valor real, con un costo por
+              valuación que baja 3.5× al subir de tier.
             </p>
           </div>
         </FadeItem>
@@ -48,6 +48,9 @@ export function S09BusinessModel() {
                 </div>
                 <div className="text-4xl font-semibold mb-1 tabular-nums">
                   {p.price_label}
+                </div>
+                <div className={`text-xs font-semibold tabular-nums mb-2 ${p.featured ? "text-accent" : "text-accent"}`}>
+                  {p.cost_per_valuation}
                 </div>
                 <div className="text-sm opacity-70 mb-5">{p.target}</div>
                 <ul className="flex flex-col gap-2">
@@ -76,7 +79,7 @@ export function S09BusinessModel() {
             <Kpi label="Ticket promedio" value={`$${unit_economics.avg_ticket_mxn} MXN`} sub="Mix 70% Pro + 30% Empresarial" />
             <Kpi label="CAC objetivo" value={`$${unit_economics.cac_mxn.toLocaleString()} MXN`} sub="Ads + SEO + referidos" accent />
             <Kpi label="LTV" value={`$${unit_economics.ltv_mxn.toLocaleString()} MXN`} sub="18 meses retention B2B" />
-            <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en 3 meses" accent />
+            <Kpi label="LTV / CAC" value={`${unit_economics.ltv_cac_ratio}×`} sub="Payback en ~2 meses" accent />
           </div>
         </FadeItem>
         <TermLegend terms={[
