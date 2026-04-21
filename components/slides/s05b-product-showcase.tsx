@@ -6,9 +6,9 @@ import { FadeStack, FadeItem } from "../ui/motion-primitives";
 
 const screenshots = [
   { src: "/inmobiq%20mapa%20principal.png", caption: "Mapa choropleth de precios" },
-  { src: "/inmobiq%20secundario.png",       caption: "Inteligencia por zona" },
-  { src: "/inmobiq%203.png",                caption: "Brújula · valuación" },
-  { src: "/inmobiq%204.png",                caption: "Panorama de mercado" },
+  { src: "/inmobiq%20secundario.png",       caption: "Panorama de mercado" },
+  { src: "/inmobiq%203.png",                caption: "Inteligencia por zona" },
+  { src: "/inmobiq%204.png",                caption: "Brújula · valuación" },
 ];
 
 export function S05ProductShowcase() {
@@ -53,17 +53,17 @@ export function S05ProductShowcase() {
 
         {/* Mapa hero + 3 secundarios */}
         <FadeItem>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-            {/* Hero — mapa grande izquierda */}
-            <div className="lg:col-span-2 lg:row-span-2 rounded-2xl bg-card border border-card-border/60 overflow-hidden aspect-[16/10]">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
+            {/* Hero — mapa grande izquierda (ratio 16/9 tipo screenshot) */}
+            <div className="lg:col-span-3 lg:row-span-3 rounded-2xl bg-card border border-card-border/60 overflow-hidden aspect-[16/9]">
               <ScreenshotSlot screenshot={screenshots[0]} large onOpen={setLightbox} />
             </div>
 
-            {/* 3 secundarios */}
+            {/* 3 secundarios en columna derecha */}
             {screenshots.slice(1).map((s, i) => (
               <div
                 key={i}
-                className="rounded-2xl bg-card border border-card-border/60 overflow-hidden aspect-[4/3]"
+                className="lg:col-span-2 rounded-2xl bg-card border border-card-border/60 overflow-hidden aspect-[16/9]"
               >
                 <ScreenshotSlot screenshot={s} onOpen={setLightbox} />
               </div>
@@ -129,7 +129,7 @@ function ScreenshotSlot({
         <img
           src={screenshot.src}
           alt={screenshot.caption}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
         />
         <div className="absolute bottom-0 inset-x-0 px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
           <span className="text-xs text-foreground/90 font-medium">{screenshot.caption}</span>
