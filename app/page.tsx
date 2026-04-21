@@ -26,11 +26,11 @@ export default function Page() {
       <S02Problem />
       <SCockpit />
       <SRadar />
-      <S03Solution />
-      <S04HowItWorks />
+      <S06Differentiator />
       <S05Product />
       <SSuperpowers />
-      <S06Differentiator />
+      <S04HowItWorks />
+      <S03Solution />
       <S07Market />
       <S08Cities />
       <S09BusinessModel />
