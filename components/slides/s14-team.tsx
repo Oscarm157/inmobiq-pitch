@@ -115,7 +115,22 @@ export function S14Team() {
                 {risks.map((r) => (
                   <div key={r.risk} className="border-l-2 border-accent/30 pl-4">
                     <div className="text-sm font-semibold text-foreground">{r.risk}</div>
-                    <div className="text-xs text-muted mt-1 leading-relaxed">{r.mitigation}</div>
+                    <div className="text-xs text-muted mt-1 leading-relaxed">
+                      {r.mitigation}
+                      {"link" in r && r.link && (
+                        <>
+                          {" · "}
+                          <a
+                            href={r.link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-accent underline underline-offset-2 hover:text-accent-light"
+                          >
+                            {r.link.label}
+                          </a>
+                        </>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

@@ -350,7 +350,8 @@ export const team = [
 export const risks = [
   {
     risk: "Adopción lenta de brokers",
-    mitigation: "Cross-promo con Narrativa360 · ventas directas en AMPI · onboarding personalizado para Empresarial",
+    mitigation: "Herramientas gratuitas para brokers con INMOBIQ como canal de entrada · alianzas con AMPI · marketing de afiliados con influencers de real estate · campañas pagadas (Meta + Google)",
+    link: { label: "logofa.st", url: "https://logofa.st/" },
   },
   {
     risk: "Competencia de portales grandes (Inmuebles24, Lamudi)",
