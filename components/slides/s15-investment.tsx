@@ -5,7 +5,6 @@ import {
   round,
   roi,
   veq_inkind,
-  founder_secondary_tranches,
   monthly_cash_flow,
 } from "@/lib/data";
 
@@ -63,15 +62,11 @@ export function S15Investment() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <PackageCard
               label="Compensación al fundador"
-              amount={fmtMxn(round.founder_secondary_mxn)}
-              subtitle="$250K al cierre · $150K por hito"
-              detail="$250K pagados al cierre del deal. Los $150K restantes están condicionados al hito de los primeros 300 usuarios pagados."
+              amount="$250K"
+              subtitle="Al cierre del deal · pago asegurado"
+              detail=""
               color="amber"
-              breakdown={founder_secondary_tranches.map((t) => ({
-                label: `Tramo ${t.tranche}`,
-                detail: t.milestone,
-                mxn: t.mxn,
-              }))}
+              bonus={{ amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" }}
             />
             <PackageCard
               label="Aporte VEQ · 10 meses de opex"
@@ -233,6 +228,7 @@ function PackageCard({
   detail,
   color,
   breakdown,
+  bonus,
 }: {
   label: string;
   amount: string;
@@ -240,6 +236,7 @@ function PackageCard({
   detail: string;
   color: "accent" | "emerald" | "amber";
   breakdown?: Array<{ label: string; detail?: string; mxn: number }>;
+  bonus?: { amount: string; when: string };
 }) {
   const text =
     color === "emerald" ? "text-emerald-300" : color === "amber" ? "text-amber-300" : "text-gradient-accent";
@@ -249,9 +246,15 @@ function PackageCard({
   return (
     <div className={`rounded-2xl bg-card p-5 ring-1 ${ring} flex flex-col h-full`}>
       <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted mb-1.5">{label}</div>
-      <div className={`text-3xl sm:text-4xl font-semibold tabular-nums ${text}`}>{amount}</div>
-      <div className="text-[11px] text-muted mt-0.5 mb-2.5">{subtitle}</div>
-      <div className="text-xs text-muted leading-relaxed mb-3">{detail}</div>
+      <div className={`text-4xl sm:text-5xl font-semibold tabular-nums ${text}`}>{amount}</div>
+      <div className="text-xs text-muted mt-1 mb-3">{subtitle}</div>
+      {detail && <div className="text-xs text-muted leading-relaxed mb-3">{detail}</div>}
+      {bonus && (
+        <div className="mt-1 mb-3 rounded-xl bg-foreground/5 border border-card-border/60 p-3.5">
+          <div className={`text-2xl sm:text-3xl font-semibold tabular-nums ${text}`}>{bonus.amount}</div>
+          <div className="text-xs text-muted mt-0.5 leading-snug">{bonus.when}</div>
+        </div>
+      )}
       {breakdown && (
         <div className="mt-auto pt-3 border-t border-card-border/50">
           <div className="flex items-baseline justify-between mb-2">
