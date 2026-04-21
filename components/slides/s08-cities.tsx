@@ -180,7 +180,7 @@ export function S08Cities() {
           </div>
         </FadeItem>
 
-        {/* Visión a futuro — trayectoria post broker */}
+        {/* Horizonte — trayectoria post broker */}
         <FadeItem>
           <div className="rounded-2xl bg-gradient-to-br from-accent/10 via-card to-card border border-accent/20 p-5 sm:p-6">
             <div className="flex items-start justify-between gap-6 flex-wrap">
@@ -190,7 +190,7 @@ export function S08Cities() {
                     rocket_launch
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
-                    Visión a futuro · post broker
+                    Horizonte · post broker
                   </span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight mb-2">
