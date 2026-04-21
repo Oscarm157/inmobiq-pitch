@@ -186,7 +186,7 @@ export const pricing = [
     price_mxn: 0,
     price_label: "Gratis",
     cost_per_valuation: "3 valuaciones / mes",
-    target: "Funnel inicial · probadita del producto",
+    target: "Funnel inicial · acceso de evaluación",
     features: [
       "3 créditos Brújula · export PDF / mes",
       "Vista parcial del dashboard",
