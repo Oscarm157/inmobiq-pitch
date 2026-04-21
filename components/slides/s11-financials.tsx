@@ -38,9 +38,9 @@ export function S11Financials() {
             <div className="flex gap-5 sm:gap-7">
               <HeroKpi label="Punto de equilibrio" value="Mes 6" sub="~490 usuarios pagados" accent="emerald" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="ARR Mes 12" value="$23M" sub="MXN · $1.24M USD" />
+              <HeroKpi label="Ingreso anual mes 12" value="$21M" sub="MXN · $1.13M USD" />
               <div className="w-px bg-[#2a2a3e]" />
-              <HeroKpi label="ARR Mes 18" value="$51.9M" sub="MXN · $2.8M USD" accent="blue" />
+              <HeroKpi label="Ingreso anual mes 18" value="$47.1M" sub="MXN · $2.5M USD" accent="blue" />
             </div>
           </div>
         </FadeItem>
@@ -87,13 +87,13 @@ export function S11Financials() {
             icon="schedule"
             label="Payback CAC"
             value="3 meses"
-            detail="CAC $2.5K MXN · ticket promedio $799 MXN · retención 18m"
+            detail="CAC $2.5K MXN · ticket promedio $729 MXN · retención 18m"
           />
           <InsightCard
             icon="rocket_launch"
             label="Siguiente ronda"
             value="Mes 24-30"
-            detail="Ingreso anual $53.2M MXN posiciona para ronda A de $6-8M USD a múltiplo 6×"
+            detail="Ingreso anual ~$48M MXN posiciona para ronda A de $5-7M USD a múltiplo 6×"
             featured
           />
         </FadeStack>

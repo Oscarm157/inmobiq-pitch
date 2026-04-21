@@ -114,15 +114,15 @@ export const founder_secondary_tranches = [
 // Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) × $20K/mes
 const opexMonthly = 238_000;
 export const monthly_cash_flow = [
-  { month: 1,  cities: 1,  users: 35,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 27_965,    net_mxn: -12_035,   margin_pct: -43, note: "Tijuana piloto · pre-escala" },
-  { month: 3,  cities: 5,  users: 345,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 275_655,   net_mxn: 115_655,   margin_pct: 42, note: "Ola 1 abriendo · 5 ciudades" },
-  { month: 6,  cities: 8,  users: 990,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 791_010,   net_mxn: 551_010,   margin_pct: 70, note: "Punto de equilibrio · ola 2 abriendo" },
-  { month: 9,  cities: 8,  users: 1_700, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_358_300, net_mxn: 1_118_300, margin_pct: 82, note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, cities: 15, users: 2_400, curators: 22, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 440_000, mrr_mxn: 1_917_600, net_mxn: 1_477_600, margin_pct: 77, note: "Ola 3 abriendo · 15 ciudades · último mes año 1" },
-  { month: 15, cities: 15, users: 3_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_100_000, net_mxn: 2_422_000, margin_pct: 78, note: "Año 2 · Inmobiq asume opex" },
-  { month: 16, cities: 15, users: 4_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_500_000, net_mxn: 2_822_000, margin_pct: 81, note: "Crecimiento sostenido" },
-  { month: 17, cities: 15, users: 4_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_900_000, net_mxn: 3_222_000, margin_pct: 83, note: "Optimización · LTV creciendo" },
-  { month: 18, cities: 15, users: 5_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 4_298_620, net_mxn: 3_620_620, margin_pct: 84, note: "Plan completo · autosostenible" },
+  { month: 1,  cities: 1,  users: 35,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 25_515,    net_mxn: -14_485,  margin_pct: -57, note: "Tijuana piloto · pre-escala" },
+  { month: 3,  cities: 5,  users: 345,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 251_505,   net_mxn: 91_505,   margin_pct: 36, note: "Ola 1 abriendo · 5 ciudades" },
+  { month: 6,  cities: 8,  users: 990,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 721_710,   net_mxn: 481_710,  margin_pct: 67, note: "Punto de equilibrio · ola 2 abriendo" },
+  { month: 9,  cities: 8,  users: 1_700, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_239_300, net_mxn: 999_300,  margin_pct: 81, note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, cities: 15, users: 2_400, curators: 22, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 440_000, mrr_mxn: 1_749_600, net_mxn: 1_309_600, margin_pct: 75, note: "Ola 3 abriendo · 15 ciudades · último mes año 1" },
+  { month: 15, cities: 15, users: 3_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_830_000, net_mxn: 2_152_000, margin_pct: 76, note: "Año 2 · Inmobiq asume opex" },
+  { month: 16, cities: 15, users: 4_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_200_000, net_mxn: 2_522_000, margin_pct: 79, note: "Crecimiento sostenido" },
+  { month: 17, cities: 15, users: 4_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_560_000, net_mxn: 2_882_000, margin_pct: 81, note: "Optimización" },
+  { month: 18, cities: 15, users: 5_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_922_020, net_mxn: 3_244_020, margin_pct: 83, note: "Plan completo · autosostenible" },
 ];
 
 // Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
@@ -258,42 +258,42 @@ export const pricing = [
 ];
 
 export const unit_economics = {
-  avg_ticket_mxn: 799, // weighted: $499 × 0.7 + $1,499 × 0.3
+  avg_ticket_mxn: 729, // ponderado: $399 × 0.7 + $1,499 × 0.3
   cac_mxn: 2_500,
   cac_usd: 147,
   ltv_retention_months: 18,
-  ltv_mxn: 14_382,
-  ltv_cac_ratio: 5.7,
-  payback_months: 3.1,
+  ltv_mxn: 13_122,
+  ltv_cac_ratio: 5.2,
+  payback_months: 3.4,
 };
 
-// Proyección usuarios + revenue (MXN)
+// Proyección usuarios + revenue (MXN) · ticket avg $729
 export const projections = [
-  { month: 3,  users_active: 345,   paid_percent: 100, paid_users: 345,   mrr_mxn: 275_655,   arr_mxn: 3_307_860,   status: "ramp" },
-  { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 791_010,   arr_mxn: 9_492_120,   status: "punto de equilibrio" },
-  { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_358_300, arr_mxn: 16_299_600,  status: "profitable" },
-  { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_917_600, arr_mxn: 23_011_200,  status: "15 ciudades" },
-  { month: 18, users_active: 5_380, paid_percent: 100, paid_users: 5_380, mrr_mxn: 4_298_620, arr_mxn: 51_583_440,  status: "plan completo" },
+  { month: 3,  users_active: 345,   paid_percent: 100, paid_users: 345,   mrr_mxn: 251_505,   arr_mxn: 3_018_060,   status: "ramp" },
+  { month: 6,  users_active: 990,   paid_percent: 100, paid_users: 990,   mrr_mxn: 721_710,   arr_mxn: 8_660_520,   status: "punto de equilibrio" },
+  { month: 9,  users_active: 1_700, paid_percent: 100, paid_users: 1_700, mrr_mxn: 1_239_300, arr_mxn: 14_871_600,  status: "profitable" },
+  { month: 12, users_active: 2_400, paid_percent: 100, paid_users: 2_400, mrr_mxn: 1_749_600, arr_mxn: 20_995_200,  status: "15 ciudades" },
+  { month: 18, users_active: 5_380, paid_percent: 100, paid_users: 5_380, mrr_mxn: 3_922_020, arr_mxn: 47_064_240,  status: "plan completo" },
 ];
 
 export const market = {
   tam: {
     label: "TAM — Brokers e inmobiliarias registrados en México",
     users: 80_000,
-    revenue_potential_mxn: 862_800_000,
-    detail: "Fuente: AMPI + estimaciones sectoriales · ~$899 MXN avg × 12 meses × 80K usuarios",
+    revenue_potential_mxn: 699_840_000,
+    detail: "Fuente: AMPI + estimaciones sectoriales · $729 MXN avg × 12 meses × 80K brokers",
   },
   sam: {
     label: "SAM — Brokers activos en 5 ciudades prioritarias",
     users: 44_000,
-    revenue_potential_mxn: 474_700_000,
+    revenue_potential_mxn: 384_912_000,
     detail: "CDMX 22,400 + MTY 8,000 + GDL 7,200 + Puebla 3,200 + TJ 3,200",
   },
   som: {
     label: "SOM — Penetración objetivo mes 18",
     users: 5_380,
-    revenue_potential_mxn: 51_583_440,
-    detail: "8.5% del TAM · 5,412 usuarios pagos × $799 avg (70% Pro / 30% Empresarial) = $4.3M MXN/mes MRR",
+    revenue_potential_mxn: 47_064_240,
+    detail: "8.5% del mercado · 5,380 usuarios pagados × $729 avg (70% Pro / 30% Empresarial) = $3.92M MXN/mes",
   },
 };
 

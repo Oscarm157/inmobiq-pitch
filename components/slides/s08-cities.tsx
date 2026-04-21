@@ -89,9 +89,9 @@ export function S08Cities() {
               <div className="w-px bg-card-border" />
               <Kpi label="Usuarios mes 18" value={fmt(totals.m18)} sub={`${penetration18.toFixed(1)}% del mercado`} accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="Ingreso mensual mes 18" value="$4.3M MXN" sub="5,380 suscripciones · prom. $799/mes" accent />
+              <Kpi label="Ingreso mensual mes 18" value="$3.92M MXN" sub="5,380 suscripciones · prom. $729/mes" accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="Ingreso anual mes 18" value="$51.9M MXN" sub="≈ $2.8M USD anualizado" />
+              <Kpi label="Ingreso anual mes 18" value="$47.1M MXN" sub="≈ $2.5M USD anualizado" />
             </div>
           </div>
         </FadeItem>
