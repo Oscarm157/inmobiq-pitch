@@ -109,9 +109,6 @@ export function S11Financials() {
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               <span className="uppercase tracking-widest font-semibold text-accent">Rentable mes 9</span>
             </span>
-            <span className="ml-auto italic">
-              Proyección base · tabla detallada en anexo · USD @ 18.5 MXN
-            </span>
           </div>
         </FadeItem>
         <TermLegend terms={[
