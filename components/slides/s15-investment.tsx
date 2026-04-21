@@ -7,7 +7,6 @@ import {
   roi,
   veq_inkind,
   founder_secondary_tranches,
-  cash_to_operation_breakdown,
   monthly_cash_flow,
 } from "@/lib/data";
 
@@ -53,7 +52,7 @@ export function S15Investment() {
 
         {/* Desglose del paquete */}
         <FadeItem>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <PackageCard
               label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
@@ -73,14 +72,6 @@ export function S15Investment() {
               detail="VEQ asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
               color="emerald"
               breakdown={veq_inkind}
-            />
-            <PackageCard
-              label="Efectivo a Inmobiq"
-              amount={fmtMxn(round.cash_to_operation_mxn)}
-              subtitle="MXN · al banco de Inmobiq"
-              detail="Capital para abrir las 14 ciudades nuevas. Cubre el arranque de curadores antes de que cada ciudad genere ingresos."
-              color="accent"
-              breakdown={cash_to_operation_breakdown}
             />
           </div>
         </FadeItem>
