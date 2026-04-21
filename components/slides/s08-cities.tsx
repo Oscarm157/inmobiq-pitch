@@ -78,19 +78,20 @@ export function S08Cities() {
                 15 ciudades. <em className="italic text-accent">Un plan</em> de 18 meses.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                TAM total 63.6K usuarios potenciales. Tijuana en vivo desde el día uno — las 14 ciudades
-                restantes en 3 olas durante los primeros 12 meses. La ronda financia toda la expansión.
+                Mercado potencial agregado de 63,600 brokers en las 15 ciudades. Tijuana opera en vivo
+                desde el día uno; las 14 ciudades restantes se incorporan en tres olas durante los
+                primeros 12 meses. La ronda financia la expansión completa.
               </p>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <Kpi label="TAM total" value={fmt(totals.tam)} sub="brokers · 15 ciudades" />
+              <Kpi label="Mercado total" value={fmt(totals.tam)} sub="brokers · 15 ciudades" />
               <div className="w-px bg-card-border" />
-              <Kpi label="Users mes 18" value={fmt(totals.m18)} sub={`${penetration18.toFixed(1)}% del TAM`} accent />
+              <Kpi label="Usuarios mes 18" value={fmt(totals.m18)} sub={`${penetration18.toFixed(1)}% del mercado`} accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="MRR mes 18" value="$4.3M MXN" sub="5,412 pagos · avg $799/mes" accent />
+              <Kpi label="Ingreso mensual mes 18" value="$4.3M MXN" sub="5,380 suscripciones · prom. $799/mes" accent />
               <div className="w-px bg-card-border" />
-              <Kpi label="ARR mes 18" value="$51.9M MXN" sub="≈ $2.8M USD run rate" />
+              <Kpi label="Ingreso anual mes 18" value="$51.9M MXN" sub="≈ $2.8M USD anualizado" />
             </div>
           </div>
         </FadeItem>
