@@ -235,7 +235,7 @@ function PackageCard({
   subtitle: string;
   detail: string;
   color: "accent" | "emerald" | "amber";
-  breakdown?: Array<{ label: string; detail?: string; mxn: number }>;
+  breakdown?: Array<{ label: string; detail?: string; monthly?: number; mxn: number }>;
   bonus?: { amount: string; when: string };
 }) {
   const text =
@@ -263,14 +263,21 @@ function PackageCard({
           </div>
           <ul className="flex flex-col gap-1.5">
             {breakdown.map((b, i) => (
-              <li key={i} className="flex items-baseline justify-between gap-3 text-xs">
+              <li key={i} className="flex items-start justify-between gap-3 text-xs">
                 <div className="flex-1 leading-snug">
                   <div className="text-foreground/80">{b.label}</div>
                   {b.detail && <div className="text-muted/70 text-[11px]">{b.detail}</div>}
                 </div>
-                <span className="font-semibold tabular-nums text-foreground/90 whitespace-nowrap">
-                  ${(b.mxn / 1_000).toFixed(0)}K
-                </span>
+                <div className="text-right whitespace-nowrap">
+                  <div className="font-semibold tabular-nums text-foreground/90">
+                    ${(b.mxn / 1_000).toFixed(0)}K
+                  </div>
+                  {b.monthly !== undefined && (
+                    <div className="text-muted/60 text-[10px] tabular-nums">
+                      ${(b.monthly / 1_000).toFixed(b.monthly % 1_000 === 0 ? 0 : 1)}K/mes
+                    </div>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
