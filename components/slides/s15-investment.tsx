@@ -7,7 +7,6 @@ import {
   roi,
   veq_inkind,
   founder_secondary_tranches,
-  cash_to_operation_breakdown,
   monthly_cash_flow,
 } from "@/lib/data";
 
@@ -44,21 +43,30 @@ export function S15Investment() {
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
               VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
-              (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores —
-              que se cubren con el revenue de cada ciudad. Paquete total $4.785M MXN por
+              (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
+              que se cubren con el revenue de cada ciudad. Paquete total $4.735M MXN por
               <span className="text-foreground font-semibold"> 49% de participación</span>.
             </p>
           </div>
         </FadeItem>
 
+        {/* Participación + valuación */}
+        <FadeItem>
+          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="control mayoritario" />
+            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
+            <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
+          </div>
+        </FadeItem>
+
         {/* Desglose del paquete */}
         <FadeItem>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <PackageCard
               label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
               subtitle="Pagada por VEQ · por hitos"
-              detail="Diferida en 3 tramos atados a hitos operativos. Reducida del estándar para hacer el deal más atractivo a VEQ."
+              detail="Diferida en 2 tramos atados a hitos operativos. Reducida del estándar para hacer el deal más atractivo a VEQ."
               color="amber"
               breakdown={founder_secondary_tranches.map((t) => ({
                 label: `Tramo ${t.tranche}`,
@@ -74,23 +82,6 @@ export function S15Investment() {
               color="emerald"
               breakdown={veq_inkind}
             />
-            <PackageCard
-              label="Efectivo a Inmobiq"
-              amount={fmtMxn(round.cash_to_operation_mxn)}
-              subtitle="MXN · al banco de Inmobiq"
-              detail="Capital para abrir las 14 ciudades nuevas. Cubre el arranque de curadores antes de que cada ciudad genere ingresos."
-              color="accent"
-              breakdown={cash_to_operation_breakdown}
-            />
-          </div>
-        </FadeItem>
-
-        {/* Participación + valuación */}
-        <FadeItem>
-          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="control mayoritario" />
-            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
-            <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
 
@@ -205,7 +196,7 @@ export function S15Investment() {
                 </span>
               </span>
               <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
-                Utilidad acumulada M1-M10 ~$5M MXN — suficiente para cubrir el opex propio a partir del mes 11.
+                Utilidad acumulada M1-M10 ~$5M MXN. Suficiente para cubrir el opex propio a partir del mes 11.
               </span>
             </div>
           </div>
@@ -244,7 +235,7 @@ export function S15Investment() {
 
         <TermLegend
           terms={[
-            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por VEQ — valor equivalente, no efectivo" },
+            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por VEQ (valor equivalente, no efectivo)" },
             { term: "Compensación al fundador", def: "pago al fundador por el año de bootstrap, dividido en tramos atados a hitos" },
             { term: "Gasto mensual", def: "lo que sale del banco cada mes para operar (salarios, infra, etc.)" },
             { term: "Ingreso recurrente", def: "ingresos mensuales por suscripciones (MRR · ARR cuando es anual)" },

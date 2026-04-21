@@ -74,7 +74,7 @@ const problemCards = [
   {
     number: "4",
     label: "Portales desintegrados",
-    detail: "Inmuebles24, Lamudi, Vivanuncios, MercadoLibre — sin estándar común, sin API pública confiable.",
+    detail: "Inmuebles24, Lamudi, Vivanuncios, MercadoLibre. Sin estándar común, sin API pública confiable.",
   },
   {
     number: "8-12",

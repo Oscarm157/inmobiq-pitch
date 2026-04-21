@@ -63,7 +63,7 @@ export function S05ProductShowcase() {
         <FadeItem>
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted">
             <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-success" />
-            <span>inmobiq.com — Tijuana en vivo</span>
+            <span>inmobiq.com · Tijuana en vivo</span>
           </div>
         </FadeItem>
       </FadeStack>

@@ -43,7 +43,7 @@ export function S05Product() {
         <FadeItem>
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted">
             <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-success" />
-            <span>Vivo en inmobiq.com — siguiente: vistazo visual</span>
+            <span>Vivo en inmobiq.com · siguiente: vistazo visual</span>
           </div>
         </FadeItem>
       </FadeStack>

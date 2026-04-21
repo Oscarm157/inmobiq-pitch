@@ -10,7 +10,7 @@ const publishers = [
   {
     icon: "key",
     title: "Compradores / rentadores",
-    detail: "Onboarding de 10 preguntas que perfila a fondo al usuario — el matching funciona como Tinder/Bumble: el sistema empareja al comprador con las propiedades que realmente encajan con su perfil.",
+    detail: "Onboarding de 10 preguntas que perfila a fondo al usuario. El matching funciona como Tinder/Bumble: el sistema empareja al comprador con las propiedades que realmente encajan con su perfil.",
   },
   {
     icon: "badge",
@@ -65,7 +65,7 @@ const haviPrinciples = [
     icon: "handyman",
     title: "Marketplace de servicios",
     detail:
-      "Mudanza, mantenimiento, financiero, legal — el ciclo completo del comprador, no solo la transacción.",
+      "Mudanza, mantenimiento, financiero, legal. El ciclo completo del comprador, no solo la transacción.",
   },
 ];
 
@@ -93,14 +93,16 @@ export function S13Havi() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                Havi: portal abierto que <em className="italic text-gradient-accent">genera data</em> para Inmobiq.
+                Havi: El Tinder para encontrar tu próxima{" "}
+                <span className="line-through decoration-[3px] text-muted/60">casa</span>{" "}
+                <em className="italic text-gradient-accent">hogar.</em>
               </h2>
-              <div className="mt-3 text-lg sm:text-xl font-semibold text-accent tracking-[-0.01em]">
-                El Tinder para encontrar tu próximo hogar.
+              <div className="mt-3 text-base sm:text-lg text-muted tracking-[-0.005em]">
+                Portal abierto que genera data para Inmobiq.
               </div>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Producto independiente donde compradores, vendedores y brokers publican. Su función primaria
-                no es facturar — es generar data first-party limpia, sin duplicados, completa, que alimenta
+                no es facturar. Es generar data first-party limpia, sin duplicados, completa, que alimenta
                 la inteligencia de mercado de Inmobiq y reduce la dependencia del scraping.
               </p>
             </div>
@@ -118,86 +120,36 @@ export function S13Havi() {
         {/* Who publishes */}
         <FadeItem>
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
+            <span className="text-xs uppercase tracking-[0.22em] font-semibold text-accent">
               Quién publica en Havi
             </span>
             <div className="flex-1 h-px bg-accent/20" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {publishers.map((p) => (
-              <div key={p.title} className="rounded-xl bg-card p-4 border border-card-border/40">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent/15">
-                    <span className="material-symbols-outlined text-accent" style={{ fontSize: 16 }}>
+              <div key={p.title} className="rounded-xl bg-card p-5 border border-card-border/40">
+                <div className="flex items-center gap-2.5 mb-2.5">
+                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-accent/15">
+                    <span className="material-symbols-outlined text-accent" style={{ fontSize: 18 }}>
                       {p.icon}
                     </span>
                   </div>
-                  <div className="text-sm font-semibold text-foreground">{p.title}</div>
+                  <div className="text-base font-semibold text-foreground">{p.title}</div>
                 </div>
-                <div className="text-[11px] text-muted leading-relaxed">{p.detail}</div>
+                <div className="text-sm text-muted leading-relaxed">{p.detail}</div>
               </div>
             ))}
           </div>
         </FadeItem>
 
-        {/* Problems vs principles */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <FadeItem>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
-                Lo que rompen los portales actuales
-              </span>
-              <div className="flex-1 h-px bg-card-border" />
-            </div>
-            <div className="flex flex-col gap-2.5">
-              {portalProblems.map((p) => (
-                <div key={p.title} className="rounded-xl bg-card/50 border border-card-border/50 p-3.5">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="material-symbols-outlined text-muted-light/70" style={{ fontSize: 16 }}>
-                      {p.icon}
-                    </span>
-                    <div className="text-sm font-semibold text-foreground/90">{p.title}</div>
-                  </div>
-                  <div className="text-[11px] text-muted leading-relaxed">{p.detail}</div>
-                </div>
-              ))}
-            </div>
-          </FadeItem>
-
-          <FadeItem>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
-                Cómo Havi lo resuelve
-              </span>
-              <div className="flex-1 h-px bg-accent/20" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {haviPrinciples.map((s) => (
-                <div
-                  key={s.title}
-                  className={`rounded-xl p-3.5 h-full ${s.accent ? "bg-card glow-accent-subtle" : "bg-card"}`}
-                >
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="material-symbols-outlined text-accent" style={{ fontSize: 16 }}>
-                      {s.icon}
-                    </span>
-                    <div className="text-sm font-semibold text-foreground leading-tight">{s.title}</div>
-                  </div>
-                  <div className="text-[11px] text-muted leading-relaxed">{s.detail}</div>
-                </div>
-              ))}
-            </div>
-          </FadeItem>
-        </div>
-
         {/* Loop diagram */}
         <FadeItem>
           <div className="rounded-2xl bg-card p-5 sm:p-6">
             <div className="flex items-center justify-between gap-4 mb-4">
-              <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted">
+              <div className="text-xs uppercase tracking-[0.22em] font-semibold text-muted">
                 El loop · cómo Havi alimenta Inmobiq
               </div>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-accent-light italic">
+              <span className="text-xs uppercase tracking-[0.18em] text-accent-light italic">
                 Ningún competidor en MX tiene los dos lados
               </span>
             </div>
@@ -226,6 +178,56 @@ export function S13Havi() {
             </div>
           </div>
         </FadeItem>
+
+        {/* Problems vs principles */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <FadeItem>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs uppercase tracking-[0.22em] font-semibold text-muted">
+                Lo que rompen los portales actuales
+              </span>
+              <div className="flex-1 h-px bg-card-border" />
+            </div>
+            <div className="flex flex-col gap-2.5">
+              {portalProblems.map((p) => (
+                <div key={p.title} className="rounded-xl bg-card/50 border border-card-border/50 p-4">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="material-symbols-outlined text-muted-light/70" style={{ fontSize: 18 }}>
+                      {p.icon}
+                    </span>
+                    <div className="text-base font-semibold text-foreground/90">{p.title}</div>
+                  </div>
+                  <div className="text-sm text-muted leading-relaxed">{p.detail}</div>
+                </div>
+              ))}
+            </div>
+          </FadeItem>
+
+          <FadeItem>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs uppercase tracking-[0.22em] font-semibold text-accent">
+                Cómo Havi lo resuelve
+              </span>
+              <div className="flex-1 h-px bg-accent/20" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {haviPrinciples.map((s) => (
+                <div
+                  key={s.title}
+                  className={`rounded-xl p-4 h-full ${s.accent ? "bg-card glow-accent-subtle" : "bg-card"}`}
+                >
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="material-symbols-outlined text-accent" style={{ fontSize: 18 }}>
+                      {s.icon}
+                    </span>
+                    <div className="text-base font-semibold text-foreground leading-tight">{s.title}</div>
+                  </div>
+                  <div className="text-sm text-muted leading-relaxed">{s.detail}</div>
+                </div>
+              ))}
+            </div>
+          </FadeItem>
+        </div>
 
         <FadeItem>
           <div className="flex flex-wrap items-center gap-6 text-xs text-muted pt-1">
@@ -281,9 +283,9 @@ function LoopNode({
   const text = color === "emerald" ? "text-emerald-300" : "text-accent";
   return (
     <div className={`rounded-xl bg-foreground/5 p-4 ring-1 ${ring} h-full`}>
-      <div className={`font-mono text-[10px] tracking-[0.22em] font-semibold ${text} mb-1.5`}>{step}</div>
-      <div className="text-sm font-semibold text-foreground mb-1 leading-tight">{title}</div>
-      <div className="text-[11px] text-muted leading-relaxed">{detail}</div>
+      <div className={`font-mono text-xs tracking-[0.22em] font-semibold ${text} mb-2`}>{step}</div>
+      <div className="text-base font-semibold text-foreground mb-1.5 leading-tight">{title}</div>
+      <div className="text-sm text-muted leading-relaxed">{detail}</div>
     </div>
   );
 }
@@ -291,10 +293,10 @@ function LoopNode({
 function LoopArrow({ label }: { label: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-1.5 py-1">
-      <div className="text-[9px] uppercase tracking-[0.16em] font-semibold text-muted text-center max-w-[140px] leading-snug">
+      <div className="text-[11px] uppercase tracking-[0.16em] font-semibold text-muted text-center max-w-[160px] leading-snug">
         {label}
       </div>
-      <span className="material-symbols-outlined text-accent rotate-90 lg:rotate-0" style={{ fontSize: 20 }}>
+      <span className="material-symbols-outlined text-accent rotate-90 lg:rotate-0" style={{ fontSize: 22 }}>
         arrow_forward
       </span>
     </div>

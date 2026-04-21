@@ -225,7 +225,7 @@ export function SCockpit() {
           </h2>
           <p className="mt-2 text-sm text-muted max-w-2xl leading-relaxed">
             Un portal es la vitrina donde se exhiben propiedades. Inmobiq es la herramienta que
-            usa el broker detrás del mostrador — para entender el mercado, valuar con precisión
+            usa el broker detrás del mostrador para entender el mercado, valuar con precisión
             y cerrar mejor. Nunca compite con la vitrina.
           </p>
         </FadeItem>

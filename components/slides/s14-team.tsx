@@ -27,12 +27,12 @@ export function S14Team() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Un año ejecutando solo. <em className="italic text-gradient-accent">Riesgos claros, mitigación concreta.</em>
+              Un año ejecutando. <em className="italic text-gradient-accent">Riesgos claros, mitigación concreta.</em>
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              Oscar construyó Inmobiq de punta a punta durante un año con equipo subcontratado por tareas —
-              producto, data, IA, comercial. El MVP está al 80%. Aquí los principales riesgos del plan
-              y cómo pensamos mitigarlos.
+              He desarrollado Inmobiq de punta a punta durante un año: iterando, probando, validando con
+              brokers reales, apoyado por equipo técnico subcontratado por tareas. El MVP está al 80%.
+              Aquí los principales riesgos del plan y cómo pensamos mitigarlos.
             </p>
           </div>
         </FadeItem>
@@ -128,32 +128,37 @@ export function S14Team() {
                 Principales riesgos · Mitigación
               </div>
               <div className="flex flex-col gap-4">
-                {risks.map((r) => (
-                  <div key={r.risk} className="border-l-2 border-accent/30 pl-4">
-                    <div className="text-sm font-semibold text-foreground">{r.risk}</div>
-                    <ul className="mt-1.5 flex flex-col gap-1">
-                      {r.mitigation.map((point, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-muted leading-relaxed">
-                          <span className="text-accent/70 flex-shrink-0 mt-0.5">·</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                      {"link" in r && r.link && (
-                        <li className="flex items-start gap-2 text-xs leading-relaxed">
-                          <span className="text-accent/70 flex-shrink-0 mt-0.5">·</span>
-                          <a
-                            href={r.link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-accent underline underline-offset-2 hover:text-accent-light"
-                          >
-                            {r.link.label}
-                          </a>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                ))}
+                {risks.map((r) => {
+                  const hasLink = "link" in r && r.link;
+                  const lastIdx = r.mitigation.length - 1;
+                  return (
+                    <div key={r.risk} className="border-l-2 border-accent/30 pl-4">
+                      <div className="text-sm font-semibold text-foreground">{r.risk}</div>
+                      <ul className="mt-1.5 flex flex-col gap-1">
+                        {r.mitigation.map((point, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs text-muted leading-relaxed">
+                            <span className="text-accent/70 flex-shrink-0 mt-0.5">·</span>
+                            <div className="flex-1">
+                              <span>{point}</span>
+                              {hasLink && i === lastIdx && (
+                                <div className="mt-0.5 ml-0">
+                                  <a
+                                    href={r.link!.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent underline underline-offset-2 hover:text-accent-light"
+                                  >
+                                    {r.link!.label}
+                                  </a>
+                                </div>
+                              )}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </FadeItem>

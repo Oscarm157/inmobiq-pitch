@@ -170,7 +170,7 @@ export function S08Cities() {
             {[
               { label: "Ola 1 · Mes 3", cities: "CDMX, MTY, GDL, Cancún", detail: "Las 4 plazas con mayor volumen. Con Tijuana suman las 5 ciudades principales del país." },
               { label: "Ola 2 · Mes 6", cities: "Puebla, Querétaro, Mérida", detail: "Mercados emergentes de alto crecimiento. Menor competencia, mayor velocidad de adopción." },
-              { label: "Ola 3 · Mes 12", cities: "7 ciudades restantes", detail: "León, Toluca, Cd. Juárez, Playa del Carmen, SLP, Los Cabos, Aguascalientes — pipeline consolidado." },
+              { label: "Ola 3 · Mes 12", cities: "7 ciudades restantes", detail: "León, Toluca, Cd. Juárez, Playa del Carmen, SLP, Los Cabos, Aguascalientes. Pipeline consolidado." },
             ].map((w) => (
               <div key={w.label} className="rounded-xl bg-card p-4">
                 <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-accent mb-1">{w.label}</div>
