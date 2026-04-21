@@ -2,18 +2,18 @@ import { Slide } from "../slide";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 
 const fakeListings = [
-  { price: "$1.85M", zone: "Zona Río", type: "Depto", m2: "75m²" },
-  { price: "$3.2M", zone: "Playas", type: "Casa", m2: "180m²" },
-  { price: "$980K", zone: "Otay", type: "Depto", m2: "52m²" },
-  { price: "$2.1M", zone: "Chapultepec", type: "Casa", m2: "130m²" },
-  { price: "$4.5M", zone: "Playas", type: "Casa", m2: "240m²" },
-  { price: "$1.2M", zone: "Otay", type: "Depto", m2: "60m²" },
-  { price: "$890K", zone: "Sanchez T.", type: "Depto", m2: "48m²" },
-  { price: "$2.8M", zone: "Zona Río", type: "Casa", m2: "155m²" },
-  { price: "$1.5M", zone: "Chapultepec", type: "Depto", m2: "80m²" },
-  { price: "$3.9M", zone: "Playas", type: "Casa", m2: "210m²" },
-  { price: "$760K", zone: "Otay", type: "Depto", m2: "44m²" },
-  { price: "$1.1M", zone: "Sanchez T.", type: "Depto", m2: "58m²" },
+  { price: "$1.85M", zone: "Zona Río",    type: "Depto", m2: "75m²",  photo: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=200&h=120&fit=crop" },
+  { price: "$3.2M",  zone: "Playas",      type: "Casa",  m2: "180m²", photo: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=120&fit=crop" },
+  { price: "$980K",  zone: "Otay",        type: "Depto", m2: "52m²",  photo: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=200&h=120&fit=crop" },
+  { price: "$2.1M",  zone: "Chapultepec", type: "Casa",  m2: "130m²", photo: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200&h=120&fit=crop" },
+  { price: "$4.5M",  zone: "Playas",      type: "Casa",  m2: "240m²", photo: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=200&h=120&fit=crop" },
+  { price: "$1.2M",  zone: "Otay",        type: "Depto", m2: "60m²",  photo: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=200&h=120&fit=crop" },
+  { price: "$890K",  zone: "Sanchez T.",  type: "Depto", m2: "48m²",  photo: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=200&h=120&fit=crop" },
+  { price: "$2.8M",  zone: "Zona Río",    type: "Casa",  m2: "155m²", photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&h=120&fit=crop" },
+  { price: "$1.5M",  zone: "Chapultepec", type: "Depto", m2: "80m²",  photo: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=200&h=120&fit=crop" },
+  { price: "$3.9M",  zone: "Playas",      type: "Casa",  m2: "210m²", photo: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=200&h=120&fit=crop" },
+  { price: "$760K",  zone: "Otay",        type: "Depto", m2: "44m²",  photo: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=200&h=120&fit=crop" },
+  { price: "$1.1M",  zone: "Sanchez T.",  type: "Depto", m2: "58m²",  photo: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=200&h=120&fit=crop" },
 ];
 
 const topZones = [
@@ -32,7 +32,7 @@ const cityKpis = [
 
 function ChaosView() {
   return (
-    <div className="bg-[#0e0e16] px-5 py-4 flex flex-col gap-3 relative border-r border-card-border overflow-hidden">
+    <div className="bg-[#15151f] px-5 py-4 flex flex-col gap-3 relative border-r border-card-border overflow-hidden">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-1.5 h-1.5 rounded-full bg-muted/40" />
@@ -50,11 +50,17 @@ function ChaosView() {
       {/* Chaos grid */}
       <div className="grid grid-cols-3 gap-1.5 flex-1">
         {fakeListings.map((l, i) => (
-          <div key={i} className="bg-card/30 border border-card-border/30 rounded-lg p-2 flex flex-col gap-0.5">
-            <div className="w-full h-8 bg-card-border/20 rounded mb-1" />
-            <div className="text-[8px] font-semibold text-foreground/60 tabular-nums">{l.price}</div>
-            <div className="text-[7px] text-muted/50">{l.zone}</div>
-            <div className="text-[7px] text-muted/40">{l.type} · {l.m2}</div>
+          <div key={i} className="bg-card/60 border border-card-border/40 rounded-lg p-2 flex flex-col gap-0.5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={l.photo}
+              alt={`${l.type} en ${l.zone}`}
+              className="w-full h-12 object-cover rounded mb-1"
+              loading="lazy"
+            />
+            <div className="text-[8px] font-semibold text-foreground/85 tabular-nums">{l.price}</div>
+            <div className="text-[7px] text-muted/70">{l.zone}</div>
+            <div className="text-[7px] text-muted/60">{l.type} · {l.m2}</div>
           </div>
         ))}
       </div>
