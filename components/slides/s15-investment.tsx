@@ -43,7 +43,7 @@ export function S15Investment() {
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
               VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
               (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
-              que se cubren con el revenue de cada ciudad. Paquete total $4.805M MXN por
+              que se cubren con el revenue de cada ciudad. Paquete total $4.635M MXN por
               <span className="text-foreground font-semibold"> 49% de participación</span>.
             </p>
           </div>
