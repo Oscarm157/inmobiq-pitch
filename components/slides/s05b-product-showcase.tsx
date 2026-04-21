@@ -5,10 +5,10 @@ import { Slide } from "../slide";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 
 const screenshots = [
-  { src: "/screenshots/01-mapa.png",    caption: "Mapa choropleth de precios" },
-  { src: "/screenshots/02-zonas.png",   caption: "Inteligencia por zona" },
-  { src: "/screenshots/03-brujula.png", caption: "Brújula · valuación" },
-  { src: "/screenshots/04-precios.png", caption: "Panorama de mercado" },
+  { src: "/inmobiq%20mapa%20principal.png", caption: "Mapa choropleth de precios" },
+  { src: "/inmobiq%20secundario.png",       caption: "Inteligencia por zona" },
+  { src: "/inmobiq%203.png",                caption: "Brújula · valuación" },
+  { src: "/inmobiq%204.png",                caption: "Panorama de mercado" },
 ];
 
 export function S05ProductShowcase() {
