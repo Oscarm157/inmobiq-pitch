@@ -1,104 +1,125 @@
 import { Slide } from "../slide";
-import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { market } from "@/lib/data";
 
 export function S07Market() {
   const fmt = (n: number) => n.toLocaleString("es-MX");
 
+  // 3 niveles del embudo, de mayor a menor
   const layers = [
-    { key: "som" as const, data: market.som, size: 100, highlight: true },
-    { key: "sam" as const, data: market.sam, size: 220 },
-    { key: "tam" as const, data: market.tam, size: 380 },
+    {
+      key: "total",
+      label: "Mercado total",
+      sub: "Brokers e inmobiliarias activos en México",
+      users: market.tam.users,
+      revenue: market.tam.revenue_potential_mxn,
+      barPct: 100,
+    },
+    {
+      key: "alcanzable",
+      label: "Mercado alcanzable",
+      sub: "5 ciudades con mayor volumen de transacciones",
+      users: market.sam.users,
+      revenue: market.sam.revenue_potential_mxn,
+      barPct: 25,
+    },
+    {
+      key: "captura",
+      label: "Captura objetivo · mes 18",
+      sub: "Plan conservador en 15 ciudades activas",
+      users: market.som.users,
+      revenue: market.som.revenue_potential_mxn,
+      barPct: 6.8,
+      highlight: true,
+    },
   ];
 
   return (
     <Slide mode="dark">
-      <FadeStack className="flex flex-col gap-5">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-5 flex flex-col gap-5">
-            <FadeItem>
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">07</span>
-                <span className="text-xs uppercase tracking-[0.18em] text-muted">Mercado</span>
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em] mt-2">
-                Un mercado real, medible y <em className="italic text-accent">subatendido.</em>
-              </h2>
-              <p className="mt-3 text-sm text-muted leading-relaxed max-w-md">
-                AMPI registra más de 80,000 brokers e inmobiliarias activas en México.
-                La mitad trabaja con data fragmentada. Nosotros atacamos primero los
-                20K profesionales de las 5 ciudades con mayor volumen de transacciones.
-              </p>
-            </FadeItem>
+      <FadeStack className="flex flex-col gap-8">
+        <FadeItem>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs font-semibold tracking-[0.22em] text-accent">07</span>
+            <span className="text-xs uppercase tracking-[0.18em] text-muted">Mercado</span>
+          </div>
+        </FadeItem>
 
-            <FadeStack className="flex flex-col gap-2.5">
-              {[market.tam, market.sam, market.som].map((m, i) => (
-                <FadeItem key={m.label}>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-card shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)]">
-                    <span className="font-mono text-xs font-semibold text-accent mt-1 tracking-widest">
-                      {["TAM", "SAM", "SOM"][i]}
-                    </span>
-                    <div className="flex-1">
-                      <div className="text-xs text-muted uppercase tracking-wide">
-                        {m.label.replace(/^(TAM|SAM|SOM) — /, "")}
+        <FadeItem>
+          <div className="max-w-3xl">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
+              Un mercado real, medible y <em className="italic text-accent">subatendido.</em>
+            </h2>
+            <p className="mt-3 text-base text-muted max-w-2xl leading-relaxed">
+              80,000 brokers activos en México. La mitad trabaja con datos sin curar.
+            </p>
+          </div>
+        </FadeItem>
+
+        {/* Embudo visual horizontal */}
+        <FadeStack className="flex flex-col gap-3">
+          {layers.map((l) => (
+            <FadeItem key={l.key}>
+              <div
+                className={`relative rounded-2xl p-5 sm:p-6 overflow-hidden ${
+                  l.highlight ? "bg-card border border-accent/30 glow-accent-subtle" : "bg-card"
+                }`}
+              >
+                {/* Barra de fondo proporcional */}
+                <div
+                  className="absolute inset-y-0 left-0 pointer-events-none"
+                  style={{
+                    width: `${l.barPct}%`,
+                    background: l.highlight
+                      ? "linear-gradient(to right, rgba(59,130,246,0.18), rgba(59,130,246,0.04))"
+                      : "linear-gradient(to right, rgba(59,130,246,0.10), rgba(59,130,246,0.02))",
+                  }}
+                />
+
+                <div className="relative flex items-center justify-between gap-6 flex-wrap">
+                  <div className="flex-1 min-w-[220px]">
+                    <div
+                      className={`text-xs uppercase tracking-[0.18em] font-semibold mb-1 ${
+                        l.highlight ? "text-accent" : "text-muted"
+                      }`}
+                    >
+                      {l.label}
+                    </div>
+                    <div className="text-sm text-foreground/85 leading-snug">{l.sub}</div>
+                  </div>
+
+                  <div className="flex items-baseline gap-4">
+                    <div className="text-right">
+                      <div
+                        className={`text-3xl sm:text-4xl font-semibold tabular-nums ${
+                          l.highlight ? "text-gradient-accent" : "text-foreground"
+                        }`}
+                      >
+                        {fmt(l.users)}
                       </div>
-                      <div className="flex items-baseline gap-2 mt-1">
-                        <span className="text-2xl font-semibold text-foreground tabular-nums">
-                          {fmt(m.users)} users
-                        </span>
-                        <span className="text-sm text-muted">·</span>
-                        <span className="text-sm font-semibold text-accent tabular-nums">
-                          ${(m.revenue_potential_mxn / 1_000_000).toFixed(1)}M MXN
-                        </span>
+                      <div className="text-[10px] uppercase tracking-widest text-muted mt-0.5">
+                        brokers
+                      </div>
+                    </div>
+                    <div className="w-px h-10 bg-card-border" />
+                    <div className="text-right">
+                      <div className="text-xl font-semibold text-accent-light tabular-nums">
+                        ${(l.revenue / 1_000_000).toFixed(1)}M
+                      </div>
+                      <div className="text-[10px] uppercase tracking-widest text-muted mt-0.5">
+                        MXN/año potencial
                       </div>
                     </div>
                   </div>
-                </FadeItem>
-              ))}
-            </FadeStack>
-          </div>
-
-          {/* Right — concentric circles visualization */}
-          <FadeItem className="lg:col-span-7 relative h-[380px] flex items-center justify-center">
-            <div className="relative" style={{ width: 380, height: 380 }}>
-              {layers.map((l) => (
-                <div
-                  key={l.key}
-                  className={`absolute rounded-full ${l.highlight ? "glow-accent" : ""}`}
-                  style={{
-                    width: l.size,
-                    height: l.size,
-                    left: `calc(50% - ${l.size / 2}px)`,
-                    top: `calc(50% - ${l.size / 2}px)`,
-                    background: l.highlight
-                      ? "radial-gradient(circle, rgba(59,130,246,0.28) 0%, rgba(59,130,246,0.08) 100%)"
-                      : `rgba(59,130,246,${0.07 - (l.size / 6000)})`,
-                    border: `1px solid rgba(59,130,246,${l.highlight ? 0.4 : 0.2})`,
-                  }}
-                />
-              ))}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl font-semibold text-gradient-accent tabular-nums">
-                    {fmt(market.som.users)}
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted mt-1">
-                    SOM · mes 18
-                  </div>
                 </div>
               </div>
-            </div>
-          </FadeItem>
-        </div>
+            </FadeItem>
+          ))}
+        </FadeStack>
 
         <FadeItem>
-          <TermLegend terms={[
-            { term: "TAM", def: "mercado total disponible" },
-            { term: "SAM", def: "porción a la que podemos llegar" },
-            { term: "SOM", def: "porción realista a capturar en el plan" },
-            { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios" },
-          ]} />
+          <p className="text-xs text-muted/70 italic">
+            Fuente: AMPI (Asociación Mexicana de Profesionales Inmobiliarios) + estimaciones sectoriales · ticket promedio $899 MXN/mes × 12 meses.
+          </p>
         </FadeItem>
       </FadeStack>
     </Slide>
