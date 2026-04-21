@@ -95,6 +95,9 @@ export function S13Havi() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
                 Havi: portal abierto que <em className="italic text-gradient-accent">genera data</em> para Inmobiq.
               </h2>
+              <div className="mt-3 text-lg sm:text-xl font-semibold text-accent tracking-[-0.01em]">
+                El Tinder para encontrar tu próximo hogar.
+              </div>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Producto independiente donde compradores, vendedores y brokers publican. Su función primaria
                 no es facturar — es generar data first-party limpia, sin duplicados, completa, que alimenta
@@ -103,7 +106,7 @@ export function S13Havi() {
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <Kpi label="Launch" value="Mes 6" sub="post Series Seed" />
+              <Kpi label="Launch" value="Mes 6" sub="siguiente etapa" />
               <div className="w-px bg-card-border" />
               <Kpi label="Publicadores" value="3 tipos" sub="abierto a todos" accent />
               <div className="w-px bg-card-border" />
