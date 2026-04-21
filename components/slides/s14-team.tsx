@@ -128,32 +128,37 @@ export function S14Team() {
                 Principales riesgos · Mitigación
               </div>
               <div className="flex flex-col gap-4">
-                {risks.map((r) => (
-                  <div key={r.risk} className="border-l-2 border-accent/30 pl-4">
-                    <div className="text-sm font-semibold text-foreground">{r.risk}</div>
-                    <ul className="mt-1.5 flex flex-col gap-1">
-                      {r.mitigation.map((point, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-muted leading-relaxed">
-                          <span className="text-accent/70 flex-shrink-0 mt-0.5">·</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                      {"link" in r && r.link && (
-                        <li className="flex items-start gap-2 text-xs leading-relaxed">
-                          <span className="text-accent/70 flex-shrink-0 mt-0.5">·</span>
-                          <a
-                            href={r.link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-accent underline underline-offset-2 hover:text-accent-light"
-                          >
-                            {r.link.label}
-                          </a>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                ))}
+                {risks.map((r) => {
+                  const hasLink = "link" in r && r.link;
+                  const lastIdx = r.mitigation.length - 1;
+                  return (
+                    <div key={r.risk} className="border-l-2 border-accent/30 pl-4">
+                      <div className="text-sm font-semibold text-foreground">{r.risk}</div>
+                      <ul className="mt-1.5 flex flex-col gap-1">
+                        {r.mitigation.map((point, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs text-muted leading-relaxed">
+                            <span className="text-accent/70 flex-shrink-0 mt-0.5">·</span>
+                            <div className="flex-1">
+                              <span>{point}</span>
+                              {hasLink && i === lastIdx && (
+                                <div className="mt-0.5 ml-0">
+                                  <a
+                                    href={r.link!.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent underline underline-offset-2 hover:text-accent-light"
+                                  >
+                                    {r.link!.label}
+                                  </a>
+                                </div>
+                              )}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </FadeItem>

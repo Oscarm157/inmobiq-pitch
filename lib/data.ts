@@ -361,10 +361,10 @@ export const risks = [
   {
     risk: "Adopción lenta de brokers",
     mitigation: [
-      "Herramientas gratuitas para brokers con INMOBIQ como canal de entrada",
       "Alianza con AMPI",
       "Marketing de afiliados con influencers de real estate",
       "Campañas pagadas (Meta + Google)",
+      "Herramientas gratuitas para brokers con INMOBIQ como canal de entrada",
     ],
     link: { label: "logofa.st", url: "https://logofa.st/" },
   },
