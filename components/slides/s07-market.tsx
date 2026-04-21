@@ -55,6 +55,9 @@ export function S07Market() {
             <p className="mt-3 text-base text-muted max-w-2xl leading-relaxed">
               80,000 brokers activos en México. La mitad trabaja con datos sin curar.
             </p>
+            <p className="mt-2 text-xs text-muted/70 italic max-w-2xl">
+              Dato AMPI · padrón de brokers e inmobiliarias registradas a nivel nacional.
+            </p>
           </div>
         </FadeItem>
 
