@@ -66,22 +66,22 @@ const stages = [
     num: "02",
     icon: "filter_alt",
     title: "Limpiamos",
-    sub: "Dedup + normalización + validación",
-    detail: "Reglas estrictas por categoría. Outliers removidos con IQR 2.0. Doble verificación humana.",
+    sub: "Deduplicación + normalización + validación",
+    detail: "Reglas estadísticas estrictas por categoría. Doble verificación humana en cada ciudad.",
   },
   {
     num: "03",
     icon: "hub",
     title: "Transformamos",
-    sub: "Asignación de zona + enriquecimiento con IA",
-    detail: "30 zonas canónicas + 500 variables INEGI + valuaciones con Claude.",
+    sub: "Zonas por ciudad + enriquecimiento con IA",
+    detail: "Zonas canónicas en 15 ciudades + 500 variables INEGI cruzadas + valuaciones con Claude.",
   },
   {
     num: "04",
     icon: "insights",
     title: "Procesamos",
     sub: "Inteligencia + valuaciones + narrativas",
-    detail: "Risk scoring multifactor. ADN de zona. Brújula AI. Comparadores.",
+    detail: "Análisis de riesgo multifactor a nivel nacional. ADN de zona. Brújula AI. Comparadores entre ciudades.",
   },
 ];
 
