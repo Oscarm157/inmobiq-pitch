@@ -117,7 +117,7 @@ function CockpitView() {
           <div className="flex-1 h-px bg-card-border" />
         </div>
         <div className="flex flex-col items-end">
-          <span className="text-[7px] uppercase tracking-widest text-accent font-semibold">Brújula AI</span>
+          <span className="text-[7px] uppercase tracking-widest text-accent font-semibold">Brújula Inmobiliaria</span>
           <span className="text-base font-bold text-emerald-300 tabular-nums">$1,921,000 MXN</span>
         </div>
       </div>

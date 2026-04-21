@@ -84,7 +84,7 @@ const pillars = [
   },
   {
     icon: "travel_explore",
-    title: "Brújula AI",
+    title: "Brújula Inmobiliaria",
     description: "Valuación instantánea de cualquier propiedad con narrativa explicable generada por IA.",
   },
 ];

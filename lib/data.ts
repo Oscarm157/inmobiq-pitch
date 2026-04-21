@@ -407,7 +407,7 @@ export const features = [
   },
   {
     icon: "travel_explore",
-    title: "Brújula AI",
+    title: "Brújula Inmobiliaria",
     description: "Valuación instantánea de cualquier propiedad con Claude AI · narrativa explicable vs. mercado de zona.",
   },
   {

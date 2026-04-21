@@ -81,7 +81,7 @@ const stages = [
     icon: "insights",
     title: "Procesamos",
     sub: "Inteligencia + valuaciones + narrativas",
-    detail: "Análisis de riesgo multifactor a nivel nacional. ADN de zona. Brújula AI. Comparadores entre ciudades.",
+    detail: "Análisis de riesgo multifactor a nivel nacional. ADN de zona. Brújula Inmobiliaria. Comparadores entre ciudades.",
   },
 ];
 
