@@ -80,7 +80,7 @@ const pillars = [
   {
     icon: "insights",
     title: "Inteligencia de zona",
-    description: "Precio por m², tendencia, riesgo, demografía INEGI cruzada. 30 zonas canónicas ya vivas en TJ.",
+    description: "Precio por m², tendencia, riesgo y demografía INEGI cruzada por zona. Plan de cobertura nacional en 15 ciudades.",
   },
   {
     icon: "travel_explore",
