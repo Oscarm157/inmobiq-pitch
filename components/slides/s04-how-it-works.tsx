@@ -73,7 +73,7 @@ const stages = [
     num: "03",
     icon: "hub",
     title: "Transformamos",
-    sub: "Zone assignment + AI enrichment",
+    sub: "Asignación de zona + enriquecimiento con IA",
     detail: "30 zonas canónicas + 500 variables INEGI + valuaciones con Claude.",
   },
   {
