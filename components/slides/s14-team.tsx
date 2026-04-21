@@ -31,7 +31,7 @@ export function S14Team() {
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
               No es una ronda de capital pasivo. VEQ aporta 2 desarrolladores, un admin/operaciones y su
-              equipo de marketing durante 18 meses — además del efectivo. El fundador se libera para
+              equipo de marketing durante 10 meses — además del efectivo. El fundador se libera para
               enfocarse en producto y crecimiento comercial.
             </p>
           </div>
@@ -44,32 +44,61 @@ export function S14Team() {
               {team.map((m) => {
                 const src = (m.source as TeamSource) ?? "current";
                 const cfg = sourceConfig[src];
-                return (
-                  <div
-                    key={m.name}
-                    className={`rounded-xl p-4 ${
-                      m.highlight ? "bg-card glow-accent-subtle border border-accent/20" : "bg-card"
-                    }`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${cfg.bg}`}>
-                        <span className={`material-symbols-outlined ${cfg.text}`} style={{ fontSize: 20 }}>
-                          {cfg.icon}
+                const collapsible = src === "veq" || src === "inmobiq";
+                const header = (
+                  <div className="flex items-start gap-3">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${cfg.bg}`}>
+                      <span className={`material-symbols-outlined ${cfg.text}`} style={{ fontSize: 20 }}>
+                        {cfg.icon}
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <div className="font-semibold text-foreground text-sm">{m.name}</div>
+                        <span className={`text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded ${cfg.bg} ${cfg.text}`}>
+                          {cfg.label}
                         </span>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <div className="font-semibold text-foreground text-sm">{m.name}</div>
-                          <span className={`text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded ${cfg.bg} ${cfg.text}`}>
-                            {cfg.label}
-                          </span>
-                        </div>
-                        <div className="text-[11px] uppercase tracking-widest text-accent/80 mt-0.5">
+                      {!collapsible && (
+                        <>
+                          <div className="text-[11px] uppercase tracking-widest text-accent/80 mt-0.5">
+                            {m.role}
+                          </div>
+                          <div className="text-xs text-muted mt-1.5 leading-relaxed">{m.bio}</div>
+                        </>
+                      )}
+                    </div>
+                    {collapsible && (
+                      <span className="material-symbols-outlined text-muted/60 group-open:rotate-180 transition-transform flex-shrink-0" style={{ fontSize: 18 }}>
+                        expand_more
+                      </span>
+                    )}
+                  </div>
+                );
+
+                const cardClass = `rounded-xl p-4 ${
+                  m.highlight ? "bg-card glow-accent-subtle border border-accent/20" : "bg-card"
+                }`;
+
+                if (collapsible) {
+                  return (
+                    <details key={m.name} className={`${cardClass} group cursor-pointer`}>
+                      <summary className="list-none marker:hidden">
+                        {header}
+                      </summary>
+                      <div className="pl-[52px] mt-2">
+                        <div className="text-[11px] uppercase tracking-widest text-accent/80">
                           {m.role}
                         </div>
                         <div className="text-xs text-muted mt-1.5 leading-relaxed">{m.bio}</div>
                       </div>
-                    </div>
+                    </details>
+                  );
+                }
+
+                return (
+                  <div key={m.name} className={cardClass}>
+                    {header}
                   </div>
                 );
               })}
@@ -86,7 +115,22 @@ export function S14Team() {
                 {risks.map((r) => (
                   <div key={r.risk} className="border-l-2 border-accent/30 pl-4">
                     <div className="text-sm font-semibold text-foreground">{r.risk}</div>
-                    <div className="text-xs text-muted mt-1 leading-relaxed">{r.mitigation}</div>
+                    <div className="text-xs text-muted mt-1 leading-relaxed">
+                      {r.mitigation}
+                      {"link" in r && r.link && (
+                        <>
+                          {" · "}
+                          <a
+                            href={r.link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-accent underline underline-offset-2 hover:text-accent-light"
+                          >
+                            {r.link.label}
+                          </a>
+                        </>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

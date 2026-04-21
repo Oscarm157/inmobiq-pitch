@@ -30,14 +30,14 @@ export function S11Financials() {
                 Trayectoria financiera <em className="italic text-gradient-accent">del plan</em>.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-                Punto de equilibrio operativo al mes 6. Rentabilidad sostenida desde el mes 9.
+                Punto de equilibrio operativo al mes 4-5. Rentabilidad sostenida desde el mes 9.
                 La base de usuarios pagados escala 15× durante el plan — de 345 al mes 3 a 5,380
                 al mes 18 — impulsada por la expansión escalonada en tres olas.
               </p>
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <HeroKpi label="Punto de equilibrio" value="Mes 6" sub="~490 usuarios pagados" accent="emerald" />
+              <HeroKpi label="Punto de equilibrio" value="Mes 4-5" sub="~490 usuarios pagados" accent="emerald" />
               <div className="w-px bg-[#2a2a3e]" />
               <HeroKpi label="Ingreso anual mes 12" value="$21M" sub="MXN · $1.13M USD" />
               <div className="w-px bg-[#2a2a3e]" />
@@ -75,8 +75,8 @@ export function S11Financials() {
           <InsightCard
             icon="trending_up"
             label="Aceleración M12→M18"
-            value="2.7× en 6 meses"
-            detail="De 2,050 a 5,545 users con las 15 ciudades en plena operación"
+            value="2.2× en 6 meses"
+            detail="De 2,400 a 5,380 users con las 15 ciudades en plena operación"
           />
           <InsightCard
             icon="payments"
@@ -87,7 +87,7 @@ export function S11Financials() {
           <InsightCard
             icon="schedule"
             label="Payback CAC"
-            value="3 meses"
+            value="~2 meses"
             detail="CAC $1.5K MXN · ticket promedio $729 MXN · retención 18m"
           />
           <InsightCard
@@ -103,7 +103,7 @@ export function S11Financials() {
           <div className="flex flex-wrap items-center gap-6 text-xs text-muted pt-2">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 6</span>
+              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Punto de equilibrio mes 4-5</span>
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />

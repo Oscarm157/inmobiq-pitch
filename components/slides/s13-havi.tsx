@@ -234,9 +234,6 @@ export function S13Havi() {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Launch mes 12</span>
             </span>
-            <span className="ml-auto italic">
-              Prototipo funcional ya construido · Vite + React + Supabase + Mapbox
-            </span>
           </div>
         </FadeItem>
       </FadeStack>

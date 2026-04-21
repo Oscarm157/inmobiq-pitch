@@ -15,25 +15,25 @@ export const brand = {
 
 export const round = {
   // Paquete total VEQ (todo lo aporta VEQ — Inmobiq solo paga curadores)
-  package_total_mxn: 5_260_000,
-  package_total_usd: 284_324,
+  package_total_mxn: 4_785_000,
+  package_total_usd: 258_649,
 
   // Cash a Inmobiq (apertura de ciudades + ramp pre-revenue de curadores)
   cash_to_operation_mxn: 1_960_000,
   cash_to_operation_usd: 105_946,
 
   // Salario fundador (cubierto por VEQ in-kind)
-  founder_salary_mxn: 540_000,
+  founder_salary_mxn: 450_000,
   founder_salary_monthly_mxn: 45_000,
-  founder_salary_months: 12,
+  founder_salary_months: 10,
 
   // Compensación al fundador (3 tramos de $150K c/u · pagado por VEQ)
   founder_secondary_mxn: 450_000,
   founder_secondary_tranches: 3,
 
-  // Aporte VEQ in-kind (12 meses cubriendo TODO el opex de Inmobiq)
-  veq_inkind_mxn: 2_850_000,
-  veq_inkind_months: 12,
+  // Aporte VEQ in-kind (10 meses cubriendo TODO el opex de Inmobiq)
+  veq_inkind_mxn: 2_375_000,
+  veq_inkind_months: 10,
 
   // Participación
   equity_percent: 49,
@@ -41,19 +41,19 @@ export const round = {
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 10_735_000,
-  post_money_usd: 580_270,
-  pre_money_mxn: 5_475_000,
-  pre_money_usd: 295_946,
+  post_money_mxn: 9_765_000,
+  post_money_usd: 527_838,
+  pre_money_mxn: 4_980_000,
+  pre_money_usd: 269_189,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $5.26M MXN",
-  runway_months: 12,
+  instrument: "Participación directa · 49% por paquete de $4.785M MXN",
+  runway_months: 10,
   buffer_months: 0,
 };
 
 export const roi = {
-  break_even_month: 6,
+  break_even_month: 5,
   capital_payback_month: 18,
   year_3: {
     arr_usd: 3_368_000,
@@ -65,7 +65,7 @@ export const roi = {
     valuation_mxn: 498_400_000,
     veq_return_usd: 13_200_000,
     veq_return_mxn: 244_220_000,
-    veq_multiple: "46×",
+    veq_multiple: "51×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -77,21 +77,21 @@ export const roi = {
     valuation_mxn: 613_600_000,
     veq_return_usd: 16_252_000,
     veq_return_mxn: 300_660_000,
-    veq_multiple: "57×",
+    veq_multiple: "63×",
   },
-  irr_annual_percent: 122,
+  irr_annual_percent: 132,
 };
 
-// Aporte VEQ in-kind — TODO el opex de Inmobiq durante el año base (12 meses)
+// Aporte VEQ in-kind — TODO el opex de Inmobiq durante 10 meses
 export const veq_inkind = [
-  { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 12m", mxn: 840_000 },
-  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 12m", mxn: 300_000 },
-  { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 12m", mxn: 480_000 },
-  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 12m", mxn: 180_000 },
-  { label: "Salario fundador", detail: "$45K MXN/mes · 12m", mxn: 540_000 },
-  { label: "Infraestructura + IA", detail: "Cloud + Claude API masivo + tokens · 12m", mxn: 296_000 },
-  { label: "Legal + contador fiscal", detail: "$15K/mes · 12m", mxn: 180_000 },
-  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 12m", mxn: 36_000 },
+  { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 10m", mxn: 700_000 },
+  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 10m", mxn: 250_000 },
+  { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 10m", mxn: 400_000 },
+  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 10m", mxn: 150_000 },
+  { label: "Salario fundador", detail: "$45K MXN/mes · 10m", mxn: 450_000 },
+  { label: "Infraestructura + IA", detail: "Cloud + Claude API masivo + tokens · 10m", mxn: 245_000 },
+  { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
+  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 10m", mxn: 30_000 },
 ];
 
 // Cash a Inmobiq — desglose
@@ -104,93 +104,65 @@ export const cash_to_operation_breakdown = [
 // Compensación fundador — 3 tramos de $150K c/u atados a hitos · pagada por VEQ
 export const founder_secondary_tranches = [
   { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
-  { tranche: 2, mxn: 150_000, milestone: "Mes 6 · punto de equilibrio confirmado (intermedia)" },
-  { tranche: 3, mxn: 150_000, milestone: "Mes 12 · Inmobiq autosostenible 3 meses (final)" },
+  { tranche: 2, mxn: 150_000, milestone: "Mes 5 · punto de equilibrio confirmado (intermedia)" },
+  { tranche: 3, mxn: 150_000, milestone: "Mes 10 · Inmobiq autosostenible · VEQ deja de cubrir opex (final)" },
 ];
 
 // Flujo mensual — opex completo (VEQ + Inmobiq) vs ingresos
-// Año 1 (M1-M12): VEQ cubre $238K/mes opex · Inmobiq solo paga curadores
-// Año 2 (M13+): Inmobiq asume opex propio ($238K/mes) + sigue pagando curadores
+// M1-M10: VEQ cubre $238K/mes opex · Inmobiq solo paga curadores
+// M11+: Inmobiq asume opex propio ($238K/mes) + sigue pagando curadores
 // Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) × $20K/mes
 const opexMonthly = 238_000;
 export const monthly_cash_flow = [
   { month: 1,  cities: 1,  users: 35,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 25_515,    net_mxn: -14_485,  margin_pct: -57, note: "Tijuana piloto · pre-escala" },
   { month: 3,  cities: 5,  users: 345,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 251_505,   net_mxn: 91_505,   margin_pct: 36, note: "Ola 1 abriendo · 5 ciudades" },
-  { month: 6,  cities: 8,  users: 990,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 721_710,   net_mxn: 481_710,  margin_pct: 67, note: "Punto de equilibrio · ola 2 abriendo" },
+  { month: 6,  cities: 8,  users: 990,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 721_710,   net_mxn: 481_710,  margin_pct: 67, note: "Rentable · ola 2 abriendo" },
   { month: 9,  cities: 8,  users: 1_700, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_239_300, net_mxn: 999_300,  margin_pct: 81, note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, cities: 15, users: 2_400, curators: 22, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 440_000, mrr_mxn: 1_749_600, net_mxn: 1_309_600, margin_pct: 75, note: "Ola 3 abriendo · 15 ciudades · último mes año 1" },
-  { month: 15, cities: 15, users: 3_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_830_000, net_mxn: 2_152_000, margin_pct: 76, note: "Año 2 · Inmobiq asume opex" },
-  { month: 16, cities: 15, users: 4_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_200_000, net_mxn: 2_522_000, margin_pct: 79, note: "Crecimiento sostenido" },
-  { month: 17, cities: 15, users: 4_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_560_000, net_mxn: 2_882_000, margin_pct: 81, note: "Optimización" },
+  { month: 12, cities: 15, users: 2_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 1_749_600, net_mxn: 1_071_600, margin_pct: 61, note: "Ola 3 · 15 ciudades · Inmobiq asume opex post-M10" },
+  { month: 15, cities: 15, users: 3_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_843_100, net_mxn: 2_165_100, margin_pct: 76, note: "Crecimiento sostenido" },
+  { month: 16, cities: 15, users: 4_400, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_207_600, net_mxn: 2_529_600, margin_pct: 79, note: "Optimización" },
+  { month: 17, cities: 15, users: 4_900, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_572_100, net_mxn: 2_894_100, margin_pct: 81, note: "Optimización" },
   { month: 18, cities: 15, users: 5_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_922_020, net_mxn: 3_244_020, margin_pct: 83, note: "Plan completo · autosostenible" },
 ];
 
-// Uso de fondos — breakdown del cash que entra a Inmobiq ($4.67M MXN)
+// Uso de fondos — breakdown del paquete total VEQ ($4.785M MXN)
 export const use_of_funds = [
   {
-    chapter: "Apertura 14 ciudades nuevas",
-    percent: 51.0,
-    mxn: 2_380_000,
-    usd: 128_649,
+    chapter: "Aporte VEQ in-kind (10 meses)",
+    percent: 49.6,
+    mxn: 2_375_000,
+    usd: 128_378,
     items: [
-      { label: "$170K por ciudad × 14", detail: "Incluye 2 curadores × 3 meses pre-revenue + marketing launch + setup INEGI", mxn: 2_380_000 },
+      { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 10m", mxn: 700_000 },
+      { label: "Salario fundador", detail: "$45K MXN/mes · 10m", mxn: 450_000 },
+      { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 10m", mxn: 400_000 },
+      { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 10m", mxn: 250_000 },
+      { label: "Infraestructura + IA", detail: "Cloud + Claude API + tokens · 10m", mxn: 245_000 },
+      { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 10m", mxn: 150_000 },
+      { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
+      { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 10m", mxn: 30_000 },
     ],
   },
   {
-    chapter: "Salarios · operación",
-    percent: 11.6,
-    mxn: 540_000,
-    usd: 29_189,
+    chapter: "Efectivo a Inmobiq (apertura 14 ciudades)",
+    percent: 41.0,
+    mxn: 1_960_000,
+    usd: 105_946,
     items: [
-      { label: "Salario fundador (12 meses)", detail: "$45K MXN/mes · contrato laboral", mxn: 540_000 },
+      { label: "Curadores pre-revenue", detail: "14 ciudades × 1.5 curadores prom × $20K × 3 meses", mxn: 1_260_000 },
+      { label: "Marketing local de lanzamiento", detail: "14 ciudades × $30K · activación AMPI local", mxn: 420_000 },
+      { label: "Setup técnico por ciudad", detail: "14 ciudades × $20K · import INEGI + data inicial", mxn: 280_000 },
     ],
   },
   {
-    chapter: "Compensación al fundador · personal por hitos",
-    percent: 10.7,
-    mxn: 500_000,
-    usd: 27_027,
+    chapter: "Compensación al fundador (por hitos)",
+    percent: 9.4,
+    mxn: 450_000,
+    usd: 24_324,
     items: [
-      { label: "Compensación por el año bootstrap", detail: "4 tramos: cierre, mes 3, mes 6, mes 12", mxn: 500_000 },
-    ],
-  },
-  {
-    chapter: "Marketing extras",
-    percent: 6.4,
-    mxn: 300_000,
-    usd: 16_216,
-    items: [
-      { label: "Eventos AMPI + ferias", detail: "Aparte de los $40K/mo ads que pone VEQ", mxn: 150_000 },
-      { label: "Brand + video + contenido", detail: "Lanzamiento por ciudad", mxn: 150_000 },
-    ],
-  },
-  {
-    chapter: "Legal + contador + admin",
-    percent: 6.4,
-    mxn: 300_000,
-    usd: 16_216,
-    items: [
-      { label: "Constitución formal + contratos VEQ", detail: "One-off + marcas", mxn: 150_000 },
-      { label: "Contador fiscal", detail: "$8K/mes · 18m", mxn: 150_000 },
-    ],
-  },
-  {
-    chapter: "Infraestructura + software",
-    percent: 3.2,
-    mxn: 150_000,
-    usd: 8_108,
-    items: [
-      { label: "Cloud + APIs", detail: "Supabase Pro + Vercel Pro + Claude API · 18m", mxn: 90_000 },
-      { label: "Software SaaS", detail: "Linear, Notion, GitHub, Figma · 18m", mxn: 60_000 },
-    ],
-  },
-  {
-    chapter: "Buffer / contingencia",
-    percent: 10.7,
-    mxn: 500_000,
-    usd: 27_027,
-    items: [
-      { label: "Colchón de seguridad", detail: "Para si revenue ramp-up tarda o hay imprevistos", mxn: 500_000 },
+      { label: "Tramo 1 · cierre del trato", detail: "Pago inicial", mxn: 150_000 },
+      { label: "Tramo 2 · mes 5", detail: "Punto de equilibrio confirmado", mxn: 150_000 },
+      { label: "Tramo 3 · mes 10", detail: "Autosostenible · VEQ deja de cubrir opex", mxn: 150_000 },
     ],
   },
 ];
@@ -215,6 +187,7 @@ export const pricing = [
     name: "Explorador",
     price_mxn: 0,
     price_label: "Gratis",
+    cost_per_valuation: "3 valuaciones / mes",
     target: "Funnel inicial · probadita del producto",
     features: [
       "3 créditos Brújula · export PDF / mes",
@@ -226,10 +199,11 @@ export const pricing = [
     name: "Pro",
     price_mxn: 399,
     price_label: "$399 MXN/mes",
+    cost_per_valuation: "$5.32 MXN / valuación",
     target: "Broker profesional independiente",
     featured: true,
     features: [
-      "75 créditos Brújula · export PDF/Excel / mes",
+      "75 créditos Brújula · export PDF / mes",
       "Comparador completo · todas las zonas",
       "Panorama de ciudad completo",
       "Historial de valuaciones (90 días)",
@@ -242,9 +216,10 @@ export const pricing = [
     name: "Empresarial",
     price_mxn: 1_499,
     price_label: "$1,499 MXN/mes",
+    cost_per_valuation: "$1.50 MXN / valuación",
     target: "Inmobiliarias · 5-20 agentes",
     features: [
-      "1,000 créditos Brújula · export PDF/Excel / mes",
+      "1,000 créditos Brújula · export PDF / mes",
       "Hasta 5 usuarios simultáneos",
       "Reportes con logo de la inmobiliaria",
       "Historial extendido (12 meses)",
@@ -293,13 +268,13 @@ export const market = {
     label: "SOM — Penetración objetivo mes 18",
     users: 5_380,
     revenue_potential_mxn: 47_064_240,
-    detail: "8.5% del mercado · 5,380 usuarios pagados × $729 avg (70% Pro / 30% Empresarial) = $3.92M MXN/mes",
+    detail: "6.7% del TAM · 5,380 usuarios pagados × $729 avg (70% Pro / 30% Empresarial) = $3.92M MXN/mes",
   },
 };
 
 // Diferenciadores vs competencia
 export const competitors = [
-  { name: "Inmobiq", focus: "Intelligence de zona", data_source: "Curada local + INEGI + AI", differentiator: "Boutique · data confiable" },
+  { name: "Inmobiq", focus: "Intelligence de zona", data_source: "Curada local + INEGI + AI", differentiator: "Data curada + IA · 15 ciudades" },
   { name: "Inmuebles24", focus: "Listings", data_source: "User-generated · no curada", differentiator: "Volumen masivo, datos sucios" },
   { name: "Lamudi", focus: "Listings", data_source: "User-generated · no curada", differentiator: "Similar a Inmuebles24" },
   { name: "Vivanuncios", focus: "Listings genérico", data_source: "User-generated amplio", differentiator: "No especializado" },
@@ -317,14 +292,12 @@ export const expansion = [
 
 // City unit cost (para preguntas de VEQ)
 export const city_opening_cost = {
-  mxn: 170_000,
-  usd: 9_189,
+  mxn: 60_000,
+  usd: 3_243,
   breakdown: [
-    { label: "Onboarding 2 curadores locales (3 meses pre-revenue)", mxn: 120_000 },
-    { label: "Marketing launch local", mxn: 30_000 },
-    { label: "Setup técnico (INEGI import + data inicial)", mxn: 20_000 },
+    { label: "Onboarding 1.5 curadores promedio · 2 meses pre-revenue", mxn: 60_000 },
   ],
-  payback_months: 3,
+  payback_months: 2,
 };
 
 // Equipo — actual + post-inversión (incluyendo VEQ in-kind)
@@ -332,14 +305,14 @@ export const team = [
   {
     name: "Oscar Amayoral",
     role: "Fundador · Producto, tecnología y comercial",
-    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia en marketing digital y desarrollo de producto.",
+    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia profunda en IA aplicada — automatización, workflows con Claude, integración de modelos en producto. Background en marketing digital y desarrollo de producto.",
     highlight: true,
     source: "founder",
   },
   {
-    name: "Equipo técnico actual",
-    role: "3 colaboradores de desarrollo",
-    bio: "Programadores subcontratados que han apoyado en la construcción del MVP durante el último año.",
+    name: "Equipo técnico subcontratado",
+    role: "2 backend + 1 frontend · por tareas",
+    bio: "Desarrolladores subcontratados por tareas específicas. El fundador define scope y ellos ejecutan. Se fueron alternando según tiempos y presupuesto disponible — modelo flexible que mantuvo el burn bajo durante el bootstrap.",
     highlight: false,
     source: "current",
   },
@@ -377,15 +350,16 @@ export const team = [
 export const risks = [
   {
     risk: "Adopción lenta de brokers",
-    mitigation: "Cross-promo con Narrativa360 · ventas directas en AMPI · onboarding personalizado para Empresarial",
+    mitigation: "Herramientas gratuitas para brokers con INMOBIQ como canal de entrada · alianzas con AMPI · marketing de afiliados con influencers de real estate · campañas pagadas (Meta + Google)",
+    link: { label: "logofa.st", url: "https://logofa.st/" },
   },
   {
     risk: "Competencia de portales grandes (Inmuebles24, Lamudi)",
-    mitigation: "Posicionamiento boutique: no competimos en listings, competimos en claridad. B2B tool, no portal de consumer.",
+    mitigation: "No competimos en listings, competimos en claridad. B2B tool con data curada + INEGI + IA de valuación — capa que los portales no ofrecen. Nuestro lead en data curada + 15 ciudades mapeadas es real.",
   },
   {
     risk: "Calidad de data depende de curadores",
-    mitigation: "Sistema QA con doble verificación · rotación de curadores · benchmarks mensuales de precisión",
+    mitigation: "Spot-checks aleatorios · cruce con precios de portales (Inmuebles24, Lamudi) · rotación de zonas por curador para evitar sesgos",
   },
   {
     risk: "Retención B2B (churn)",
@@ -429,11 +403,11 @@ export const features = [
 
 // Producto: stats del MVP construido
 export const mvp_stats = [
-  { value: "9,000+", label: "Líneas de código" },
-  { value: "243", label: "Archivos TypeScript" },
+  { value: "80%", label: "MVP construido" },
+  { value: "1", label: "Ciudad mapeada · Tijuana" },
   { value: "30", label: "Zonas canónicas TJ" },
-  { value: "500+", label: "Variables INEGI/zona" },
-  { value: "4", label: "Scrapers de portales" },
+  { value: "INEGI", label: "Demografía cruzada por zona" },
+  { value: "9,000+", label: "Líneas de código" },
   { value: "1 año", label: "De desarrollo" },
 ];
 
@@ -445,8 +419,8 @@ export const glossary = [
   { term: "LTV", def: "Lifetime Value — ingresos totales que genera un cliente durante su vida con el producto." },
   { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
   { term: "SAFE", def: "Simple Agreement for Future Equity — instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
-  { term: "IRR", def: "Tasa Interna de Retorno — rendimiento anual compuesto de la inversión. ~102% proyectado." },
-  { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 6." },
+  { term: "IRR", def: "Tasa Interna de Retorno — rendimiento anual compuesto de la inversión. ~132% proyectado." },
+  { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 5." },
   { term: "Runway", def: "Tiempo que dura el dinero de la ronda antes de necesitar más capital o ser rentables." },
   { term: "SaaS", def: "Software as a Service — modelo de negocio de suscripción mensual/anual en la nube." },
   { term: "B2B", def: "Business to Business — vendemos a empresas (inmobiliarias, brokers profesionales), no al consumidor final." },
@@ -455,7 +429,7 @@ export const glossary = [
   { term: "SOM", def: "Serviceable Obtainable Market — porción realista del SAM capturable en el horizonte del plan (4K usuarios)." },
   { term: "Múltiplo ARR", def: "Valuación de empresas SaaS = ARR × múltiplo (8–10× en LatAm seed). Estándar de la industria para calcular retorno." },
   { term: "Churn", def: "Tasa de cancelación — porcentaje de usuarios que dejan de pagar cada mes. Queremos <5% mensual." },
-  { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$60M MXN." },
+  { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$48M MXN." },
   { term: "Tiers", def: "Niveles de precio del producto: Explorador (gratis), Pro ($399 MXN/mes), Empresarial ($1,499 MXN/mes)." },
   { term: "INEGI", def: "Instituto Nacional de Estadística y Geografía — fuente oficial de datos demográficos del Censo 2020 (500+ variables por zona)." },
   { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios — principal agremiación de brokers e inmobiliarias en México." },
