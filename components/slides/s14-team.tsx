@@ -27,12 +27,12 @@ export function S14Team() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Un año ejecutando solo. <em className="italic text-gradient-accent">Riesgos claros, mitigación concreta.</em>
+              Un año ejecutando. <em className="italic text-gradient-accent">Riesgos claros, mitigación concreta.</em>
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              Oscar construyó Inmobiq de punta a punta durante un año con equipo subcontratado por tareas —
-              producto, data, IA, comercial. El MVP está al 80%. Aquí los principales riesgos del plan
-              y cómo pensamos mitigarlos.
+              He desarrollado Inmobiq de punta a punta durante un año: iterando, probando, validando con
+              brokers reales, apoyado por equipo técnico subcontratado por tareas. El MVP está al 80%.
+              Aquí los principales riesgos del plan y cómo pensamos mitigarlos.
             </p>
           </div>
         </FadeItem>
