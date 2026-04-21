@@ -23,14 +23,13 @@ export function S16CTA() {
           </FadeItem>
 
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.02] text-foreground tracking-[-0.02em]">
-            <HeroWord delay={0.1}>Construyamos </HeroWord>
-            <HeroWord delay={0.3}>juntos </HeroWord>
+            <HeroWord delay={0.1}>Construyamos juntos</HeroWord>
             <br />
-            <HeroWord delay={0.5}>la capa de </HeroWord>
+            <HeroWord delay={0.4}>la capa de&nbsp;</HeroWord>
             <HeroWord delay={0.7}>
               <em className="italic text-gradient-accent">inteligencia</em>
             </HeroWord>
-            <HeroWord delay={0.9}> inmobiliaria</HeroWord>
+            <HeroWord delay={0.9}>&nbsp;inmobiliaria</HeroWord>
             <br />
             <HeroWord delay={1.1}>de México.</HeroWord>
           </h2>
