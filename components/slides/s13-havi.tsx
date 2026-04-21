@@ -94,8 +94,8 @@ export function S13Havi() {
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
                 Havi: El Tinder para encontrar tu próxima{" "}
-                <span className="line-through decoration-[3px] text-muted/60">casa</span>{" "}
-                <em className="italic text-gradient-accent">hogar.</em>
+                <span className="line-through decoration-[3px] text-muted/60">pareja</span>{" "}
+                <em className="italic text-gradient-accent">casa.</em>
               </h2>
               <div className="mt-3 text-base sm:text-lg text-muted tracking-[-0.005em]">
                 Portal abierto que genera data para Inmobiq.
