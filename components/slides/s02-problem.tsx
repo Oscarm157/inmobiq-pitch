@@ -82,7 +82,7 @@ const problemCards = [
     detail: "Tiempo que cada broker profesional pierde cruzando datos entre portales para cerrar una venta.",
   },
   {
-    number: "~0",
+    number: "1-2",
     label: "Data pública confiable",
     detail: "Pueden existir intentos aislados, pero la cobertura real es mínima o nula. Nadie ha construido la capa de intelligence que el broker mexicano necesita.",
   },
