@@ -17,11 +17,11 @@ export function S09BusinessModel() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              Precios validados con brokers.
+              Tres planes para el broker mexicano.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-              Tres tiers. El free es solo una probada — el valor real está en Pro y
-              Empresarial, donde proyectamos 85% de usuarios pagos.
+              El plan gratuito es una probada del producto — el valor real está en Pro
+              y Empresarial, donde proyectamos que el 85% de los usuarios pagarán.
             </p>
           </div>
         </FadeItem>
