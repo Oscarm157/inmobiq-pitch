@@ -83,7 +83,7 @@ const problemCards = [
   },
   {
     number: "1-2",
-    label: "Iniciativas serias",
+    label: "Iniciativas",
     detail: "Pueden existir intentos aislados, pero la cobertura real es mínima o nula. Nadie ha construido la capa de inteligencia que el broker mexicano necesita.",
   },
 ];
