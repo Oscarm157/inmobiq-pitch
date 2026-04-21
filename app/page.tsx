@@ -24,10 +24,10 @@ export default function Page() {
     <SlidesDeck>
       <S01Hero />
       <S02Problem />
-      <S04HowItWorks />
-      <S03Solution />
       <SCockpit />
       <SRadar />
+      <S04HowItWorks />
+      <S03Solution />
       <S05Product />
       <SSuperpowers />
       <S06Differentiator />
