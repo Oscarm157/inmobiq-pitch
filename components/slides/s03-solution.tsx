@@ -83,6 +83,6 @@ const pillars = [
   {
     icon: "travel_explore",
     title: "Brújula AI",
-    description: "Valuación instantánea de cualquier propiedad con narrativa explicable generada por Claude AI.",
+    description: "Valuación instantánea de cualquier propiedad con narrativa explicable generada por IA.",
   },
 ];

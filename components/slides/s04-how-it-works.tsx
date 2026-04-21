@@ -74,7 +74,7 @@ const stages = [
     icon: "hub",
     title: "Transformamos",
     sub: "Zonas por ciudad + enriquecimiento con IA",
-    detail: "Zonas canónicas en 15 ciudades + 500 variables INEGI cruzadas + valuaciones con Claude.",
+    detail: "Zonas canónicas en 15 ciudades + 500 variables INEGI cruzadas + valuaciones con IA.",
   },
   {
     num: "04",
