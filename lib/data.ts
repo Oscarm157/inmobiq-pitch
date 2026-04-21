@@ -281,13 +281,23 @@ export const competitors = [
   { name: "AirDNA", focus: "Data B2B (AirBnB)", data_source: "Scraping + curación", differentiator: "Modelo que aspiramos · en otro segmento" },
 ];
 
-// Expansión roadmap
+// Expansión — alineado con tabla de S08 (targets al M18)
 export const expansion = [
-  { city: "Tijuana",     status: "live",     quarter: "Mes 1",  users_target: 1_050 },
-  { city: "Guadalajara", status: "Q4 2026",  quarter: "Mes 3",  users_target: 490   },
-  { city: "Cancún",      status: "Q4 2026",  quarter: "Mes 3",  users_target: 340   },
-  { city: "CDMX",        status: "roadmap",  quarter: "Mes 3",  users_target: 1_550 },
-  { city: "Monterrey",   status: "roadmap",  quarter: "Mes 3",  users_target: 560   },
+  { city: "Tijuana",              wave: "live", launch: "Mes 1",  users_m18: 445   },
+  { city: "CDMX + Zona Metro",    wave: "ola1", launch: "Mes 3",  users_m18: 2_016 },
+  { city: "Monterrey",            wave: "ola1", launch: "Mes 3",  users_m18: 720   },
+  { city: "Guadalajara",          wave: "ola1", launch: "Mes 3",  users_m18: 650   },
+  { city: "Cancún + Riviera Maya", wave: "ola1", launch: "Mes 3",  users_m18: 288   },
+  { city: "Puebla",               wave: "ola2", launch: "Mes 6",  users_m18: 225   },
+  { city: "Querétaro",            wave: "ola2", launch: "Mes 6",  users_m18: 196   },
+  { city: "Mérida",               wave: "ola2", launch: "Mes 6",  users_m18: 168   },
+  { city: "León",                 wave: "ola3", launch: "Mes 12", users_m18: 120   },
+  { city: "Toluca",               wave: "ola3", launch: "Mes 12", users_m18: 120   },
+  { city: "Ciudad Juárez",        wave: "ola3", launch: "Mes 12", users_m18: 96    },
+  { city: "Playa del Carmen",     wave: "ola3", launch: "Mes 12", users_m18: 96    },
+  { city: "San Luis Potosí",      wave: "ola3", launch: "Mes 12", users_m18: 96    },
+  { city: "Los Cabos",            wave: "ola3", launch: "Mes 12", users_m18: 72    },
+  { city: "Aguascalientes",       wave: "ola3", launch: "Mes 12", users_m18: 72    },
 ];
 
 // City unit cost (para preguntas de VEQ)

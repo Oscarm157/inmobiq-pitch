@@ -5,7 +5,7 @@ const publishers = [
   {
     icon: "person",
     title: "Vendedores",
-    detail: "Dueños que venden directo, sin broker. Publican una vez, validados por teléfono y documento.",
+    detail: "Dueños que venden directo, sin broker. Publican una vez, validados por teléfono + INE/CURP.",
   },
   {
     icon: "key",
@@ -45,7 +45,7 @@ const haviPrinciples = [
     icon: "verified",
     title: "1 inmueble = 1 listing",
     detail:
-      "Cada propiedad publicada una sola vez, validada por teléfono + documento. Dedup estructural sin importar quién la publique.",
+      "Cada propiedad publicada una sola vez, validada por teléfono + INE/CURP. Dedup estructural sin importar quién la publique.",
     accent: true,
   },
   {
@@ -103,7 +103,7 @@ export function S13Havi() {
             </div>
 
             <div className="flex gap-5 sm:gap-7">
-              <Kpi label="Launch" value="Mes 12" sub="post Series Seed" />
+              <Kpi label="Launch" value="Mes 6" sub="post Series Seed" />
               <div className="w-px bg-card-border" />
               <Kpi label="Publicadores" value="3 tipos" sub="abierto a todos" accent />
               <div className="w-px bg-card-border" />
@@ -232,7 +232,7 @@ export function S13Havi() {
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Launch mes 12</span>
+              <span className="uppercase tracking-widest font-semibold text-emerald-300/90">Launch mes 6</span>
             </span>
           </div>
         </FadeItem>

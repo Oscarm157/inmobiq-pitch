@@ -2,12 +2,17 @@ import { Slide } from "../slide";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import { expansion, city_opening_cost } from "@/lib/data";
 
+type Wave = "live" | "ola1" | "ola2" | "ola3";
+
+const waveConfig: Record<Wave, { bg: string; text: string; label: string }> = {
+  live: { bg: "bg-success/15", text: "text-success",  label: "Vivo · Mes 1" },
+  ola1: { bg: "bg-accent/15",  text: "text-accent",   label: "Ola 1 · Mes 3" },
+  ola2: { bg: "bg-violet/15",  text: "text-violet",   label: "Ola 2 · Mes 6" },
+  ola3: { bg: "bg-muted/15",   text: "text-muted",    label: "Ola 3 · Mes 12" },
+};
+
 export function S12Expansion() {
-  const statusColor = (status: string) => {
-    if (status === "live") return { bg: "bg-success/15", text: "text-success", label: "Vivo" };
-    if (status.startsWith("Q4 2026")) return { bg: "bg-accent/15", text: "text-accent", label: "Q4 2026" };
-    return { bg: "bg-muted/15", text: "text-muted", label: "Roadmap" };
-  };
+  const totalM18 = expansion.reduce((a, c) => a + c.users_m18, 0);
 
   return (
     <Slide mode="dark">
@@ -36,29 +41,34 @@ export function S12Expansion() {
           {/* Left — city timeline */}
           <FadeItem className="lg:col-span-7">
             <div className="rounded-2xl bg-card p-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.45)]">
-              <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-muted mb-5">
-                Cronograma de expansión
+              <div className="flex items-baseline justify-between mb-5">
+                <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-muted">
+                  Cronograma de expansión · 15 ciudades
+                </div>
+                <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-accent">
+                  Total mes 18: {totalM18.toLocaleString()} usuarios
+                </div>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2.5">
                 {expansion.map((c) => {
-                  const s = statusColor(c.status);
+                  const s = waveConfig[c.wave as Wave];
                   return (
                     <div
                       key={c.city}
-                      className="flex items-center gap-4 pl-4 border-l-2 border-card-border relative"
+                      className="flex items-center gap-3 pl-4 border-l-2 border-card-border relative"
                     >
-                      <div className="absolute -left-[5px] w-2 h-2 rounded-full bg-accent" />
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xl font-semibold text-foreground">
+                      <div className="absolute -left-[5px] top-2.5 w-2 h-2 rounded-full bg-accent" />
+                      <div className="flex-1 flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="text-sm font-semibold text-foreground">
                             {c.city}
                           </span>
-                          <span className={`text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded ${s.bg} ${s.text}`}>
+                          <span className={`text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded ${s.bg} ${s.text}`}>
                             {s.label}
                           </span>
                         </div>
-                        <div className="text-xs text-muted mt-0.5">
-                          Objetivo: {c.users_target.toLocaleString()} usuarios activos · {c.quarter}
+                        <div className="text-xs text-muted tabular-nums whitespace-nowrap">
+                          {c.users_m18.toLocaleString()} <span className="opacity-60">M18</span>
                         </div>
                       </div>
                     </div>
