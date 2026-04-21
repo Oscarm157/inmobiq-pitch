@@ -93,10 +93,12 @@ export function S13Havi() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-                Havi: portal abierto que <em className="italic text-gradient-accent">genera data</em> para Inmobiq.
+                Havi: El Tinder para encontrar tu próxima{" "}
+                <span className="line-through decoration-[3px] text-muted/60">casa</span>{" "}
+                <em className="italic text-gradient-accent">hogar.</em>
               </h2>
-              <div className="mt-3 text-lg sm:text-xl font-semibold text-accent tracking-[-0.01em]">
-                El Tinder para encontrar tu próximo hogar.
+              <div className="mt-3 text-base sm:text-lg text-muted tracking-[-0.005em]">
+                Portal abierto que genera data para Inmobiq.
               </div>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Producto independiente donde compradores, vendedores y brokers publican. Su función primaria
