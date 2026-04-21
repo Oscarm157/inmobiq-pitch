@@ -68,7 +68,11 @@ const pillars = [
   {
     icon: "verified",
     title: "Data curada por locales",
-    description: "Analistas humanos en cada ciudad validan precios, zonas y listings. Calidad que un scraper nunca alcanza.",
+    description: (
+      <>
+        Analistas <em className="italic text-foreground/95">humanos</em> en cada ciudad validan precios, zonas y listings. Calidad que un scraper nunca alcanza.
+      </>
+    ),
   },
   {
     icon: "insights",
