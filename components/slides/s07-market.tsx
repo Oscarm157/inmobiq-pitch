@@ -11,6 +11,7 @@ export function S07Market() {
       key: "total",
       label: "Mercado total",
       sub: "Brokers e inmobiliarias activos en México",
+      breakdown: undefined as string | undefined,
       users: market.tam.users,
       revenue: market.tam.revenue_potential_mxn,
       barPct: 100,
@@ -19,14 +20,16 @@ export function S07Market() {
       key: "alcanzable",
       label: "Mercado alcanzable",
       sub: "5 ciudades con mayor volumen de transacciones",
+      breakdown: "CDMX 22,400 · MTY 8,000 · GDL 7,200 · Puebla 3,200 · TJ 3,200",
       users: market.sam.users,
       revenue: market.sam.revenue_potential_mxn,
-      barPct: 25,
+      barPct: 55,
     },
     {
       key: "captura",
       label: "Captura objetivo · mes 18",
       sub: "Plan conservador en 15 ciudades activas",
+      breakdown: undefined as string | undefined,
       users: market.som.users,
       revenue: market.som.revenue_potential_mxn,
       barPct: 6.8,
@@ -85,6 +88,9 @@ export function S07Market() {
                       {l.label}
                     </div>
                     <div className="text-sm text-foreground/85 leading-snug">{l.sub}</div>
+                    {l.breakdown && (
+                      <div className="text-[11px] text-muted/60 mt-1 italic">{l.breakdown}</div>
+                    )}
                   </div>
 
                   <div className="flex items-baseline gap-4">

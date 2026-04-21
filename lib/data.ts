@@ -285,14 +285,14 @@ export const market = {
   },
   sam: {
     label: "SAM — Brokers activos en 5 ciudades prioritarias",
-    users: 20_000,
-    revenue_potential_mxn: 215_760_000,
-    detail: "TJ + GDL + Cancún + CDMX + MTY · profesionales con >5 transacciones/año",
+    users: 44_000,
+    revenue_potential_mxn: 474_700_000,
+    detail: "CDMX 22,400 + MTY 8,000 + GDL 7,200 + Puebla 3,200 + TJ 3,200",
   },
   som: {
     label: "SOM — Penetración objetivo mes 18",
-    users: 5_412,
-    revenue_potential_mxn: 51_900_000,
+    users: 5_380,
+    revenue_potential_mxn: 51_583_440,
     detail: "8.5% del TAM · 5,412 usuarios pagos × $799 avg (70% Pro / 30% Empresarial) = $4.3M MXN/mes MRR",
   },
 };
