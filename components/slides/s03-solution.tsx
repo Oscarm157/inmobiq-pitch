@@ -29,31 +29,26 @@ export function S03Solution() {
         </FadeItem>
 
         <FadeItem>
-          <p className="text-lg text-muted max-w-2xl leading-relaxed">
-            Inmobiq combina data curada manualmente por analistas locales,
-            demografía INEGI, histórico de crecimiento por zona y valuaciones con IA.
-            Es una herramienta de análisis, no un portal de anuncios.
-          </p>
-          <p className="mt-2 text-xs text-muted/60 italic">
-            Demografía: Censo INEGI 2020 hoy · Encuesta Intercensal 2025 disponible septiembre 2026.
+          <p className="text-base text-muted max-w-2xl leading-relaxed">
+            Herramienta de análisis, no portal de anuncios.
           </p>
         </FadeItem>
 
         <FadeStack className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
           {pillars.map((p) => (
             <FadeItem key={p.title}>
-              <div className="relative h-full rounded-2xl bg-card p-7 overflow-hidden">
+              <div className="relative h-full rounded-2xl bg-card p-6 overflow-hidden">
                 <div
                   className="absolute -top-12 -right-12 w-36 h-36 rounded-full pointer-events-none"
                   style={{ background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)" }}
                 />
                 <div className="relative">
-                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-accent/10 mb-5">
-                    <span className="material-symbols-outlined text-accent" style={{ fontSize: 22 }}>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 mb-4">
+                    <span className="material-symbols-outlined text-accent" style={{ fontSize: 20 }}>
                       {p.icon}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-medium text-foreground mb-2 leading-tight">
+                  <h3 className="text-xl font-semibold text-foreground mb-1.5 leading-tight">
                     {p.title}
                   </h3>
                   <p className="text-sm text-muted leading-relaxed">{p.description}</p>
@@ -62,6 +57,12 @@ export function S03Solution() {
             </FadeItem>
           ))}
         </FadeStack>
+
+        <FadeItem>
+          <p className="text-xs text-muted/60 italic">
+            Demografía: Censo INEGI 2020 hoy · Encuesta Intercensal 2025 disponible septiembre 2026.
+          </p>
+        </FadeItem>
       </FadeStack>
     </Slide>
   );
@@ -73,18 +74,18 @@ const pillars = [
     title: "Data curada por locales",
     description: (
       <>
-        Analistas <em className="italic text-foreground/95">humanos</em> en cada ciudad validan precios, zonas y anuncios. Calidad que la extracción automática nunca alcanza.
+        Analistas <em className="italic text-foreground/95">humanos</em> en cada ciudad. Calidad imposible para la extracción automática.
       </>
     ),
   },
   {
     icon: "insights",
     title: "Inteligencia de zona",
-    description: "Precio por m², tendencia, riesgo y demografía INEGI cruzada por zona. Plan de cobertura nacional en 15 ciudades.",
+    description: "Precio/m², tendencia, riesgo y demografía INEGI por zona. 15 ciudades.",
   },
   {
     icon: "travel_explore",
     title: "Brújula Inmobiliaria",
-    description: "Valuación instantánea de cualquier propiedad con narrativa explicable generada por IA.",
+    description: "Valuación instantánea con narrativa explicable por IA.",
   },
 ];
