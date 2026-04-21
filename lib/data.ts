@@ -253,19 +253,19 @@ export const projections = [
 
 export const market = {
   tam: {
-    label: "TAM — Brokers e inmobiliarias registrados en México",
+    label: "TAM · Brokers e inmobiliarias registrados en México",
     users: 80_000,
     revenue_potential_mxn: 699_840_000,
     detail: "Fuente: AMPI + estimaciones sectoriales · $729 MXN avg × 12 meses × 80K brokers",
   },
   sam: {
-    label: "SAM — Brokers activos en 5 ciudades prioritarias",
+    label: "SAM · Brokers activos en 5 ciudades prioritarias",
     users: 44_000,
     revenue_potential_mxn: 384_912_000,
     detail: "CDMX 22,400 + MTY 8,000 + GDL 7,200 + Puebla 3,200 + TJ 3,200",
   },
   som: {
-    label: "SOM — Penetración objetivo mes 18",
+    label: "SOM · Penetración objetivo mes 18",
     users: 5_380,
     revenue_potential_mxn: 47_064_240,
     detail: "6.7% del TAM · 5,380 usuarios pagados × $729 avg (70% Pro / 30% Empresarial) = $3.92M MXN/mes",
@@ -315,14 +315,14 @@ export const team = [
   {
     name: "Oscar Amayoral",
     role: "Fundador · Producto, tecnología y comercial",
-    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia profunda en IA aplicada — automatización, workflows con Claude, integración de modelos en producto. Background en marketing digital y desarrollo de producto.",
+    bio: "Full-stack. 1 año construyendo Inmobiq de punta a punta con equipo técnico subcontratado. Experiencia profunda en IA aplicada: automatización, workflows con Claude, integración de modelos en producto. Background en marketing digital y desarrollo de producto.",
     highlight: true,
     source: "founder",
   },
   {
     name: "Equipo técnico subcontratado",
     role: "2 backend + 1 frontend · por tareas",
-    bio: "Desarrolladores subcontratados por tareas específicas. El fundador define scope y ellos ejecutan. Se fueron alternando según tiempos y presupuesto disponible — modelo flexible que mantuvo el burn bajo durante el bootstrap.",
+    bio: "Desarrolladores subcontratados por tareas específicas. El fundador define scope y ellos ejecutan. Se fueron alternando según tiempos y presupuesto disponible. Modelo flexible que mantuvo el burn bajo durante el bootstrap.",
     highlight: false,
     source: "current",
   },
@@ -371,7 +371,7 @@ export const risks = [
   {
     risk: "Competencia de portales grandes (Inmuebles24, Lamudi)",
     mitigation: [
-      "No competimos en listings, competimos en claridad — B2B tool",
+      "No competimos en listings, competimos en claridad (B2B tool)",
       "Capa de data curada + INEGI + IA que los portales no ofrecen",
       "Lead en data curada y 15 ciudades mapeadas",
     ],
@@ -399,7 +399,7 @@ export const features = [
   {
     icon: "dashboard",
     title: "Panorama",
-    description: "Dashboard vivo: precios por m², tendencias, composición del inventario, riesgo — todo al abrir la app.",
+    description: "Dashboard vivo: precios por m², tendencias, composición del inventario, riesgo. Todo al abrir la app.",
   },
   {
     icon: "explore",
@@ -440,28 +440,28 @@ export const mvp_stats = [
 
 // Glosario de términos y acrónimos del pitch
 export const glossary = [
-  { term: "ARR", def: "Annual Recurring Revenue — ingresos recurrentes anuales (MRR × 12)." },
-  { term: "MRR", def: "Monthly Recurring Revenue — ingresos recurrentes por suscripciones en un mes." },
-  { term: "CAC", def: "Costo de Adquisición por Cliente — cuánto cuesta conseguir un usuario pagado." },
-  { term: "LTV", def: "Lifetime Value — ingresos totales que genera un cliente durante su vida con el producto." },
+  { term: "ARR", def: "Annual Recurring Revenue. Ingresos recurrentes anuales (MRR × 12)." },
+  { term: "MRR", def: "Monthly Recurring Revenue. Ingresos recurrentes por suscripciones en un mes." },
+  { term: "CAC", def: "Costo de Adquisición por Cliente. Cuánto cuesta conseguir un usuario pagado." },
+  { term: "LTV", def: "Lifetime Value. Ingresos totales que genera un cliente durante su vida con el producto." },
   { term: "LTV / CAC", def: "Ratio de eficiencia: cuántas veces recuperas lo que gastas en adquirir un cliente. >3× es saludable; estamos en 8×." },
-  { term: "SAFE", def: "Simple Agreement for Future Equity — instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
-  { term: "IRR", def: "Tasa Interna de Retorno — rendimiento anual compuesto de la inversión. ~132% proyectado." },
+  { term: "SAFE", def: "Simple Agreement for Future Equity. Instrumento de inversión seed que convierte a equity en la siguiente ronda sin fijar valuación hoy." },
+  { term: "IRR", def: "Tasa Interna de Retorno. Rendimiento anual compuesto de la inversión. ~132% proyectado." },
   { term: "Punto de equilibrio", def: "Mes en que los ingresos cubren exactamente los costos operativos. Proyectado en mes 5." },
   { term: "Runway", def: "Tiempo que dura el dinero de la ronda antes de necesitar más capital o ser rentables." },
-  { term: "SaaS", def: "Software as a Service — modelo de negocio de suscripción mensual/anual en la nube." },
-  { term: "B2B", def: "Business to Business — vendemos a empresas (inmobiliarias, brokers profesionales), no al consumidor final." },
-  { term: "TAM", def: "Total Addressable Market — mercado total disponible si capturaras el 100% (80K brokers en México)." },
-  { term: "SAM", def: "Serviceable Addressable Market — porción del TAM a la que realmente puedes llegar (20K en ciudades objetivo)." },
-  { term: "SOM", def: "Serviceable Obtainable Market — porción realista del SAM capturable en el horizonte del plan (4K usuarios)." },
+  { term: "SaaS", def: "Software as a Service. Modelo de negocio de suscripción mensual/anual en la nube." },
+  { term: "B2B", def: "Business to Business. Vendemos a empresas (inmobiliarias, brokers profesionales), no al consumidor final." },
+  { term: "TAM", def: "Total Addressable Market. Mercado total disponible si capturaras el 100% (80K brokers en México)." },
+  { term: "SAM", def: "Serviceable Addressable Market. Porción del TAM a la que realmente puedes llegar (20K en ciudades objetivo)." },
+  { term: "SOM", def: "Serviceable Obtainable Market. Porción realista del SAM capturable en el horizonte del plan (4K usuarios)." },
   { term: "Múltiplo ARR", def: "Valuación de empresas SaaS = ARR × múltiplo (8–10× en LatAm seed). Estándar de la industria para calcular retorno." },
-  { term: "Churn", def: "Tasa de cancelación — porcentaje de usuarios que dejan de pagar cada mes. Queremos <5% mensual." },
+  { term: "Churn", def: "Tasa de cancelación. Porcentaje de usuarios que dejan de pagar cada mes. Queremos <5% mensual." },
   { term: "Series A", def: "Segunda ronda formal de inversión (después de seed). Proyectada en mes 24–30 con ARR de ~$48M MXN." },
   { term: "Tiers", def: "Niveles de precio del producto: Explorador (gratis), Pro ($399 MXN/mes), Empresarial ($1,499 MXN/mes)." },
-  { term: "INEGI", def: "Instituto Nacional de Estadística y Geografía — fuente oficial de datos demográficos del Censo 2020 (500+ variables por zona)." },
-  { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios — principal agremiación de brokers e inmobiliarias en México." },
-  { term: "ICP", def: "Ideal Customer Profile — perfil del cliente ideal: broker con 5+ años, 5+ transacciones/mes, ciudad de alto volumen." },
-  { term: "Cap Rate", def: "Capitalization Rate — rendimiento anual de un inmueble en renta vs. su valor de mercado. KPI para inversión comercial." },
+  { term: "INEGI", def: "Instituto Nacional de Estadística y Geografía. Fuente oficial de datos demográficos del Censo 2020." },
+  { term: "AMPI", def: "Asociación Mexicana de Profesionales Inmobiliarios. Principal agremiación de brokers e inmobiliarias en México." },
+  { term: "ICP", def: "Ideal Customer Profile. Perfil del cliente ideal: broker con 5+ años, 5+ transacciones/mes, ciudad de alto volumen." },
+  { term: "Cap Rate", def: "Capitalization Rate. Rendimiento anual de un inmueble en renta vs. su valor de mercado. KPI para inversión comercial." },
 ];
 
 // Categorías de VEQ que cubre cada slide (índice 0 = S01 Hero)

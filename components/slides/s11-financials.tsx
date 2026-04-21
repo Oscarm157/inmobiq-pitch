@@ -31,8 +31,8 @@ export function S11Financials() {
               </h2>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Punto de equilibrio operativo al mes 4-5. Rentabilidad sostenida desde el mes 9.
-                La base de usuarios pagados escala 15× durante el plan — de 345 al mes 3 a 5,380
-                al mes 18 — impulsada por la expansión escalonada en tres olas.
+                La base de usuarios pagados escala 15× durante el plan, de 345 al mes 3 a 5,380
+                al mes 18, impulsada por la expansión escalonada en tres olas.
               </p>
             </div>
 

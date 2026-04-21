@@ -205,7 +205,7 @@ export function S15Investment() {
                 </span>
               </span>
               <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
-                Utilidad acumulada M1-M10 ~$5M MXN — suficiente para cubrir el opex propio a partir del mes 11.
+                Utilidad acumulada M1-M10 ~$5M MXN. Suficiente para cubrir el opex propio a partir del mes 11.
               </span>
             </div>
           </div>
@@ -244,7 +244,7 @@ export function S15Investment() {
 
         <TermLegend
           terms={[
-            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por VEQ — valor equivalente, no efectivo" },
+            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por VEQ (valor equivalente, no efectivo)" },
             { term: "Compensación al fundador", def: "pago al fundador por el año de bootstrap, dividido en tramos atados a hitos" },
             { term: "Gasto mensual", def: "lo que sale del banco cada mes para operar (salarios, infra, etc.)" },
             { term: "Ingreso recurrente", def: "ingresos mensuales por suscripciones (MRR · ARR cuando es anual)" },

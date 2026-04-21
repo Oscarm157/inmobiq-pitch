@@ -20,7 +20,7 @@ export function S09BusinessModel() {
               Tres planes para el broker mexicano.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-              El plan gratuito es puerta de entrada — funnel, no monetización. Los
+              El plan gratuito es puerta de entrada: funnel, no monetización. Los
               planes Pro y Empresarial concentran el valor real, con un costo por
               valuación que baja 3.5× al subir de tier.
             </p>
@@ -85,7 +85,7 @@ export function S09BusinessModel() {
         <TermLegend terms={[
           { term: "CAC", def: "costo de adquirir un cliente" },
           { term: "LTV", def: "ingresos totales del cliente en su vida" },
-          { term: "LTV/CAC", def: "cuántas veces recuperas lo invertido en adquirirlo — >3× es saludable" },
+          { term: "LTV/CAC", def: "cuántas veces recuperas lo invertido en adquirirlo (>3× es saludable)" },
         ]} />
       </FadeStack>
     </Slide>

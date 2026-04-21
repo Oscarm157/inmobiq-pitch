@@ -203,7 +203,7 @@ export function SRadar() {
           </h2>
           <p className="mt-2 text-sm text-muted max-w-2xl leading-relaxed">
             Antes: abrir cada anuncio, copiar precios a un Excel, intentar ver patrones en el ruido.
-            Con Inmobiq: el radar completo de la ciudad — zonas, tendencias, riesgo y precios en una sola pantalla.
+            Con Inmobiq: el radar completo de la ciudad. Zonas, tendencias, riesgo y precios en una sola pantalla.
           </p>
         </FadeItem>
 

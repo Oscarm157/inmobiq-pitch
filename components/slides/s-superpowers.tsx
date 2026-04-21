@@ -26,7 +26,7 @@ const gains = [
     icon: "verified",
     title: "Se ve pro",
     value: "Reporte al instante",
-    detail: "Llega a la cita con valuación IA, comparativa de zona, riesgo y demografía — en PDF. El cliente percibe a alguien que domina el mercado.",
+    detail: "Llega a la cita con valuación IA, comparativa de zona, riesgo y demografía en PDF. El cliente percibe a alguien que domina el mercado.",
   },
 ];
 
@@ -46,7 +46,7 @@ export function SSuperpowers() {
             <em className="italic text-gradient-accent">Le da superpoderes.</em>
           </h2>
           <p className="mt-2 text-sm text-muted max-w-2xl leading-relaxed">
-            La parte tediosa del customer journey — análisis, comparativas, preguntas de incertidumbre —
+            La parte tediosa del customer journey (análisis, comparativas, preguntas de incertidumbre)
             ahora la resuelve la IA en 5 segundos. El broker se enfoca en lo que ningún algoritmo puede hacer.
           </p>
         </FadeItem>
@@ -151,7 +151,7 @@ export function SSuperpowers() {
             <div className="h-px flex-1 bg-card-border" />
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-muted">
               <span className="material-symbols-outlined text-accent" style={{ fontSize: 14 }}>bolt</span>
-              El broker sigue siendo indispensable — ahora con inteligencia artificial de copiloto
+              El broker sigue siendo indispensable, ahora con inteligencia artificial de copiloto
             </div>
             <div className="h-px flex-1 bg-card-border" />
           </div>

@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Inmobiq · Pitch para Grupo VEQ",
   description:
-    "Inteligencia inmobiliaria confiable y precisa para profesionales — presentación de ronda de inversión semilla.",
+    "Inteligencia inmobiliaria confiable y precisa para profesionales. Presentación de ronda de inversión semilla.",
 };
 
 export default function RootLayout({

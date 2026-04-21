@@ -10,7 +10,7 @@ const publishers = [
   {
     icon: "key",
     title: "Compradores / rentadores",
-    detail: "Onboarding de 10 preguntas que perfila a fondo al usuario — el matching funciona como Tinder/Bumble: el sistema empareja al comprador con las propiedades que realmente encajan con su perfil.",
+    detail: "Onboarding de 10 preguntas que perfila a fondo al usuario. El matching funciona como Tinder/Bumble: el sistema empareja al comprador con las propiedades que realmente encajan con su perfil.",
   },
   {
     icon: "badge",
@@ -65,7 +65,7 @@ const haviPrinciples = [
     icon: "handyman",
     title: "Marketplace de servicios",
     detail:
-      "Mudanza, mantenimiento, financiero, legal — el ciclo completo del comprador, no solo la transacción.",
+      "Mudanza, mantenimiento, financiero, legal. El ciclo completo del comprador, no solo la transacción.",
   },
 ];
 
@@ -100,7 +100,7 @@ export function S13Havi() {
               </div>
               <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
                 Producto independiente donde compradores, vendedores y brokers publican. Su función primaria
-                no es facturar — es generar data first-party limpia, sin duplicados, completa, que alimenta
+                no es facturar. Es generar data first-party limpia, sin duplicados, completa, que alimenta
                 la inteligencia de mercado de Inmobiq y reduce la dependencia del scraping.
               </p>
             </div>
