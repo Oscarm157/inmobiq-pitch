@@ -31,9 +31,11 @@ export function S03Solution() {
         <FadeItem>
           <p className="text-lg text-muted max-w-2xl leading-relaxed">
             Inmobiq combina data curada manualmente por analistas locales,
-            demografía INEGI (Censo 2020 hoy · Encuesta Intercensal 2025 disponible
-            septiembre 2026), histórico de crecimiento por zona y valuaciones con IA.
+            demografía INEGI, histórico de crecimiento por zona y valuaciones con IA.
             Es una herramienta de análisis, no un portal de anuncios.
+          </p>
+          <p className="mt-2 text-xs text-muted/60 italic">
+            Demografía: Censo INEGI 2020 hoy · Encuesta Intercensal 2025 disponible septiembre 2026.
           </p>
         </FadeItem>
 
