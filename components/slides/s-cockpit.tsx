@@ -76,7 +76,7 @@ function BasicView() {
           "¿Tendencia del mercado?",
           "¿Nivel de riesgo real?",
           "¿Valuación es justa?",
-          "¿Cuántos listings activos?",
+          "¿Cuántos anuncios activos?",
         ].map((q) => (
           <div key={q} className="flex items-center gap-2">
             <span className="text-sm font-bold text-muted leading-none">?</span>
@@ -199,7 +199,7 @@ function CockpitView() {
         </div>
 
         <div className="bg-card/50 border border-card-border/50 rounded-lg p-2 backdrop-blur-sm">
-          <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1">Listings</div>
+          <div className="text-[7px] uppercase tracking-widest text-muted font-semibold mb-1">Anuncios</div>
           <div className="text-sm font-bold text-foreground tabular-nums">23</div>
           <div className="text-[8px] text-muted mt-0.5">activos zona</div>
         </div>

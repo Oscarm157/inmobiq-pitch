@@ -17,7 +17,7 @@ export function S06Differentiator() {
 
         <FadeItem>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground tracking-[-0.015em] max-w-4xl">
-            Ellos muestran listings.{" "}
+            Ellos muestran anuncios.{" "}
             <em className="italic text-gradient-accent">Nosotros damos claridad.</em>
           </h2>
         </FadeItem>
