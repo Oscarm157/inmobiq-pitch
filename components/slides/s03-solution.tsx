@@ -31,8 +31,10 @@ export function S03Solution() {
         <FadeItem>
           <p className="text-lg text-muted max-w-2xl leading-relaxed">
             Inmobiq combina data curada manualmente por analistas locales,
-            demografía INEGI 2020 y valuaciones con IA. No otro portal de anuncios:
-            la capa de claridad que el profesional mexicano necesitaba.
+            demografía INEGI (Censo 2020 hoy · Encuesta Intercensal 2025 disponible
+            septiembre 2026), histórico de crecimiento por zona y valuaciones con IA.
+            No otro portal de anuncios: la capa de claridad que el profesional
+            mexicano necesitaba.
           </p>
         </FadeItem>
 
