@@ -387,9 +387,9 @@ export const risks = [
   {
     risk: "Retención B2B (churn)",
     mitigation: [
-      "Customer success dedicado",
-      "Contratos anuales para Empresarial",
-      "Features stickiness (alertas, API)",
+      "Customer success 100% enfocado en hacer de Inmobiq un producto excelente para el broker. La satisfacción del usuario es nuestra métrica principal",
+      "Contratos anuales para Empresarial con descuento progresivo",
+      "Ecosistema de herramientas complementarias (Havi como portal, medios digitales inmobiliarios, portal de comisiones entre brokers, etc.) bajo un paquete global difícil de abandonar",
     ],
   },
 ];
