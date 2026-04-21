@@ -15,8 +15,8 @@ export const brand = {
 
 export const round = {
   // Paquete total VEQ (todo lo aporta VEQ — Inmobiq solo paga curadores)
-  package_total_mxn: 4_785_000,
-  package_total_usd: 258_649,
+  package_total_mxn: 4_735_000,
+  package_total_usd: 255_946,
 
   // Cash a Inmobiq (apertura de ciudades + ramp pre-revenue de curadores)
   cash_to_operation_mxn: 1_960_000,
@@ -27,9 +27,9 @@ export const round = {
   founder_salary_monthly_mxn: 45_000,
   founder_salary_months: 10,
 
-  // Compensación al fundador (3 tramos de $150K c/u · pagado por VEQ)
-  founder_secondary_mxn: 450_000,
-  founder_secondary_tranches: 3,
+  // Compensación al fundador (2 tramos · pagado por VEQ)
+  founder_secondary_mxn: 400_000,
+  founder_secondary_tranches: 2,
 
   // Aporte VEQ in-kind (10 meses cubriendo TODO el opex de Inmobiq)
   veq_inkind_mxn: 2_375_000,
@@ -41,13 +41,13 @@ export const round = {
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 9_765_000,
-  post_money_usd: 527_838,
-  pre_money_mxn: 4_980_000,
-  pre_money_usd: 269_189,
+  post_money_mxn: 9_663_000,
+  post_money_usd: 522_324,
+  pre_money_mxn: 4_928_000,
+  pre_money_usd: 266_378,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $4.785M MXN",
+  instrument: "Participación directa · 49% por paquete de $4.735M MXN",
   runway_months: 10,
   buffer_months: 0,
 };
@@ -65,7 +65,7 @@ export const roi = {
     valuation_mxn: 498_400_000,
     veq_return_usd: 13_200_000,
     veq_return_mxn: 244_220_000,
-    veq_multiple: "51×",
+    veq_multiple: "52×",
   },
   year_5: {
     arr_usd: 4_146_000,
@@ -87,9 +87,9 @@ export const veq_inkind = [
   { label: "2 desarrolladores full-stack", detail: "$35K MXN/mes c/u · 10m", mxn: 700_000 },
   { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 10m", mxn: 250_000 },
   { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 10m", mxn: 400_000 },
-  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 10m", mxn: 150_000 },
+  { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · $15K/mes · 10m", mxn: 150_000 },
   { label: "Salario fundador", detail: "$45K MXN/mes · 10m", mxn: 450_000 },
-  { label: "Infraestructura + IA", detail: "Cloud + Claude API masivo + tokens · 10m", mxn: 245_000 },
+  { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens · $24.5K/mes · 10m", mxn: 245_000 },
   { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
   { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 10m", mxn: 30_000 },
 ];
@@ -101,11 +101,10 @@ export const cash_to_operation_breakdown = [
   { label: "Setup técnico por ciudad", detail: "14 ciudades × $20K · import INEGI + data inicial", mxn: 280_000 },
 ];
 
-// Compensación fundador — 3 tramos de $150K c/u atados a hitos · pagada por VEQ
+// Compensación fundador — 2 tramos atados a hitos · pagada por VEQ
 export const founder_secondary_tranches = [
-  { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
-  { tranche: 2, mxn: 150_000, milestone: "Mes 5 · punto de equilibrio confirmado (intermedia)" },
-  { tranche: 3, mxn: 150_000, milestone: "Mes 10 · Inmobiq autosostenible · VEQ deja de cubrir opex (final)" },
+  { tranche: 1, mxn: 250_000, milestone: "Cierre del trato (inicial)" },
+  { tranche: 2, mxn: 150_000, milestone: "Primeros 300 usuarios pagados (final)" },
 ];
 
 // Flujo mensual — opex completo (VEQ + Inmobiq) vs ingresos
@@ -129,7 +128,7 @@ export const monthly_cash_flow = [
 export const use_of_funds = [
   {
     chapter: "Aporte VEQ in-kind (10 meses)",
-    percent: 49.6,
+    percent: 50.2,
     mxn: 2_375_000,
     usd: 128_378,
     items: [
@@ -137,15 +136,15 @@ export const use_of_funds = [
       { label: "Salario fundador", detail: "$45K MXN/mes · 10m", mxn: 450_000 },
       { label: "Publicidad pagada (Meta + Google)", detail: "$40K MXN/mes · 10m", mxn: 400_000 },
       { label: "1 admin/operaciones", detail: "Cobros, contratos, RH · $25K/mes · 10m", mxn: 250_000 },
-      { label: "Infraestructura + IA", detail: "Cloud + Claude API + tokens · 10m", mxn: 245_000 },
-      { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · 10m", mxn: 150_000 },
+      { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens · $24.5K/mes · 10m", mxn: 245_000 },
+      { label: "Equipo de marketing VEQ", detail: "Estrategia + creatividad · $15K/mes · 10m", mxn: 150_000 },
       { label: "Legal + contador fiscal", detail: "$15K/mes · 10m", mxn: 150_000 },
       { label: "Software (GitHub, Linear, Notion, Figma)", detail: "$3K/mes · 10m", mxn: 30_000 },
     ],
   },
   {
     chapter: "Efectivo a Inmobiq (apertura 14 ciudades)",
-    percent: 41.0,
+    percent: 41.4,
     mxn: 1_960_000,
     usd: 105_946,
     items: [
@@ -156,13 +155,12 @@ export const use_of_funds = [
   },
   {
     chapter: "Compensación al fundador (por hitos)",
-    percent: 9.4,
-    mxn: 450_000,
-    usd: 24_324,
+    percent: 8.4,
+    mxn: 400_000,
+    usd: 21_622,
     items: [
-      { label: "Tramo 1 · cierre del trato", detail: "Pago inicial", mxn: 150_000 },
-      { label: "Tramo 2 · mes 5", detail: "Punto de equilibrio confirmado", mxn: 150_000 },
-      { label: "Tramo 3 · mes 10", detail: "Autosostenible · VEQ deja de cubrir opex", mxn: 150_000 },
+      { label: "Tramo 1 · cierre del trato", detail: "Pago inicial", mxn: 250_000 },
+      { label: "Tramo 2 · primeros 300 usuarios", detail: "Hito de tracción", mxn: 150_000 },
     ],
   },
 ];

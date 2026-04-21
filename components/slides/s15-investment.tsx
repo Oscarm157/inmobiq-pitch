@@ -43,10 +43,19 @@ export function S15Investment() {
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
               VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
-              (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores —
-              que se cubren con el revenue de cada ciudad. Paquete total $4.785M MXN por
+              (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
+              que se cubren con el revenue de cada ciudad. Paquete total $4.735M MXN por
               <span className="text-foreground font-semibold"> 49% de participación</span>.
             </p>
+          </div>
+        </FadeItem>
+
+        {/* Participación + valuación */}
+        <FadeItem>
+          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="control mayoritario" />
+            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
+            <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
 
@@ -57,7 +66,7 @@ export function S15Investment() {
               label="Compensación al fundador"
               amount={fmtMxn(round.founder_secondary_mxn)}
               subtitle="Pagada por VEQ · por hitos"
-              detail="Diferida en 3 tramos atados a hitos operativos. Reducida del estándar para hacer el deal más atractivo a VEQ."
+              detail="Diferida en 2 tramos atados a hitos operativos. Reducida del estándar para hacer el deal más atractivo a VEQ."
               color="amber"
               breakdown={founder_secondary_tranches.map((t) => ({
                 label: `Tramo ${t.tranche}`,
@@ -73,15 +82,6 @@ export function S15Investment() {
               color="emerald"
               breakdown={veq_inkind}
             />
-          </div>
-        </FadeItem>
-
-        {/* Participación + valuación */}
-        <FadeItem>
-          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="control mayoritario" />
-            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
-            <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
 
