@@ -45,7 +45,7 @@ export function S01Hero() {
             <FadeItem>
               <div className="flex items-center gap-3 mt-6 text-xs uppercase tracking-[0.18em] text-accent-light/80">
                 <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-accent-light" />
-                <span>Para Grupo VEQ</span>
+                <span>Para Inversor</span>
                 <span className="text-muted-light">·</span>
                 <span>{brand.city}</span>
               </div>

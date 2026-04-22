@@ -202,7 +202,7 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
         </button>
       </div>
 
-      {/* VEQ Category Badge */}
+      {/* Investor Category Badge */}
       {slideVeqCategories[current]?.length > 0 && (
         <div className="absolute bottom-8 left-4 sm:left-6 z-40 flex flex-wrap gap-1.5 pointer-events-none">
           {slideVeqCategories[current].map((cat) => (

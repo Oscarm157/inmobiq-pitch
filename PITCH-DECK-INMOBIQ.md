@@ -1,6 +1,6 @@
-# INMOBIQ · Pitch para Grupo VEQ — Cheat Sheet
+# INMOBIQ · Pitch para Inversor — Cheat Sheet
 
-> Resumen ejecutivo + respuestas preparadas a las 17 categorías de preguntas de VEQ.
+> Resumen ejecutivo + respuestas preparadas a las 17 categorías de preguntas de Inversor.
 > Documento de respaldo mental para Oscar durante la reunión.
 > Todas las cifras en **MXN** como referencia primaria; USD entre paréntesis al tipo de cambio 18.5.
 
@@ -24,14 +24,14 @@
 | **Break-even operativo** | Mes 9 (268 usuarios pagados) |
 | **ARR proyectado mes 12** | $7.3M MXN ($395K USD) |
 | **ARR proyectado mes 24** | $22.9M MXN ($1.24M USD) |
-| **ROI VEQ año 3** | 6× · retorno $55.5M MXN ($3M USD) |
-| **ROI VEQ año 5** | 15× · retorno $138.75M MXN ($7.5M USD) |
+| **ROI Inversor año 3** | 6× · retorno $55.5M MXN ($3M USD) |
+| **ROI Inversor año 5** | 15× · retorno $138.75M MXN ($7.5M USD) |
 | **IRR anual** | ~72% |
 | **Comparable** | AirDNA (B2B data SaaS para operadores Airbnb) |
 
 ---
 
-## Las 17 categorías de VEQ — respuestas
+## Las 17 categorías de Inversor — respuestas
 
 ### 1. Estructura de inversión
 
@@ -41,13 +41,13 @@
 **¿Qué porcentaje queda para el equipo fundador?**
 - Founder (Oscar): 60%
 - Pool de empleados (reserva para CTO, curadores clave, ventas): 15%
-- VEQ: 25%
+- Inversor: 25%
 
 ### 2. Retorno (ROI)
 
 **¿Cuál es el ROI estimado?**
-- **Año 3**: 6× · valuación $222M MXN (ARR $27.75M × múltiplo 8 SaaS LatAm) · retorno VEQ $55.5M MXN
-- **Año 5**: 15× · valuación $555M MXN (ARR $55.5M × múltiplo 10) · retorno VEQ $138.75M MXN
+- **Año 3**: 6× · valuación $222M MXN (ARR $27.75M × múltiplo 8 SaaS LatAm) · retorno Inversor $55.5M MXN
+- **Año 5**: 15× · valuación $555M MXN (ARR $55.5M × múltiplo 10) · retorno Inversor $138.75M MXN
 - **IRR anual proyectado**: ~72%
 
 **¿En cuánto tiempo se recupera la inversión?**
@@ -222,7 +222,7 @@ $499 MXN Pro / $1,499 MXN Empresarial.
 
 ---
 
-## Preguntas-trampa que VEQ podría lanzar
+## Preguntas-trampa que Inversor podría lanzar
 
 **"¿Por qué no usaron scraping en lugar de curación manual si es más barato?"**
 > Evaluamos ambos. El scraping masivo tiene riesgos legales (violación de TOS de portales), datos sucios (30-40% de listings duplicados o fuera de mercado), y no puede detectar matices que solo un local entiende (zona emergente, obra nueva, barrio en transición). Nuestra tesis es que la data curada es el moat defendible. Los portales grandes no van a pivotar a curación manual — no encaja con su modelo de volumen.
@@ -243,7 +243,7 @@ $499 MXN Pro / $1,499 MXN Empresarial.
 > Valoración pre-money de $27.75M MXN es defendible para un seed SaaS LatAm con MVP en producción. En USA proyectos similares pre-revenue cotizan $3-5M USD pre-money. Nuestra oferta es 15-20% más accesible considerando ventana LatAm + riesgo de ejecución pre-launch.
 
 **"¿Y si les va mejor y piden Series A en 12 meses?"**
-> Anti-dilución estándar para VEQ en próxima ronda. Con ARR proyectado $7.3M MXN mes 12, podríamos cerrar Series A en el rango $3-5M USD a valuación $15-25M USD, donde VEQ habría 2-3× su cesión en papel.
+> Anti-dilución estándar para Inversor en próxima ronda. Con ARR proyectado $7.3M MXN mes 12, podríamos cerrar Series A en el rango $3-5M USD a valuación $15-25M USD, donde Inversor habría 2-3× su cesión en papel.
 
 **"¿Cuál es el plan B si no cumplen break-even en mes 9?"**
 > El buffer de 6 meses extras ($2.64M MXN) absorbe desviación realista. Si mes 9 no estamos en break-even, ajustamos: reducir marketing (quemamos menos), priorizar Empresarial (mayor ticket), extender runway a 24 meses. Si mes 15 seguimos sin break-even, evaluamos pivote o bridge round.
@@ -255,9 +255,9 @@ $499 MXN Pro / $1,499 MXN Empresarial.
 - **Framework visual del deck**: `/root/inmobiq/pitch/` (Next.js app corriendo en puerto 3100)
 - **Navegación**: flechas ← → para pasar, tecla `F` para fullscreen, `Home`/`End` para inicio/fin
 - **Screens Stitch de referencia**: Hero y Investment disponibles en proyecto Stitch ID `4433851313335676279`
-- **Export PDF de respaldo**: abrir deck en Chrome fullscreen → File → Print → Save as PDF → enviar a VEQ como anexo
+- **Export PDF de respaldo**: abrir deck en Chrome fullscreen → File → Print → Save as PDF → enviar a Inversor como anexo
 - **Contacto founder**: Oscar Amayoral · oscar.amayoral@gmail.com
 
 ---
 
-*Generado para la reunión de esta semana con Grupo VEQ. Todos los números son defendibles — cada uno tiene supuesto trazado en `/root/inmobiq/pitch/lib/data.ts`.*
+*Generado para la reunión de esta semana con Inversor. Todos los números son defendibles — cada uno tiene supuesto trazado en `/root/inmobiq/pitch/lib/data.ts`.*
