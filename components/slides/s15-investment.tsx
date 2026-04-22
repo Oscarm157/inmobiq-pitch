@@ -37,10 +37,10 @@ export function S15Investment() {
         <FadeItem>
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              <em className="italic text-gradient-accent">No es solo capital.</em> VEQ opera junto a Inmobiq.
+              <em className="italic text-gradient-accent">No es solo capital.</em> Inversor opera junto a Inmobiq.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              VEQ cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
+              Inversor cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
               (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
               que se cubren con el revenue de cada ciudad. Paquete total $4.635M MXN por
               <span className="text-foreground font-semibold"> 49% de participación</span>.
@@ -52,7 +52,7 @@ export function S15Investment() {
         <FadeItem>
           <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
             <Stat label="Fundador" value={`${round.founder_percent}%`} sub="voto de calidad · libertad creativa y de producto" />
-            <Stat label="VEQ" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
+            <Stat label="Inversor" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
             <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
@@ -69,10 +69,10 @@ export function S15Investment() {
               bonus={{ amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" }}
             />
             <PackageCard
-              label="Aporte VEQ · 10 meses de opex"
+              label="Aporte Inversor · 10 meses de opex"
               amount={fmtMxn(round.veq_inkind_mxn)}
               subtitle="MXN · todo el opex de Inmobiq"
-              detail="VEQ asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
+              detail="Inversor asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
               color="emerald"
               breakdown={veq_inkind}
             />
@@ -87,7 +87,7 @@ export function S15Investment() {
                 Inmobiq genera utilidad desde el mes 3
               </div>
               <div className="text-base text-foreground/90 leading-snug max-w-3xl mb-2">
-                VEQ cubre todo el opex los primeros 10 meses. El único gasto de Inmobiq son los curadores —
+                Inversor cubre todo el opex los primeros 10 meses. El único gasto de Inmobiq son los curadores —
                 que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.
               </div>
               <div className="flex flex-wrap gap-x-5 gap-y-1 text-[11px] text-muted">
@@ -112,7 +112,7 @@ export function S15Investment() {
                       Usuarios<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">pagados</span>
                     </th>
                     <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-emerald-300/90">
-                      Opex VEQ<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">aporte in-kind</span>
+                      Opex Inversor<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">aporte in-kind</span>
                     </th>
                     <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-violet">
                       Opex Inmobiq<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">post-mes 10</span>
@@ -180,7 +180,7 @@ export function S15Investment() {
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span className="uppercase tracking-widest font-semibold text-emerald-300/90">
-                  M1-M10 · VEQ cubre $238K/mes opex
+                  M1-M10 · Inversor cubre $238K/mes opex
                 </span>
               </span>
               <span className="flex items-center gap-2">
@@ -208,7 +208,7 @@ export function S15Investment() {
 
         <TermLegend
           terms={[
-            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por VEQ (valor equivalente, no efectivo)" },
+            { term: "Aporte en especie", def: "equipo, servicios y publicidad aportados por Inversor (valor equivalente, no efectivo)" },
             { term: "Compensación al fundador", def: "pago al fundador por el año de bootstrap, dividido en tramos atados a hitos" },
             { term: "Gasto mensual", def: "lo que sale del banco cada mes para operar (salarios, infra, etc.)" },
             { term: "Ingreso recurrente", def: "ingresos mensuales por suscripciones (MRR · ARR cuando es anual)" },

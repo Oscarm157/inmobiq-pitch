@@ -7,7 +7,7 @@ type TeamSource = "founder" | "current" | "veq" | "inmobiq";
 const sourceConfig: Record<TeamSource, { label: string; bg: string; text: string; icon: string }> = {
   founder:  { label: "Fundador",      bg: "bg-accent/15",       text: "text-accent",        icon: "account_circle" },
   current:  { label: "Equipo actual", bg: "bg-muted/15",        text: "text-muted-light",   icon: "groups" },
-  veq:      { label: "Aporte VEQ",    bg: "bg-emerald-500/15",  text: "text-emerald-300",   icon: "handshake" },
+  veq:      { label: "Aporte Inversor",    bg: "bg-emerald-500/15",  text: "text-emerald-300",   icon: "handshake" },
   inmobiq:  { label: "Contrata Inmobiq", bg: "bg-violet/15",    text: "text-violet",        icon: "group_add" },
 };
 
@@ -73,7 +73,7 @@ export function S14Team() {
                   );
                 })}
 
-              {/* Single collapsible "Equipo VEQ" grouping VEQ + curadores */}
+              {/* Single collapsible "Equipo Inversor" grouping investor + curadores */}
               <details className="rounded-xl bg-card p-4 group cursor-pointer">
                 <summary className="list-none marker:hidden">
                   <div className="flex items-start gap-3">
@@ -84,7 +84,7 @@ export function S14Team() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <div className="font-semibold text-foreground text-sm">Equipo VEQ</div>
+                        <div className="font-semibold text-foreground text-sm">Equipo Inversor</div>
                       </div>
                     </div>
                     <span className="material-symbols-outlined text-muted/60 group-open:rotate-180 transition-transform flex-shrink-0" style={{ fontSize: 18 }}>

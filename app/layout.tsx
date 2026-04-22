@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Inmobiq · Pitch para Grupo VEQ",
+  title: "Inmobiq · Pitch para Inversor",
   description:
     "Inteligencia inmobiliaria confiable y precisa para profesionales. Presentación de ronda de inversión semilla.",
 };

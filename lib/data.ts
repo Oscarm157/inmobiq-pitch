@@ -1,5 +1,5 @@
 // ============================================================================
-// INMOBIQ PITCH DATA — Grupo VEQ
+// INMOBIQ PITCH DATA — Inversor
 // Tipo de cambio base: 1 USD = 18.5 MXN (referencia interna, no se muestra)
 // Toda la narrativa visible al inversionista se presenta en MXN como primario.
 // ============================================================================
@@ -14,7 +14,7 @@ export const brand = {
 };
 
 export const round = {
-  // Paquete total VEQ (todo lo aporta VEQ — Inmobiq solo paga curadores)
+  // Paquete total Inversor (todo lo aporta Inversor — Inmobiq solo paga curadores)
   package_total_mxn: 4_635_000,
   package_total_usd: 250_541,
 
@@ -22,16 +22,16 @@ export const round = {
   cash_to_operation_mxn: 1_960_000,
   cash_to_operation_usd: 105_946,
 
-  // Salario fundador (cubierto por VEQ in-kind)
+  // Salario fundador (cubierto por Inversor in-kind)
   founder_salary_mxn: 400_000,
   founder_salary_monthly_mxn: 40_000,
   founder_salary_months: 10,
 
-  // Compensación al fundador (2 tramos · pagado por VEQ)
+  // Compensación al fundador (2 tramos · pagado por Inversor)
   founder_secondary_mxn: 400_000,
   founder_secondary_tranches: 2,
 
-  // Aporte VEQ in-kind (10 meses cubriendo TODO el opex de Inmobiq)
+  // Aporte Inversor in-kind (10 meses cubriendo TODO el opex de Inmobiq)
   veq_inkind_mxn: 2_275_000,
   veq_inkind_months: 10,
 
@@ -82,14 +82,14 @@ export const roi = {
   irr_annual_percent: 120,
 };
 
-// Aporte VEQ in-kind — TODO el opex de Inmobiq durante 10 meses
+// Aporte Inversor in-kind — TODO el opex de Inmobiq durante 10 meses
 export const veq_inkind = [
   { label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
   { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
   { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
   { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
   { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
-  { label: "Equipo de marketing VEQ", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
+  { label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
   { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
   { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
 ];
@@ -101,14 +101,14 @@ export const cash_to_operation_breakdown = [
   { label: "Setup técnico por ciudad", detail: "14 ciudades × $20K · import INEGI + data inicial", mxn: 280_000 },
 ];
 
-// Compensación fundador — 2 tramos atados a hitos · pagada por VEQ
+// Compensación fundador — 2 tramos atados a hitos · pagada por Inversor
 export const founder_secondary_tranches = [
   { tranche: 1, mxn: 250_000, milestone: "Cierre del trato (inicial)" },
   { tranche: 2, mxn: 150_000, milestone: "Primeros 300 usuarios pagados (final)" },
 ];
 
-// Flujo mensual — opex completo (VEQ + Inmobiq) vs ingresos
-// M1-M10: VEQ cubre $238K/mes opex · Inmobiq solo paga curadores
+// Flujo mensual — opex completo (Inversor + Inmobiq) vs ingresos
+// M1-M10: Inversor cubre $238K/mes opex · Inmobiq solo paga curadores
 // M11+: Inmobiq asume opex propio ($238K/mes) + sigue pagando curadores
 // Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) × $20K/mes
 const opexMonthly = 238_000;
@@ -124,10 +124,10 @@ export const monthly_cash_flow = [
   { month: 18, cities: 15, users: 4_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_193_020, net_mxn: 2_515_020, margin_pct: 79, note: "Plan completo · autosostenible" },
 ];
 
-// Uso de fondos — breakdown del paquete total VEQ ($4.785M MXN)
+// Uso de fondos — breakdown del paquete total Inversor ($4.785M MXN)
 export const use_of_funds = [
   {
-    chapter: "Aporte VEQ in-kind (10 meses)",
+    chapter: "Aporte Inversor in-kind (10 meses)",
     percent: 49.1,
     mxn: 2_275_000,
     usd: 122_973,
@@ -137,7 +137,7 @@ export const use_of_funds = [
       { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
       { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
       { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
-      { label: "Equipo de marketing VEQ", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
+      { label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
       { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
       { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
     ],
@@ -166,7 +166,7 @@ export const use_of_funds = [
 ];
 
 // Costos operativos mensuales — fixed (steady state)
-// VEQ paga aparte sus 2 devs + admin + ads (no entra aquí)
+// Inversor paga aparte sus 2 devs + admin + ads (no entra aquí)
 export const monthly_opex = {
   founder_salary_mxn: 45_000,
   infra_mxn: 8_000,
@@ -298,7 +298,7 @@ export const expansion = [
   { city: "Aguascalientes",       wave: "ola3", launch: "Mes 12", users_m18: 60    },
 ];
 
-// City unit cost (para preguntas de VEQ)
+// City unit cost (para preguntas de Inversor)
 export const city_opening_cost = {
   mxn: 60_000,
   usd: 3_243,
@@ -308,7 +308,7 @@ export const city_opening_cost = {
   payback_months: 2,
 };
 
-// Equipo — actual + post-inversión (incluyendo VEQ in-kind)
+// Equipo — actual + post-inversión (incluyendo Inversor in-kind)
 export const team = [
   {
     name: "Oscar Amayoral",
@@ -325,23 +325,23 @@ export const team = [
     source: "current",
   },
   {
-    name: "2 desarrolladores VEQ",
-    role: "Equipo técnico full-stack · aporte VEQ",
-    bio: "Equipo técnico asignado por Grupo VEQ. Construyen y mantienen la plataforma junto al fundador. Reemplaza la necesidad de un CTO formal.",
+    name: "2 desarrolladores Inversor",
+    role: "Equipo técnico full-stack · aporte Inversor",
+    bio: "Equipo técnico asignado por Inversor. Construyen y mantienen la plataforma junto al fundador. Reemplaza la necesidad de un CTO formal.",
     highlight: false,
     source: "veq",
   },
   {
-    name: "Admin/operaciones VEQ",
-    role: "Cobros, contratos, RH ligero · aporte VEQ",
-    bio: "Perfil operativo asignado por VEQ. Libera al fundador para enfocarse en producto y comercial.",
+    name: "Admin/operaciones Inversor",
+    role: "Cobros, contratos, RH ligero · aporte Inversor",
+    bio: "Perfil operativo asignado por Inversor. Libera al fundador para enfocarse en producto y comercial.",
     highlight: false,
     source: "veq",
   },
   {
-    name: "Equipo de marketing VEQ",
-    role: "Estrategia + creatividad + $40K/mes en publicidad · aporte VEQ",
-    bio: "Acceso al equipo de marketing de Grupo VEQ + presupuesto mensual para campañas pagadas (Meta + Google).",
+    name: "Equipo de marketing Inversor",
+    role: "Estrategia + creatividad + $40K/mes en publicidad · aporte Inversor",
+    bio: "Acceso al equipo de marketing de Inversor + presupuesto mensual para campañas pagadas (Meta + Google).",
     highlight: false,
     source: "veq",
   },
@@ -462,7 +462,7 @@ export const glossary = [
   { term: "Cap Rate", def: "Capitalization Rate. Rendimiento anual de un inmueble en renta vs. su valor de mercado. KPI para inversión comercial." },
 ];
 
-// Categorías de VEQ que cubre cada slide (índice 0 = S01 Hero)
+// Categorías de Inversor que cubre cada slide (índice 0 = S01 Hero)
 export const slideVeqCategories: string[][] = [
   [],                                                    // S01 Hero
   [],                                                    // S02 Problem
