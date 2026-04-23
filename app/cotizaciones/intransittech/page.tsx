@@ -533,8 +533,8 @@ export default function Page() {
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
                     El <span className="font-semibold text-foreground">hosting</span> es el servicio
                     que mantiene el sitio publicado y accesible en internet las 24 horas. Incluido
-                    durante los primeros 12 meses; la renovación posterior se realiza directamente
-                    con el proveedor.
+                    durante los primeros 12 meses; la renovación a partir del segundo año se
+                    gestiona con {PROVIDER.name} bajo tarifa anual.
                   </div>
                 </div>
                 <div className="text-right shrink-0 tabular-nums">
