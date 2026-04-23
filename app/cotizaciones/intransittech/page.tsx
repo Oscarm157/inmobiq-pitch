@@ -17,8 +17,17 @@ const FOLIO = "384";
 const ISSUED = "2026-04-23";
 const VALID = "2026-05-15";
 
-const USD_TOTAL = 950;
+const PRICE_SITIO = 800;
+const PRICE_AGENTE = 150;
+const USD_TOTAL = PRICE_SITIO + PRICE_AGENTE;
 const USD_DEPOSIT = Math.round(USD_TOTAL * 0.5);
+
+const PHASES = [
+  { num: "01", name: "Propuesta" },
+  { num: "02", name: "Transformación" },
+  { num: "03", name: "Contenido" },
+  { num: "04", name: "Inversión" },
+] as const;
 
 const fmtUsd = (n: number) =>
   new Intl.NumberFormat("en-US", {
@@ -36,60 +45,86 @@ const fmtDate = (iso: string) => {
   });
 };
 
+const BEFORE = [
+  "Visitantes cierran el sitio sin información clara de lo que ofrecen.",
+  "Cada cotización empieza desde cero por teléfono o correo.",
+  "Información dispersa entre correo, teléfono y el sitio actual.",
+  "Sin forma de medir qué productos o servicios se consultan más.",
+];
+
+const AFTER = [
+  "Catálogo y servicios claros a primera vista.",
+  "Solicitudes estructuradas directo al correo de ventas.",
+  "Un solo lugar con toda la información unificada.",
+  "Reporte mensual con lo que más buscan sus clientes.",
+];
+
 const BENEFITS = [
   {
+    icon: "schedule",
     title: "Menos tiempo explicando lo básico",
     detail:
       "El sitio presenta sus servicios y categorías con claridad. El cliente llega a la llamada con contexto y ustedes se concentran en cerrar.",
   },
   {
+    icon: "mark_email_read",
     title: "Solicitudes de cotización ordenadas",
     detail:
       "Los formularios piden número de parte, cantidad, industria y contacto. Cada correo llega completo al equipo de ventas.",
   },
   {
+    icon: "phone_in_talk",
     title: "Su teléfono siempre a un clic",
     detail:
-      "El número aparece fijo en la parte superior. Desde celular, el cliente toca y marca — sin copiar ni pegar.",
+      "El número aparece fijo en el encabezado. Desde celular, el cliente toca y marca sin copiar ni pegar.",
   },
   {
-    title: "Información real de qué buscan sus clientes",
+    icon: "insights",
+    title: "Información real de qué buscan",
     detail:
-      "Cada mes podrán ver qué categorías y servicios se consultan más. Es información para decidir con base en datos.",
+      "Cada mes podrán ver qué categorías y servicios se consultan más. Datos para decidir, no para adivinar.",
   },
 ];
 
 const FEATURES = [
   {
+    icon: "design_services",
     title: "Diseño profesional y moderno",
     detail: "Se ve bien en computadora y en celular. Transmite la seriedad de un distribuidor global.",
   },
   {
+    icon: "search",
     title: "Buscador de productos en la página principal",
     detail: "El visitante escribe número de parte o palabra clave y llega directo a lo que necesita.",
   },
   {
+    icon: "view_list",
     title: "Una página por cada servicio especializado",
     detail:
-      "Componentes difíciles de encontrar, obsoletos, reparación, entre otros — cada uno con su explicación y botón de cotización.",
+      "Componentes difíciles de encontrar, obsoletos, revisión y reparación — cada uno con su propia página.",
   },
   {
+    icon: "description",
     title: "Formulario para pedir cotización",
     detail: "El correo llega estructurado al equipo de ventas para responder sin fricción.",
   },
   {
+    icon: "inventory_2",
     title: "Formulario para vender inventario",
     detail: "Apartado separado para proveedores que quieren venderles inventario excedente.",
   },
   {
+    icon: "call",
     title: "Teléfono y correo visibles siempre",
-    detail: "(949) 481-7935 fijo en el encabezado — el negocio vive de llamadas inmediatas.",
+    detail: "(949) 481-7935 fijo en el encabezado. El negocio vive de llamadas inmediatas.",
   },
   {
+    icon: "translate",
     title: "Sitio en español y en inglés",
     detail: "Con botón para cambiar idioma. Aprovecha el 'Se Habla Español' como diferenciador real.",
   },
   {
+    icon: "monitoring",
     title: "Medición de visitas desde el primer día",
     detail: "Para saber cuántas personas entran, de dónde llegan y qué buscan.",
   },
@@ -98,40 +133,82 @@ const FEATURES = [
 const PAGES = [
   { name: "Inicio", detail: "Buscador, servicios y propuesta de valor." },
   { name: "Nosotros", detail: "Historia, experiencia y diferenciadores." },
-  {
-    name: "Servicios",
-    detail: "Una página por cada servicio: hard-to-find, obsoletos, revisión, reparación, conversión.",
-  },
-  { name: "Productos", detail: "Catálogo base organizado por categorías (ver sección siguiente)." },
-  { name: "Industrias", detail: "Aeroespacial, automotriz, robótica, médico, entre otros." },
+  { name: "Servicios", detail: "Una página por cada servicio especializado." },
+  { name: "Productos", detail: "Catálogo base organizado por categorías." },
+  { name: "Industrias", detail: "Aeroespacial, automotriz, robótica, médico y más." },
   { name: "Marcas que distribuimos", detail: "Fanuc, Allen Bradley, Yaskawa, Samsung, Intel, entre otras." },
   { name: "Vender inventario", detail: "Formulario dedicado para proveedores." },
   { name: "Contacto", detail: "Formulario de cotización, mapa, teléfonos y correos." },
 ];
 
 const CATEGORIES = [
-  { name: "Componentes electrónicos", detail: "Semiconductores, pasivos, discretos y de placa." },
-  { name: "Motores y control", detail: "Servomotores, encoders y controladores industriales." },
-  { name: "Sensores e instrumentación", detail: "Sensores, interruptores, medidores y transductores." },
-  { name: "Neumática e hidráulica", detail: "Válvulas, bombas, actuadores y accesorios." },
-  { name: "Robótica industrial", detail: "Partes para robots Fanuc, Kuka, Yaskawa y similares." },
-  { name: "Aeroespacial y automotriz", detail: "Componentes certificados para ambos sectores." },
-  { name: "Herramientas y adhesivos", detail: "Herramienta industrial, adhesivos técnicos, consumibles." },
-  { name: "Comunicación y datos", detail: "Módulos de red, conectividad y transmisión industrial." },
+  { icon: "memory", name: "Componentes electrónicos", detail: "Semiconductores, pasivos, discretos y de placa." },
+  { icon: "settings_input_component", name: "Motores y control", detail: "Servomotores, encoders y controladores industriales." },
+  { icon: "sensors", name: "Sensores e instrumentación", detail: "Sensores, interruptores, medidores y transductores." },
+  { icon: "water_drop", name: "Neumática e hidráulica", detail: "Válvulas, bombas, actuadores y accesorios." },
+  { icon: "precision_manufacturing", name: "Robótica industrial", detail: "Partes para robots Fanuc, Kuka, Yaskawa y similares." },
+  { icon: "flight", name: "Aeroespacial y automotriz", detail: "Componentes certificados para ambos sectores." },
+  { icon: "construction", name: "Herramientas y adhesivos", detail: "Herramienta industrial, adhesivos técnicos y consumibles." },
+  { icon: "hub", name: "Comunicación y datos", detail: "Módulos de red, conectividad y transmisión industrial." },
+];
+
+const AGENT_FEATURES = [
+  {
+    icon: "support_agent",
+    title: "Atiende 24/7",
+    detail: "Responde consultas básicas de inmediato, sin importar el horario ni la zona horaria.",
+  },
+  {
+    icon: "category",
+    title: "Reconoce categorías",
+    detail: "El cliente pregunta por una categoría y el agente responde con las marcas que ustedes manejan.",
+  },
+  {
+    icon: "contact_mail",
+    title: "Captura datos del prospecto",
+    detail: "Solicita nombre, empresa y correo para armar un lead listo para el equipo de ventas.",
+  },
+  {
+    icon: "forward_to_inbox",
+    title: "Avisa al equipo al instante",
+    detail: "En cuanto captura un lead, envía notificación al correo de ventas para dar seguimiento.",
+  },
+];
+
+const CHAT = [
+  {
+    from: "client" as const,
+    text: "Buenas tardes. Estoy buscando servomotores para una línea de ensamble nueva. ¿Manejan?",
+  },
+  {
+    from: "agent" as const,
+    text:
+      "Buenas tardes. Sí, manejamos servomotores de Fanuc, Yaskawa, Allen Bradley y Kuka, entre otras marcas. ¿Tiene ya una preferencia de marca o potencia?",
+  },
+  {
+    from: "client" as const,
+    text: "Aún no definimos marca. Necesitaríamos unas 10 unidades.",
+  },
+  {
+    from: "agent" as const,
+    text:
+      "Con gusto. Para que un asesor de Intransit Tech le envíe opciones con tiempos y precios, ¿me comparte su nombre, empresa y un correo de contacto?",
+  },
+  {
+    from: "client" as const,
+    text: "Luis Herrera, Industrial ACX, luis@acx.mx",
+  },
+  {
+    from: "agent" as const,
+    text:
+      "Gracias, Luis. Un asesor se pondrá en contacto con usted en las próximas horas. ¿Hay algo más en lo que pueda ayudarle mientras tanto?",
+  },
 ];
 
 export default function Page() {
   return (
-    <main className="slide-dark min-h-screen w-full text-foreground relative">
-      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none no-print" />
-      <div
-        className="absolute inset-0 pointer-events-none no-print"
-        style={{
-          background:
-            "radial-gradient(ellipse 900px 500px at 50% 0%, rgba(59,130,246,0.14) 0%, transparent 60%)",
-        }}
-      />
-
+    <main className="slide-light min-h-screen w-full text-foreground">
+      {/* Toolbar — solo pantalla */}
       <div className="no-print sticky top-0 z-20 border-b border-card-border bg-background/80 backdrop-blur">
         <div className="max-w-[900px] mx-auto px-6 py-3 flex items-center justify-between">
           <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted">
@@ -141,254 +218,322 @@ export default function Page() {
         </div>
       </div>
 
-      {/* ─────────── PÁGINA 1 ─────────── */}
-      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[13px] leading-relaxed">
+      {/* ─────────── PÁGINA 1 · PROPUESTA ─────────── */}
+      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[14px] leading-relaxed">
+        <PhaseBar active={1} />
+
         {/* Encabezado */}
-        <header className="flex items-start justify-between gap-6 pb-5 border-b border-card-border">
+        <header className="flex items-start justify-between gap-6 pb-5 border-b border-card-border mt-5">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-lg font-semibold tracking-tight text-foreground">
+              <span className="text-xl font-semibold tracking-tight text-primary">
                 {PROVIDER.name}
               </span>
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent pulse-dot" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" />
             </div>
-            <p className="mt-0.5 text-[11px] text-muted max-w-xs leading-snug">{PROVIDER.tagline}</p>
+            <p className="mt-0.5 text-[12px] text-muted max-w-xs leading-snug">{PROVIDER.tagline}</p>
           </div>
           <div className="text-right">
-            <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-accent">
+            <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
               Cotización
             </div>
-            <div className="mt-0.5 font-mono text-base text-foreground">N.º {FOLIO}</div>
-            <dl className="mt-1.5 text-[11px] text-muted grid grid-cols-[auto_auto] gap-x-3 gap-y-0.5 justify-end">
+            <div className="mt-0.5 font-mono text-base text-primary">N.º {FOLIO}</div>
+            <dl className="mt-1.5 text-[12px] text-muted grid grid-cols-[auto_auto] gap-x-3 gap-y-0.5 justify-end">
               <dt className="text-right">Emitida</dt>
-              <dd className="text-foreground/90 tabular-nums text-right">{fmtDate(ISSUED)}</dd>
+              <dd className="text-foreground tabular-nums text-right">{fmtDate(ISSUED)}</dd>
               <dt className="text-right">Vigencia</dt>
-              <dd className="text-foreground/90 tabular-nums text-right">{fmtDate(VALID)}</dd>
+              <dd className="text-foreground tabular-nums text-right">{fmtDate(VALID)}</dd>
             </dl>
           </div>
         </header>
 
         {/* Partes */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 py-5 border-b border-card-border">
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-5 border-b border-card-border">
           <div>
-            <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted mb-1">
+            <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted mb-1">
               De
             </div>
-            <div className="text-[12px] text-foreground font-semibold">{PROVIDER.name}</div>
-            <div className="text-[11px] text-muted">Responsable · {PROVIDER.lead}</div>
-            <div className="text-[11px] text-muted">{PROVIDER.email}</div>
+            <div className="text-[13px] text-foreground font-semibold">{PROVIDER.name}</div>
+            <div className="text-[12px] text-muted">Responsable · {PROVIDER.lead}</div>
+            <div className="text-[12px] text-muted">{PROVIDER.email}</div>
           </div>
           <div>
-            <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted mb-1">
+            <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted mb-1">
               Preparado para
             </div>
-            <div className="text-[12px] text-foreground font-semibold">{CLIENT.name}</div>
-            <div className="text-[11px] text-muted">{CLIENT.descriptor}</div>
+            <div className="text-[13px] text-foreground font-semibold">{CLIENT.name}</div>
+            <div className="text-[12px] text-muted">{CLIENT.descriptor}</div>
           </div>
         </section>
 
         {/* Intro */}
-        <section className="pt-5">
-          <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-accent">
-            Propuesta · Sitio web nuevo
+        <section className="pt-6">
+          <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
+            Propuesta · Sitio web nuevo + Agente de ventas IA
           </div>
-          <h1 className="mt-1.5 text-2xl sm:text-[28px] font-bold leading-[1.1] tracking-[-0.015em] text-foreground">
+          <h1 className="mt-1.5 text-[28px] sm:text-[32px] font-bold leading-[1.08] tracking-[-0.015em] text-primary">
             Sitio web <em className="italic text-gradient-accent">profesional</em> para {CLIENT.short}
           </h1>
-          <p className="mt-2 text-[12px] text-muted leading-relaxed max-w-2xl">
-            Propuesta para construir un sitio web nuevo que reemplace al actual. Pensado para
-            acompañar el trabajo que ya hacen a diario: atender compradores, cotizar partes y
-            mantener el teléfono sonando.
+          <p className="mt-2 text-[13px] text-muted leading-relaxed max-w-2xl">
+            Propuesta para construir un sitio web nuevo que reemplace al actual, acompañado de un
+            agente de ventas con inteligencia artificial que atiende consultas y captura prospectos
+            las 24 horas.
           </p>
         </section>
 
-        {/* Cómo facilita su día a día */}
-        <section className="mt-5">
-          <div className="flex items-baseline justify-between mb-2.5">
-            <h2 className="text-[15px] font-bold text-foreground tracking-tight">
+        {/* Antes / Después */}
+        <BeforeAfter />
+
+        {/* Beneficios en el día a día */}
+        <section className="mt-6">
+          <div className="flex items-baseline justify-between mb-3">
+            <h2 className="text-[17px] font-bold text-primary tracking-tight">
               Cómo les facilita el día a día
             </h2>
-            <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
-              Beneficios directos
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
+              4 beneficios
             </span>
           </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            {BENEFITS.map((b, i) => (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {BENEFITS.map((b) => (
               <li
                 key={b.title}
-                className="rounded-xl bg-accent/5 border border-accent/20 p-3 flex gap-2.5"
+                className="rounded-xl bg-card border border-card-border p-3.5 flex gap-3"
               >
-                <div className="shrink-0 w-6 h-6 rounded-lg bg-accent/20 text-accent flex items-center justify-center font-mono text-[10px] font-semibold tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <div className="text-[12px] font-semibold text-foreground leading-tight">
+                <IconBadge icon={b.icon} />
+                <div className="min-w-0">
+                  <div className="text-[13px] font-semibold text-foreground leading-tight">
                     {b.title}
                   </div>
-                  <div className="text-[11px] text-muted mt-0.5 leading-snug">{b.detail}</div>
+                  <div className="text-[11.5px] text-muted mt-1 leading-snug">{b.detail}</div>
                 </div>
               </li>
             ))}
           </ul>
         </section>
 
-        {/* Qué incluye */}
-        <section className="mt-5">
-          <div className="flex items-baseline justify-between mb-2.5">
-            <h2 className="text-[15px] font-bold text-foreground tracking-tight">
-              Qué incluye el sitio
-            </h2>
-            <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+        <PageFooter num={1} />
+      </article>
+
+      {/* ─────────── PÁGINA 2 · TRANSFORMACIÓN ─────────── */}
+      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[14px] leading-relaxed page-break">
+        <PhaseBar active={2} />
+
+        <section className="mt-6">
+          <div className="flex items-baseline justify-between mb-3">
+            <h2 className="text-[17px] font-bold text-primary tracking-tight">Qué incluye el sitio</h2>
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
               8 puntos
             </span>
           </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {FEATURES.map((f, i) => (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {FEATURES.map((f) => (
               <li
                 key={f.title}
-                className="rounded-xl border border-card-border bg-card p-2.5 flex gap-2.5"
+                className="rounded-xl border border-card-border bg-card p-3 flex gap-3"
               >
-                <div className="shrink-0 w-5 h-5 rounded-md bg-accent/15 text-accent flex items-center justify-center font-mono text-[9px] font-semibold tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <div className="text-[12px] font-semibold text-foreground leading-tight">
+                <IconBadge icon={f.icon} />
+                <div className="min-w-0">
+                  <div className="text-[13px] font-semibold text-foreground leading-tight">
                     {f.title}
                   </div>
-                  <div className="text-[10.5px] text-muted mt-0.5 leading-snug">{f.detail}</div>
+                  <div className="text-[11.5px] text-muted mt-0.5 leading-snug">{f.detail}</div>
                 </div>
               </li>
             ))}
           </ul>
         </section>
 
-        <div className="mt-5 text-right text-[9px] uppercase tracking-[0.22em] text-muted/70">
-          Página 1 · 3
-        </div>
-      </article>
-
-      {/* ─────────── PÁGINA 2 ─────────── */}
-      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[13px] leading-relaxed page-break">
-        <section>
-          <div className="flex items-baseline justify-between mb-2.5">
-            <h2 className="text-[15px] font-bold text-foreground tracking-tight">Páginas del sitio</h2>
-            <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+        <section className="mt-7">
+          <div className="flex items-baseline justify-between mb-3">
+            <h2 className="text-[17px] font-bold text-primary tracking-tight">Páginas del sitio</h2>
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
               8 secciones
             </span>
           </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {PAGES.map((p) => (
               <li
                 key={p.name}
-                className="rounded-lg bg-card border border-card-border border-l-4 border-l-accent px-3 py-2"
+                className="rounded-lg bg-card border border-card-border border-l-4 border-l-accent px-3 py-2.5"
               >
-                <div className="text-[12px] font-semibold text-foreground">{p.name}</div>
-                <div className="text-[10.5px] text-muted mt-0.5 leading-snug">{p.detail}</div>
+                <div className="text-[13px] font-semibold text-foreground">{p.name}</div>
+                <div className="text-[11.5px] text-muted mt-0.5 leading-snug">{p.detail}</div>
               </li>
             ))}
           </ul>
         </section>
 
+        <PageFooter num={2} />
+      </article>
+
+      {/* ─────────── PÁGINA 3 · CONTENIDO ─────────── */}
+      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[14px] leading-relaxed page-break">
+        <PhaseBar active={3} />
+
+        {/* Catálogo por categorías */}
         <section className="mt-6">
           <div className="flex items-baseline justify-between mb-1">
-            <h2 className="text-[15px] font-bold text-foreground tracking-tight">
+            <h2 className="text-[17px] font-bold text-primary tracking-tight">
               Catálogo de productos · por categorías
             </h2>
-            <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
               8 familias
             </span>
           </div>
-          <p className="text-[11px] text-muted leading-relaxed max-w-2xl mb-3">
-            No es un catálogo pieza por pieza, es un catálogo base con las familias de productos
-            que ustedes ya saben que les piden con más frecuencia. El cliente reconoce su
-            categoría y llega al formulario para cotizar.
+          <p className="text-[12px] text-muted leading-relaxed max-w-2xl mb-3">
+            Un catálogo base con las familias de productos que ustedes ya saben que les piden con
+            más frecuencia. El cliente reconoce su categoría y llega al formulario para cotizar.
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-            {CATEGORIES.map((c, i) => (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {CATEGORIES.map((c) => (
               <li
                 key={c.name}
-                className="rounded-lg bg-card border border-card-border px-3 py-2 flex gap-2.5"
+                className="rounded-lg bg-card border border-card-border px-3 py-2.5 flex gap-3"
               >
-                <div className="shrink-0 w-5 h-5 rounded-md bg-accent/15 text-accent flex items-center justify-center font-mono text-[9px] font-semibold tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <div className="text-[12px] font-semibold text-foreground leading-tight">
+                <IconBadge icon={c.icon} small />
+                <div className="min-w-0">
+                  <div className="text-[13px] font-semibold text-foreground leading-tight">
                     {c.name}
                   </div>
-                  <div className="text-[10.5px] text-muted mt-0.5 leading-snug">{c.detail}</div>
+                  <div className="text-[11.5px] text-muted mt-0.5 leading-snug">{c.detail}</div>
                 </div>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="mt-5 rounded-xl bg-accent/10 border border-accent/30 p-3.5 flex items-start gap-2.5">
-          <span className="text-accent text-base leading-none mt-0.5">◎</span>
-          <div className="text-[12px] leading-relaxed text-foreground/90">
-            <span className="font-semibold text-accent">Objetivo del sitio:</span> que cada visita
-            termine en una llamada al (949) 481-7935 o en un formulario de cotización recibido
-            por el equipo de ventas de {CLIENT.short}.
+        {/* Agente de ventas IA */}
+        <section className="mt-7">
+          <div className="flex items-baseline justify-between mb-1">
+            <h2 className="text-[17px] font-bold text-primary tracking-tight">
+              Agente de ventas con <em className="italic text-gradient-accent">inteligencia artificial</em>
+            </h2>
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
+              Incluido
+            </span>
+          </div>
+          <p className="text-[12px] text-muted leading-relaxed max-w-2xl mb-3">
+            Un asistente virtual integrado en el sitio que conversa con el visitante, reconoce qué
+            categoría necesita, le dice qué marcas manejan ustedes y deja los datos listos para que
+            un asesor humano cierre la venta.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Qué hace · 4 cards */}
+            <ul className="grid grid-cols-1 gap-2">
+              {AGENT_FEATURES.map((a) => (
+                <li
+                  key={a.title}
+                  className="rounded-lg bg-card border border-card-border p-3 flex gap-3"
+                >
+                  <IconBadge icon={a.icon} small />
+                  <div className="min-w-0">
+                    <div className="text-[13px] font-semibold text-foreground leading-tight">
+                      {a.title}
+                    </div>
+                    <div className="text-[11.5px] text-muted mt-0.5 leading-snug">{a.detail}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            {/* Mock de chat */}
+            <ChatMock />
           </div>
         </section>
 
-        <div className="mt-5 text-right text-[9px] uppercase tracking-[0.22em] text-muted/70">
-          Página 2 · 3
-        </div>
+        <PageFooter num={3} />
       </article>
 
-      {/* ─────────── PÁGINA 3 ─────────── */}
-      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[13px] leading-relaxed page-break">
-        <section>
-          <h2 className="text-[15px] font-bold text-foreground tracking-tight mb-3">Inversión</h2>
+      {/* ─────────── PÁGINA 4 · INVERSIÓN ─────────── */}
+      <article className="doc-page relative max-w-[900px] mx-auto px-8 sm:px-12 py-8 text-[14px] leading-relaxed page-break">
+        <PhaseBar active={4} />
+
+        <section className="mt-6">
+          <h2 className="text-[17px] font-bold text-primary tracking-tight mb-4">Inversión</h2>
 
           <div className="rounded-xl border border-card-border bg-card overflow-hidden">
-            <div className="grid grid-cols-[1fr_auto] gap-4 p-4 border-b border-card-border">
+            {/* Renglones */}
+            <div className="divide-y divide-card-border">
+              <div className="flex items-start gap-4 p-4">
+                <IconBadge icon="language" />
+                <div className="flex-1 min-w-0">
+                  <div className="text-[13px] font-semibold text-foreground">
+                    Sitio web profesional
+                  </div>
+                  <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
+                    Diseño, desarrollo y publicación. Incluye los 8 puntos, las 8 páginas y el
+                    catálogo base por categorías.
+                  </div>
+                </div>
+                <div className="text-right shrink-0 tabular-nums">
+                  <div className="text-lg font-semibold text-foreground">{fmtUsd(PRICE_SITIO)}</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 p-4">
+                <IconBadge icon="support_agent" />
+                <div className="flex-1 min-w-0">
+                  <div className="text-[13px] font-semibold text-foreground">
+                    Agente de ventas con IA
+                  </div>
+                  <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
+                    Configuración, entrenamiento con su catálogo y marcas, e integración al sitio.
+                  </div>
+                </div>
+                <div className="text-right shrink-0 tabular-nums">
+                  <div className="text-lg font-semibold text-foreground">{fmtUsd(PRICE_AGENTE)}</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Total */}
+            <div className="grid grid-cols-[1fr_auto] gap-4 p-4 border-t border-card-border bg-accent/5">
               <div>
-                <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-accent mb-0.5">
+                <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent mb-0.5">
                   Pago único · Entrega completa
                 </div>
-                <div className="text-[13px] font-semibold text-foreground">
-                  Sitio web profesional — diseño, construcción y publicación
-                </div>
-                <div className="text-[11px] text-muted mt-1 leading-snug max-w-md">
-                  Incluye los 8 puntos, las 8 páginas, el catálogo base por categorías, versión en
-                  español e inglés, y herramientas de medición activas desde el primer día. Sin
-                  costos ocultos.
+                <div className="text-[12px] text-muted leading-snug max-w-md">
+                  Sin costos ocultos. Versión en español e inglés y herramientas de medición
+                  incluidas desde el primer día.
                 </div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-2xl font-semibold tabular-nums text-gradient-accent">
+                <div className="text-3xl font-semibold tabular-nums text-gradient-accent">
                   {fmtUsd(USD_TOTAL)}
                 </div>
-                <div className="text-[9px] uppercase tracking-[0.2em] text-muted">USD · total</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD · total</div>
               </div>
             </div>
-            <div className="grid grid-cols-2 divide-x divide-card-border">
-              <div className="p-3.5">
-                <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+
+            {/* Anticipo / liquidación */}
+            <div className="grid grid-cols-2 divide-x divide-card-border border-t border-card-border">
+              <div className="p-4">
+                <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
                   Anticipo · al aprobar
                 </div>
-                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-foreground">
+                <div className="mt-0.5 text-lg font-semibold tabular-nums text-foreground">
                   {fmtUsd(USD_DEPOSIT)}{" "}
                   <span className="text-[10px] text-muted font-normal">USD</span>
                 </div>
-                <div className="text-[10px] text-muted">50% para iniciar</div>
+                <div className="text-[11px] text-muted">50% para iniciar</div>
               </div>
-              <div className="p-3.5">
-                <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+              <div className="p-4">
+                <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
                   Liquidación · al entregar
                 </div>
-                <div className="mt-0.5 text-[15px] font-semibold tabular-nums text-foreground">
+                <div className="mt-0.5 text-lg font-semibold tabular-nums text-foreground">
                   {fmtUsd(USD_TOTAL - USD_DEPOSIT)}{" "}
                   <span className="text-[10px] text-muted font-normal">USD</span>
                 </div>
-                <div className="text-[10px] text-muted">50% con el sitio publicado</div>
+                <div className="text-[11px] text-muted">50% con todo publicado</div>
               </div>
             </div>
           </div>
 
-          <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-[10.5px] text-muted">
+          <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-[11.5px] text-muted">
             <li>• Precios en dólares americanos (USD).</li>
             <li>• Vigencia de la cotización: hasta el {fmtDate(VALID)}.</li>
             <li>• Formas de pago: transferencia o tarjeta.</li>
@@ -396,11 +541,11 @@ export default function Page() {
           </ul>
         </section>
 
-        <section className="mt-6 rounded-xl bg-surface-muted/60 border border-card-border p-4">
-          <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-accent mb-1.5">
+        <section className="mt-6 rounded-xl bg-surface-muted border border-card-border p-4">
+          <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent mb-1.5">
             Siguiente paso
           </div>
-          <p className="text-[12px] text-foreground/90 leading-relaxed">
+          <p className="text-[13px] text-foreground/90 leading-relaxed">
             Aprobar esta cotización y cubrir el anticipo de{" "}
             <span className="font-semibold text-foreground">{fmtUsd(USD_DEPOSIT)} USD</span> para
             agendar la reunión de arranque. En ella acordamos accesos, qué servicios y categorías
@@ -411,24 +556,22 @@ export default function Page() {
 
         <footer className="mt-8 pt-5 border-t border-card-border flex items-end justify-between gap-6">
           <div>
-            <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+            <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
               Aceptación
             </div>
-            <div className="mt-8 w-60 border-t border-foreground/40" />
-            <div className="mt-1 text-[10.5px] text-muted">Firma de {CLIENT.short}</div>
+            <div className="mt-8 w-60 border-t border-primary/60" />
+            <div className="mt-1 text-[11.5px] text-muted">Firma de {CLIENT.short}</div>
           </div>
           <div className="text-right">
-            <div className="text-[9px] uppercase tracking-[0.22em] font-semibold text-muted">
+            <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
               {PROVIDER.name}
             </div>
-            <div className="mt-0.5 text-[12px] text-foreground font-semibold">{PROVIDER.lead}</div>
-            <div className="text-[10.5px] text-muted">{PROVIDER.email}</div>
+            <div className="mt-0.5 text-[13px] text-primary font-semibold">{PROVIDER.lead}</div>
+            <div className="text-[11.5px] text-muted">{PROVIDER.email}</div>
           </div>
         </footer>
 
-        <div className="mt-5 text-right text-[9px] uppercase tracking-[0.22em] text-muted/70">
-          Página 3 · 3
-        </div>
+        <PageFooter num={4} />
       </article>
 
       <style>{`
@@ -436,7 +579,7 @@ export default function Page() {
         @media print {
           .no-print { display: none !important; }
           html, body {
-            background: #0a0a0a !important;
+            background: #ffffff !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
           }
@@ -465,5 +608,200 @@ export default function Page() {
         }
       `}</style>
     </main>
+  );
+}
+
+/* ────────── Helpers locales ────────── */
+
+function IconBadge({ icon, small = false }: { icon: string; small?: boolean }) {
+  const size = small ? "w-8 h-8" : "w-10 h-10";
+  const iconSize = small ? 18 : 22;
+  return (
+    <div
+      className={`shrink-0 ${size} rounded-lg bg-accent/10 text-accent flex items-center justify-center`}
+    >
+      <span
+        className="material-symbols-outlined"
+        style={{ fontSize: iconSize, fontVariationSettings: "'wght' 500, 'FILL' 0" }}
+      >
+        {icon}
+      </span>
+    </div>
+  );
+}
+
+function PhaseBar({ active }: { active: 1 | 2 | 3 | 4 }) {
+  return (
+    <div className="flex items-center gap-2 w-full">
+      {PHASES.map((p, i) => {
+        const idx = (i + 1) as 1 | 2 | 3 | 4;
+        const done = idx < active;
+        const current = idx === active;
+        const isAccent = done || current;
+        return (
+          <div key={p.num} className="flex-1 flex items-center gap-2 min-w-0">
+            <div
+              className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono font-semibold tabular-nums ${
+                current
+                  ? "bg-accent text-white"
+                  : done
+                  ? "bg-accent/20 text-accent"
+                  : "bg-surface-muted text-muted"
+              }`}
+            >
+              {p.num}
+            </div>
+            <div className="flex-1 min-w-0">
+              <div
+                className={`text-[10.5px] uppercase tracking-[0.18em] font-semibold truncate ${
+                  current ? "text-primary" : isAccent ? "text-accent" : "text-muted"
+                }`}
+              >
+                {p.name}
+              </div>
+            </div>
+            {i < PHASES.length - 1 && (
+              <div
+                className={`h-px flex-1 min-w-[10px] ${
+                  done ? "bg-accent/40" : "bg-card-border"
+                }`}
+              />
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function BeforeAfter() {
+  return (
+    <section className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-3 items-stretch">
+      {/* Antes */}
+      <div className="rounded-xl border border-card-border bg-surface-muted/70 p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <span
+            className="material-symbols-outlined text-muted"
+            style={{ fontSize: 20, fontVariationSettings: "'wght' 500" }}
+          >
+            remove_circle
+          </span>
+          <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">Hoy</div>
+        </div>
+        <ul className="space-y-1.5">
+          {BEFORE.map((t) => (
+            <li key={t} className="text-[12px] text-muted leading-snug flex gap-2">
+              <span className="text-muted/50 mt-0.5">—</span>
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Flecha */}
+      <div className="hidden md:flex items-center justify-center px-1">
+        <span
+          className="material-symbols-outlined text-accent"
+          style={{ fontSize: 28, fontVariationSettings: "'wght' 500" }}
+        >
+          arrow_forward
+        </span>
+      </div>
+
+      {/* Después */}
+      <div className="rounded-xl border border-accent/30 bg-accent/5 p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <span
+            className="material-symbols-outlined text-accent"
+            style={{ fontSize: 20, fontVariationSettings: "'wght' 500" }}
+          >
+            check_circle
+          </span>
+          <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
+            Con el sitio nuevo
+          </div>
+        </div>
+        <ul className="space-y-1.5">
+          {AFTER.map((t) => (
+            <li key={t} className="text-[12px] text-foreground leading-snug flex gap-2">
+              <span className="text-accent mt-0.5">+</span>
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function ChatMock() {
+  return (
+    <div className="rounded-xl border border-card-border bg-card overflow-hidden flex flex-col">
+      {/* Header del chat */}
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-card-border bg-surface-muted/60">
+        <div className="w-6 h-6 rounded-full bg-accent/15 text-accent flex items-center justify-center">
+          <span
+            className="material-symbols-outlined"
+            style={{ fontSize: 14, fontVariationSettings: "'wght' 600" }}
+          >
+            support_agent
+          </span>
+        </div>
+        <div>
+          <div className="text-[11.5px] font-semibold text-foreground leading-none">
+            Asistente Intransit Tech
+          </div>
+          <div className="text-[9.5px] text-muted mt-0.5">En línea · responde en segundos</div>
+        </div>
+        <div className="ml-auto flex items-center gap-1 text-[9px] uppercase tracking-[0.18em] font-semibold text-accent">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+          Demo
+        </div>
+      </div>
+
+      {/* Mensajes */}
+      <div className="p-3 space-y-2 flex-1">
+        {CHAT.map((m, i) => {
+          const isAgent = m.from === "agent";
+          return (
+            <div
+              key={i}
+              className={`flex ${isAgent ? "justify-start" : "justify-end"}`}
+            >
+              <div
+                className={`max-w-[85%] rounded-xl px-3 py-2 text-[11.5px] leading-snug ${
+                  isAgent
+                    ? "bg-accent text-white rounded-tl-sm"
+                    : "bg-surface-muted text-foreground rounded-tr-sm border border-card-border"
+                }`}
+              >
+                {m.text}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Input simulado */}
+      <div className="flex items-center gap-2 px-3 py-2 border-t border-card-border">
+        <div className="flex-1 text-[11px] text-muted/70 italic">Escriba su mensaje…</div>
+        <div className="w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center">
+          <span
+            className="material-symbols-outlined"
+            style={{ fontSize: 14, fontVariationSettings: "'wght' 700" }}
+          >
+            send
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PageFooter({ num }: { num: number }) {
+  return (
+    <div className="mt-6 text-right text-[10px] uppercase tracking-[0.22em] text-muted/70">
+      Página {num} · 4
+    </div>
   );
 }
