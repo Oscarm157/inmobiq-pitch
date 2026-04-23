@@ -101,9 +101,9 @@ const FEATURES = [
   },
   {
     icon: "view_list",
-    title: "Una página por cada servicio especializado",
+    title: "Todos los servicios presentados con claridad",
     detail:
-      "Componentes difíciles de encontrar, obsoletos, revisión y reparación — cada uno con su propia página.",
+      "Una sección dedicada a cada servicio (componentes difíciles de encontrar, obsoletos, revisión, reparación) con su explicación y botón para cotizar.",
   },
   {
     icon: "description",
@@ -128,13 +128,12 @@ const FEATURES = [
 ];
 
 const PAGES = [
-  { name: "Inicio", detail: "Buscador, servicios y propuesta de valor." },
+  { name: "Inicio", detail: "Buscador, propuesta de valor y marcas destacadas." },
   { name: "Nosotros", detail: "Historia, experiencia y diferenciadores." },
-  { name: "Servicios", detail: "Una página por cada servicio especializado." },
+  { name: "Servicios", detail: "Todos los servicios especializados agrupados por secciones dentro de una sola página." },
   { name: "Productos", detail: "Catálogo base organizado por categorías." },
-  { name: "Industrias", detail: "Aeroespacial, automotriz, robótica, médico y más." },
-  { name: "Marcas que distribuimos", detail: "Fanuc, Allen Bradley, Yaskawa, Samsung, Intel, entre otras." },
-  { name: "Vender inventario", detail: "Formulario dedicado para proveedores." },
+  { name: "Industrias", detail: "Sectores que atienden, cada uno como sección dentro de una sola página." },
+  { name: "Vender inventario", detail: "Formulario dedicado para proveedores con inventario excedente." },
   { name: "Contacto", detail: "Formulario de cotización, mapa, teléfonos y correos." },
 ];
 
@@ -266,15 +265,15 @@ export default function Page() {
         {/* Intro */}
         <section className="pt-6">
           <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
-            Propuesta · Sitio web nuevo + Agente de ventas IA
+            Propuesta · Sitio + Agente IA + Versión bilingüe
           </div>
           <h1 className="mt-1.5 text-[28px] sm:text-[32px] font-bold leading-[1.08] tracking-[-0.015em] text-primary">
             Sitio web <em className="italic text-gradient-accent">profesional</em> para {CLIENT.short}
           </h1>
           <p className="mt-2 text-[13px] text-muted leading-relaxed max-w-2xl">
             Propuesta para construir un sitio web nuevo que reemplace al actual, acompañado de un
-            agente de ventas con inteligencia artificial que atiende consultas y captura prospectos
-            las 24 horas.
+            agente de ventas con inteligencia artificial que atiende consultas 24 horas, y la
+            versión bilingüe del sitio en español e inglés.
           </p>
         </section>
 
@@ -334,7 +333,7 @@ export default function Page() {
         </section>
 
         <section className="mt-7">
-          <SectionTitle icon="menu_book" title="Páginas del sitio" meta="8 secciones" />
+          <SectionTitle icon="menu_book" title="Páginas del sitio" meta="7 secciones" />
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {PAGES.map((p) => (
               <li
@@ -464,7 +463,7 @@ export default function Page() {
                     Sitio web profesional
                   </div>
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
-                    Diseño, desarrollo y publicación. Incluye los 7 puntos, las 8 páginas y el
+                    Diseño, desarrollo y publicación. Incluye los 7 puntos, las 7 páginas y el
                     catálogo base por categorías.
                   </div>
                 </div>
