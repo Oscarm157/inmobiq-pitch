@@ -19,8 +19,8 @@ const ISSUED = "2026-04-23";
 const VALID = "2026-05-15";
 
 const PRICE_SITIO = 800;
-const PRICE_AGENTE = 150;
-const PRICE_TRANSLATION = 200;
+const PRICE_AGENTE = 200;
+const PRICE_TRANSLATION = 150;
 const USD_TOTAL = PRICE_SITIO + PRICE_AGENTE + PRICE_TRANSLATION;
 const USD_DEPOSIT = Math.round(USD_TOTAL * 0.5);
 
@@ -48,17 +48,17 @@ const fmtDate = (iso: string) => {
 };
 
 const BEFORE = [
-  "Visitantes cierran el sitio sin información clara de lo que ofrecen.",
-  "Cada cotización empieza desde cero por teléfono o correo.",
-  "Información dispersa entre correo, teléfono y el sitio actual.",
-  "Sin forma de medir qué productos o servicios se consultan más.",
+  "Los visitantes cierran el sitio sin información clara sobre los servicios.",
+  "Cada cotización se inicia desde cero por teléfono o correo.",
+  "La información se encuentra dispersa entre correo, teléfono y el sitio actual.",
+  "No existen métricas que indiquen qué productos o servicios se consultan con mayor frecuencia.",
 ];
 
 const AFTER = [
-  "Catálogo y servicios claros a primera vista.",
-  "Solicitudes estructuradas directo al correo de ventas.",
-  "Un solo lugar con toda la información unificada.",
-  "Reporte mensual con lo que más buscan sus clientes.",
+  "Catálogo y servicios presentados con claridad desde el inicio.",
+  "Solicitudes estructuradas que llegan directamente al correo de ventas.",
+  "Toda la información unificada en un único espacio.",
+  "Reporte mensual con los productos y servicios más consultados.",
 ];
 
 const BENEFITS = [
@@ -66,25 +66,25 @@ const BENEFITS = [
     icon: "schedule",
     title: "Menos tiempo explicando lo básico",
     detail:
-      "El sitio presenta sus servicios y categorías con claridad. El cliente llega a la llamada con contexto y ustedes se concentran en cerrar.",
+      "El sitio presenta los servicios y categorías con claridad. El prospecto llega a la llamada con contexto y el equipo se concentra en cerrar la venta.",
   },
   {
     icon: "mark_email_read",
     title: "Solicitudes de cotización ordenadas",
     detail:
-      "Los formularios piden número de parte, cantidad, industria y contacto. Cada correo llega completo al equipo de ventas.",
+      "Los formularios capturan número de parte, cantidad, industria y datos de contacto. Cada correo llega completo al equipo de ventas.",
   },
   {
     icon: "phone_in_talk",
-    title: "Su teléfono siempre a un clic",
+    title: "Teléfono siempre visible y activo",
     detail:
-      "El número aparece fijo en el encabezado. Desde celular, el cliente toca y marca sin copiar ni pegar.",
+      "El número permanece fijo en el encabezado. Desde dispositivos móviles basta presionarlo para iniciar la llamada, sin necesidad de copiar el número.",
   },
   {
     icon: "insights",
-    title: "Información real de qué buscan",
+    title: "Información precisa sobre lo que buscan sus clientes",
     detail:
-      "Cada mes podrán ver qué categorías y servicios se consultan más. Datos para decidir, no para adivinar.",
+      "Cada mes se reportan las categorías y servicios con mayor número de consultas. Información que permite tomar decisiones con respaldo.",
   },
 ];
 
@@ -92,38 +92,44 @@ const FEATURES = [
   {
     icon: "design_services",
     title: "Diseño profesional y moderno",
-    detail: "Se ve bien en computadora y en celular. Transmite la seriedad de un distribuidor global.",
+    detail:
+      "Se adapta correctamente a computadoras y dispositivos móviles. Transmite la seriedad de un distribuidor global.",
   },
   {
     icon: "search",
-    title: "Buscador de productos en la página principal",
-    detail: "El visitante escribe número de parte o palabra clave y llega directo a lo que necesita.",
+    title: "Buscador enlazado al formulario de cotización",
+    detail:
+      "El visitante escribe lo que necesita y se abre el formulario de cotización con el texto precargado, listo para enviar al equipo de ventas.",
   },
   {
     icon: "view_list",
-    title: "Todos los servicios presentados con claridad",
+    title: "Servicios presentados con claridad",
     detail:
       "Una sección dedicada a cada servicio (componentes difíciles de encontrar, obsoletos, revisión, reparación) con su explicación y botón para cotizar.",
   },
   {
     icon: "description",
-    title: "Formulario para pedir cotización",
-    detail: "El correo llega estructurado al equipo de ventas para responder sin fricción.",
+    title: "Formulario de cotización",
+    detail:
+      "Los datos llegan estructurados al equipo de ventas para facilitar una respuesta ágil.",
   },
   {
     icon: "inventory_2",
-    title: "Formulario para vender inventario",
-    detail: "Apartado separado para proveedores que quieren venderles inventario excedente.",
+    title: "Formulario para recibir inventario",
+    detail:
+      "Sección dedicada para proveedores que desean ofrecer inventario excedente a Intransit Tech.",
   },
   {
     icon: "call",
-    title: "Teléfono y correo visibles siempre",
-    detail: "(949) 481-7935 fijo en el encabezado. El negocio vive de llamadas inmediatas.",
+    title: "Teléfono y correo visibles en todo momento",
+    detail:
+      "El número (949) 481-7935 permanece fijo en el encabezado del sitio. La operación depende de atender consultas sin demora.",
   },
   {
     icon: "monitoring",
     title: "Medición de visitas desde el primer día",
-    detail: "Para saber cuántas personas entran, de dónde llegan y qué buscan.",
+    detail:
+      "Permite conocer cuántos visitantes recibe el sitio, de qué canal provienen y qué contenido consultan.",
   },
 ];
 
@@ -151,44 +157,49 @@ const CATEGORIES = [
 const AGENT_FEATURES = [
   {
     icon: "support_agent",
-    title: "Atiende 24/7",
-    detail: "Responde consultas básicas de inmediato, sin importar el horario ni la zona horaria.",
+    title: "Disponible las 24 horas",
+    detail:
+      "Responde consultas iniciales de forma inmediata, sin importar el horario ni la zona horaria del visitante.",
   },
   {
     icon: "category",
     title: "Reconoce categorías",
-    detail: "El cliente pregunta por una categoría y el agente responde con las marcas que ustedes manejan.",
+    detail:
+      "El visitante pregunta por una categoría y el agente responde con las marcas que distribuye Intransit Tech.",
   },
   {
     icon: "contact_mail",
     title: "Captura datos del prospecto",
-    detail: "Solicita nombre, empresa y correo para armar un lead listo para el equipo de ventas.",
+    detail:
+      "Solicita nombre, empresa y correo electrónico para entregar un prospecto calificado al equipo de ventas.",
   },
   {
     icon: "forward_to_inbox",
-    title: "Avisa al equipo al instante",
-    detail: "En cuanto captura un lead, envía notificación al correo de ventas para dar seguimiento.",
+    title: "Notifica al equipo de forma inmediata",
+    detail:
+      "Al registrar un prospecto, envía una notificación al correo de ventas para dar seguimiento oportuno.",
   },
 ];
 
 const CHAT = [
   {
     from: "client" as const,
-    text: "Buenas tardes. Estoy buscando servomotores para una línea de ensamble nueva. ¿Manejan?",
+    text:
+      "Buenas tardes. Requiero servomotores para una nueva línea de ensamble. ¿Los distribuyen?",
   },
   {
     from: "agent" as const,
     text:
-      "Buenas tardes. Sí, manejamos servomotores de Fanuc, Yaskawa, Allen Bradley y Kuka, entre otras marcas. ¿Tiene ya una preferencia de marca o potencia?",
+      "Buenas tardes. Sí, distribuimos servomotores de Fanuc, Yaskawa, Allen Bradley y Kuka, entre otras marcas. ¿Cuenta con alguna preferencia de marca o potencia?",
   },
   {
     from: "client" as const,
-    text: "Aún no definimos marca. Necesitaríamos unas 10 unidades.",
+    text: "Aún no definimos marca. Requeriríamos alrededor de 10 unidades.",
   },
   {
     from: "agent" as const,
     text:
-      "Con gusto. Para que un asesor de Intransit Tech le envíe opciones con tiempos y precios, ¿me comparte su nombre, empresa y un correo de contacto?",
+      "Con gusto. Para que un asesor de Intransit Tech le comparta opciones con tiempos y precios, ¿me proporciona su nombre, empresa y correo de contacto?",
   },
   {
     from: "client" as const,
@@ -197,7 +208,7 @@ const CHAT = [
   {
     from: "agent" as const,
     text:
-      "Gracias, Luis. Un asesor se pondrá en contacto con usted en las próximas horas. ¿Hay algo más en lo que pueda ayudarle mientras tanto?",
+      "Gracias, Luis. Un asesor se pondrá en contacto con usted en las próximas horas. ¿Puedo asistirle con algo adicional mientras tanto?",
   },
 ];
 
@@ -362,8 +373,9 @@ export default function Page() {
             meta="8 familias"
           />
           <p className="text-[12px] text-muted leading-relaxed max-w-2xl mb-3">
-            Un catálogo base con las familias de productos que ustedes ya saben que les piden con
-            más frecuencia. El cliente reconoce su categoría y llega al formulario para cotizar.
+            Un catálogo base con las familias de productos que Intransit Tech distribuye con mayor
+            frecuencia. El visitante identifica la categoría que requiere y accede al formulario de
+            cotización.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {CATEGORIES.map((c) => (
@@ -392,9 +404,9 @@ export default function Page() {
             meta="Incluido"
           />
           <p className="text-[12px] text-muted leading-relaxed max-w-2xl mb-3">
-            Un asistente virtual integrado en el sitio que conversa con el visitante, reconoce qué
-            categoría necesita, le dice qué marcas manejan ustedes y deja los datos listos para que
-            un asesor humano cierre la venta.
+            Un asistente virtual integrado al sitio que conversa con el visitante, identifica la
+            categoría que requiere, comparte las marcas que distribuye Intransit Tech y registra los
+            datos de contacto para que un asesor del equipo concrete la venta.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -434,11 +446,12 @@ export default function Page() {
               info
             </span>
             <div className="text-[11.5px] text-foreground/90 leading-snug">
-              <span className="font-semibold text-primary">Requisito:</span> el agente necesita
+              <span className="font-semibold text-primary">Requisito:</span> el agente debe
               vincularse con una cuenta de <span className="font-semibold">ChatGPT (OpenAI)</span> o{" "}
-              <span className="font-semibold">Gemini (Google)</span>. El costo de esa cuenta corre
-              por parte de {CLIENT.short} y se configura durante la reunión de arranque. La
-              configuración y el entrenamiento del agente sí están incluidos en esta cotización.
+              <span className="font-semibold">Gemini (Google)</span>. El costo mensual de dicha
+              cuenta se estima entre <span className="font-semibold">10 y 30 USD mensuales</span> con
+              un tráfico regular de consultas, y corre por parte de {CLIENT.short}. La configuración
+              y el entrenamiento del agente están incluidos en la presente cotización.
             </div>
           </div>
         </section>
@@ -463,8 +476,8 @@ export default function Page() {
                     Sitio web profesional
                   </div>
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
-                    Diseño, desarrollo y publicación. Incluye los 7 puntos, las 7 páginas y el
-                    catálogo base por categorías.
+                    Diseño, desarrollo y publicación del sitio. Incluye los 7 puntos, las 7 páginas
+                    y el catálogo base organizado por categorías.
                   </div>
                 </div>
                 <div className="text-right shrink-0 tabular-nums">
@@ -479,7 +492,8 @@ export default function Page() {
                     Agente de ventas con IA
                   </div>
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
-                    Configuración, entrenamiento con su catálogo y marcas, e integración al sitio.
+                    Configuración del agente, entrenamiento con las categorías y marcas de Intransit
+                    Tech, e integración al sitio.
                   </div>
                 </div>
                 <div className="text-right shrink-0 tabular-nums">
@@ -494,8 +508,8 @@ export default function Page() {
                     Traducción y versión bilingüe
                   </div>
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
-                    Traducción de todo el contenido del sitio al inglés, selector de idioma visible
-                    y mantenimiento de ambas versiones sincronizadas.
+                    Traducción del contenido completo del sitio al inglés, selector de idioma y
+                    sincronización de ambas versiones.
                   </div>
                 </div>
                 <div className="text-right shrink-0 tabular-nums">
@@ -503,6 +517,31 @@ export default function Page() {
                     {fmtUsd(PRICE_TRANSLATION)}
                   </div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-accent/5">
+                <IconBadge icon="dns" />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[13px] font-semibold text-foreground">
+                      Hosting del sitio por 1 año
+                    </span>
+                    <span className="text-[9px] uppercase tracking-[0.22em] font-semibold text-white bg-accent rounded px-1.5 py-0.5">
+                      Cortesía
+                    </span>
+                  </div>
+                  <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
+                    El <span className="font-semibold text-foreground">hosting</span> es el servicio
+                    que mantiene el sitio publicado y accesible en internet las 24 horas. Incluido
+                    durante los primeros 12 meses; la renovación posterior se realiza directamente
+                    con el proveedor.
+                  </div>
+                </div>
+                <div className="text-right shrink-0 tabular-nums">
+                  <div className="text-[12px] text-muted/70 line-through">$2,500 MXN</div>
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-accent font-semibold">
+                    Sin costo
+                  </div>
                 </div>
               </div>
             </div>
@@ -514,8 +553,8 @@ export default function Page() {
                   Pago único · Entrega completa
                 </div>
                 <div className="text-[12px] text-white/70 leading-snug max-w-md">
-                  Sin costos ocultos. Medición de visitas y capacitación del equipo incluidas desde
-                  el primer día.
+                  Sin cargos adicionales. Medición de visitas, capacitación del equipo y hosting del
+                  sitio por 1 año incluidos desde el primer día.
                 </div>
               </div>
               <div className="text-right shrink-0">
@@ -566,11 +605,11 @@ export default function Page() {
             Siguiente paso
           </div>
           <p className="text-[13px] text-foreground/90 leading-relaxed">
-            Aprobar esta cotización y cubrir el anticipo de{" "}
+            Aprobar la presente cotización y cubrir el anticipo de{" "}
             <span className="font-semibold text-foreground">{fmtUsd(USD_DEPOSIT)} USD</span> para
-            agendar la reunión de arranque. En ella acordamos accesos, qué servicios y categorías
-            van primero, materiales disponibles (logo, fotos, textos) y fechas concretas por
-            entrega.
+            agendar la reunión de arranque. En dicha reunión se definirán los accesos, los
+            servicios y categorías prioritarios, los materiales disponibles (logotipo, fotografías
+            y textos) y el calendario con fechas específicas por entrega.
           </p>
         </section>
 
@@ -749,7 +788,7 @@ function BeforeAfter() {
         <ul className="space-y-1.5">
           {BEFORE.map((t) => (
             <li key={t} className="text-[12px] text-muted leading-snug flex gap-2">
-              <span className="text-muted/50 mt-0.5">—</span>
+              <span className="text-muted/50 mt-0.5">·</span>
               <span>{t}</span>
             </li>
           ))}
@@ -813,7 +852,7 @@ function ChatMock() {
         </div>
         <div className="ml-auto flex items-center gap-1 text-[9px] uppercase tracking-[0.18em] font-semibold text-accent">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          Demo
+          Ejemplo
         </div>
       </div>
 
