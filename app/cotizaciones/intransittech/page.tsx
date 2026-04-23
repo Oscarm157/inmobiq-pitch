@@ -505,7 +505,7 @@ export default function Page() {
                 <IconBadge icon="translate" />
                 <div className="flex-1 min-w-0">
                   <div className="text-[13px] font-semibold text-foreground">
-                    Traducción y versión bilingüe
+                    Versión bilingüe
                   </div>
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
                     Traducción del contenido completo del sitio al inglés, selector de idioma y
