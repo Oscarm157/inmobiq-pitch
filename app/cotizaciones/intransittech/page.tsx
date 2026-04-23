@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { PrintButton } from "./print-button";
 
 const PROVIDER = {
@@ -19,7 +20,8 @@ const VALID = "2026-05-15";
 
 const PRICE_SITIO = 800;
 const PRICE_AGENTE = 150;
-const USD_TOTAL = PRICE_SITIO + PRICE_AGENTE;
+const PRICE_TRANSLATION = 200;
+const USD_TOTAL = PRICE_SITIO + PRICE_AGENTE + PRICE_TRANSLATION;
 const USD_DEPOSIT = Math.round(USD_TOTAL * 0.5);
 
 const PHASES = [
@@ -117,11 +119,6 @@ const FEATURES = [
     icon: "call",
     title: "Teléfono y correo visibles siempre",
     detail: "(949) 481-7935 fijo en el encabezado. El negocio vive de llamadas inmediatas.",
-  },
-  {
-    icon: "translate",
-    title: "Sitio en español y en inglés",
-    detail: "Con botón para cambiar idioma. Aprovecha el 'Se Habla Español' como diferenciador real.",
   },
   {
     icon: "monitoring",
@@ -286,14 +283,11 @@ export default function Page() {
 
         {/* Beneficios en el día a día */}
         <section className="mt-6">
-          <div className="flex items-baseline justify-between mb-3">
-            <h2 className="text-[17px] font-bold text-primary tracking-tight">
-              Cómo les facilita el día a día
-            </h2>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
-              4 beneficios
-            </span>
-          </div>
+          <SectionTitle
+            icon="auto_awesome"
+            title="Cómo les facilita el día a día"
+            meta="4 beneficios"
+          />
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {BENEFITS.map((b) => (
               <li
@@ -320,12 +314,7 @@ export default function Page() {
         <PhaseBar active={2} />
 
         <section className="mt-6">
-          <div className="flex items-baseline justify-between mb-3">
-            <h2 className="text-[17px] font-bold text-primary tracking-tight">Qué incluye el sitio</h2>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
-              8 puntos
-            </span>
-          </div>
+          <SectionTitle icon="check_circle" title="Qué incluye el sitio" meta="7 puntos" />
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {FEATURES.map((f) => (
               <li
@@ -345,12 +334,7 @@ export default function Page() {
         </section>
 
         <section className="mt-7">
-          <div className="flex items-baseline justify-between mb-3">
-            <h2 className="text-[17px] font-bold text-primary tracking-tight">Páginas del sitio</h2>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
-              8 secciones
-            </span>
-          </div>
+          <SectionTitle icon="menu_book" title="Páginas del sitio" meta="8 secciones" />
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {PAGES.map((p) => (
               <li
@@ -373,14 +357,11 @@ export default function Page() {
 
         {/* Catálogo por categorías */}
         <section className="mt-6">
-          <div className="flex items-baseline justify-between mb-1">
-            <h2 className="text-[17px] font-bold text-primary tracking-tight">
-              Catálogo de productos · por categorías
-            </h2>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
-              8 familias
-            </span>
-          </div>
+          <SectionTitle
+            icon="category"
+            title="Catálogo de productos · por categorías"
+            meta="8 familias"
+          />
           <p className="text-[12px] text-muted leading-relaxed max-w-2xl mb-3">
             Un catálogo base con las familias de productos que ustedes ya saben que les piden con
             más frecuencia. El cliente reconoce su categoría y llega al formulario para cotizar.
@@ -405,14 +386,12 @@ export default function Page() {
 
         {/* Agente de ventas IA */}
         <section className="mt-7">
-          <div className="flex items-baseline justify-between mb-1">
-            <h2 className="text-[17px] font-bold text-primary tracking-tight">
-              Agente de ventas con <em className="italic text-gradient-accent">inteligencia artificial</em>
-            </h2>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-muted">
-              Incluido
-            </span>
-          </div>
+          <SectionTitle
+            icon="smart_toy"
+            title="Agente de ventas con"
+            emphasis="inteligencia artificial"
+            meta="Incluido"
+          />
           <p className="text-[12px] text-muted leading-relaxed max-w-2xl mb-3">
             Un asistente virtual integrado en el sitio que conversa con el visitante, reconoce qué
             categoría necesita, le dice qué marcas manejan ustedes y deja los datos listos para que
@@ -420,19 +399,24 @@ export default function Page() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Qué hace · 4 cards */}
+            {/* Qué hace · cards en dark */}
             <ul className="grid grid-cols-1 gap-2">
               {AGENT_FEATURES.map((a) => (
                 <li
                   key={a.title}
-                  className="rounded-lg bg-card border border-card-border p-3 flex gap-3"
+                  className="rounded-lg bg-primary text-primary-foreground border border-primary/30 p-3 flex gap-3"
                 >
-                  <IconBadge icon={a.icon} small />
+                  <div className="shrink-0 w-8 h-8 rounded-lg bg-accent/20 text-accent-light flex items-center justify-center">
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ fontSize: 18, fontVariationSettings: "'wght' 500" }}
+                    >
+                      {a.icon}
+                    </span>
+                  </div>
                   <div className="min-w-0">
-                    <div className="text-[13px] font-semibold text-foreground leading-tight">
-                      {a.title}
-                    </div>
-                    <div className="text-[11.5px] text-muted mt-0.5 leading-snug">{a.detail}</div>
+                    <div className="text-[13px] font-semibold leading-tight">{a.title}</div>
+                    <div className="text-[11.5px] text-white/70 mt-0.5 leading-snug">{a.detail}</div>
                   </div>
                 </li>
               ))}
@@ -440,6 +424,23 @@ export default function Page() {
 
             {/* Mock de chat */}
             <ChatMock />
+          </div>
+
+          {/* Nota de integración */}
+          <div className="mt-3 rounded-lg bg-accent/10 border border-accent/30 px-3 py-2.5 flex items-start gap-2.5">
+            <span
+              className="material-symbols-outlined text-accent shrink-0 mt-0.5"
+              style={{ fontSize: 18, fontVariationSettings: "'wght' 600" }}
+            >
+              info
+            </span>
+            <div className="text-[11.5px] text-foreground/90 leading-snug">
+              <span className="font-semibold text-primary">Requisito:</span> el agente necesita
+              vincularse con una cuenta de <span className="font-semibold">ChatGPT (OpenAI)</span> o{" "}
+              <span className="font-semibold">Gemini (Google)</span>. El costo de esa cuenta corre
+              por parte de {CLIENT.short} y se configura durante la reunión de arranque. La
+              configuración y el entrenamiento del agente sí están incluidos en esta cotización.
+            </div>
           </div>
         </section>
 
@@ -451,7 +452,7 @@ export default function Page() {
         <PhaseBar active={4} />
 
         <section className="mt-6">
-          <h2 className="text-[17px] font-bold text-primary tracking-tight mb-4">Inversión</h2>
+          <SectionTitle icon="payments" title="Inversión" />
 
           <div className="rounded-xl border border-card-border bg-card overflow-hidden">
             {/* Renglones */}
@@ -463,7 +464,7 @@ export default function Page() {
                     Sitio web profesional
                   </div>
                   <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
-                    Diseño, desarrollo y publicación. Incluye los 8 puntos, las 8 páginas y el
+                    Diseño, desarrollo y publicación. Incluye los 7 puntos, las 8 páginas y el
                     catálogo base por categorías.
                   </div>
                 </div>
@@ -487,24 +488,44 @@ export default function Page() {
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD</div>
                 </div>
               </div>
+              <div className="flex items-start gap-4 p-4">
+                <IconBadge icon="translate" />
+                <div className="flex-1 min-w-0">
+                  <div className="text-[13px] font-semibold text-foreground">
+                    Traducción y versión bilingüe
+                  </div>
+                  <div className="text-[11.5px] text-muted mt-0.5 leading-snug max-w-md">
+                    Traducción de todo el contenido del sitio al inglés, selector de idioma visible
+                    y mantenimiento de ambas versiones sincronizadas.
+                  </div>
+                </div>
+                <div className="text-right shrink-0 tabular-nums">
+                  <div className="text-lg font-semibold text-foreground">
+                    {fmtUsd(PRICE_TRANSLATION)}
+                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD</div>
+                </div>
+              </div>
             </div>
 
-            {/* Total */}
-            <div className="grid grid-cols-[1fr_auto] gap-4 p-4 border-t border-card-border bg-accent/5">
+            {/* Total · dark */}
+            <div className="grid grid-cols-[1fr_auto] gap-4 p-4 border-t border-primary bg-primary text-primary-foreground">
               <div>
-                <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent mb-0.5">
+                <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent-light mb-0.5">
                   Pago único · Entrega completa
                 </div>
-                <div className="text-[12px] text-muted leading-snug max-w-md">
-                  Sin costos ocultos. Versión en español e inglés y herramientas de medición
-                  incluidas desde el primer día.
+                <div className="text-[12px] text-white/70 leading-snug max-w-md">
+                  Sin costos ocultos. Medición de visitas y capacitación del equipo incluidas desde
+                  el primer día.
                 </div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-3xl font-semibold tabular-nums text-gradient-accent">
+                <div className="text-3xl font-semibold tabular-nums text-accent-light">
                   {fmtUsd(USD_TOTAL)}
                 </div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-muted">USD · total</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-white/60">
+                  USD · total
+                </div>
               </div>
             </div>
 
@@ -632,33 +653,32 @@ function IconBadge({ icon, small = false }: { icon: string; small?: boolean }) {
 
 function PhaseBar({ active }: { active: 1 | 2 | 3 | 4 }) {
   return (
-    <div className="flex items-center gap-2 w-full">
+    <div className="flex items-center gap-3 w-full">
       {PHASES.map((p, i) => {
         const idx = (i + 1) as 1 | 2 | 3 | 4;
         const done = idx < active;
         const current = idx === active;
-        const isAccent = done || current;
         return (
-          <div key={p.num} className="flex-1 flex items-center gap-2 min-w-0">
-            <div
-              className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono font-semibold tabular-nums ${
-                current
-                  ? "bg-accent text-white"
-                  : done
-                  ? "bg-accent/20 text-accent"
-                  : "bg-surface-muted text-muted"
-              }`}
-            >
-              {p.num}
-            </div>
-            <div className="flex-1 min-w-0">
+          <Fragment key={p.num}>
+            <div className="flex items-center gap-2 shrink-0">
               <div
-                className={`text-[10.5px] uppercase tracking-[0.18em] font-semibold truncate ${
-                  current ? "text-primary" : isAccent ? "text-accent" : "text-muted"
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono font-semibold tabular-nums ${
+                  current
+                    ? "bg-accent text-white"
+                    : done
+                    ? "bg-accent/20 text-accent"
+                    : "bg-surface-muted text-muted"
+                }`}
+              >
+                {p.num}
+              </div>
+              <span
+                className={`text-[10.5px] uppercase tracking-[0.18em] font-semibold whitespace-nowrap ${
+                  current ? "text-primary" : done ? "text-accent" : "text-muted"
                 }`}
               >
                 {p.name}
-              </div>
+              </span>
             </div>
             {i < PHASES.length - 1 && (
               <div
@@ -667,9 +687,48 @@ function PhaseBar({ active }: { active: 1 | 2 | 3 | 4 }) {
                 }`}
               />
             )}
-          </div>
+          </Fragment>
         );
       })}
+    </div>
+  );
+}
+
+function SectionTitle({
+  icon,
+  title,
+  meta,
+  emphasis,
+}: {
+  icon: string;
+  title: string;
+  meta?: string;
+  emphasis?: string;
+}) {
+  return (
+    <div className="flex items-center justify-between rounded-xl bg-primary text-primary-foreground px-4 py-2.5 mb-4 gap-3">
+      <div className="flex items-center gap-2.5 min-w-0">
+        <span
+          className="material-symbols-outlined text-accent shrink-0"
+          style={{ fontSize: 20, fontVariationSettings: "'wght' 600" }}
+        >
+          {icon}
+        </span>
+        <h2 className="text-[16px] font-bold tracking-tight leading-tight">
+          {title}
+          {emphasis && (
+            <>
+              {" "}
+              <em className="italic text-accent-light font-bold">{emphasis}</em>
+            </>
+          )}
+        </h2>
+      </div>
+      {meta && (
+        <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/60 shrink-0 whitespace-nowrap">
+          {meta}
+        </span>
+      )}
     </div>
   );
 }
@@ -708,23 +767,23 @@ function BeforeAfter() {
         </span>
       </div>
 
-      {/* Después */}
-      <div className="rounded-xl border border-accent/30 bg-accent/5 p-4">
+      {/* Después · dark */}
+      <div className="rounded-xl border border-primary bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-2 mb-2">
           <span
-            className="material-symbols-outlined text-accent"
-            style={{ fontSize: 20, fontVariationSettings: "'wght' 500" }}
+            className="material-symbols-outlined text-accent-light"
+            style={{ fontSize: 20, fontVariationSettings: "'wght' 600" }}
           >
             check_circle
           </span>
-          <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent">
+          <div className="text-[10px] uppercase tracking-[0.22em] font-semibold text-accent-light">
             Con el sitio nuevo
           </div>
         </div>
         <ul className="space-y-1.5">
           {AFTER.map((t) => (
-            <li key={t} className="text-[12px] text-foreground leading-snug flex gap-2">
-              <span className="text-accent mt-0.5">+</span>
+            <li key={t} className="text-[12px] text-white/90 leading-snug flex gap-2">
+              <span className="text-accent-light mt-0.5">+</span>
               <span>{t}</span>
             </li>
           ))}
