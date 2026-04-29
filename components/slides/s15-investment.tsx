@@ -505,7 +505,7 @@ function BreakdownRow({ b }: { b: InkindRow }) {
   const fromATotal = fromAMonthly !== undefined ? fromAMonthly * 10 : undefined;
 
   return (
-    <li className="flex items-start justify-between gap-4 text-xs pb-3 border-b border-card-border/30 last:border-0 last:pb-0">
+    <li className="flex items-start justify-between gap-4 text-[13px] pb-4 border-b border-card-border last:border-0 last:pb-0">
       <div className="flex-1 leading-snug">
         <div className={struck ? "text-muted/70 line-through decoration-rose-400/70 decoration-[1.5px]" : "text-foreground/95"}>
           {b.label}
