@@ -535,7 +535,7 @@ export const veq_inkindB = [
   { category: "team", label: "Salario fundador (neto)", detail: "Producto, dirección, comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
   { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
   { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
-  { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "VEQ" },
+  { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe VEQ" },
   // GASTOS OPERATIVOS
   { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Empuje inicial de adquisición · combinada con mailings y acciones de marketing directo a bases de brokers existentes (+10,000 contactos)", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
   { category: "expense", label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 12_500, mxn: 125_000, fromA: { monthly: 22_500 } },
