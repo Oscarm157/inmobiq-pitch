@@ -537,7 +537,7 @@ export const veq_inkindB = [
   { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
   { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "VEQ" },
   // GASTOS OPERATIVOS
-  { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Empuje inicial de adquisición · combinada con base de datos de brokers ya integrada", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
+  { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Empuje inicial de adquisición · combinada con mailings y acciones de marketing directo a bases de brokers existentes", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
   { category: "expense", label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 12_500, mxn: 125_000, fromA: { monthly: 22_500 } },
   { category: "expense", label: "Software (GitHub, Vercel, Supabase, Cloudflare, SEMrush)", detail: "Herramientas de desarrollo y gestión", monthly: 5_000, mxn: 50_000, fromA: { monthly: 10_000 } },
 ];
