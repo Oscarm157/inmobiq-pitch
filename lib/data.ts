@@ -82,7 +82,7 @@ export const roi = {
 // Ordenado: equipo de trabajo (roles) primero, luego gastos operativos
 export const veq_inkind = [
   // EQUIPO DE TRABAJO
-  { category: "team", label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
+  { category: "team", label: "2 desarrolladores de software", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
   { category: "team", label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
   { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
   { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
@@ -132,7 +132,7 @@ export const use_of_funds = [
     mxn: 2_275_000,
     usd: 122_973,
     items: [
-      { label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
+      { label: "2 desarrolladores de software", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
       { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
       { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
       { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
@@ -326,7 +326,7 @@ export const team = [
   },
   {
     name: "2 desarrolladores Inversor",
-    role: "Equipo técnico full-stack · aporte Inversor",
+    role: "Equipo técnico de software · aporte Inversor",
     bio: "Equipo técnico asignado por Inversor. Construyen y mantienen la plataforma junto al fundador. Reemplaza la necesidad de un CTO formal.",
     highlight: false,
     source: "veq",
@@ -531,7 +531,7 @@ export const roundB = {
 // Ordenado: equipo de trabajo primero, luego gastos operativos
 export const veq_inkindB = [
   // EQUIPO DE TRABAJO
-  { category: "team", label: "1 desarrollador JR full-stack", detail: "Perfil junior · suficiente para mantener la plataforma post-beta y cerrar features pendientes", monthly: 25_000, mxn: 250_000, fromA: { monthly: 70_000, label: "2 desarrolladores full-stack" } },
+  { category: "team", label: "1 desarrollador JR de software", detail: "Perfil junior · suficiente para mantener la plataforma post-beta y cerrar features pendientes", monthly: 25_000, mxn: 250_000, fromA: { monthly: 70_000, label: "2 desarrolladores de software" } },
   { category: "team", label: "Salario fundador", detail: "Producto, dirección, comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
   { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
   { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
