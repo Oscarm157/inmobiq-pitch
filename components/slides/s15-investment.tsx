@@ -68,7 +68,7 @@ const copyB = {
   description: (
     <>
       Estructura operativa reducida: <span className="text-foreground font-semibold">admin y marketing los absorbe
-      el fundador, legal se comparte VEQ + fundador</span>. Menor compromiso de capital,
+      el fundador, legal lo absorbe VEQ</span>. Menor compromiso de capital,
       menor riesgo, con <span className="text-foreground font-semibold">20% de participación</span> y
       opción de expansión al cierre del primer año.
     </>
