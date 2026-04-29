@@ -23,6 +23,7 @@ type Variant = "A" | "B";
 
 type CashRow = typeof monthly_cash_flow[number];
 type InkindRow = {
+  category?: string;
   label: string;
   detail?: string;
   monthly?: number;
@@ -46,9 +47,9 @@ const copyA = {
     </>
   ),
   inkindLabel: "Aporte Inversor · opex mensual",
-  inkindSubtitle: "MXN /mes · todo el opex de Inmobiq",
+  inkindSubtitle: "MXN /mes · opex completo de Inmobiq",
   inkindDetail:
-    "Inversor asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores. Total acumulado 10 meses · $2.275M MXN.",
+    "Inversor asume el opex completo durante 10 meses: equipo, infraestructura, marketing y legal. Inmobiq solo se preocupa por curadores. Total acumulado 10 meses · $2.275M MXN.",
   founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" },
   founderUpfront: "$250K",
   founderSubtitle: "Al cierre del deal · pago asegurado",
@@ -66,16 +67,17 @@ const copyB = {
   </>,
   description: (
     <>
-      Misma estructura que A pero con <span className="text-foreground font-semibold">3 partidas absorbidas
-      por el equipo VEQ</span> y las restantes ajustadas a lo esencial. Paquete total $1.275M MXN por
+      Misma estructura que A: <span className="text-foreground font-semibold">admin y marketing los absorbe
+      el fundador, legal se comparte VEQ + fundador</span>, y las restantes ajustadas a lo esencial.
+      Paquete total $1.275M MXN por
       <span className="text-foreground font-semibold"> 20% de participación</span>.
       La plataforma ya está al 80% — el cheque solo financia el último empujón a beta Tijuana.
     </>
   ),
   inkindLabel: "Aporte Inversor · opex mensual liviano",
-  inkindSubtitle: "MXN /mes · 5 partidas cash + 3 absorbidas",
+  inkindSubtitle: "MXN /mes · opex liviano (in-kind)",
   inkindDetail:
-    "Misma estructura que A: las partidas tachadas las absorbe el equipo VEQ in-kind o se difieren hasta post-beta. Total acumulado 10 meses · $875K MXN.",
+    "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash. Total acumulado 10 meses · $875K MXN.",
   founderBonus: { amount: "+ $250K", when: "al llegar a los primeros 500 usuarios pagados" },
   founderUpfront: "$150K",
   founderSubtitle: "Al cierre del deal · cheque inicial menor",
@@ -104,17 +106,18 @@ export function S15Investment() {
         }}
       />
 
-      <FadeStack className="relative z-10 flex flex-col gap-7">
-        <FadeItem>
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-sm font-semibold tracking-[0.22em] text-accent">15</span>
-              <span className="text-sm uppercase tracking-[0.18em] text-muted-light">{data.copy.eyebrow}</span>
-            </div>
-            <VariantToggle variant={variant} onChange={setVariant} />
+      {/* Sticky header — toggle siempre visible al hacer scroll dentro del slide */}
+      <div className="sticky top-16 sm:top-20 z-30 -mx-4 sm:-mx-8 md:-mx-12 px-4 sm:px-8 md:px-12 py-3 mb-6 bg-background/85 backdrop-blur-md border-b border-card-border/50">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-sm font-semibold tracking-[0.22em] text-accent">15</span>
+            <span className="text-sm uppercase tracking-[0.18em] text-muted-light">{data.copy.eyebrow}</span>
           </div>
-        </FadeItem>
+          <VariantToggle variant={variant} onChange={setVariant} />
+        </div>
+      </div>
 
+      <FadeStack className="relative z-10 flex flex-col gap-7">
         <FadeItem>
           <div key={`head-${variant}`} className="max-w-3xl animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
@@ -144,7 +147,7 @@ export function S15Investment() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <TradeoffCard
               tag="A"
-              title="Más riesgosa, mayor velocidad"
+              title="Apuesta mayor, crecimiento acelerado"
               copy="Equipo completo (2 devs, admin, marketing, legal). Capital cash mayor, escala agresiva, 14 ciudades en 18 meses."
               tone="amber"
               active={variant === "A"}
@@ -411,64 +414,81 @@ function PackageCard({
         </div>
       )}
       {breakdown && (
-        <div className="mt-auto pt-3 border-t border-card-border/50">
-          <div className="flex items-baseline justify-between mb-2">
-            <span className="text-[11px] uppercase tracking-widest font-semibold text-muted">Desglose</span>
-            <span className="text-[11px] uppercase tracking-widest font-semibold text-muted/70">Total acumulado</span>
-          </div>
-          <ul className="flex flex-col gap-1.5">
-            {breakdown.map((b, i) => {
-              const struck = b.struck === true;
-              return (
-                <li key={i} className="flex items-start justify-between gap-3 text-xs">
-                  <div className="flex-1 leading-snug">
-                    <div className={struck ? "text-muted/40 line-through decoration-rose-400/60 decoration-[1.5px]" : "text-foreground/80"}>
-                      {b.label}
-                    </div>
-                    {b.detail && (
-                      <div className={struck ? "text-muted/30 line-through text-[11px]" : "text-muted/70 text-[11px]"}>
-                        {b.detail}
-                      </div>
-                    )}
-                    {struck && b.absorbedBy && (
-                      <div className="mt-1 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-500/10 ring-1 ring-emerald-400/30">
-                        <span className="material-symbols-outlined text-emerald-300" style={{ fontSize: 11 }}>handshake</span>
-                        <span className="text-[10px] uppercase tracking-[0.12em] font-semibold text-emerald-200">
-                          {b.absorbedBy}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="text-right whitespace-nowrap">
-                    {struck ? (
-                      <div className="text-muted/40 line-through tabular-nums text-[11px]">
-                        ${(b.mxn === 0 && b.fromA ? (b.fromA.monthly ?? 0) * 10 / 1_000 : b.mxn / 1_000).toFixed(0)}K
-                      </div>
-                    ) : (
-                      <>
-                        <div className="font-semibold tabular-nums text-foreground/90">
-                          ${(b.mxn / 1_000).toFixed(0)}K
-                        </div>
-                        {b.monthly !== undefined && (
-                          <div className="text-muted/60 text-[10px] tabular-nums">
-                            ${(b.monthly / 1_000).toFixed(b.monthly % 1_000 === 0 ? 0 : 1)}K/mes
-                            {b.fromA?.monthly !== undefined && b.fromA.monthly !== b.monthly && (
-                              <span className="ml-1 line-through text-muted/35">
-                                ${(b.fromA.monthly / 1_000).toFixed(b.fromA.monthly % 1_000 === 0 ? 0 : 1)}K
-                              </span>
-                            )}
-                          </div>
-                        )}
-                      </>
-                    )}
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="mt-auto pt-3 border-t border-card-border/50 flex flex-col gap-4">
+          {(["team", "expense"] as const).map((cat) => {
+            const items = breakdown.filter((b) => (b.category ?? "team") === cat);
+            if (items.length === 0) return null;
+            return (
+              <div key={cat}>
+                <div className="flex items-baseline justify-between mb-2">
+                  <span className="text-[11px] uppercase tracking-widest font-semibold text-muted">
+                    {cat === "team" ? "Equipo de trabajo" : "Gastos operativos"}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-widest font-semibold text-muted/60">
+                    Total acumulado · 10 meses
+                  </span>
+                </div>
+                <ul className="flex flex-col gap-1.5">
+                  {items.map((b, i) => <BreakdownRow key={i} b={b} />)}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
+  );
+}
+
+function BreakdownRow({ b }: { b: InkindRow }) {
+  const struck = b.struck === true;
+  const fromAMonthly = b.fromA?.monthly;
+  const fromATotal = fromAMonthly !== undefined ? fromAMonthly * 10 : undefined;
+
+  return (
+    <li className="flex items-start justify-between gap-3 text-xs">
+      <div className="flex-1 leading-snug">
+        <div className={struck ? "text-muted/40 line-through decoration-rose-400/60 decoration-[1.5px]" : "text-foreground/85"}>
+          {b.label}
+        </div>
+        {b.detail && (
+          <div className={struck ? "text-muted/30 line-through text-[11px] mt-0.5" : "text-muted/70 text-[11px] mt-0.5"}>
+            {b.detail}
+          </div>
+        )}
+        {struck && b.absorbedBy && (
+          <div className="mt-1 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-500/10 ring-1 ring-emerald-400/30">
+            <span className="material-symbols-outlined text-emerald-300" style={{ fontSize: 11 }}>handshake</span>
+            <span className="text-[10px] uppercase tracking-[0.12em] font-semibold text-emerald-200">
+              {b.absorbedBy}
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="text-right whitespace-nowrap">
+        {struck ? (
+          <div className="text-muted/40 line-through tabular-nums text-[11px]">
+            {fromATotal !== undefined ? `$${(fromATotal / 1_000).toFixed(0)}K` : "—"}
+          </div>
+        ) : (
+          <>
+            <div className="font-semibold tabular-nums text-foreground/90">
+              ${(b.mxn / 1_000).toFixed(0)}K
+            </div>
+            {b.monthly !== undefined && (
+              <div className="text-muted/60 text-[10px] tabular-nums">
+                ${(b.monthly / 1_000).toFixed(b.monthly % 1_000 === 0 ? 0 : 1)}K/mes
+                {fromAMonthly !== undefined && fromAMonthly !== b.monthly && (
+                  <span className="ml-1 line-through text-muted/35">
+                    ${(fromAMonthly / 1_000).toFixed(fromAMonthly % 1_000 === 0 ? 0 : 1)}K
+                  </span>
+                )}
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </li>
   );
 }
 

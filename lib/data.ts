@@ -83,15 +83,18 @@ export const roi = {
 };
 
 // Aporte Inversor in-kind — TODO el opex de Inmobiq durante 10 meses
+// Ordenado: equipo de trabajo (roles) primero, luego gastos operativos
 export const veq_inkind = [
-  { label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
-  { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
-  { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
-  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
-  { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
-  { label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
-  { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
-  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
+  // EQUIPO DE TRABAJO
+  { category: "team", label: "2 desarrolladores full-stack", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
+  { category: "team", label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
+  { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
+  { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
+  { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
+  // GASTOS OPERATIVOS
+  { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
+  { category: "expense", label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
+  { category: "expense", label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
 ];
 
 // Cash a Inmobiq — desglose
@@ -528,15 +531,18 @@ export const roundB = {
 // Aporte Inversor in-kind B — réplica estructural de A con partidas reducidas o absorbidas
 // `struck: true` → línea tachada, NO suma al monto cash · `absorbedBy` → quién la cubre
 // `fromA` → valor original en propuesta A para mostrar el delta visual
+// Ordenado: equipo de trabajo primero, luego gastos operativos
 export const veq_inkindB = [
-  { label: "1 desarrollador full-stack", detail: "Construye y mantiene la plataforma", monthly: 25_000, mxn: 250_000, fromA: { monthly: 70_000, label: "2 desarrolladores" } },
-  { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
-  { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
-  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe equipo VEQ" },
-  { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 12_500, mxn: 125_000, fromA: { monthly: 22_500 } },
-  { label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe equipo VEQ" },
-  { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "Difiere post-beta · fundador asume" },
-  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 5_000, mxn: 50_000, fromA: { monthly: 10_000 } },
+  // EQUIPO DE TRABAJO
+  { category: "team", label: "1 desarrollador JR full-stack", detail: "Perfil junior · suficiente para mantener la plataforma post-beta y cerrar features pendientes", monthly: 25_000, mxn: 250_000, fromA: { monthly: 70_000, label: "2 desarrolladores full-stack" } },
+  { category: "team", label: "Salario fundador", detail: "Producto, dirección, comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
+  { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
+  { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
+  { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "Compartido VEQ + fundador" },
+  // GASTOS OPERATIVOS
+  { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Empuje inicial de adquisición · combinada con bases de datos AMPI/INEGI ya integradas para no depender solo de paid", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
+  { category: "expense", label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 12_500, mxn: 125_000, fromA: { monthly: 22_500 } },
+  { category: "expense", label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 5_000, mxn: 50_000, fromA: { monthly: 10_000 } },
 ];
 
 // Compensación fundador B — invertido: menos al cierre, más en hito
