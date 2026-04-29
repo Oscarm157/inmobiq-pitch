@@ -56,7 +56,7 @@ const copyA = {
   cashflowKicker: "Inmobiq genera utilidad desde el mes 3",
   cashflowCopy:
     "Inversor cubre todo el opex los primeros 10 meses. El único gasto de Inmobiq son los curadores — que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.",
-  cashflowFootnoteLeft: "M1-M10 · Inversor cubre $238K/mes opex",
+  cashflowFootnoteLeft: "M1-M10 · Inversor cubre $228K/mes opex",
   cashflowFootnoteRight: "Utilidad acumulada M1-M10 ~$5M MXN. Suficiente para cubrir el opex propio a partir del mes 11.",
 };
 

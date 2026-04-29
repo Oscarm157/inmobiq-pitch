@@ -107,20 +107,21 @@ export const founder_secondary_tranches = [
 ];
 
 // Flujo mensual — opex completo (Inversor + Inmobiq) vs ingresos
-// M1-M10: Inversor cubre $238K/mes opex · Inmobiq solo paga curadores
-// M11+: Inmobiq asume opex propio ($238K/mes) + sigue pagando curadores
+// M1-M10: Inversor cubre $227.5K/mes opex · Inmobiq solo paga curadores
+// M11+: Inmobiq asume opex propio ($227.5K/mes) + sigue pagando curadores
 // Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) × $20K/mes
-const opexMonthly = 238_000;
+// opexMonthly = suma de veq_inkind breakdown: 70+40+25+15+15+30+22.5+10 = 227.5K
+const opexMonthly = 227_500;
 export const monthly_cash_flow = [
-  { month: 1,  cities: 1,  users: 28,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 20_412,    net_mxn: -19_588,  margin_pct: -96, note: "Tijuana piloto · pre-escala" },
-  { month: 3,  cities: 5,  users: 280,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 204_120,   net_mxn: 44_120,   margin_pct: 22, note: "Ola 1 abriendo · 5 ciudades" },
-  { month: 6,  cities: 8,  users: 805,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 586_845,   net_mxn: 346_845,  margin_pct: 59, note: "Rentable · ola 2 abriendo" },
-  { month: 9,  cities: 8,  users: 1_385, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_009_665, net_mxn: 769_665,  margin_pct: 76, note: "Rentable · 8 ciudades estabilizadas" },
-  { month: 12, cities: 15, users: 1_950, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 1_421_550, net_mxn: 743_550,  margin_pct: 52, note: "Ola 3 · 15 ciudades · Inmobiq asume opex post-M10" },
-  { month: 15, cities: 15, users: 3_175, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_314_575, net_mxn: 1_636_575, margin_pct: 71, note: "Crecimiento sostenido" },
-  { month: 16, cities: 15, users: 3_580, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_609_820, net_mxn: 1_931_820, margin_pct: 74, note: "Optimización" },
-  { month: 17, cities: 15, users: 3_990, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 2_908_710, net_mxn: 2_230_710, margin_pct: 77, note: "Optimización" },
-  { month: 18, cities: 15, users: 4_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly, burn_mxn: 440_000, mrr_mxn: 3_193_020, net_mxn: 2_515_020, margin_pct: 79, note: "Plan completo · autosostenible" },
+  { month: 1,  cities: 1,  users: 28,    curators: 2,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 20_412,    net_mxn: -19_588,   margin_pct: -96, note: "Tijuana piloto · pre-escala" },
+  { month: 3,  cities: 5,  users: 280,   curators: 8,  opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 160_000, mrr_mxn: 204_120,   net_mxn: 44_120,    margin_pct: 22, note: "Ola 1 abriendo · 5 ciudades" },
+  { month: 6,  cities: 8,  users: 805,   curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 586_845,   net_mxn: 346_845,   margin_pct: 59, note: "Rentable · ola 2 abriendo" },
+  { month: 9,  cities: 8,  users: 1_385, curators: 12, opex_veq_mxn: opexMonthly, opex_inmobiq_mxn: 0,            burn_mxn: 240_000, mrr_mxn: 1_009_665, net_mxn: 769_665,   margin_pct: 76, note: "Rentable · 8 ciudades estabilizadas" },
+  { month: 12, cities: 15, users: 1_950, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly,  burn_mxn: 440_000, mrr_mxn: 1_421_550, net_mxn: 754_050,   margin_pct: 53, note: "Ola 3 · 15 ciudades · Inmobiq asume opex post-M10" },
+  { month: 15, cities: 15, users: 3_175, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly,  burn_mxn: 440_000, mrr_mxn: 2_314_575, net_mxn: 1_647_075, margin_pct: 71, note: "Crecimiento sostenido" },
+  { month: 16, cities: 15, users: 3_580, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly,  burn_mxn: 440_000, mrr_mxn: 2_609_820, net_mxn: 1_942_320, margin_pct: 74, note: "Optimización" },
+  { month: 17, cities: 15, users: 3_990, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly,  burn_mxn: 440_000, mrr_mxn: 2_908_710, net_mxn: 2_241_210, margin_pct: 77, note: "Optimización" },
+  { month: 18, cities: 15, users: 4_380, curators: 22, opex_veq_mxn: 0,           opex_inmobiq_mxn: opexMonthly,  burn_mxn: 440_000, mrr_mxn: 3_193_020, net_mxn: 2_525_520, margin_pct: 79, note: "Plan completo · autosostenible" },
 ];
 
 // Uso de fondos — breakdown del paquete total Inversor ($4.785M MXN)
@@ -487,7 +488,7 @@ export const slideVeqCategories: string[][] = [
 // ============================================================================
 // PROPUESTA B — Arranque liviano (menos riesgo para Inversor)
 // 1 dev en lugar de 2 · sin admin/legal/marketing-VEQ · pub/infra/sw reducidos
-// Equity 80/20 · paquete cash $1.325M MXN · valuación derivada del paquete
+// Equity 80/20 · paquete cash $1.275M MXN · valuación derivada del paquete
 // ============================================================================
 
 export const roundB = {
