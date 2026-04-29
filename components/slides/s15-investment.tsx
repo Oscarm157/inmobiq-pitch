@@ -201,6 +201,25 @@ export function S15Investment() {
           </div>
         </FadeItem>
 
+        {/* Opción de expansión — solo Plan B */}
+        {variant === "B" && (
+          <FadeItem>
+            <div className="rounded-xl bg-accent/[0.06] ring-1 ring-accent/30 p-4 flex items-start gap-3">
+              <span className="material-symbols-outlined text-accent shrink-0 mt-0.5" style={{ fontSize: 20 }}>expand_circle_right</span>
+              <div>
+                <div className="text-xs uppercase tracking-[0.18em] font-semibold text-accent mb-1">
+                  Opción de expansión
+                </div>
+                <div className="text-sm text-foreground/90 leading-relaxed">
+                  VEQ podrá adquirir hasta un <span className="font-semibold text-foreground">20% adicional</span> de
+                  participación dentro de los primeros 18 meses, a un <span className="font-semibold text-foreground">40%
+                  de descuento</span> sobre la valuación vigente al momento del ejercicio.
+                </div>
+              </div>
+            </div>
+          </FadeItem>
+        )}
+
         {/* Utilidad mensual de Inmobiq */}
         <FadeItem>
           <div key={`cf-${variant}`} className="rounded-2xl bg-card p-5 sm:p-6 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
