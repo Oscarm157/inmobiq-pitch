@@ -465,6 +465,7 @@ function PackageCard({
       {detail && <div className="text-xs text-foreground/75 leading-relaxed mb-3">{detail}</div>}
       {bonus && (
         <div className="mt-1 mb-3 rounded-xl bg-foreground/5 border border-card-border/60 p-3.5">
+          <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-foreground/70 mb-1">Bono por tracción</div>
           <div className={`text-2xl sm:text-3xl font-semibold tabular-nums ${text}`}>
             {bonus.amount}
             <span className="text-xs text-muted ml-1 font-medium tracking-wide">MXN</span>
