@@ -50,7 +50,7 @@ const copyA = {
   inkindSubtitle: "Opex completo de Inmobiq durante 10 meses",
   inkindDetail:
     "Inversor asume el opex completo: equipo, infraestructura, marketing y legal. Inmobiq solo se preocupa por curadores, que se cubren con el revenue de cada ciudad.",
-  founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" },
+  founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 400 usuarios pagados" },
   founderUpfront: "$250K",
   founderSubtitle: "Al cierre del deal · pago asegurado",
   cashflowKicker: "Inmobiq genera utilidad desde el mes 3",
@@ -78,10 +78,10 @@ const copyB = {
   inkindSubtitle: "Opex liviano (in-kind) durante 10 meses",
   inkindDetail:
     "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash de Inversor.",
-  founderBonus: { amount: "+ $250K", when: "al llegar a los primeros 500 usuarios pagados" },
+  founderBonus: { amount: "+ $250K", when: "al llegar a los primeros 400 usuarios pagados" },
   founderUpfront: "$150K",
   founderSubtitle: "Al cierre del deal · cheque inicial menor",
-  cashflowKicker: "Break-even desde mes 3 · hito de 500 usuarios en mes 7",
+  cashflowKicker: "Break-even desde mes 3 · hito de 400 usuarios en mes 7",
   cashflowCopy:
     "Inversor cubre $87.5K/mes los primeros 10 meses. Crecimiento más medido por menor publicidad y un solo desarrollador, pero con riesgo significativamente menor para VEQ.",
   cashflowFootnoteLeft: "M1-M10 · Inversor cubre $87.5K/mes opex",

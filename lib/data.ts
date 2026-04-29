@@ -103,7 +103,7 @@ export const cash_to_operation_breakdown = [
 // Compensación fundador — 2 tramos atados a hitos · pagada por Inversor
 export const founder_secondary_tranches = [
   { tranche: 1, mxn: 250_000, milestone: "Cierre del trato (inicial)" },
-  { tranche: 2, mxn: 150_000, milestone: "Primeros 300 usuarios pagados (final)" },
+  { tranche: 2, mxn: 150_000, milestone: "Primeros 400 usuarios pagados (final)" },
 ];
 
 // Flujo mensual — opex completo (Inversor + Inmobiq) vs ingresos
@@ -159,7 +159,7 @@ export const use_of_funds = [
     usd: 21_622,
     items: [
       { label: "Tramo 1 · cierre del trato", detail: "Pago inicial", mxn: 250_000 },
-      { label: "Tramo 2 · primeros 300 usuarios", detail: "Hito de tracción", mxn: 150_000 },
+      { label: "Tramo 2 · primeros 400 usuarios", detail: "Hito de tracción", mxn: 150_000 },
     ],
   },
 ];
@@ -502,7 +502,7 @@ export const roundB = {
   founder_salary_monthly_mxn: 30_000,
   founder_salary_months: 10,
 
-  // Compensación al fundador — invertido vs A: cierre $150K + $250K @ 500 usuarios
+  // Compensación al fundador — invertido vs A: cierre $150K + $250K @ 400 usuarios
   founder_secondary_mxn: 400_000,
   founder_secondary_tranches: 2,
 
@@ -544,7 +544,7 @@ export const veq_inkindB = [
 // Compensación fundador B — invertido: menos al cierre, más en hito
 export const founder_secondary_tranches_B = [
   { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
-  { tranche: 2, mxn: 250_000, milestone: "Primeros 500 usuarios pagados (final)" },
+  { tranche: 2, mxn: 250_000, milestone: "Primeros 400 usuarios pagados (final)" },
 ];
 
 // Flujo mensual B — opex liviano $87.5K/mes · crecimiento ~50% más lento
