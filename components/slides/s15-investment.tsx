@@ -67,11 +67,10 @@ const copyB = {
   </>,
   description: (
     <>
-      Misma estructura que A: <span className="text-foreground font-semibold">admin y marketing los absorbe
-      el fundador, legal se comparte VEQ + fundador</span>, y las restantes ajustadas a lo esencial.
-      Equipo mínimo, ritmo medido y menor compromiso de capital por
-      <span className="text-foreground font-semibold"> 20% de participación</span>.
-      La plataforma ya está al 80% — el cheque solo financia el último empujón a beta Tijuana.
+      Estructura operativa reducida: <span className="text-foreground font-semibold">admin y marketing los absorbe
+      el fundador, legal se comparte VEQ + fundador</span>. Menor compromiso de capital,
+      menor riesgo, con <span className="text-foreground font-semibold">20% de participación</span> y
+      opción de expansión al cierre del primer año.
     </>
   ),
   inkindLabel: "Aporte Inversor · opex mensual liviano",
