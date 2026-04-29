@@ -78,7 +78,7 @@ const copyB = {
   inkindSubtitle: "Opex liviano (in-kind) durante 10 meses",
   inkindDetail:
     "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash de Inversor.",
-  founderBonus: { amount: "+ $250K", when: "al llegar a los primeros 400 usuarios pagados" },
+  founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 400 usuarios pagados" },
   founderUpfront: "$150K",
   founderSubtitle: "Al cierre del deal · cheque inicial menor",
   cashflowKicker: "Break-even desde mes 3 · hito de 400 usuarios en mes 7",

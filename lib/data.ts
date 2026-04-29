@@ -488,12 +488,12 @@ export const slideVeqCategories: string[][] = [
 // ============================================================================
 // PROPUESTA B — Arranque liviano (menos riesgo para Inversor)
 // 1 dev en lugar de 2 · sin admin/legal/marketing-VEQ · pub/infra/sw reducidos
-// Equity 80/20 · paquete cash $1.275M MXN · valuación derivada del paquete
+// Equity 80/20 · paquete cash $1.175M MXN · valuación derivada del paquete
 // ============================================================================
 
 export const roundB = {
-  package_total_mxn: 1_275_000,
-  package_total_usd: 68_919,
+  package_total_mxn: 1_175_000,
+  package_total_usd: 63_514,
 
   cash_to_operation_mxn: 0,
   cash_to_operation_usd: 0,
@@ -503,8 +503,8 @@ export const roundB = {
   founder_salary_monthly_mxn: 30_000,
   founder_salary_months: 10,
 
-  // Compensación al fundador — invertido vs A: cierre $150K + $250K @ 400 usuarios
-  founder_secondary_mxn: 400_000,
+  // Compensación al fundador — cierre $150K + $150K @ 400 usuarios
+  founder_secondary_mxn: 300_000,
   founder_secondary_tranches: 2,
 
   // Aporte Inversor in-kind (10 meses · solo 5 partidas reales)
@@ -515,12 +515,12 @@ export const roundB = {
   founder_percent: 80,
   employee_pool_percent: 0,
 
-  post_money_mxn: 6_375_000,
-  post_money_usd: 344_595,
-  pre_money_mxn: 5_100_000,
-  pre_money_usd: 275_676,
+  post_money_mxn: 5_875_000,
+  post_money_usd: 317_568,
+  pre_money_mxn: 4_700_000,
+  pre_money_usd: 254_054,
 
-  instrument: "Participación directa · 20% por paquete de $1.275M MXN",
+  instrument: "Participación directa · 20% por paquete de $1.175M MXN",
   runway_months: 10,
   buffer_months: 0,
 };
@@ -545,7 +545,7 @@ export const veq_inkindB = [
 // Compensación fundador B — invertido: menos al cierre, más en hito
 export const founder_secondary_tranches_B = [
   { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
-  { tranche: 2, mxn: 250_000, milestone: "Primeros 400 usuarios pagados (final)" },
+  { tranche: 2, mxn: 150_000, milestone: "Primeros 400 usuarios pagados (final)" },
 ];
 
 // Flujo mensual B — opex liviano $87.5K/mes · crecimiento ~50% más lento
