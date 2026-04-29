@@ -175,7 +175,7 @@ export function S15Investment() {
 
         {/* Desglose del paquete */}
         <FadeItem>
-          <div key={`pkg-${variant}`} className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+          <div key={`pkg-${variant}`} className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-4 items-start animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <PackageCard
               label="Compensación al fundador"
               amount={data.copy.founderUpfront}
