@@ -42,14 +42,14 @@ const copyA = {
     <>
       Inversor cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
       (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
-      que se cubren con el revenue de cada ciudad. Paquete total $4.635M MXN por
+      que se cubren con el revenue de cada ciudad. Estructura completa, equipo robusto y escala agresiva por
       <span className="text-foreground font-semibold"> 49% de participación</span>.
     </>
   ),
   inkindLabel: "Aporte Inversor · opex mensual",
-  inkindSubtitle: "MXN /mes · opex completo de Inmobiq",
+  inkindSubtitle: "Opex completo de Inmobiq durante 10 meses",
   inkindDetail:
-    "Inversor asume el opex completo durante 10 meses: equipo, infraestructura, marketing y legal. Inmobiq solo se preocupa por curadores. Total acumulado 10 meses · $2.275M MXN.",
+    "Inversor asume el opex completo: equipo, infraestructura, marketing y legal. Inmobiq solo se preocupa por curadores, que se cubren con el revenue de cada ciudad.",
   founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" },
   founderUpfront: "$250K",
   founderSubtitle: "Al cierre del deal · pago asegurado",
@@ -69,15 +69,15 @@ const copyB = {
     <>
       Misma estructura que A: <span className="text-foreground font-semibold">admin y marketing los absorbe
       el fundador, legal se comparte VEQ + fundador</span>, y las restantes ajustadas a lo esencial.
-      Paquete total $1.275M MXN por
+      Equipo mínimo, ritmo medido y menor compromiso de capital por
       <span className="text-foreground font-semibold"> 20% de participación</span>.
       La plataforma ya está al 80% — el cheque solo financia el último empujón a beta Tijuana.
     </>
   ),
   inkindLabel: "Aporte Inversor · opex mensual liviano",
-  inkindSubtitle: "MXN /mes · opex liviano (in-kind)",
+  inkindSubtitle: "Opex liviano (in-kind) durante 10 meses",
   inkindDetail:
-    "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash. Total acumulado 10 meses · $875K MXN.",
+    "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash de Inversor.",
   founderBonus: { amount: "+ $250K", when: "al llegar a los primeros 500 usuarios pagados" },
   founderUpfront: "$150K",
   founderSubtitle: "Al cierre del deal · cheque inicial menor",
@@ -123,7 +123,7 @@ export function S15Investment() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
               {data.copy.headline}
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-foreground/85 max-w-2xl leading-relaxed">
               {data.copy.description}
             </p>
           </div>
@@ -167,7 +167,7 @@ export function S15Investment() {
           <div key={`stats-${variant}`} className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <Stat label="Fundador" value={`${data.round.founder_percent}%`} sub={variant === "A" ? "voto de calidad · libertad creativa y de producto" : "control mayoritario · dirige producto y operación"} />
             <Stat label="Inversor" value={`${data.round.equity_percent}%`} sub={variant === "A" ? "socio co-operador" : "socio capital · menor exposición"} accent />
-            <Stat label="Valuación post-inversión" value={fmtMxn(data.round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(data.round.pre_money_mxn)}`} />
+            <Stat label="Valuación post-inversión" value={fmtMxn(data.round.post_money_mxn)} currency="MXN" sub={`Pre-inversión ${fmtMxn(data.round.pre_money_mxn)} MXN`} />
           </div>
         </FadeItem>
 
@@ -185,6 +185,11 @@ export function S15Investment() {
             <PackageCard
               label={data.copy.inkindLabel}
               amount={fmtMxn(data.round.veq_inkind_mxn / data.round.veq_inkind_months)}
+              amountSuffix="/Mes"
+              secondary={{
+                amount: fmtMxn(data.round.veq_inkind_mxn),
+                label: `Total acumulado · ${data.round.veq_inkind_months} meses`,
+              }}
               subtitle={data.copy.inkindSubtitle}
               detail={data.copy.inkindDetail}
               color="emerald"
@@ -304,7 +309,7 @@ export function S15Investment() {
                   M11+ · Inmobiq asume opex
                 </span>
               </span>
-              <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
+              <span className="ml-auto italic text-muted max-w-[420px] text-right">
                 {data.copy.cashflowFootnoteRight}
               </span>
             </div>
@@ -382,6 +387,8 @@ function ToggleButton({
 function PackageCard({
   label,
   amount,
+  amountSuffix,
+  secondary,
   subtitle,
   detail,
   color,
@@ -390,6 +397,8 @@ function PackageCard({
 }: {
   label: string;
   amount: string;
+  amountSuffix?: string;
+  secondary?: { amount: string; label: string };
   subtitle: string;
   detail: string;
   color: "accent" | "emerald" | "amber";
@@ -399,17 +408,37 @@ function PackageCard({
   const text =
     color === "emerald" ? "text-emerald-300" : color === "amber" ? "text-amber-300" : "text-gradient-accent";
   const ring =
-    color === "emerald" ? "ring-emerald-400/20" : color === "amber" ? "ring-amber-400/20" : "ring-accent/20";
+    color === "emerald" ? "ring-emerald-400/25" : color === "amber" ? "ring-amber-400/25" : "ring-accent/25";
 
   return (
     <div className={`rounded-2xl bg-card p-5 ring-1 ${ring} flex flex-col h-full`}>
-      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted mb-1.5">{label}</div>
-      <div className={`text-3xl sm:text-4xl font-semibold tabular-nums ${text}`}>{amount}</div>
-      <div className="text-xs text-muted mt-1 mb-3">{subtitle}</div>
-      {detail && <div className="text-xs text-muted leading-relaxed mb-3">{detail}</div>}
+      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-foreground/85 mb-1.5">{label}</div>
+      <div className={`text-3xl sm:text-4xl font-semibold tabular-nums ${text}`}>
+        {amount}
+        <span className="text-sm sm:text-base text-muted ml-1.5 font-medium tracking-wide">MXN</span>
+        {amountSuffix && (
+          <span className="text-lg sm:text-xl text-muted ml-1 font-medium">{amountSuffix}</span>
+        )}
+      </div>
+      {secondary && (
+        <div className="mt-1.5 flex items-baseline gap-2 flex-wrap">
+          <span className="text-xl sm:text-2xl font-semibold tabular-nums text-foreground/90">
+            {secondary.amount}
+            <span className="text-xs text-muted ml-1 font-medium tracking-wide">MXN</span>
+          </span>
+          <span className="text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">
+            {secondary.label}
+          </span>
+        </div>
+      )}
+      <div className="text-xs text-muted mt-2 mb-3">{subtitle}</div>
+      {detail && <div className="text-xs text-foreground/75 leading-relaxed mb-3">{detail}</div>}
       {bonus && (
         <div className="mt-1 mb-3 rounded-xl bg-foreground/5 border border-card-border/60 p-3.5">
-          <div className={`text-2xl sm:text-3xl font-semibold tabular-nums ${text}`}>{bonus.amount}</div>
+          <div className={`text-2xl sm:text-3xl font-semibold tabular-nums ${text}`}>
+            {bonus.amount}
+            <span className="text-xs text-muted ml-1 font-medium tracking-wide">MXN</span>
+          </div>
           <div className="text-xs text-muted mt-0.5 leading-snug">{bonus.when}</div>
         </div>
       )}
@@ -421,10 +450,10 @@ function PackageCard({
             return (
               <div key={cat}>
                 <div className="flex items-baseline justify-between mb-2">
-                  <span className="text-[11px] uppercase tracking-widest font-semibold text-muted">
+                  <span className="text-[11px] uppercase tracking-widest font-semibold text-foreground/90">
                     {cat === "team" ? "Equipo de trabajo" : "Gastos operativos"}
                   </span>
-                  <span className="text-[10px] uppercase tracking-widest font-semibold text-muted/60">
+                  <span className="text-[10px] uppercase tracking-widest font-semibold text-muted">
                     Total acumulado · 10 meses
                   </span>
                 </div>
@@ -448,16 +477,16 @@ function BreakdownRow({ b }: { b: InkindRow }) {
   return (
     <li className="flex items-start justify-between gap-3 text-xs">
       <div className="flex-1 leading-snug">
-        <div className={struck ? "text-muted/40 line-through decoration-rose-400/60 decoration-[1.5px]" : "text-foreground/85"}>
+        <div className={struck ? "text-muted/70 line-through decoration-rose-400/70 decoration-[1.5px]" : "text-foreground/95"}>
           {b.label}
         </div>
         {b.detail && (
-          <div className={struck ? "text-muted/30 line-through text-[11px] mt-0.5" : "text-muted/70 text-[11px] mt-0.5"}>
+          <div className={struck ? "text-muted/55 line-through text-[11px] mt-0.5" : "text-muted text-[11px] mt-0.5"}>
             {b.detail}
           </div>
         )}
         {struck && b.absorbedBy && (
-          <div className="mt-1 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-500/10 ring-1 ring-emerald-400/30">
+          <div className="mt-1 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-500/15 ring-1 ring-emerald-400/40">
             <span className="material-symbols-outlined text-emerald-300" style={{ fontSize: 11 }}>handshake</span>
             <span className="text-[10px] uppercase tracking-[0.12em] font-semibold text-emerald-200">
               {b.absorbedBy}
@@ -467,19 +496,19 @@ function BreakdownRow({ b }: { b: InkindRow }) {
       </div>
       <div className="text-right whitespace-nowrap">
         {struck ? (
-          <div className="text-muted/40 line-through tabular-nums text-[11px]">
+          <div className="text-muted/65 line-through tabular-nums text-[11px]">
             {fromATotal !== undefined ? `$${(fromATotal / 1_000).toFixed(0)}K` : "—"}
           </div>
         ) : (
           <>
-            <div className="font-semibold tabular-nums text-foreground/90">
+            <div className="font-semibold tabular-nums text-foreground">
               ${(b.mxn / 1_000).toFixed(0)}K
             </div>
             {b.monthly !== undefined && (
-              <div className="text-muted/60 text-[10px] tabular-nums">
+              <div className="text-muted text-[10px] tabular-nums">
                 ${(b.monthly / 1_000).toFixed(b.monthly % 1_000 === 0 ? 0 : 1)}K/mes
                 {fromAMonthly !== undefined && fromAMonthly !== b.monthly && (
-                  <span className="ml-1 line-through text-muted/35">
+                  <span className="ml-1 line-through text-muted/60">
                     ${(fromAMonthly / 1_000).toFixed(fromAMonthly % 1_000 === 0 ? 0 : 1)}K
                   </span>
                 )}
@@ -517,10 +546,10 @@ function TradeoffCard({
         {tag}
       </span>
       <div className="flex-1 min-w-0">
-        <div className={`text-xs uppercase tracking-[0.16em] font-semibold mb-1 ${active ? "text-foreground" : "text-foreground/70"}`}>
+        <div className={`text-xs uppercase tracking-[0.16em] font-semibold mb-1 ${active ? "text-foreground" : "text-foreground/75"}`}>
           {title}
         </div>
-        <div className={`text-[12px] leading-relaxed ${active ? "text-muted-light" : "text-muted/80"}`}>
+        <div className={`text-[12px] leading-relaxed ${active ? "text-foreground/85" : "text-muted"}`}>
           {copy}
         </div>
       </div>
@@ -528,12 +557,25 @@ function TradeoffCard({
   );
 }
 
-function Stat({ label, value, sub, accent }: { label: string; value: string; sub: string; accent?: boolean }) {
+function Stat({
+  label,
+  value,
+  currency,
+  sub,
+  accent,
+}: {
+  label: string;
+  value: string;
+  currency?: string;
+  sub: string;
+  accent?: boolean;
+}) {
   return (
     <div>
-      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted">{label}</div>
+      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-foreground/85">{label}</div>
       <div className={`text-2xl font-semibold tabular-nums mt-1 ${accent ? "text-gradient-accent" : "text-foreground"}`}>
         {value}
+        {currency && <span className="text-sm text-muted ml-1.5 font-medium tracking-wide">{currency}</span>}
       </div>
       <div className="text-[11px] text-muted mt-0.5">{sub}</div>
     </div>

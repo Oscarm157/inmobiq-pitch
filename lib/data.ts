@@ -14,13 +14,9 @@ export const brand = {
 };
 
 export const round = {
-  // Paquete total Inversor (todo lo aporta Inversor — Inmobiq solo paga curadores)
-  package_total_mxn: 4_635_000,
-  package_total_usd: 250_541,
-
-  // Cash a Inmobiq (apertura de ciudades + ramp pre-revenue de curadores)
-  cash_to_operation_mxn: 1_960_000,
-  cash_to_operation_usd: 105_946,
+  // Paquete total Inversor: aporte in-kind 10 meses opex + compensación fundador
+  package_total_mxn: 2_675_000,
+  package_total_usd: 144_595,
 
   // Salario fundador (cubierto por Inversor in-kind)
   founder_salary_mxn: 400_000,
@@ -47,7 +43,7 @@ export const round = {
   pre_money_usd: 260_757,
 
   // Términos
-  instrument: "Participación directa · 49% por paquete de $4.635M MXN",
+  instrument: "Participación directa · 49% por aporte $2.675M MXN (in-kind + comp fundador)",
   runway_months: 10,
   buffer_months: 0,
 };
