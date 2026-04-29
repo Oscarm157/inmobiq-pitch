@@ -212,8 +212,8 @@ export function S15Investment() {
                 </div>
                 <div className="text-sm text-foreground/90 leading-relaxed">
                   VEQ podrá adquirir hasta un <span className="font-semibold text-foreground">20% adicional</span> de
-                  participación dentro de los primeros 18 meses, a un <span className="font-semibold text-foreground">40%
-                  de descuento</span> sobre la valuación vigente al momento del ejercicio.
+                  participación, con la empresa valuada a <span className="font-semibold text-foreground">1 año de ventas
+                  al momento del ejercicio</span>.
                 </div>
               </div>
             </div>
