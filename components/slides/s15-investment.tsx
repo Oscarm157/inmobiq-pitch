@@ -501,11 +501,11 @@ function BreakdownRow({ b }: { b: InkindRow }) {
   return (
     <li className="flex items-start justify-between gap-4 text-[13px] pb-4 border-b border-card-border last:border-0 last:pb-0">
       <div className="flex-1 leading-snug">
-        <div className={struck ? "text-muted/70 line-through decoration-rose-400/70 decoration-[1.5px]" : "text-foreground/95"}>
+        <div className={struck ? "text-foreground/80" : "text-foreground/95"}>
           {b.label}
         </div>
         {b.detail && (
-          <div className={struck ? "text-muted/55 line-through text-[11px] mt-0.5" : "text-muted text-[11px] mt-0.5"}>
+          <div className={struck ? "text-muted/70 text-[11px] mt-0.5" : "text-muted text-[11px] mt-0.5"}>
             {b.detail}
           </div>
         )}
@@ -520,9 +520,7 @@ function BreakdownRow({ b }: { b: InkindRow }) {
       </div>
       <div className="text-right whitespace-nowrap">
         {struck ? (
-          <div className="text-muted/65 line-through tabular-nums text-[11px]">
-            {fromATotal !== undefined ? `$${(fromATotal / 1_000).toFixed(0)}K` : "—"}
-          </div>
+          <div className="text-muted/50 tabular-nums text-[11px]">—</div>
         ) : (
           <>
             <div className="font-semibold tabular-nums text-foreground">
