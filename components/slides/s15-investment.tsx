@@ -151,6 +151,7 @@ export function S15Investment() {
               copy="Equipo completo (2 devs, admin, marketing, legal). Capital cash mayor, escala agresiva, 14 ciudades en 18 meses."
               tone="amber"
               active={variant === "A"}
+              onClick={() => setVariant("A")}
             />
             <TradeoffCard
               tag="B"
@@ -158,6 +159,7 @@ export function S15Investment() {
               copy="Equipo mínimo + absorciones VEQ. Cheque cash menor, ritmo más medido, beta Tijuana sólida antes de expansión."
               tone="emerald"
               active={variant === "B"}
+              onClick={() => setVariant("B")}
             />
           </div>
         </FadeItem>
@@ -527,21 +529,27 @@ function TradeoffCard({
   copy,
   tone,
   active,
+  onClick,
 }: {
   tag: "A" | "B";
   title: string;
   copy: string;
   tone: "amber" | "emerald";
   active: boolean;
+  onClick: () => void;
 }) {
   const ring = active
     ? tone === "amber"
       ? "ring-amber-400/50 bg-amber-500/[0.06]"
       : "ring-emerald-400/50 bg-emerald-500/[0.06]"
-    : "ring-card-border/60 bg-card/40";
+    : "ring-card-border/60 bg-card/40 hover:ring-card-border hover:bg-card/60";
   const tagColor = tone === "amber" ? "text-amber-300 bg-amber-500/15" : "text-emerald-300 bg-emerald-500/15";
   return (
-    <div className={`rounded-xl ring-1 ${ring} p-3.5 flex items-start gap-3 transition-all`}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-xl ring-1 ${ring} p-3.5 flex items-start gap-3 transition-all text-left cursor-pointer`}
+    >
       <span className={`shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-sm font-bold ${tagColor}`}>
         {tag}
       </span>
@@ -553,7 +561,7 @@ function TradeoffCard({
           {copy}
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
