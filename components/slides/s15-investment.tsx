@@ -34,7 +34,7 @@ type InkindRow = {
 };
 
 const copyA = {
-  eyebrow: "Ronda · capital con operación",
+  eyebrow: "Ronda · plan intensivo",
   headline: <>
     <em className="italic text-gradient-accent">No es solo capital.</em> Inversor opera junto a Inmobiq.
   </>,
@@ -61,7 +61,7 @@ const copyA = {
 };
 
 const copyB = {
-  eyebrow: "Ronda · arranque liviano",
+  eyebrow: "Ronda · plan liviano",
   headline: <>
     <em className="italic text-gradient-accent">Arranque liviano.</em> Menos riesgo, mismo destino.
   </>,
@@ -350,8 +350,8 @@ function VariantToggle({ variant, onChange }: { variant: Variant; onChange: (v: 
       aria-label="Variante de propuesta"
       className="inline-flex items-center gap-0.5 p-1 rounded-xl bg-black/40 ring-1 ring-white/10 backdrop-blur-sm"
     >
-      <ToggleButton active={variant === "A"} onClick={() => onChange("A")} sub="capital con operación">A</ToggleButton>
-      <ToggleButton active={variant === "B"} onClick={() => onChange("B")} sub="arranque liviano">B</ToggleButton>
+      <ToggleButton active={variant === "A"} onClick={() => onChange("A")} sub="plan intensivo">A</ToggleButton>
+      <ToggleButton active={variant === "B"} onClick={() => onChange("B")} sub="plan liviano">B</ToggleButton>
     </div>
   );
 }
