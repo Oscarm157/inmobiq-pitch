@@ -1,20 +1,98 @@
+"use client";
+
+import { useState } from "react";
 import { Slide } from "../slide";
 import { TermLegend } from "../ui/term-legend";
 import { FadeStack, FadeItem } from "../ui/motion-primitives";
 import {
   round,
+  roundB,
   roi,
   veq_inkind,
+  veq_inkindB,
   monthly_cash_flow,
+  monthly_cash_flow_B,
 } from "@/lib/data";
 
 const fmtMxn = (n: number) =>
   n >= 1_000_000
     ? `$${(n / 1_000_000).toFixed(2)}M`
     : `$${Math.round(n / 1_000).toLocaleString("es-MX")}K`;
-const fmtK = (n: number) => `$${Math.round(n / 1_000).toLocaleString("es-MX")}K`;
+
+type Variant = "A" | "B";
+
+type CashRow = typeof monthly_cash_flow[number];
+type InkindRow = {
+  label: string;
+  detail?: string;
+  monthly?: number;
+  mxn: number;
+  struck?: boolean;
+  absorbedBy?: string;
+  fromA?: { monthly?: number; label?: string };
+};
+
+const copyA = {
+  eyebrow: "Ronda · capital con operación",
+  headline: <>
+    <em className="italic text-gradient-accent">No es solo capital.</em> Inversor opera junto a Inmobiq.
+  </>,
+  description: (
+    <>
+      Inversor cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
+      (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
+      que se cubren con el revenue de cada ciudad. Paquete total $4.635M MXN por
+      <span className="text-foreground font-semibold"> 49% de participación</span>.
+    </>
+  ),
+  inkindLabel: "Aporte Inversor · opex mensual",
+  inkindSubtitle: "MXN /mes · todo el opex de Inmobiq",
+  inkindDetail:
+    "Inversor asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores. Total acumulado 10 meses · $2.275M MXN.",
+  founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" },
+  founderUpfront: "$250K",
+  founderSubtitle: "Al cierre del deal · pago asegurado",
+  cashflowKicker: "Inmobiq genera utilidad desde el mes 3",
+  cashflowCopy:
+    "Inversor cubre todo el opex los primeros 10 meses. El único gasto de Inmobiq son los curadores — que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.",
+  cashflowFootnoteLeft: "M1-M10 · Inversor cubre $238K/mes opex",
+  cashflowFootnoteRight: "Utilidad acumulada M1-M10 ~$5M MXN. Suficiente para cubrir el opex propio a partir del mes 11.",
+};
+
+const copyB = {
+  eyebrow: "Ronda · arranque liviano",
+  headline: <>
+    <em className="italic text-gradient-accent">Arranque liviano.</em> Menos riesgo, mismo destino.
+  </>,
+  description: (
+    <>
+      Misma estructura que A pero con <span className="text-foreground font-semibold">3 partidas absorbidas
+      por el equipo VEQ</span> y las restantes ajustadas a lo esencial. Paquete total $1.275M MXN por
+      <span className="text-foreground font-semibold"> 20% de participación</span>.
+      La plataforma ya está al 80% — el cheque solo financia el último empujón a beta Tijuana.
+    </>
+  ),
+  inkindLabel: "Aporte Inversor · opex mensual liviano",
+  inkindSubtitle: "MXN /mes · 5 partidas cash + 3 absorbidas",
+  inkindDetail:
+    "Misma estructura que A: las partidas tachadas las absorbe el equipo VEQ in-kind o se difieren hasta post-beta. Total acumulado 10 meses · $875K MXN.",
+  founderBonus: { amount: "+ $250K", when: "al llegar a los primeros 500 usuarios pagados" },
+  founderUpfront: "$150K",
+  founderSubtitle: "Al cierre del deal · cheque inicial menor",
+  cashflowKicker: "Break-even desde mes 3 · hito de 500 usuarios en mes 7",
+  cashflowCopy:
+    "Inversor cubre $87.5K/mes los primeros 10 meses. Crecimiento más medido por menor publicidad y un solo desarrollador, pero con riesgo significativamente menor para VEQ.",
+  cashflowFootnoteLeft: "M1-M10 · Inversor cubre $87.5K/mes opex",
+  cashflowFootnoteRight: "Inmobiq autosostenible desde M11. 5 ciudades estabilizadas a M18.",
+};
 
 export function S15Investment() {
+  const [variant, setVariant] = useState<Variant>("A");
+
+  const data = variant === "A"
+    ? { round, inkind: veq_inkind, cashflow: monthly_cash_flow, copy: copyA }
+    : { round: roundB, inkind: veq_inkindB, cashflow: monthly_cash_flow_B, copy: copyB };
+
   return (
     <Slide mode="dark" className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
@@ -28,80 +106,114 @@ export function S15Investment() {
 
       <FadeStack className="relative z-10 flex flex-col gap-7">
         <FadeItem>
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-sm font-semibold tracking-[0.22em] text-accent">15</span>
-            <span className="text-sm uppercase tracking-[0.18em] text-muted-light">Ronda · capital con operación</span>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-sm font-semibold tracking-[0.22em] text-accent">15</span>
+              <span className="text-sm uppercase tracking-[0.18em] text-muted-light">{data.copy.eyebrow}</span>
+            </div>
+            <VariantToggle variant={variant} onChange={setVariant} />
           </div>
         </FadeItem>
 
         <FadeItem>
-          <div className="max-w-3xl">
+          <div key={`head-${variant}`} className="max-w-3xl animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] text-foreground tracking-[-0.015em]">
-              <em className="italic text-gradient-accent">No es solo capital.</em> Inversor opera junto a Inmobiq.
+              {data.copy.headline}
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              Inversor cubre <span className="text-foreground font-semibold">todo el opex de Inmobiq</span> durante 10 meses
-              (desarrolladores, admin, marketing, salario fundador, infra, IA, legal). Inmobiq solo paga curadores,
-              que se cubren con el revenue de cada ciudad. Paquete total $4.635M MXN por
-              <span className="text-foreground font-semibold"> 49% de participación</span>.
+              {data.copy.description}
             </p>
+          </div>
+        </FadeItem>
+
+        {/* Banner: plataforma 80% lista beta Tijuana — ambas variantes */}
+        <FadeItem>
+          <div className="inline-flex items-center gap-2.5 self-start px-3 py-2 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/30 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inset-0 rounded-full bg-emerald-400 opacity-60 animate-ping" />
+              <span className="relative rounded-full h-2 w-2 bg-emerald-400" />
+            </span>
+            <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-emerald-200">
+              Plataforma al 80% · beta Tijuana lista para lanzamiento
+            </span>
+          </div>
+        </FadeItem>
+
+        {/* Trade-off panel A vs B — siempre visible, resalta la activa */}
+        <FadeItem>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <TradeoffCard
+              tag="A"
+              title="Más riesgosa, mayor velocidad"
+              copy="Equipo completo (2 devs, admin, marketing, legal). Capital cash mayor, escala agresiva, 14 ciudades en 18 meses."
+              tone="amber"
+              active={variant === "A"}
+            />
+            <TradeoffCard
+              tag="B"
+              title="Más segura, crecimiento sostenido"
+              copy="Equipo mínimo + absorciones VEQ. Cheque cash menor, ritmo más medido, beta Tijuana sólida antes de expansión."
+              tone="emerald"
+              active={variant === "B"}
+            />
           </div>
         </FadeItem>
 
         {/* Participación + valuación */}
         <FadeItem>
-          <div className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <Stat label="Fundador" value={`${round.founder_percent}%`} sub="voto de calidad · libertad creativa y de producto" />
-            <Stat label="Inversor" value={`${round.equity_percent}%`} sub="socio co-operador" accent />
-            <Stat label="Valuación post-inversión" value={fmtMxn(round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(round.pre_money_mxn)}`} />
+          <div key={`stats-${variant}`} className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+            <Stat label="Fundador" value={`${data.round.founder_percent}%`} sub={variant === "A" ? "voto de calidad · libertad creativa y de producto" : "control mayoritario · dirige producto y operación"} />
+            <Stat label="Inversor" value={`${data.round.equity_percent}%`} sub={variant === "A" ? "socio co-operador" : "socio capital · menor exposición"} accent />
+            <Stat label="Valuación post-inversión" value={fmtMxn(data.round.post_money_mxn)} sub={`MXN · pre-inversión ${fmtMxn(data.round.pre_money_mxn)}`} />
           </div>
         </FadeItem>
 
         {/* Desglose del paquete */}
         <FadeItem>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div key={`pkg-${variant}`} className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <PackageCard
               label="Compensación al fundador"
-              amount="$250K"
-              subtitle="Al cierre del deal · pago asegurado"
+              amount={data.copy.founderUpfront}
+              subtitle={data.copy.founderSubtitle}
               detail=""
               color="amber"
-              bonus={{ amount: "+ $150K", when: "al llegar a los primeros 300 usuarios pagados" }}
+              bonus={data.copy.founderBonus}
             />
             <PackageCard
-              label="Aporte Inversor · 10 meses de opex"
-              amount={fmtMxn(round.veq_inkind_mxn)}
-              subtitle="MXN · todo el opex de Inmobiq"
-              detail="Inversor asume el opex completo durante 10 meses: desarrolladores, admin, marketing, salario fundador, infra, IA, legal. Inmobiq solo se preocupa por curadores."
+              label={data.copy.inkindLabel}
+              amount={fmtMxn(data.round.veq_inkind_mxn / data.round.veq_inkind_months)}
+              subtitle={data.copy.inkindSubtitle}
+              detail={data.copy.inkindDetail}
               color="emerald"
-              breakdown={veq_inkind}
+              breakdown={data.inkind}
             />
           </div>
         </FadeItem>
 
         {/* Utilidad mensual de Inmobiq */}
         <FadeItem>
-          <div className="rounded-2xl bg-card p-5 sm:p-6">
+          <div key={`cf-${variant}`} className="rounded-2xl bg-card p-5 sm:p-6 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <div className="mb-4">
               <div className="text-xs uppercase tracking-[0.22em] font-semibold text-accent mb-1.5">
-                Inmobiq genera utilidad desde el mes 3
+                {data.copy.cashflowKicker}
               </div>
               <div className="text-base text-foreground/90 leading-snug max-w-3xl mb-2">
-                Inversor cubre todo el opex los primeros 10 meses. El único gasto de Inmobiq son los curadores —
-                que se pagan con el revenue de cada ciudad. Todo lo demás del MRR es utilidad neta.
+                {data.copy.cashflowCopy}
               </div>
               <div className="flex flex-wrap gap-x-5 gap-y-1 text-[11px] text-muted">
                 <span className="uppercase tracking-widest font-semibold text-foreground/80">
                   Todas las cifras son mensuales · MXN
                 </span>
                 <span className="italic">
-                  Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) · $20K MXN/mes c/u
+                  {variant === "A"
+                    ? "Curadores: 1.5 promedio por ciudad (2 en grandes, 1 en chicas) · $20K MXN/mes c/u"
+                    : "Curadores: 1 por ciudad chica · $20K MXN/mes c/u · ticket promedio $729 MXN"}
                 </span>
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-card-border/50">
-              <table className="w-full">
+            <div className="overflow-x-auto rounded-xl border border-card-border/50">
+              <table className="w-full min-w-[760px]">
                 <thead>
                   <tr className="bg-surface-muted/40">
                     <th className="px-2.5 py-3 text-left text-[11px] uppercase tracking-[0.14em] font-semibold text-muted">Mes</th>
@@ -129,11 +241,11 @@ export function S15Investment() {
                   </tr>
                 </thead>
                 <tbody>
-                  {monthly_cash_flow.map((row, i) => {
+                  {data.cashflow.map((row: CashRow, i: number) => {
                     const isYear2 = row.opex_veq_mxn === 0;
                     return (
                       <tr
-                        key={`${row.month}`}
+                        key={`${variant}-${row.month}`}
                         className={
                           isYear2
                             ? "bg-accent/5 border-l-2 border-accent/40"
@@ -180,7 +292,7 @@ export function S15Investment() {
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span className="uppercase tracking-widest font-semibold text-emerald-300/90">
-                  M1-M10 · Inversor cubre $238K/mes opex
+                  {data.copy.cashflowFootnoteLeft}
                 </span>
               </span>
               <span className="flex items-center gap-2">
@@ -190,7 +302,7 @@ export function S15Investment() {
                 </span>
               </span>
               <span className="ml-auto italic text-muted/70 max-w-[420px] text-right">
-                Utilidad acumulada M1-M10 ~$5M MXN. Suficiente para cubrir el opex propio a partir del mes 11.
+                {data.copy.cashflowFootnoteRight}
               </span>
             </div>
           </div>
@@ -221,6 +333,49 @@ export function S15Investment() {
   );
 }
 
+function VariantToggle({ variant, onChange }: { variant: Variant; onChange: (v: Variant) => void }) {
+  return (
+    <div
+      role="tablist"
+      aria-label="Variante de propuesta"
+      className="inline-flex items-center gap-0.5 p-1 rounded-xl bg-black/40 ring-1 ring-white/10 backdrop-blur-sm"
+    >
+      <ToggleButton active={variant === "A"} onClick={() => onChange("A")} sub="capital con operación">A</ToggleButton>
+      <ToggleButton active={variant === "B"} onClick={() => onChange("B")} sub="arranque liviano">B</ToggleButton>
+    </div>
+  );
+}
+
+function ToggleButton({
+  active,
+  onClick,
+  children,
+  sub,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+  sub: string;
+}) {
+  return (
+    <button
+      role="tab"
+      aria-selected={active}
+      onClick={onClick}
+      className={`px-3 sm:px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all ${
+        active
+          ? "bg-accent text-background shadow-[0_0_24px_rgba(59,130,246,0.35)]"
+          : "text-foreground/70 hover:text-foreground hover:bg-white/5"
+      }`}
+    >
+      <span className="font-mono text-sm font-bold tracking-wide">{children}</span>
+      <span className={`text-[10px] uppercase tracking-[0.16em] hidden sm:inline ${active ? "opacity-90" : "opacity-70"}`}>
+        {sub}
+      </span>
+    </button>
+  );
+}
+
 function PackageCard({
   label,
   amount,
@@ -235,7 +390,7 @@ function PackageCard({
   subtitle: string;
   detail: string;
   color: "accent" | "emerald" | "amber";
-  breakdown?: Array<{ label: string; detail?: string; monthly?: number; mxn: number }>;
+  breakdown?: InkindRow[];
   bonus?: { amount: string; when: string };
 }) {
   const text =
@@ -246,7 +401,7 @@ function PackageCard({
   return (
     <div className={`rounded-2xl bg-card p-5 ring-1 ${ring} flex flex-col h-full`}>
       <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-muted mb-1.5">{label}</div>
-      <div className={`text-4xl sm:text-5xl font-semibold tabular-nums ${text}`}>{amount}</div>
+      <div className={`text-3xl sm:text-4xl font-semibold tabular-nums ${text}`}>{amount}</div>
       <div className="text-xs text-muted mt-1 mb-3">{subtitle}</div>
       {detail && <div className="text-xs text-muted leading-relaxed mb-3">{detail}</div>}
       {bonus && (
@@ -262,27 +417,93 @@ function PackageCard({
             <span className="text-[11px] uppercase tracking-widest font-semibold text-muted/70">Total acumulado</span>
           </div>
           <ul className="flex flex-col gap-1.5">
-            {breakdown.map((b, i) => (
-              <li key={i} className="flex items-start justify-between gap-3 text-xs">
-                <div className="flex-1 leading-snug">
-                  <div className="text-foreground/80">{b.label}</div>
-                  {b.detail && <div className="text-muted/70 text-[11px]">{b.detail}</div>}
-                </div>
-                <div className="text-right whitespace-nowrap">
-                  <div className="font-semibold tabular-nums text-foreground/90">
-                    ${(b.mxn / 1_000).toFixed(0)}K
-                  </div>
-                  {b.monthly !== undefined && (
-                    <div className="text-muted/60 text-[10px] tabular-nums">
-                      ${(b.monthly / 1_000).toFixed(b.monthly % 1_000 === 0 ? 0 : 1)}K/mes
+            {breakdown.map((b, i) => {
+              const struck = b.struck === true;
+              return (
+                <li key={i} className="flex items-start justify-between gap-3 text-xs">
+                  <div className="flex-1 leading-snug">
+                    <div className={struck ? "text-muted/40 line-through decoration-rose-400/60 decoration-[1.5px]" : "text-foreground/80"}>
+                      {b.label}
                     </div>
-                  )}
-                </div>
-              </li>
-            ))}
+                    {b.detail && (
+                      <div className={struck ? "text-muted/30 line-through text-[11px]" : "text-muted/70 text-[11px]"}>
+                        {b.detail}
+                      </div>
+                    )}
+                    {struck && b.absorbedBy && (
+                      <div className="mt-1 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-500/10 ring-1 ring-emerald-400/30">
+                        <span className="material-symbols-outlined text-emerald-300" style={{ fontSize: 11 }}>handshake</span>
+                        <span className="text-[10px] uppercase tracking-[0.12em] font-semibold text-emerald-200">
+                          {b.absorbedBy}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-right whitespace-nowrap">
+                    {struck ? (
+                      <div className="text-muted/40 line-through tabular-nums text-[11px]">
+                        ${(b.mxn === 0 && b.fromA ? (b.fromA.monthly ?? 0) * 10 / 1_000 : b.mxn / 1_000).toFixed(0)}K
+                      </div>
+                    ) : (
+                      <>
+                        <div className="font-semibold tabular-nums text-foreground/90">
+                          ${(b.mxn / 1_000).toFixed(0)}K
+                        </div>
+                        {b.monthly !== undefined && (
+                          <div className="text-muted/60 text-[10px] tabular-nums">
+                            ${(b.monthly / 1_000).toFixed(b.monthly % 1_000 === 0 ? 0 : 1)}K/mes
+                            {b.fromA?.monthly !== undefined && b.fromA.monthly !== b.monthly && (
+                              <span className="ml-1 line-through text-muted/35">
+                                ${(b.fromA.monthly / 1_000).toFixed(b.fromA.monthly % 1_000 === 0 ? 0 : 1)}K
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
+    </div>
+  );
+}
+
+function TradeoffCard({
+  tag,
+  title,
+  copy,
+  tone,
+  active,
+}: {
+  tag: "A" | "B";
+  title: string;
+  copy: string;
+  tone: "amber" | "emerald";
+  active: boolean;
+}) {
+  const ring = active
+    ? tone === "amber"
+      ? "ring-amber-400/50 bg-amber-500/[0.06]"
+      : "ring-emerald-400/50 bg-emerald-500/[0.06]"
+    : "ring-card-border/60 bg-card/40";
+  const tagColor = tone === "amber" ? "text-amber-300 bg-amber-500/15" : "text-emerald-300 bg-emerald-500/15";
+  return (
+    <div className={`rounded-xl ring-1 ${ring} p-3.5 flex items-start gap-3 transition-all`}>
+      <span className={`shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-sm font-bold ${tagColor}`}>
+        {tag}
+      </span>
+      <div className="flex-1 min-w-0">
+        <div className={`text-xs uppercase tracking-[0.16em] font-semibold mb-1 ${active ? "text-foreground" : "text-foreground/70"}`}>
+          {title}
+        </div>
+        <div className={`text-[12px] leading-relaxed ${active ? "text-muted-light" : "text-muted/80"}`}>
+          {copy}
+        </div>
+      </div>
     </div>
   );
 }
@@ -298,4 +519,3 @@ function Stat({ label, value, sub, accent }: { label: string; value: string; sub
     </div>
   );
 }
-

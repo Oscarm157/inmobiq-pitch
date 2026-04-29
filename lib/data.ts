@@ -484,3 +484,79 @@ export const slideVeqCategories: string[][] = [
   ["Estructura de inversión", "Retorno (ROI)"],          // S15 Investment
   [],                                                    // S16 CTA
 ];
+
+// ============================================================================
+// PROPUESTA B — Arranque liviano (menos riesgo para Inversor)
+// 1 dev en lugar de 2 · sin admin/legal/marketing-VEQ · pub/infra/sw reducidos
+// Equity 80/20 · paquete cash $1.325M MXN · valuación derivada del paquete
+// ============================================================================
+
+export const roundB = {
+  package_total_mxn: 1_275_000,
+  package_total_usd: 68_919,
+
+  cash_to_operation_mxn: 0,
+  cash_to_operation_usd: 0,
+
+  // Salario fundador (cubierto por Inversor in-kind, 10 meses)
+  founder_salary_mxn: 300_000,
+  founder_salary_monthly_mxn: 30_000,
+  founder_salary_months: 10,
+
+  // Compensación al fundador — invertido vs A: cierre $150K + $250K @ 500 usuarios
+  founder_secondary_mxn: 400_000,
+  founder_secondary_tranches: 2,
+
+  // Aporte Inversor in-kind (10 meses · solo 5 partidas reales)
+  veq_inkind_mxn: 875_000,
+  veq_inkind_months: 10,
+
+  equity_percent: 20,
+  founder_percent: 80,
+  employee_pool_percent: 0,
+
+  post_money_mxn: 6_375_000,
+  post_money_usd: 344_595,
+  pre_money_mxn: 5_100_000,
+  pre_money_usd: 275_676,
+
+  instrument: "Participación directa · 20% por paquete de $1.275M MXN",
+  runway_months: 10,
+  buffer_months: 0,
+};
+
+// Aporte Inversor in-kind B — réplica estructural de A con partidas reducidas o absorbidas
+// `struck: true` → línea tachada, NO suma al monto cash · `absorbedBy` → quién la cubre
+// `fromA` → valor original en propuesta A para mostrar el delta visual
+export const veq_inkindB = [
+  { label: "1 desarrollador full-stack", detail: "Construye y mantiene la plataforma", monthly: 25_000, mxn: 250_000, fromA: { monthly: 70_000, label: "2 desarrolladores" } },
+  { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
+  { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
+  { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe equipo VEQ" },
+  { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 12_500, mxn: 125_000, fromA: { monthly: 22_500 } },
+  { label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe equipo VEQ" },
+  { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "Difiere post-beta · fundador asume" },
+  { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 5_000, mxn: 50_000, fromA: { monthly: 10_000 } },
+];
+
+// Compensación fundador B — invertido: menos al cierre, más en hito
+export const founder_secondary_tranches_B = [
+  { tranche: 1, mxn: 150_000, milestone: "Cierre del trato (inicial)" },
+  { tranche: 2, mxn: 250_000, milestone: "Primeros 500 usuarios pagados (final)" },
+];
+
+// Flujo mensual B — opex liviano $87.5K/mes · crecimiento ~50% más lento
+// M1-M10: Inversor cubre $87.5K/mes opex · Inmobiq solo paga curadores · net = mrr - burn
+// M11+: Inmobiq asume opex propio · net = mrr - opex_inmobiq - burn
+// Curadores: $20K/mes c/u · ticket promedio $729 MXN
+const opexMonthlyB = 87_500;
+export const monthly_cash_flow_B = [
+  { month: 1,  cities: 1, users: 15,    curators: 1,  opex_veq_mxn: opexMonthlyB, opex_inmobiq_mxn: 0,            burn_mxn: 20_000,  mrr_mxn: 10_935,    net_mxn: -9_065,    margin_pct: -83, note: "Tijuana piloto · pre-escala" },
+  { month: 3,  cities: 1, users: 80,    curators: 1,  opex_veq_mxn: opexMonthlyB, opex_inmobiq_mxn: 0,            burn_mxn: 20_000,  mrr_mxn: 58_320,    net_mxn: 38_320,    margin_pct: 66, note: "Break-even · curador cubierto" },
+  { month: 5,  cities: 1, users: 250,   curators: 1,  opex_veq_mxn: opexMonthlyB, opex_inmobiq_mxn: 0,            burn_mxn: 20_000,  mrr_mxn: 182_250,   net_mxn: 162_250,   margin_pct: 89, note: "Tijuana sólida · pre-expansión" },
+  { month: 7,  cities: 2, users: 500,   curators: 2,  opex_veq_mxn: opexMonthlyB, opex_inmobiq_mxn: 0,            burn_mxn: 40_000,  mrr_mxn: 364_500,   net_mxn: 324_500,   margin_pct: 89, note: "Hito · activa bonus fundador" },
+  { month: 10, cities: 2, users: 900,   curators: 3,  opex_veq_mxn: opexMonthlyB, opex_inmobiq_mxn: 0,            burn_mxn: 60_000,  mrr_mxn: 656_100,   net_mxn: 596_100,   margin_pct: 91, note: "Fin del soporte VEQ · M11 Inmobiq asume" },
+  { month: 11, cities: 3, users: 1_100, curators: 4,  opex_veq_mxn: 0,            opex_inmobiq_mxn: opexMonthlyB, burn_mxn: 80_000,  mrr_mxn: 801_900,   net_mxn: 634_400,   margin_pct: 79, note: "Inmobiq autosostenible" },
+  { month: 12, cities: 3, users: 1_300, curators: 4,  opex_veq_mxn: 0,            opex_inmobiq_mxn: opexMonthlyB, burn_mxn: 80_000,  mrr_mxn: 947_700,   net_mxn: 780_200,   margin_pct: 82, note: "Crecimiento sostenido" },
+  { month: 18, cities: 5, users: 2_800, curators: 7,  opex_veq_mxn: 0,            opex_inmobiq_mxn: opexMonthlyB, burn_mxn: 140_000, mrr_mxn: 2_041_200, net_mxn: 1_813_700, margin_pct: 89, note: "5 ciudades estabilizadas" },
+];

@@ -124,15 +124,24 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
         </div>
       ))}
 
+      {/* Top scrim — keeps controls readable over any slide background */}
+      <div
+        className="absolute top-0 left-0 right-0 z-40 pointer-events-none h-20 sm:h-24"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.55) 55%, transparent 100%)",
+        }}
+      />
+
       {/* Top-left: brand + home button */}
       <div
-        className="absolute top-0 left-0 z-50 flex items-center gap-4 px-4 sm:px-6 py-3 sm:py-4"
+        className="absolute top-0 left-0 z-50 flex items-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-4"
         style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
       >
         <button
           onClick={() => goTo(0)}
           aria-label="Ir al inicio"
-          className="flex items-center transition-opacity hover:opacity-80"
+          className="flex items-center transition-opacity hover:opacity-100"
         >
           <Image
             src="/logo-inmobiq-white.png"
@@ -140,33 +149,34 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
             width={260}
             height={80}
             priority
-            className="h-7 sm:h-9 w-auto opacity-90"
+            className="h-7 sm:h-9 w-auto"
           />
         </button>
         {current > 0 && (
           <button
             onClick={() => goTo(0)}
-            className="flex items-center gap-1 text-xs text-concrete hover:text-foreground transition-all"
+            className="flex items-center gap-1 text-xs text-foreground/80 hover:text-foreground transition-all"
+            aria-label="Volver al inicio"
           >
-            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>home</span>
+            <span className="material-symbols-outlined" style={{ fontSize: 16 }}>home</span>
             <span className="hidden sm:inline">Inicio</span>
           </button>
         )}
       </div>
 
-      {/* Top-right: counter + nav + fullscreen */}
+      {/* Top-right: counter + nav + glossary + fullscreen */}
       <div
-        className="absolute top-0 right-0 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-4"
+        className="absolute top-0 right-0 z-50 flex items-center gap-1.5 sm:gap-2 px-2 sm:px-5 py-3 sm:py-4"
         style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
       >
-        <span className="text-xs font-mono text-concrete tabular-nums">
+        <span className="text-[11px] sm:text-xs font-mono font-semibold text-foreground/85 tabular-nums px-2 py-1 rounded-md bg-black/40 ring-1 ring-white/10 backdrop-blur-sm">
           {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 rounded-lg bg-black/40 ring-1 ring-white/10 backdrop-blur-sm">
           <button
             onClick={prev}
             disabled={current === 0}
-            className="w-11 h-11 rounded-lg flex items-center justify-center text-concrete hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center text-foreground/85 hover:text-foreground hover:bg-white/10 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
             aria-label="Anterior"
           >
             <span className="material-symbols-outlined" style={{ fontSize: 20 }}>chevron_left</span>
@@ -174,7 +184,7 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
           <button
             onClick={next}
             disabled={current === total - 1}
-            className="w-11 h-11 rounded-lg flex items-center justify-center text-concrete hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center text-foreground/85 hover:text-foreground hover:bg-white/10 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
             aria-label="Siguiente"
           >
             <span className="material-symbols-outlined" style={{ fontSize: 20 }}>chevron_right</span>
@@ -182,18 +192,20 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
         </div>
         <button
           onClick={() => setGlossaryOpen((v) => !v)}
-          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-concrete hover:text-foreground hover:bg-card transition-all"
+          className="flex items-center gap-1.5 px-2.5 sm:px-3 h-10 sm:h-11 rounded-lg text-foreground/85 hover:text-foreground bg-black/40 hover:bg-white/10 ring-1 ring-white/10 backdrop-blur-sm transition-all"
           title="Glosario de términos"
+          aria-label="Glosario"
         >
-          <span className="material-symbols-outlined" style={{ fontSize: 16 }}>menu_book</span>
+          <span className="material-symbols-outlined" style={{ fontSize: 18 }}>menu_book</span>
           <span className="text-xs font-medium hidden md:inline">Glosario</span>
         </button>
         <button
           onClick={toggleFullscreen}
-          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-concrete hover:text-foreground hover:bg-card transition-all"
+          className="hidden sm:flex items-center gap-1.5 px-2.5 sm:px-3 h-10 sm:h-11 rounded-lg text-foreground/85 hover:text-foreground bg-black/40 hover:bg-white/10 ring-1 ring-white/10 backdrop-blur-sm transition-all"
           title="Fullscreen (F)"
+          aria-label="Fullscreen"
         >
-          <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
+          <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
             {isFullscreen ? "fullscreen_exit" : "fullscreen"}
           </span>
           <span className="text-xs font-medium hidden md:inline">
@@ -202,13 +214,25 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
         </button>
       </div>
 
+      {/* Bottom scrim — keeps progress bar + badges readable */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-40 pointer-events-none h-20"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.4) 60%, transparent 100%)",
+        }}
+      />
+
       {/* Investor Category Badge */}
       {slideVeqCategories[current]?.length > 0 && (
-        <div className="absolute bottom-8 left-4 sm:left-6 z-40 flex flex-wrap gap-1.5 pointer-events-none">
+        <div
+          className="absolute left-3 sm:left-6 z-40 flex flex-wrap gap-1.5 pointer-events-none"
+          style={{ bottom: "max(2.75rem, calc(env(safe-area-inset-bottom) + 2.5rem))" }}
+        >
           {slideVeqCategories[current].map((cat) => (
             <span
               key={cat}
-              className="px-2.5 py-1 rounded-md bg-accent/15 border border-accent/30 text-accent text-[10px] font-semibold uppercase tracking-wider backdrop-blur-sm"
+              className="px-2.5 py-1 rounded-md bg-accent/20 border border-accent/40 text-accent text-[10px] font-semibold uppercase tracking-wider backdrop-blur-sm"
             >
               {cat}
             </span>
@@ -246,10 +270,10 @@ export function SlidesDeck({ children, storageKey = "inmobiq-pitch-slide" }: Sli
 
       {/* Bottom progress */}
       <div
-        className="absolute bottom-0 left-0 right-0 z-50 px-6 py-3"
+        className="absolute bottom-0 left-0 right-0 z-50 px-4 sm:px-6 py-3"
         style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
-        <div className="h-0.5 bg-card-border rounded-full overflow-hidden">
+        <div className="h-1 bg-white/10 rounded-full overflow-hidden ring-1 ring-white/5">
           <div
             className="h-full bg-accent transition-all duration-500 ease-out rounded-full"
             style={{ width: `${((current + 1) / total) * 100}%` }}

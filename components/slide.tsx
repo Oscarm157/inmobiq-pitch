@@ -10,7 +10,7 @@ export function Slide({ children, className = "", mode = "light", centered = tru
   return (
     <div className={`w-full h-full overflow-y-auto scrollbar-hide touch-pan-y ${modeClass} ${className}`}>
       <div
-        className={`w-full max-w-6xl mx-auto px-4 sm:px-8 md:px-12 pt-16 sm:pt-14 pb-8 sm:pb-10 ${
+        className={`w-full max-w-6xl mx-auto px-4 sm:px-8 md:px-12 pt-20 sm:pt-20 pb-20 sm:pb-20 ${
           centered ? "min-h-full flex flex-col justify-center" : ""
         }`}
       >
