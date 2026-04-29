@@ -211,7 +211,7 @@ export function S15Investment() {
                   Opción de expansión
                 </div>
                 <div className="text-sm text-foreground/90 leading-relaxed">
-                  Dentro de los próximos <span className="font-semibold text-foreground">12 meses</span>, VEQ
+                  Después del primer año y dentro de los <span className="font-semibold text-foreground">12 meses siguientes</span>, VEQ
                   podrá adquirir hasta un <span className="font-semibold text-foreground">20% adicional</span> de
                   participación, con la empresa valuada a <span className="font-semibold text-foreground">1 año de ventas
                   al momento del ejercicio</span>.
