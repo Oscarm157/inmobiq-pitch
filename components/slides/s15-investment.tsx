@@ -369,8 +369,8 @@ function VariantToggle({ variant, onChange }: { variant: Variant; onChange: (v: 
       aria-label="Variante de propuesta"
       className="inline-flex items-center gap-0.5 p-1 rounded-xl bg-black/40 ring-1 ring-white/10 backdrop-blur-sm"
     >
-      <ToggleButton active={variant === "A"} onClick={() => onChange("A")} sub="plan intensivo">A</ToggleButton>
-      <ToggleButton active={variant === "B"} onClick={() => onChange("B")} sub="plan liviano">B</ToggleButton>
+      <ToggleButton active={variant === "A"} onClick={() => onChange("A")}>Plan A · intensivo</ToggleButton>
+      <ToggleButton active={variant === "B"} onClick={() => onChange("B")}>Plan B · liviano</ToggleButton>
     </div>
   );
 }
@@ -379,28 +379,23 @@ function ToggleButton({
   active,
   onClick,
   children,
-  sub,
 }: {
   active: boolean;
   onClick: () => void;
   children: React.ReactNode;
-  sub: string;
 }) {
   return (
     <button
       role="tab"
       aria-selected={active}
       onClick={onClick}
-      className={`px-3 sm:px-4 py-1.5 rounded-lg flex items-center gap-2 transition-all ${
+      className={`px-3 sm:px-4 py-2 rounded-lg transition-all text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] ${
         active
           ? "bg-accent text-background shadow-[0_0_24px_rgba(59,130,246,0.35)]"
           : "text-foreground/70 hover:text-foreground hover:bg-white/5"
       }`}
     >
-      <span className="font-mono text-sm font-bold tracking-wide">{children}</span>
-      <span className={`text-[10px] uppercase tracking-[0.16em] hidden sm:inline ${active ? "opacity-90" : "opacity-70"}`}>
-        {sub}
-      </span>
+      {children}
     </button>
   );
 }
