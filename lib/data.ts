@@ -90,7 +90,7 @@ export const veq_inkind = [
   // GASTOS OPERATIVOS
   { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
   { category: "expense", label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
-  { category: "expense", label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
+  { category: "expense", label: "Software (GitHub, Vercel, Supabase, Cloudflare, SEMrush)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
 ];
 
 // Cash a Inmobiq — desglose
@@ -139,7 +139,7 @@ export const use_of_funds = [
       { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
       { label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
       { label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
-      { label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
+      { label: "Software (GitHub, Vercel, Supabase, Cloudflare, SEMrush)", detail: "Herramientas de desarrollo y gestión", monthly: 10_000, mxn: 100_000 },
     ],
   },
   {
@@ -539,7 +539,7 @@ export const veq_inkindB = [
   // GASTOS OPERATIVOS
   { category: "expense", label: "Publicidad pagada (Meta + Google)", detail: "Empuje inicial de adquisición · combinada con base de datos de brokers ya integrada", monthly: 15_000, mxn: 150_000, fromA: { monthly: 30_000 } },
   { category: "expense", label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 12_500, mxn: 125_000, fromA: { monthly: 22_500 } },
-  { category: "expense", label: "Software (GitHub, Linear, Notion, Figma)", detail: "Herramientas de desarrollo y gestión", monthly: 5_000, mxn: 50_000, fromA: { monthly: 10_000 } },
+  { category: "expense", label: "Software (GitHub, Vercel, Supabase, Cloudflare, SEMrush)", detail: "Herramientas de desarrollo y gestión", monthly: 5_000, mxn: 50_000, fromA: { monthly: 10_000 } },
 ];
 
 // Compensación fundador B — invertido: menos al cierre, más en hito
