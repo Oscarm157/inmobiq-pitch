@@ -175,15 +175,32 @@ export function S15Investment() {
         {/* Desglose del paquete */}
         <FadeItem>
           <div key={`pkg-${variant}`} className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-4 items-start animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-            <PackageCard
-              label="Compensación al fundador"
-              amount={data.copy.founderUpfront}
-              subtitle={data.copy.founderSubtitle}
-              detail=""
-              color="amber"
-              bonus={data.copy.founderBonus}
-              badge={variant === "B" ? "-$100K vs Plan A" : undefined}
-            />
+            <div className="flex flex-col gap-4">
+              <PackageCard
+                label="Compensación al fundador"
+                amount={data.copy.founderUpfront}
+                subtitle={data.copy.founderSubtitle}
+                detail=""
+                color="amber"
+                bonus={data.copy.founderBonus}
+                badge={variant === "B" ? "-$100K vs Plan A" : undefined}
+              />
+              {variant === "B" && (
+                <div className="rounded-xl bg-accent/[0.06] ring-1 ring-accent/30 p-4 flex items-start gap-3">
+                  <span className="material-symbols-outlined text-accent shrink-0 mt-0.5" style={{ fontSize: 20 }}>expand_circle_right</span>
+                  <div>
+                    <div className="text-xs uppercase tracking-[0.18em] font-semibold text-accent mb-1">
+                      Opción de expansión
+                    </div>
+                    <div className="text-[13px] text-foreground/90 leading-relaxed">
+                      Una vez cumplido el primer año, VEQ tendrá la opción de crecer su participación hasta un <span className="font-semibold text-foreground">20%
+                      adicional</span>, con la empresa valuada a <span className="font-semibold text-foreground">1 año de ventas
+                      al momento de ejercerla</span>. Esta opción estará disponible durante el segundo año de operación.
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             <PackageCard
               label={data.copy.inkindLabel}
               amount={fmtMxn(data.round.veq_inkind_mxn / data.round.veq_inkind_months)}
@@ -199,25 +216,6 @@ export function S15Investment() {
             />
           </div>
         </FadeItem>
-
-        {/* Opción de expansión — solo Plan B */}
-        {variant === "B" && (
-          <FadeItem>
-            <div className="rounded-xl bg-accent/[0.06] ring-1 ring-accent/30 p-4 flex items-start gap-3">
-              <span className="material-symbols-outlined text-accent shrink-0 mt-0.5" style={{ fontSize: 20 }}>expand_circle_right</span>
-              <div>
-                <div className="text-xs uppercase tracking-[0.18em] font-semibold text-accent mb-1">
-                  Opción de expansión
-                </div>
-                <div className="text-sm text-foreground/90 leading-relaxed">
-                  Una vez cumplido el primer año, VEQ tendrá la opción de crecer su participación hasta un <span className="font-semibold text-foreground">20%
-                  adicional</span>, con la empresa valuada a <span className="font-semibold text-foreground">1 año de ventas
-                  al momento de ejercerla</span>. Esta opción estará disponible durante el segundo año de operación.
-                </div>
-              </div>
-            </div>
-          </FadeItem>
-        )}
 
         {/* Utilidad mensual de Inmobiq */}
         <FadeItem>
