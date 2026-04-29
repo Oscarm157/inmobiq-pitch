@@ -83,7 +83,7 @@ export const roi = {
 export const veq_inkind = [
   // EQUIPO DE TRABAJO
   { category: "team", label: "2 desarrolladores de software", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
-  { category: "team", label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
+  { category: "team", label: "Salario fundador (neto)", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
   { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
   { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 15_000, mxn: 150_000 },
   { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 15_000, mxn: 150_000 },
@@ -133,7 +133,7 @@ export const use_of_funds = [
     usd: 122_973,
     items: [
       { label: "2 desarrolladores de software", detail: "Construyen y mantienen la plataforma", monthly: 70_000, mxn: 700_000 },
-      { label: "Salario fundador", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
+      { label: "Salario fundador (neto)", detail: "Producto, creatividad, dirección y comercial · orquesta toda la operación", monthly: 40_000, mxn: 400_000 },
       { label: "Publicidad pagada (Meta + Google)", detail: "Adquisición de brokers en canales digitales", monthly: 30_000, mxn: 300_000 },
       { label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 25_000, mxn: 250_000 },
       { label: "Infraestructura + IA", detail: "Cloud + AI API + tokens", monthly: 22_500, mxn: 225_000 },
@@ -532,7 +532,7 @@ export const roundB = {
 export const veq_inkindB = [
   // EQUIPO DE TRABAJO
   { category: "team", label: "1 desarrollador JR de software", detail: "Perfil junior · suficiente para mantener la plataforma post-beta y cerrar features pendientes", monthly: 25_000, mxn: 250_000, fromA: { monthly: 70_000, label: "2 desarrolladores de software" } },
-  { category: "team", label: "Salario fundador", detail: "Producto, dirección, comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
+  { category: "team", label: "Salario fundador (neto)", detail: "Producto, dirección, comercial · orquesta toda la operación", monthly: 30_000, mxn: 300_000, fromA: { monthly: 40_000 } },
   { category: "team", label: "1 admin/operaciones", detail: "Cobros, contratos, RH ligero", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
   { category: "team", label: "Equipo de marketing Inversor", detail: "Estrategia, creatividad, branding", monthly: 0, mxn: 0, struck: true, absorbedBy: "Absorbe fundador" },
   { category: "team", label: "Legal + contador fiscal", detail: "Compliance y contabilidad", monthly: 0, mxn: 0, struck: true, absorbedBy: "VEQ" },
