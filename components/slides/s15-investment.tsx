@@ -79,7 +79,7 @@ const copyB = {
     "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash de Inversor.",
   founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 400 usuarios pagados" },
   founderUpfront: "$150K",
-  founderSubtitle: "Al cierre del deal · cheque inicial menor",
+  founderSubtitle: "Al cierre del deal",
   cashflowKicker: "Break-even desde mes 3 · hito de 400 usuarios en mes 7",
   cashflowCopy:
     "Inversor cubre $87.5K/mes los primeros 10 meses. Crecimiento más medido por menor publicidad y un solo desarrollador, pero con riesgo significativamente menor para VEQ.",
