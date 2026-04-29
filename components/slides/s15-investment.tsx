@@ -169,7 +169,7 @@ export function S15Investment() {
           <div key={`stats-${variant}`} className="rounded-2xl bg-card p-5 grid grid-cols-2 sm:grid-cols-3 gap-4 animate-[heroFadeIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <Stat label="Fundador" value={`${data.round.founder_percent}%`} sub={variant === "A" ? "voto de calidad · libertad creativa y de producto" : "control mayoritario · dirige producto y operación"} />
             <Stat label="Inversor" value={`${data.round.equity_percent}%`} sub={variant === "A" ? "socio co-operador" : "socio capital · menor exposición"} accent />
-            <Stat label="Valuación post-inversión" value={fmtMxn(data.round.post_money_mxn)} currency="MXN" sub={`Pre-inversión ${fmtMxn(data.round.pre_money_mxn)} MXN`} />
+            <Stat label="Valuación" value={fmtMxn(data.round.post_money_mxn)} currency="MXN" sub="Valor de la empresa" />
           </div>
         </FadeItem>
 
@@ -334,7 +334,7 @@ export function S15Investment() {
             { term: "Compensación al fundador", def: "pago al fundador por el año de bootstrap, dividido en tramos atados a hitos" },
             { term: "Gasto mensual", def: "lo que sale del banco cada mes para operar (salarios, infra, etc.)" },
             { term: "Ingreso recurrente", def: "ingresos mensuales por suscripciones (MRR · ARR cuando es anual)" },
-            { term: "Valuación post-inversión", def: "lo que vale la empresa una vez que entra el capital" },
+            { term: "Valuación", def: "lo que vale la empresa" },
             { term: "Rendimiento anual", def: "ganancia compuesta anual del dinero invertido (IRR)" },
           ]}
         />
