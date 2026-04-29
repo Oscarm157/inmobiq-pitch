@@ -183,6 +183,7 @@ export function S15Investment() {
               detail=""
               color="amber"
               bonus={data.copy.founderBonus}
+              badge={variant === "B" ? "-$100K vs Plan A" : undefined}
             />
             <PackageCard
               label={data.copy.inkindLabel}
@@ -396,6 +397,7 @@ function PackageCard({
   color,
   breakdown,
   bonus,
+  badge,
 }: {
   label: string;
   amount: string;
@@ -406,6 +408,7 @@ function PackageCard({
   color: "accent" | "emerald" | "amber";
   breakdown?: InkindRow[];
   bonus?: { amount: string; when: string };
+  badge?: string;
 }) {
   const text =
     color === "emerald" ? "text-emerald-300" : color === "amber" ? "text-amber-300" : "text-gradient-accent";
@@ -414,7 +417,14 @@ function PackageCard({
 
   return (
     <div className={`rounded-2xl bg-card p-5 ring-1 ${ring} flex flex-col h-full`}>
-      <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-foreground/85 mb-1.5">{label}</div>
+      <div className="flex items-center justify-between mb-1.5">
+        <div className="text-[11px] uppercase tracking-[0.22em] font-semibold text-foreground/85">{label}</div>
+        {badge && (
+          <span className="px-2 py-0.5 rounded-md bg-rose-500/15 ring-1 ring-rose-400/30 text-[10px] uppercase tracking-[0.12em] font-semibold text-rose-300">
+            {badge}
+          </span>
+        )}
+      </div>
       <div className={`text-3xl sm:text-4xl font-semibold tabular-nums ${text}`}>
         {amount}
         <span className="text-sm sm:text-base text-muted ml-1.5 font-medium tracking-wide">MXN</span>
