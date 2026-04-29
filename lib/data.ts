@@ -37,10 +37,10 @@ export const round = {
   employee_pool_percent: 0,
 
   // Valuación
-  post_money_mxn: 9_459_000,
-  post_money_usd: 511_297,
-  pre_money_mxn: 4_824_000,
-  pre_money_usd: 260_757,
+  post_money_mxn: 5_460_000,
+  post_money_usd: 295_135,
+  pre_money_mxn: 2_785_000,
+  pre_money_usd: 150_541,
 
   // Términos
   instrument: "Participación directa · 49% por aporte $2.675M MXN (in-kind + comp fundador)",
