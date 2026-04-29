@@ -43,7 +43,7 @@ export const round = {
   pre_money_usd: 150_541,
 
   // Términos
-  instrument: "Participación directa · 49% por aporte $2.675M MXN (in-kind + comp fundador)",
+  instrument: "Participación directa · 49% por aporte $2.675M MXN (operativo + comp fundador)",
   runway_months: 10,
   buffer_months: 0,
 };
@@ -127,7 +127,7 @@ export const monthly_cash_flow = [
 // Uso de fondos — breakdown del paquete total Inversor ($4.785M MXN)
 export const use_of_funds = [
   {
-    chapter: "Aporte Inversor in-kind (10 meses)",
+    chapter: "Aporte Inversor (10 meses)",
     percent: 49.1,
     mxn: 2_275_000,
     usd: 122_973,

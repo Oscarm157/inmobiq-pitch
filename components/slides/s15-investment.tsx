@@ -75,7 +75,7 @@ const copyB = {
     </>
   ),
   inkindLabel: "Aporte Inversor · opex mensual liviano",
-  inkindSubtitle: "Opex liviano (in-kind) durante 10 meses",
+  inkindSubtitle: "Opex liviano durante 10 meses",
   inkindDetail:
     "Misma estructura que A: las líneas tachadas las absorbe el fundador o se comparten con VEQ. Solo lo gris cuenta como aporte cash de Inversor.",
   founderBonus: { amount: "+ $150K", when: "al llegar a los primeros 400 usuarios pagados" },
@@ -254,7 +254,7 @@ export function S15Investment() {
                       Usuarios<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">pagados</span>
                     </th>
                     <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-emerald-300/90">
-                      Opex Inversor<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">aporte in-kind</span>
+                      Opex Inversor<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">aporte operativo</span>
                     </th>
                     <th className="px-2.5 py-3 text-right text-[11px] uppercase tracking-[0.14em] font-semibold text-violet">
                       Opex Inmobiq<span className="block text-[9px] normal-case tracking-normal font-normal text-muted/60">post-mes 10</span>
