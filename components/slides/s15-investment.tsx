@@ -473,21 +473,21 @@ function PackageCard({
         </div>
       )}
       {breakdown && (
-        <div className="mt-auto pt-3 border-t border-card-border/50 flex flex-col gap-4">
+        <div className="mt-auto pt-4 border-t border-card-border/50 flex flex-col gap-6">
           {(["team", "expense"] as const).map((cat) => {
             const items = breakdown.filter((b) => (b.category ?? "team") === cat);
             if (items.length === 0) return null;
             return (
               <div key={cat}>
-                <div className="flex items-baseline justify-between mb-2">
+                <div className="flex items-baseline justify-between mb-3">
                   <span className="text-[11px] uppercase tracking-widest font-semibold text-foreground/90">
                     {cat === "team" ? "Equipo de trabajo" : "Gastos operativos"}
                   </span>
                   <span className="text-[10px] uppercase tracking-widest font-semibold text-muted">
-                    Total acumulado · 10 meses
+                    10 meses
                   </span>
                 </div>
-                <ul className="flex flex-col gap-1.5">
+                <ul className="flex flex-col gap-4">
                   {items.map((b, i) => <BreakdownRow key={i} b={b} />)}
                 </ul>
               </div>
@@ -505,7 +505,7 @@ function BreakdownRow({ b }: { b: InkindRow }) {
   const fromATotal = fromAMonthly !== undefined ? fromAMonthly * 10 : undefined;
 
   return (
-    <li className="flex items-start justify-between gap-3 text-xs">
+    <li className="flex items-start justify-between gap-4 text-xs pb-3 border-b border-card-border/30 last:border-0 last:pb-0">
       <div className="flex-1 leading-snug">
         <div className={struck ? "text-muted/70 line-through decoration-rose-400/70 decoration-[1.5px]" : "text-foreground/95"}>
           {b.label}
